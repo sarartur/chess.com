@@ -2,6 +2,7 @@ from urllib3 import PoolManager
 from certifi import where
 import json
 from typing import Dict
+from datetime import datetime
 
 from chessdotcom.errors import ChessDotComError
 
@@ -25,6 +26,21 @@ class _internal:
         if r.status != 200:
             raise ChessDotComError(status_code=r.status)
         return r
+
+    @staticmethod
+    def resolve_date(year, month, date: datetime) -> (str, str):
+        if (year is None) != (month is None):
+            raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
+        if year is not None:
+            if isinstance(year, int):
+                year = str(year)
+            if isinstance(month, int):
+                month = str(month)
+            return year, month.zfill(2)
+        elif date is not None:
+            return str(date.year), str(date.month).zfill(2)
+        else:
+            raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
 
 
 def get_player_profile(username: str) -> Dict:
@@ -62,7 +78,7 @@ def get_player_stats(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def is_player_online(username: str) -> Dict:
+def is_player_online(username: str) -> bool:
     """Public method that returns True if user has been online
     in the last 5 minutes
 
@@ -70,7 +86,7 @@ def is_player_online(username: str) -> Dict:
         username -- username of the player"""
 
     r = _internal.do_get_request(f"/player/{username}/is-online")
-    return json.loads(r.data.decode('utf-8'))
+    return json.loads(r.data.decode('utf-8'))["online"]
 
 
 def get_player_current_games(username: str) -> Dict:
@@ -108,7 +124,7 @@ def get_player_game_archives(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def get_player_games_by_month(username: str, yyyy: str, mm: str) -> Dict:
+def get_player_games_by_month(username: str, year=None, month=None, date: datetime = None) -> Dict:
     """Public method that returns an array of
     live and daily Chess games that a player has finished.
 
@@ -117,20 +133,23 @@ def get_player_games_by_month(username: str, yyyy: str, mm: str) -> Dict:
         yyyy -- integer: the year (yyyy)
         mm -- integer: the month (mm)
     """
+    yyyy, mm = _internal.resolve_date(year, month, date)
     r = _internal.do_get_request(f"/player/{username}/games/{yyyy}/{mm}")
     return json.loads(r.data.decode('utf-8'))
 
 
-def get_player_games_by_month_pgn(username: str, yyyy: str, mm: str):
+def get_player_games_by_month_pgn(username: str, year=None, month=None, date: datetime = None):
     """Public method that returns standard multi-game format PGN
     containing all games for a month
 
     Parameters:
         username -- username of the player
-        yyyy -- intger: the year (yyyy)
-        mm -- integer: the month (mm)
+        year -- integer or string: the year
+        month -- integer or string: the month
+        date -- datetime.datetime: the date of the month
+    You can pass in either the year and month or the datetime
     """
-
+    yyyy, mm = _internal.resolve_date(year, month, date)
     r = _internal.do_get_request(f"/player/{username}/games/{yyyy}/{mm}/pgn")
     return r.data
 
