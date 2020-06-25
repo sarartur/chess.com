@@ -12,6 +12,20 @@ class ChessDotCom(object):
     __HOST__ = "https://api.chess.com/pub"
     https = PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=where())
 
+    @classmethod
+    def _complete_path(cls, path_fmt, args):
+        return path_fmt % args
+
+    @classmethod
+    def _do_request(cls, path_fmt: str, args):
+        r = cls.https.request(
+            method='GET',
+            url=cls.__HOST__ + cls._complete_path(path_fmt, args),
+        )
+        if r.status != 200:
+            raise ChessDotComError(status_code=r.status)
+        return r
+
 
     @classmethod
     def player_profile(cls, username: str) -> Dict:
@@ -20,14 +34,7 @@ class ChessDotCom(object):
         Parameters:
             username -- username of the player
         """
-
-        URL_EXTENSION = f"/player/{username}"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION,
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}", username)
         return json.loads(r.data.decode('utf-8'))
 
 
@@ -39,13 +46,7 @@ class ChessDotCom(object):
             title_abbrev -- abbreviation of chess title
         """
 
-        URL_EXTENSION = f"/titled/{title_abbrev}"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/titled/{0}", title_abbrev)
         return json.loads(r.data.decode('utf-8'))
 
     
@@ -59,13 +60,7 @@ class ChessDotCom(object):
             username -- username of the player
         """
 
-        URL_EXTENSION = f"/player/{username}/stats"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}/stats", username)
         return json.loads(r.data.decode('utf-8'))
 
 
@@ -77,13 +72,7 @@ class ChessDotCom(object):
         Parameters:
             username -- username of the player"""
 
-        URL_EXTENSION = f"/player/{username}/is-online"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}/is-online", username)
         return json.loads(r.data.decode('utf-8'))
 
     
@@ -96,13 +85,7 @@ class ChessDotCom(object):
             username -- username of the player
         """
 
-        URL_EXTENSION = f"/player/{username}/games"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}/games", username)
         return json.loads(r.data.decode('utf-8'))
 
 
@@ -115,13 +98,7 @@ class ChessDotCom(object):
             username -- username of the player
         """
 
-        URL_EXTENSION = f"/player/{username}/games/to-move"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION 
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}/games/to-move", username)
         return json.loads(r.data.decode('utf-8'))
 
 
@@ -134,13 +111,7 @@ class ChessDotCom(object):
             username -- username of the player
         """
 
-        URL_EXTENSION = f"/player/{username}/games/archives"
-        r = cls.https.request(
-            method='GET',
-            url = cls.__HOST__ + URL_EXTENSION
-        )
-        if r.status != 200:
-            raise ChessDotComError(status_code = r.status)
+        r = cls._do_request("/player/{0}/games/archives", username)
         return json.loads(r.data.decode('utf-8'))
 
 
