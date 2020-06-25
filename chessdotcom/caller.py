@@ -22,7 +22,7 @@ class _internal:
         return r
 
 
-def player_profile(username: str) -> Dict:
+def get_player_profile(username: str) -> Dict:
     """Public method that returns additional details about a player
 
     Parameters:
@@ -33,7 +33,7 @@ def player_profile(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def titled_players(title_abbrev: str) -> Dict:
+def get_titled_players(title_abbrev: str) -> Dict:
     """Public method that returns list of titled-player usernames
 
     Parameters:
@@ -44,7 +44,7 @@ def titled_players(title_abbrev: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_stats(username: str) -> Dict:
+def get_player_stats(username: str) -> Dict:
     """Public method that returns ratings, win/loss,
     and other stats about a player's game play, tactics,
     lessons and Puzzle Rush score.
@@ -57,7 +57,7 @@ def player_stats(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_is_online(username: str) -> Dict:
+def is_player_online(username: str) -> Dict:
     """Public method that returns True if user has been online
     in the last 5 minutes
 
@@ -68,7 +68,7 @@ def player_is_online(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_current_games(username: str) -> Dict:
+def get_player_current_games(username: str) -> Dict:
     """Public method that returns an array
     of Daily Chess games that a player is currently playing
 
@@ -80,7 +80,7 @@ def player_current_games(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_current_games_to_move(username: str) -> Dict:
+def get_player_current_games_to_move(username: str) -> Dict:
     """Public method that returns an array of Daily Chess games
     where it is the player's turn to act
 
@@ -92,7 +92,7 @@ def player_current_games_to_move(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_games_archives(username: str) -> Dict:
+def get_player_game_archives(username: str) -> Dict:
     """Public method that returns a array
     of monthly archives available for this player.
 
@@ -103,7 +103,7 @@ def player_games_archives(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_games_by_month(username: str, yyyy: str, mm: str) -> Dict:
+def get_player_games_by_month(username: str, yyyy: str, mm: str) -> Dict:
     """Public method that returns an array of
     live and daily Chess games that a player has finished.
 
@@ -116,7 +116,7 @@ def player_games_by_month(username: str, yyyy: str, mm: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_games_by_month_pgn(username: str, yyyy: str, mm: str):
+def get_player_games_by_month_pgn(username: str, yyyy: str, mm: str):
     """Public method that returns standard multi-game format PGN
     containing all games for a month
 
@@ -130,7 +130,7 @@ def player_games_by_month_pgn(username: str, yyyy: str, mm: str):
     return r.data
 
 
-def player_clubs(username: str) -> Dict:
+def get_player_clubs(username: str) -> Dict:
     """Public method that returns list of clubs the player
     is a member of.
 
@@ -141,9 +141,9 @@ def player_clubs(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_team_matches(username: str) -> Dict:
+def get_player_team_matches(username: str) -> Dict:
     """Public method that returns List of Team matches the player has attended,
-    is partecipating or is currently registered.
+    is participating or is currently registered.
 
     Parameters:
         username -- username of the player
@@ -152,7 +152,7 @@ def player_team_matches(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def player_tournaments(username: str) -> Dict:
+def get_player_tournaments(username: str) -> Dict:
     """List of tournaments the player is registered,
     is attending or has attended in the past.
 
@@ -164,7 +164,7 @@ def player_tournaments(username: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def clubs(url_id: str) -> Dict:
+def get_club_details(url_id: str) -> Dict:
     """Public method that returns additional details about a club
 
     Parameters:
@@ -174,7 +174,7 @@ def clubs(url_id: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def club_members(url_id: str) -> Dict:
+def get_club_members(url_id: str) -> Dict:
     """Public method that return a list of club members
 
     Parameters:
@@ -184,7 +184,7 @@ def club_members(url_id: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def club_matches(url_id: str) -> Dict:
+def get_club_matches(url_id: str) -> Dict:
     """Public method that returns a list of daily and club matches
 
     Parameters:
@@ -194,7 +194,7 @@ def club_matches(url_id: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def tournament(url_id: str) -> Dict:
+def get_tournament_details(url_id: str) -> Dict:
     """Public method that returns details
     about a daily, live and arena tournament
 
@@ -205,7 +205,7 @@ def tournament(url_id: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def tournament_round(url_id: str, round_num: int) -> Dict:
+def get_tournament_round(url_id: str, round_num: int) -> Dict:
     """Public method that returns details about a
     tournament's round.
 
@@ -217,7 +217,7 @@ def tournament_round(url_id: str, round_num: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def tournament_round_group(url_id: str, round_num: int, group_num: int) -> Dict:
+def get_tournament_round_group_details(url_id: str, round_num: int, group_num: int) -> Dict:
     """Public method that returns details about a tournament's
     round group
 
@@ -230,7 +230,7 @@ def tournament_round_group(url_id: str, round_num: int, group_num: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def team_match(match_id: int) -> Dict:
+def get_team_match(match_id: int) -> Dict:
     """Public method that returns details about a team match
     and players playing that match
 
@@ -241,7 +241,7 @@ def team_match(match_id: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def team_match_board(match_id: int, board_num: int) -> Dict:
+def get_team_match_board(match_id: int, board_num: int) -> Dict:
     """Public method that returns details about
     a team match board
 
@@ -253,7 +253,7 @@ def team_match_board(match_id: int, board_num: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def team_match_live(match_id: int) -> Dict:
+def get_team_match_live(match_id: int) -> Dict:
     """Public method that returns details
     about a team match and players playing that match
 
@@ -264,7 +264,7 @@ def team_match_live(match_id: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def team_match_live_board(match_id: int, board_num: int) -> Dict:
+def get_team_match_live_board(match_id: int, board_num: int) -> Dict:
     """Public method that returns details about a team match board
 
     Parameters:
@@ -275,7 +275,7 @@ def team_match_live_board(match_id: int, board_num: int) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def country(iso: str) -> Dict:
+def get_country_details(iso: str) -> Dict:
     """Public method that returns additional details about a country
 
     Parameters:
@@ -285,7 +285,7 @@ def country(iso: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def country_players(iso):
+def get_country_players(iso):
     """Public method that returns list of usernames for players
     who identify themselves as being in this country.
 
@@ -296,7 +296,7 @@ def country_players(iso):
     return json.loads(r.data.decode('utf-8'))
 
 
-def country_clubs(iso: str) -> Dict:
+def get_country_clubs(iso: str) -> Dict:
     """Public method that returns list of  URLs for clubs identified
     as being in or associated with this country.
 
@@ -307,28 +307,28 @@ def country_clubs(iso: str) -> Dict:
     return json.loads(r.data.decode('utf-8'))
 
 
-def puzzle() -> Dict:
+def get_current_daily_puzzle() -> Dict:
     """Public method that returns information
     about the daily puzzle found in www.chess.com"""
     r = _internal.do_request("/puzzle")
     return json.loads(r.data.decode('utf-8'))
 
 
-def puzzle_random() -> Dict:
+def get_random_daily_puzzle() -> Dict:
     """Public method that returns information about a
     randomly picked daily puzzle"""
     r = _internal.do_request("/puzzle/random")
     return json.loads(r.data.decode('utf-8'))
 
 
-def streamers():
+def get_streamers():
     """Public method that returns information
     about Chess.com streamers."""
     r = _internal.do_request("/streamers")
     return json.loads(r.data.decode('utf-8'))
 
 
-def leaderboards():
+def get_leaderboards():
     """Public method that returns information about top 50 player
     for daily and live games, tactics and lessons."""
     r = _internal.do_request("/leaderboards")
