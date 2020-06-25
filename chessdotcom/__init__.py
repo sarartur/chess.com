@@ -1,2 +1,2 @@
-from chessdotcom.caller import ChessDotCom
 from chessdotcom.errors import ChessDotComError
+from chessdotcom.caller import *
