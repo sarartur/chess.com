@@ -16,7 +16,8 @@ class _internal:
 
     @classmethod
     def do_get_request(cls, path):
-        """Preforms a GET request to the chess.com API using the specified path.
+        """Private method that performs a 
+        GET request to the chess.com API using the specified path.
 
         Parameters:
             path -- path The URL path to use
@@ -31,6 +32,15 @@ class _internal:
 
     @staticmethod
     def resolve_date(year, month, date: datetime) -> (str, str):
+        """Private method that resolves different date parameters 
+        and returns 'yyyy' and 'mm'
+
+        Parameters:
+            year -- year
+            month --month
+            datetime -- datetime object
+        """
+
         if (year is None) != (month is None):
             raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
         if year is not None:
