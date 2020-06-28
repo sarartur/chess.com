@@ -1,10 +1,11 @@
 from urllib3 import PoolManager
 from certifi import where
 import json
-from typing import Dict
+from typing import Dict, Optional, Union
 from datetime import datetime
 
 from chessdotcom.errors import ChessDotComError
+from chessdotcom.response_parser import ChessDotComResponse
 
 
 class _internal:
@@ -44,18 +45,18 @@ class _internal:
             raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
 
 
-def get_player_profile(username: str) -> Dict:
+def get_player_profile(username: str) -> 'ChessDotComResponse':
     """Public method that returns additional details about a player
 
     Parameters:
         username -- username of the player
     """
 
-    r = _internal.do_get_request(f"/player/{username}")
-    return json.loads(r.data.decode('utf-8'))
+    r = _internal.do_get_request(path = f"/player/{username}")
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_titled_players(title_abbrev: str) -> Dict:
+def get_titled_players(title_abbrev: str) -> 'ChessDotComResponse':
     """Public method that returns list of titled-player usernames
 
     Parameters:
@@ -63,10 +64,10 @@ def get_titled_players(title_abbrev: str) -> Dict:
     """
 
     r = _internal.do_get_request(path = f"/titled/{title_abbrev}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_stats(username: str) -> Dict:
+def get_player_stats(username: str) -> 'ChessDotComResponse':
     """Public method that returns ratings, win/loss,
     and other stats about a player's game play, tactics,
     lessons and Puzzle Rush score.
@@ -76,7 +77,7 @@ def get_player_stats(username: str) -> Dict:
     """
 
     r = _internal.do_get_request(path = f"/player/{username}/stats")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
 def is_player_online(username: str) -> bool:
@@ -86,10 +87,10 @@ def is_player_online(username: str) -> bool:
     Parameters:
         username -- username of the player"""
     r = _internal.do_get_request(path = f"/player/{username}/is-online")
-    return json.loads(r.data.decode('utf-8'))["online"]
+    return ChessDotComResponse(response_data = r.data).json["online"]
 
 
-def get_player_current_games(username: str) -> Dict:
+def get_player_current_games(username: str) -> 'ChessDotComResponse':
     """Public method that returns an array
     of Daily Chess games that a player is currently playing
 
@@ -98,10 +99,10 @@ def get_player_current_games(username: str) -> Dict:
     """
 
     r = _internal.do_get_request(path = f"/player/{username}/games")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_current_games_to_move(username: str) -> Dict:
+def get_player_current_games_to_move(username: str) -> 'ChessDotComResponse':
     """Public method that returns an array of Daily Chess games
     where it is the player's turn to act
 
@@ -110,10 +111,10 @@ def get_player_current_games_to_move(username: str) -> Dict:
     """
 
     r = _internal.do_get_request(path = f"/player/{username}/games/to-move")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_game_archives(username: str) -> Dict:
+def get_player_game_archives(username: str) -> 'ChessDotComResponse':
     """Public method that returns a array
     of monthly archives available for this player.
 
@@ -121,10 +122,12 @@ def get_player_game_archives(username: str) -> Dict:
         username -- username of the player
     """
     r = _internal.do_get_request(path = f"/player/{username}/games/archives")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_games_by_month(username: str, year=None, month=None, date: datetime = None) -> Dict:
+def get_player_games_by_month(username: str, year: Optional[Union[str, int, None]] = None, 
+                                month: Optional[Union[str, int, None]] = None, 
+                                datetime_obj: Optional[Union[datetime, None]] = None) -> 'ChessDotComResponse':
     """Public method that returns an array of
     live and daily Chess games that a player has finished.
 
@@ -133,12 +136,14 @@ def get_player_games_by_month(username: str, year=None, month=None, date: dateti
         yyyy -- integer: the year (yyyy)
         mm -- integer: the month (mm)
     """
-    yyyy, mm = _internal.resolve_date(year, month, date)
+    yyyy, mm = _internal.resolve_date(year, month, datetime_obj)
     r = _internal.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_games_by_month_pgn(username: str, year=None, month=None, date: datetime = None):
+def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, None]] = None, 
+                                month: Optional[Union[str, int, None]] = None, 
+                                datetime_obj: Optional[Union[datetime, None]] = None):
     """Public method that returns standard multi-game format PGN
     containing all games for a month
 
@@ -149,12 +154,12 @@ def get_player_games_by_month_pgn(username: str, year=None, month=None, date: da
         date -- datetime.datetime: the date of the month
     You can pass in either the year and month or the datetime
     """
-    yyyy, mm = _internal.resolve_date(year, month, date)
+    yyyy, mm = _internal.resolve_date(year, month, datetime_obj)
     r = _internal.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}/pgn")
     return r.data
 
 
-def get_player_clubs(username: str) -> Dict:
+def get_player_clubs(username: str) -> 'ChessDotComResponse':
     """Public method that returns list of clubs the player
     is a member of.
 
@@ -162,10 +167,10 @@ def get_player_clubs(username: str) -> Dict:
         username -- username of the player
     """
     r = _internal.do_get_request(path = f"/player/{username}/clubs")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_team_matches(username: str) -> Dict:
+def get_player_team_matches(username: str) -> 'ChessDotComResponse':
     """Public method that returns List of Team matches the player has attended,
     is participating or is currently registered.
 
@@ -173,10 +178,10 @@ def get_player_team_matches(username: str) -> Dict:
         username -- username of the player
     """
     r = _internal.do_get_request(path = f"/player/{username}/matches")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_player_tournaments(username: str) -> Dict:
+def get_player_tournaments(username: str) -> 'ChessDotComResponse':
     """List of tournaments the player is registered,
     is attending or has attended in the past.
 
@@ -185,40 +190,40 @@ def get_player_tournaments(username: str) -> Dict:
     """
 
     r = _internal.do_get_request(path = f"/player/{username}/tournaments")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_club_details(url_id: str) -> Dict:
+def get_club_details(url_id: str) -> 'ChessDotComResponse':
     """Public method that returns additional details about a club
 
     Parameters:
         url_id -- URL for the club's web page on www.chess.com.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_club_members(url_id: str) -> Dict:
+def get_club_members(url_id: str) -> 'ChessDotComResponse':
     """Public method that return a list of club members
 
     Parameters:
         url_id -- URL for the club's web page on www.chess.com.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}/members")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_club_matches(url_id: str) -> Dict:
+def get_club_matches(url_id: str) -> 'ChessDotComResponse':
     """Public method that returns a list of daily and club matches
 
     Parameters:
         url_id -- URL for the club's web page on www.chess.com.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}/matches")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_tournament_details(url_id: str) -> Dict:
+def get_tournament_details(url_id: str) -> 'ChessDotComResponse':
     """Public method that returns details
     about a daily, live and arena tournament
 
@@ -226,10 +231,10 @@ def get_tournament_details(url_id: str) -> Dict:
         url_id -- URL for the club's web page on www.chess.com.
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_tournament_round(url_id: str, round_num: int) -> Dict:
+def get_tournament_round(url_id: str, round_num: int) -> 'ChessDotComResponse':
     """Public method that returns details about a
     tournament's round.
 
@@ -238,10 +243,10 @@ def get_tournament_round(url_id: str, round_num: int) -> Dict:
         round_num -- the round of the tournament
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_tournament_round_group_details(url_id: str, round_num: int, group_num: int) -> Dict:
+def get_tournament_round_group_details(url_id: str, round_num: int, group_num: int) -> 'ChessDotComResponse':
     """Public method that returns details about a tournament's
     round group
 
@@ -251,10 +256,10 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
         group_num -- the group in the tournament
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_team_match(match_id: int) -> Dict:
+def get_team_match(match_id: int) -> 'ChessDotComResponse':
     """Public method that returns details about a team match
     and players playing that match
 
@@ -262,10 +267,10 @@ def get_team_match(match_id: int) -> Dict:
         match_id -- the id of the match
     """
     r = _internal.do_get_request(path = f"/match/{match_id}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_team_match_board(match_id: int, board_num: int) -> Dict:
+def get_team_match_board(match_id: int, board_num: int) -> 'ChessDotComResponse':
     """Public method that returns details about
     a team match board
 
@@ -274,10 +279,10 @@ def get_team_match_board(match_id: int, board_num: int) -> Dict:
         board_num -- the number of the board
     """
     r = _internal.do_get_request(path = f"/match/{match_id}/{board_num}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_team_match_live(match_id: int) -> Dict:
+def get_team_match_live(match_id: int) -> 'ChessDotComResponse':
     """Public method that returns details
     about a team match and players playing that match
 
@@ -285,10 +290,10 @@ def get_team_match_live(match_id: int) -> Dict:
         match_id -- the id of the match
     """
     r = _internal.do_get_request(path = f"/match/live/{match_id}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_team_match_live_board(match_id: int, board_num: int) -> Dict:
+def get_team_match_live_board(match_id: int, board_num: int) -> 'ChessDotComResponse':
     """Public method that returns details about a team match board
 
     Parameters:
@@ -296,20 +301,20 @@ def get_team_match_live_board(match_id: int, board_num: int) -> Dict:
         board_num -- the number of the board
     """
     r = _internal.do_get_request(path = f"/match/live/{match_id}/{board_num}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_country_details(iso: str) -> Dict:
+def get_country_details(iso: str) -> 'ChessDotComResponse':
     """Public method that returns additional details about a country
 
     Parameters:
         iso -- country's 2-character ISO 3166 code
     """
     r = _internal.do_get_request(path = f"/country/{iso}")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_country_players(iso):
+def get_country_players(iso: str) -> 'ChessDotComResponse':
     """Public method that returns list of usernames for players
     who identify themselves as being in this country.
 
@@ -317,10 +322,10 @@ def get_country_players(iso):
         iso -- country's 2-character ISO 3166 code
     """
     r = _internal.do_get_request(path = f"/country/{iso}/players")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_country_clubs(iso: str) -> Dict:
+def get_country_clubs(iso: str) -> 'ChessDotComResponse':
     """Public method that returns list of  URLs for clubs identified
     as being in or associated with this country.
 
@@ -328,32 +333,32 @@ def get_country_clubs(iso: str) -> Dict:
         iso -- country's 2-character ISO 3166 code
     """
     r = _internal.do_get_request(path = f"/country/{iso}/clubs")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_current_daily_puzzle() -> Dict:
+def get_current_daily_puzzle() -> 'ChessDotComResponse':
     """Public method that returns information
     about the daily puzzle found in www.chess.com"""
     r = _internal.do_get_request("/puzzle")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_random_daily_puzzle() -> Dict:
+def get_random_daily_puzzle() -> 'ChessDotComResponse':
     """Public method that returns information about a
     randomly picked daily puzzle"""
     r = _internal.do_get_request(path = "/puzzle/random")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_streamers():
+def get_streamers() -> 'ChessDotComResponse':
     """Public method that returns information
     about Chess.com streamers."""
     r = _internal.do_get_request(path = "/streamers")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)
 
 
-def get_leaderboards():
+def get_leaderboards() -> 'ChessDotComResponse':
     """Public method that returns information about top 50 player
     for daily and live games, tactics and lessons."""
     r = _internal.do_get_request(path = "/leaderboards")
-    return json.loads(r.data.decode('utf-8'))
+    return ChessDotComResponse(response_data = r.data)

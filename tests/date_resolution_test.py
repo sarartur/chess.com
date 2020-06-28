@@ -1,6 +1,9 @@
-from chessdotcom.caller import _internal
 from datetime import datetime
+import sys
 
+sys.path.append("../")
+
+from chessdotcom.caller import _internal
 
 def test_date_resolution():
     yyyy, mm = _internal.resolve_date(1981, 1, None)
@@ -24,3 +27,8 @@ def test_date_resolution():
         assert False
     except ValueError:
         pass
+
+
+
+if __name__ == "__main__":
+    test_date_resolution()
