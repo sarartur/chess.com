@@ -3,7 +3,7 @@ from chessdotcom.errors import ChessDotComError
 import json
 
 class ChessDotComResponse(object):
-    """Custom object for holding the API's response"""
+    """Custom object for holding the API's response."""
 
     def __init__(self, response_data: Dict) -> None:
         self._response_data = self._parse_json(response_data)
@@ -21,6 +21,8 @@ class ChessDotComResponse(object):
             return data
 
     @property
-    def json(self) -> Dict:
-        """Returns the raw json provided by the API"""
+    def json(self):
+        """
+        :returns: The data from the Chess.com API's response in dictionary format.
+        """
         return self._response_data

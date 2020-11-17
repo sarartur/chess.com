@@ -17,7 +17,7 @@ class ChessDotComError(Exception):
 
     def __str__(self):
         return (
-            f"""[MESSAGE] -- {self.message}. """
+            f"[MESSAGE] -- {self.message}."
             f"[STATUS CODE] -- {self.status_code} "
             f"[REFERENCE] -- {self.reference} "
         )
