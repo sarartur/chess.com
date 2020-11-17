@@ -8,5 +8,5 @@ Please refer to https://www.chess.com/news/view/published-data-api for detailed 
 from chessdotcom import get_player_profile
 
 data = get_player_profile("fabianocaruana")
-print(data)
+print(data.json)
 ```
