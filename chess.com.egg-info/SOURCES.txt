@@ -1,0 +1,14 @@
+README.md
+setup.py
+chess.com.egg-info/PKG-INFO
+chess.com.egg-info/SOURCES.txt
+chess.com.egg-info/dependency_links.txt
+chess.com.egg-info/requires.txt
+chess.com.egg-info/top_level.txt
+chessdotcom/__init__.py
+chessdotcom/caller.py
+chessdotcom/errors.py
+chessdotcom/response_parser.py
+tests/__init__.py
+tests/date_resolution_test.py
+tests/endpoints_test.py
