@@ -4,7 +4,7 @@ import json
 from typing import Dict, Optional, Union
 from datetime import datetime
 
-from chessdotcom.errors import ChessDotComResonser
+from chessdotcom.errors import ChessDotComError
 from chessdotcom.response import ChessDotComResponse
 
 
@@ -27,7 +27,7 @@ class _internal:
             url=cls._base_url + path
         )
         if r.status != 200:
-            raise ChessDotComResonser(status_code=r.status)
+            raise ChessDotComError(status_code=r.status)
         return r
 
     @staticmethod
@@ -101,7 +101,7 @@ def is_player_online(username: str):
 def get_player_current_games(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of Daily Chess games that a player is currently playing.
 
     """
@@ -112,7 +112,7 @@ def get_player_current_games(username: str):
 def get_player_current_games_to_move(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of Daily Chess games where it is the player's turn to act.
 
     """
@@ -123,7 +123,7 @@ def get_player_current_games_to_move(username: str):
 def get_player_game_archives(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of monthly archives available for this player.
 
     """
@@ -140,7 +140,7 @@ def get_player_games_by_month(username: str, year: Optional[Union[str, int, None
     :param month: the month (mm).
     :param date: datetime.datetime of the month. Can be passed in instead of month
                     and year parameters.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of live and daily Chess games that a player has finished.
 
     """
@@ -169,7 +169,7 @@ def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, 
 def get_player_clubs(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of clubs the player is a member of.
     """
     r = _internal.do_get_request(path = f"/player/{username}/clubs")
@@ -179,7 +179,7 @@ def get_player_clubs(username: str):
 def get_player_team_matches(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of team matches the player has attended,
                 is participating or is currently registered.
     """
@@ -190,7 +190,7 @@ def get_player_team_matches(username: str):
 def get_player_tournaments(username: str):
     """
     :param username: username of the player.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of tournaments the player is registered,
                 is attending or has attended in the past.
     """
@@ -201,7 +201,7 @@ def get_player_tournaments(username: str):
 def get_club_details(url_id: str):
     """
     :param url_id: URL for the club's web page on www.chess.com.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains additional details about a club.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}")
@@ -211,7 +211,7 @@ def get_club_details(url_id: str):
 def get_club_members(url_id: str):
     """
     :param url_id: URL for the club's web page on www.chess.com.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of club members.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}/members")
@@ -221,7 +221,7 @@ def get_club_members(url_id: str):
 def get_club_matches(url_id: str):
     """
     :param url_id: URL for the club's web page on www.chess.com.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of daily and club matches.
     """
     r = _internal.do_get_request(path = f"/club/{url_id}/matches")
@@ -231,7 +231,7 @@ def get_club_matches(url_id: str):
 def get_tournament_details(url_id: str):
     """
     :param url_id: URL for the club's web page on www.chess.com.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a daily, live and arena tournament.
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}")
@@ -242,7 +242,7 @@ def get_tournament_round(url_id: str, round_num: int):
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a tournament's round.
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}")
@@ -254,7 +254,7 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
     :param group_num: the group in the tournament.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a tournament's round group.
     """
     r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}")
@@ -264,7 +264,7 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
 def get_team_match(match_id: int):
     """
     :param match_id: the id of the match.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a team match and players playing that match.
     """
     r = _internal.do_get_request(path = f"/match/{match_id}")
@@ -275,7 +275,7 @@ def get_team_match_board(match_id: int, board_num: int):
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a team match board.
     """
     r = _internal.do_get_request(path = f"/match/{match_id}/{board_num}")
@@ -285,7 +285,7 @@ def get_team_match_board(match_id: int, board_num: int):
 def get_team_match_live(match_id: int):
     """
     :param match_id: the id of the match.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a team match and players playing that match.
     """
     r = _internal.do_get_request(path = f"/match/live/{match_id}")
@@ -296,7 +296,7 @@ def get_team_match_live_board(match_id: int, board_num: int):
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains details about a team match board.
     """
     r = _internal.do_get_request(path = f"/match/live/{match_id}/{board_num}")
@@ -306,7 +306,7 @@ def get_team_match_live_board(match_id: int, board_num: int):
 def get_country_details(iso: str):
     """
     :param iso: country's 2-character ISO 3166 code.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains additional details about a country.
     """
     r = _internal.do_get_request(path = f"/country/{iso}")
@@ -316,7 +316,7 @@ def get_country_details(iso: str):
 def get_country_players(iso: str):
     """
     :param iso: country's 2-character ISO 3166 code.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of usernames for players
                 who identify themselves as being in this country.
     """
@@ -327,7 +327,7 @@ def get_country_players(iso: str):
 def get_country_clubs(iso: str):
     """
     :param iso: country's 2-character ISO 3166 code.
-    :returns: A ChessDotComResonser response object. The json property of the object
+    :returns: A ChessDotComResponse response object. The json property of the object
                 contains a list of URLs for clubs identified
                 as being in or associated with this country.
     """
