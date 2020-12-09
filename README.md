@@ -4,7 +4,7 @@ Python wrapper around Chess.com API.
 A full Python Wrapper around Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 \
 Install the package with: ```pip install chess.com``` \
-https://pypi.org/project/liquidcss/
+https://pypi.org/project/chess.com/
 ## Usage
 Please refer to https://chesscom.readthedocs.io/ and https://www.chess.com/news/view/published-data-api for detailed instructions for Chess.com API. Below is a simple example of the usage.
 ``` python
