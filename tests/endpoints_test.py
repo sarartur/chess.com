@@ -19,7 +19,8 @@ def test_endpoints():
     assert(data.json)
 
     data = is_player_online("fabianocaruana")
-    assert(isinstance(data, bool))
+    assert(isinstance(data, ChessDotComResponse))
+    assert(data.json)
 
     data = get_player_current_games("fabianocaruana")
     assert(isinstance(data, ChessDotComResponse))
@@ -38,7 +39,8 @@ def test_endpoints():
     assert(data.json)
 
     data = get_player_games_by_month_pgn(username = "fabianocaruana", year='2020', month='05')
-    assert(data)
+    assert(isinstance(data, ChessDotComResponse))
+    assert(data.json)
 
     data = get_player_clubs("fabianocaruana")
     assert(isinstance(data, ChessDotComResponse))
