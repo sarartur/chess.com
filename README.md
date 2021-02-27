@@ -1,6 +1,6 @@
-# Python bindings for Chess.com Public API
+# Python wrapper for Chess.com Public API
 ## Description & Implementation
-Python bindings for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
+Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 \
 Install the package with: ```pip install chess.com``` \
 https://pypi.org/project/chess.com/
