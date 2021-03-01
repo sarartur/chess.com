@@ -1,7 +1,7 @@
 import sys
 
 sys.path.append("../")
-from chessdotcom.caller import *
+from chessdotcom.client import *
 from chessdotcom import ChessDotComResponse
 
 def test_endpoints():

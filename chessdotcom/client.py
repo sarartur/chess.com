@@ -6,13 +6,15 @@ from datetime import datetime
 
 from chessdotcom.errors import ChessDotComError
 from chessdotcom.response import ChessDotComResponse
+from chessdotcom.utils import resolve_date
 
 
-class _internal:
-    """This class holds the methods and variables that are module-only.
+class Client:
+    """Responsible for interacting with the API.
     """
     _base_url = "https://api.chess.com/pub"
     _https = PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=where())
+    headers = {}
 
     @classmethod
     def do_get_request(cls, path):
@@ -24,35 +26,12 @@ class _internal:
         """
         r = cls._https.request(
             method='GET',
-            url=cls._base_url + path
+            url=cls._base_url + path,
+            headers=cls.headers
         )
         if r.status != 200:
             raise ChessDotComError(status_code=r.status)
         return r
-
-    @staticmethod
-    def resolve_date(year, month, date: datetime) -> (str, str):
-        """Private method that resolves different date parameters 
-        and returns 'yyyy' and 'mm'.
-
-        Parameters:
-            year -- year
-            month --month
-            datetime -- datetime object
-        """
-
-        if (year is None) != (month is None):
-            raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
-        if year is not None:
-            if isinstance(year, int):
-                year = str(year)
-            if isinstance(month, int):
-                month = str(month)
-            return year, month.zfill(2)
-        elif date is not None:
-            return str(date.year), str(date.month).zfill(2)
-        else:
-            raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
 
 def get_player_profile(username: str):
     """
@@ -60,8 +39,7 @@ def get_player_profile(username: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains information about the chess.com user.
     """
-
-    r = _internal.do_get_request(path = f"/player/{username}")
+    r = Client.do_get_request(path = f"/player/{username}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -71,8 +49,7 @@ def get_titled_players(title_abbrev: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains a list of usernames who have the specified title.
     """
-
-    r = _internal.do_get_request(path = f"/titled/{title_abbrev}")
+    r = Client.do_get_request(path = f"/titled/{title_abbrev}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -84,7 +61,7 @@ def get_player_stats(username: str):
                 and other stats about a player's game play, tactics,
                 lessons and Puzzle Rush score.
     """
-    r = _internal.do_get_request(path = f"/player/{username}/stats")
+    r = Client.do_get_request(path = f"/player/{username}/stats")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -94,7 +71,7 @@ def is_player_online(username: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains information about whether or not the player is online. 
     """
-    r = _internal.do_get_request(path = f"/player/{username}/is-online")
+    r = Client.do_get_request(path = f"/player/{username}/is-online")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -105,7 +82,7 @@ def get_player_current_games(username: str):
                 contains a list of Daily Chess games that a player is currently playing.
 
     """
-    r = _internal.do_get_request(path = f"/player/{username}/games")
+    r = Client.do_get_request(path = f"/player/{username}/games")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -116,7 +93,7 @@ def get_player_current_games_to_move(username: str):
                 contains a list of Daily Chess games where it is the player's turn to act.
 
     """
-    r = _internal.do_get_request(path = f"/player/{username}/games/to-move")
+    r = Client.do_get_request(path = f"/player/{username}/games/to-move")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -127,7 +104,7 @@ def get_player_game_archives(username: str):
                 contains a list of monthly archives available for this player.
 
     """
-    r = _internal.do_get_request(path = f"/player/{username}/games/archives")
+    r = Client.do_get_request(path = f"/player/{username}/games/archives")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -144,8 +121,8 @@ def get_player_games_by_month(username: str, year: Optional[Union[str, int, None
                 contains a list of live and daily Chess games that a player has finished.
 
     """
-    yyyy, mm = _internal.resolve_date(year, month, datetime_obj)
-    r = _internal.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}")
+    yyyy, mm = resolve_date(year, month, datetime_obj)
+    r = Client.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -161,8 +138,8 @@ def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, 
     :returns: ``ChessDotComResponse`` object. The json property of the object contains 
                 standard multi-game format PGN containing all games for a month.
     """
-    yyyy, mm = _internal.resolve_date(year, month, datetime_obj)
-    r = _internal.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}/pgn")
+    yyyy, mm = resolve_date(year, month, datetime_obj)
+    r = Client.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}/pgn")
     return ChessDotComResponse(response_data = json.dumps({
             'pgn': r.data.decode('utf-8')
         }).encode('utf-8'))
@@ -174,7 +151,7 @@ def get_player_clubs(username: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains a list of clubs the player is a member of.
     """
-    r = _internal.do_get_request(path = f"/player/{username}/clubs")
+    r = Client.do_get_request(path = f"/player/{username}/clubs")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -185,7 +162,7 @@ def get_player_team_matches(username: str):
                 contains a list of team matches the player has attended,
                 is participating or is currently registered.
     """
-    r = _internal.do_get_request(path = f"/player/{username}/matches")
+    r = Client.do_get_request(path = f"/player/{username}/matches")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -196,7 +173,7 @@ def get_player_tournaments(username: str):
                 contains a list of tournaments the player is registered,
                 is attending or has attended in the past.
     """
-    r = _internal.do_get_request(path = f"/player/{username}/tournaments")
+    r = Client.do_get_request(path = f"/player/{username}/tournaments")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -206,7 +183,7 @@ def get_club_details(url_id: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains additional details about a club.
     """
-    r = _internal.do_get_request(path = f"/club/{url_id}")
+    r = Client.do_get_request(path = f"/club/{url_id}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -216,7 +193,7 @@ def get_club_members(url_id: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains a list of club members.
     """
-    r = _internal.do_get_request(path = f"/club/{url_id}/members")
+    r = Client.do_get_request(path = f"/club/{url_id}/members")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -226,7 +203,7 @@ def get_club_matches(url_id: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains a list of daily and club matches.
     """
-    r = _internal.do_get_request(path = f"/club/{url_id}/matches")
+    r = Client.do_get_request(path = f"/club/{url_id}/matches")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -236,7 +213,7 @@ def get_tournament_details(url_id: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a daily, live and arena tournament.
     """
-    r = _internal.do_get_request(path = f"/tournament/{url_id}")
+    r = Client.do_get_request(path = f"/tournament/{url_id}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -247,7 +224,7 @@ def get_tournament_round(url_id: str, round_num: int):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a tournament's round.
     """
-    r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}")
+    r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -259,7 +236,7 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a tournament's round group.
     """
-    r = _internal.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}")
+    r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -269,7 +246,7 @@ def get_team_match(match_id: int):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a team match and players playing that match.
     """
-    r = _internal.do_get_request(path = f"/match/{match_id}")
+    r = Client.do_get_request(path = f"/match/{match_id}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -280,7 +257,7 @@ def get_team_match_board(match_id: int, board_num: int):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a team match board.
     """
-    r = _internal.do_get_request(path = f"/match/{match_id}/{board_num}")
+    r = Client.do_get_request(path = f"/match/{match_id}/{board_num}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -290,7 +267,7 @@ def get_team_match_live(match_id: int):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a team match and players playing that match.
     """
-    r = _internal.do_get_request(path = f"/match/live/{match_id}")
+    r = Client.do_get_request(path = f"/match/live/{match_id}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -301,7 +278,7 @@ def get_team_match_live_board(match_id: int, board_num: int):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains details about a team match board.
     """
-    r = _internal.do_get_request(path = f"/match/live/{match_id}/{board_num}")
+    r = Client.do_get_request(path = f"/match/live/{match_id}/{board_num}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -311,7 +288,7 @@ def get_country_details(iso: str):
     :returns: ``ChessDotComResponse`` object. The json property of the object
                 contains additional details about a country.
     """
-    r = _internal.do_get_request(path = f"/country/{iso}")
+    r = Client.do_get_request(path = f"/country/{iso}")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -322,7 +299,7 @@ def get_country_players(iso: str):
                 contains a list of usernames for players
                 who identify themselves as being in this country.
     """
-    r = _internal.do_get_request(path = f"/country/{iso}/players")
+    r = Client.do_get_request(path = f"/country/{iso}/players")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -333,7 +310,7 @@ def get_country_clubs(iso: str):
                 contains a list of URLs for clubs identified
                 as being in or associated with this country.
     """
-    r = _internal.do_get_request(path = f"/country/{iso}/clubs")
+    r = Client.do_get_request(path = f"/country/{iso}/clubs")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -342,7 +319,7 @@ def get_current_daily_puzzle():
     :returns: ``ChessDotComResponse`` object. The json property of the object contains
                 information about the daily puzzle found in www.chess.com.
     """
-    r = _internal.do_get_request("/puzzle")
+    r = Client.do_get_request("/puzzle")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -351,7 +328,7 @@ def get_random_daily_puzzle():
     :returns: ``ChessDotComResponse`` object. The json property of the object contains 
                 information about a randomly picked daily puzzle.
     """
-    r = _internal.do_get_request(path = "/puzzle/random")
+    r = Client.do_get_request(path = "/puzzle/random")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -360,7 +337,7 @@ def get_streamers():
     :returns: ``ChessDotComResponse`` object. The json property of the object contains 
                 information about Chess.com streamers.
     """
-    r = _internal.do_get_request(path = "/streamers")
+    r = Client.do_get_request(path = "/streamers")
     return ChessDotComResponse(response_data = r.data)
 
 
@@ -369,5 +346,5 @@ def get_leaderboards():
     :returns: ``ChessDotComResponse`` object. The json property of the object contains 
                 information about top 50 player for daily and live games, tactics and lessons.
     """
-    r = _internal.do_get_request(path = "/leaderboards")
+    r = Client.do_get_request(path = "/leaderboards")
     return ChessDotComResponse(response_data = r.data)
