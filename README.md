@@ -12,7 +12,7 @@ from chessdotcom import get_player_profile
 data = get_player_profile("fabianocaruana")
 ```
 Optional Headers can also be set. Official Chess.com documentation recommends adding a `user-agent` header.
-```
+``` python
 #optional
 from chessdotcom import Client
 Client.headers = {"User-Agent": "My Python Application. Contact me at email@example.com"}
