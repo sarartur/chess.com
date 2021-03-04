@@ -12,7 +12,8 @@ from chessdotcom.utils import resolve_date
 class Client:
     """
     Client for Chess.com Public API. The client is only responsible for making calls.
-    :param headers: Dictionary containing headers for requests.
+
+    :cvar headers: Dictionary containing headers for requests.
     """
     _base_url = "https://api.chess.com/pub"
     _https = PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=where())
@@ -20,12 +21,6 @@ class Client:
 
     @classmethod
     def do_get_request(cls, path):
-        """Private method that performs a 
-        GET request to the chess.com API using the specified path.
-
-        Parameters:
-            path -- The URL path to use
-        """
         r = cls._https.request(
             method='GET',
             url=cls._base_url + path,

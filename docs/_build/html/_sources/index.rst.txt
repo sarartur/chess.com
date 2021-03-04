@@ -63,4 +63,4 @@ chessdotcom.response
 chessdotcom.client
 ==================
 .. automodule:: chessdotcom.client
-   :members:
+   :members: 

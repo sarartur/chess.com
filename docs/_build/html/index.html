@@ -94,9 +94,15 @@ repetitive code and testing.</p>
 <dl class="py class">
 <dt id="chessdotcom.response.ChessDotComResponse">
 <em class="property">class </em><code class="sig-prename descclassname">chessdotcom.response.</code><code class="sig-name descname">ChessDotComResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response_data</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">top_level_attr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.response.ChessDotComResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom object for holding the API’s response.
-:param json: Dictionary representation of the API’s response
-:param {nested_object}: Object representation of the API’s response</p>
+<dd><p>Custom object for holding the API’s response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> – Dictionary representation of the API’s response</p></li>
+<li><p><strong>{nested_object}</strong> – Object representation of the API’s response</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
@@ -105,19 +111,12 @@ repetitive code and testing.</p>
 <dl class="py class">
 <dt id="chessdotcom.client.Client">
 <em class="property">class </em><code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">Client</code><a class="headerlink" href="#chessdotcom.client.Client" title="Permalink to this definition">¶</a></dt>
-<dd><p>Client for Chess.com Public API. The client is only responsible for making calls.
-:param headers: Dictionary containing headers for requests.</p>
-<dl class="py method">
-<dt id="chessdotcom.client.Client.do_get_request">
-<em class="property">classmethod </em><code class="sig-name descname">do_get_request</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.client.Client.do_get_request" title="Permalink to this definition">¶</a></dt>
-<dd><p>Private method that performs a 
-GET request to the chess.com API using the specified path.</p>
-<dl class="simple">
-<dt>Parameters:</dt><dd><p>path – The URL path to use</p>
+<dd><p>Client for Chess.com Public API. The client is only responsible for making calls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><strong>headers</strong> – Dictionary containing headers for requests.</p>
 </dd>
 </dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py function">
