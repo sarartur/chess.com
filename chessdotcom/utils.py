@@ -1,4 +1,6 @@
 from datetime import datetime
+import re
+
 
 def resolve_date(year, month, date: datetime) -> (str, str):
     """Private method that resolves different date parameters 

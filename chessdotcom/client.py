@@ -40,7 +40,7 @@ def get_player_profile(username: str):
                 contains information about the chess.com user.
     """
     r = Client.do_get_request(path = f"/player/{username}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'player')
 
 
 def get_titled_players(title_abbrev: str):
@@ -62,7 +62,7 @@ def get_player_stats(username: str):
                 lessons and Puzzle Rush score.
     """
     r = Client.do_get_request(path = f"/player/{username}/stats")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'stats')
 
 
 def is_player_online(username: str):
@@ -163,7 +163,7 @@ def get_player_team_matches(username: str):
                 is participating or is currently registered.
     """
     r = Client.do_get_request(path = f"/player/{username}/matches")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'matches')
 
 
 def get_player_tournaments(username: str):
@@ -174,7 +174,7 @@ def get_player_tournaments(username: str):
                 is attending or has attended in the past.
     """
     r = Client.do_get_request(path = f"/player/{username}/tournaments")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'tournaments')
 
 
 def get_club_details(url_id: str):
@@ -184,7 +184,7 @@ def get_club_details(url_id: str):
                 contains additional details about a club.
     """
     r = Client.do_get_request(path = f"/club/{url_id}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'club')
 
 
 def get_club_members(url_id: str):
@@ -194,7 +194,7 @@ def get_club_members(url_id: str):
                 contains a list of club members.
     """
     r = Client.do_get_request(path = f"/club/{url_id}/members")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'members')
 
 
 def get_club_matches(url_id: str):
@@ -204,7 +204,7 @@ def get_club_matches(url_id: str):
                 contains a list of daily and club matches.
     """
     r = Client.do_get_request(path = f"/club/{url_id}/matches")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'matches')
 
 
 def get_tournament_details(url_id: str):
@@ -214,7 +214,7 @@ def get_tournament_details(url_id: str):
                 contains details about a daily, live and arena tournament.
     """
     r = Client.do_get_request(path = f"/tournament/{url_id}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'tournament')
 
 
 def get_tournament_round(url_id: str, round_num: int):
@@ -225,7 +225,7 @@ def get_tournament_round(url_id: str, round_num: int):
                 contains details about a tournament's round.
     """
     r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'tournament_round')
 
 
 def get_tournament_round_group_details(url_id: str, round_num: int, group_num: int):
@@ -237,7 +237,7 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
                 contains details about a tournament's round group.
     """
     r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'tournament_round_group')
 
 
 def get_team_match(match_id: int):
@@ -247,7 +247,7 @@ def get_team_match(match_id: int):
                 contains details about a team match and players playing that match.
     """
     r = Client.do_get_request(path = f"/match/{match_id}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'match')
 
 
 def get_team_match_board(match_id: int, board_num: int):
@@ -258,7 +258,7 @@ def get_team_match_board(match_id: int, board_num: int):
                 contains details about a team match board.
     """
     r = Client.do_get_request(path = f"/match/{match_id}/{board_num}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'match_board')
 
 
 def get_team_match_live(match_id: int):
@@ -268,7 +268,7 @@ def get_team_match_live(match_id: int):
                 contains details about a team match and players playing that match.
     """
     r = Client.do_get_request(path = f"/match/live/{match_id}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = "match_live")
 
 
 def get_team_match_live_board(match_id: int, board_num: int):
@@ -279,7 +279,7 @@ def get_team_match_live_board(match_id: int, board_num: int):
                 contains details about a team match board.
     """
     r = Client.do_get_request(path = f"/match/live/{match_id}/{board_num}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = "match_live_board")
 
 
 def get_country_details(iso: str):
@@ -289,7 +289,7 @@ def get_country_details(iso: str):
                 contains additional details about a country.
     """
     r = Client.do_get_request(path = f"/country/{iso}")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'country')
 
 
 def get_country_players(iso: str):
@@ -320,7 +320,7 @@ def get_current_daily_puzzle():
                 information about the daily puzzle found in www.chess.com.
     """
     r = Client.do_get_request("/puzzle")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'puzzle')
 
 
 def get_random_daily_puzzle():
@@ -329,7 +329,7 @@ def get_random_daily_puzzle():
                 information about a randomly picked daily puzzle.
     """
     r = Client.do_get_request(path = "/puzzle/random")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'puzzle')
 
 
 def get_streamers():
@@ -347,4 +347,4 @@ def get_leaderboards():
                 information about top 50 player for daily and live games, tactics and lessons.
     """
     r = Client.do_get_request(path = "/leaderboards")
-    return ChessDotComResponse(response_data = r.data)
+    return ChessDotComResponse(response_data = r.data, top_level_attr = 'leaderboards')

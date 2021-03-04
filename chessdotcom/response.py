@@ -1,28 +1,46 @@
 from typing import Dict
-from chessdotcom.errors import ChessDotComError
+from types import SimpleNamespace
 import json
+
+from chessdotcom.errors import ChessDotComError
+from chessdotcom.types import Node
 
 class ChessDotComResponse(object):
     """Custom object for holding the API's response."""
 
-    def __init__(self, response_data: Dict) -> None:
-        self._response_data = self._parse_json(response_data)
+    def __init__(self, response_data: Dict, top_level_attr = None) -> None:
+        self._parse_response(response_data, top_level_attr)
 
-    @staticmethod
-    def _parse_json(response_data):
+    def __repr__(self):
+        attrs_string = ''
+        for name, attr in self.__dict__.items():
+            if name == 'json':
+                continue
+            attrs_string += f"{name}={attr}, "
+        return (
+            f"ChessDotComResponse({attrs_string.strip(', ')})"
+        )
+        
+    def _parse_response(self, response_data, top_level_attr):
         try:
-            data = json.loads(response_data.decode('utf-8'))
-        except Exception as exc:
+            self._create_json_attr(response_data, top_level_attr)
+            self._create_object_attrs(response_data, top_level_attr)
+        except Exception as err:
             raise ChessDotComError(
                 status_code = 200,
                 message = 'The API returned 200, but the response was provided in an invalid format'
-            ) from exc
-        else:
-            return data
+            ) from err
+            
+    def _create_json_attr(self, response_data, top_level_attr):
+        dict_ = json.loads(response_data.decode('utf-8'))
+        if top_level_attr:
+            dict_ = {top_level_attr: dict_}
+        self.json = dict_
 
-    @property
-    def json(self):
-        """
-        :returns: The data from the Chess.com API's response in dictionary format.
-        """
-        return self._response_data
+    def _create_object_attrs(self, response_data, top_level_attr):
+        attrs = json.loads(response_data.decode('utf-8'), object_hook=lambda d: Node(**d))
+        if top_level_attr:
+            setattr(self, top_level_attr, Node(**attrs.__dict__))
+        else:
+            self.__dict__.update(**attrs.__dict__)
+
