@@ -33,12 +33,17 @@ Install chess.com by running:
 
 Usage
 ------------
+All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes:
 
 .. code-block:: python
    
    from chessdotcom import get_player_profile
 
-   data = get_player_profile("fabianocaruana")
+   response = get_player_profile("fabianocaruana")
+
+   player_name = response.json['player']['name']
+   #or
+   player_name = response.player.name
 
 Optional Headers can also be set. Official Chess.com documentation recommends adding a `user-agent` header.
 
@@ -55,7 +60,7 @@ chessdotcom.response
 .. automodule:: chessdotcom.response
    :members:
 
-chessdotcom.caller
+chessdotcom.client
 ==================
 .. automodule:: chessdotcom.client
    :members:

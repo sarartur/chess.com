@@ -10,7 +10,9 @@ from chessdotcom.utils import resolve_date
 
 
 class Client:
-    """Responsible for interacting with the API.
+    """
+    Client for Chess.com Public API. The client is only responsible for making calls.
+    :param headers: Dictionary containing headers for requests.
     """
     _base_url = "https://api.chess.com/pub"
     _https = PoolManager(cert_reqs='CERT_REQUIRED', ca_certs=where())

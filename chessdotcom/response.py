@@ -6,7 +6,10 @@ from chessdotcom.errors import ChessDotComError
 from chessdotcom.types import Node
 
 class ChessDotComResponse(object):
-    """Custom object for holding the API's response."""
+    """
+    Custom object for holding the API's response.
+    :param json: Dictionary representation of the API's response
+    :param {nested_object}: Object representation of the API's response"""
 
     def __init__(self, response_data: Dict, top_level_attr = None) -> None:
         self._parse_response(response_data, top_level_attr)

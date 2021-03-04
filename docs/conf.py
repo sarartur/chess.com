@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('..'))
 # -- Project information -----------------------------------------------------
 
 project = 'Chess.com Wrapper'
-copyright = '2020, Artur Saradzhyan'
+copyright = '2021, Artur Saradzhyan'
 author = 'Artur Saradzhyan'
 
 # The full version, including alpha/beta/rc tags
