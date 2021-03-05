@@ -26,6 +26,6 @@ Client.headers = {"User-Agent": "My Python Application. Contact me at email@exam
 ```
 All the methods from the module will now include the header when making the request to the API.
 
-**important**: With version 1.5.0 responses from some functions have been altered in order to maintain consistent response format across all functions. All `ChessDotComResponse` objects now have 2 attributes: `json` and `{nested_object}`. The `{nested_object}` attribute contains all the data in attributes and other nested objects and is named according to what makes sense based on the returning function's name. The `json` attribute still contains the response in dictionary format, but now also has a top level key with the same name as the `{nested_object}` attribute. All functions that already returned data with a top level key are unchanged.
+**important**: Starting with version 1.5.0 responses from some functions have been altered in order to maintain consistent response format across all functions. All `ChessDotComResponse` objects now have 2 attributes: `json` and `{nested_object}`. The `{nested_object}` attribute contains all the data in attributes and other nested objects and is named according to what makes sense based on the returning function's name. The `json` attribute still contains the response in dictionary format, but now also has a top level key with the same name as the `{nested_object}` attribute. All functions that already return data with a top level key are unchanged.
 
 
