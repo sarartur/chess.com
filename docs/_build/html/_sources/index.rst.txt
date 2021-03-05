@@ -2,10 +2,10 @@ Welcome to Chess.com Wrapper's documentation!
 =============================================
 Description
 ------------
-A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
+"A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
 website. All endpoints provided by Chess.com's API are available in the 
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
-repetitive code and testing.
+repetitive code and testing."
 
 .. toctree::
    :maxdepth: 2
@@ -31,9 +31,9 @@ Install chess.com by running:
 
    pip install chess.com
 
-Usage
-------------
-All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes:
+Retrieving Data
+---------------
+"All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes:"
 
 .. code-block:: python
    
@@ -45,7 +45,11 @@ All the functions return a `ChessDotComResponse` object. The data can be accesse
    #or
    player_name = response.player.name
 
-Optional Headers can also be set. Official Chess.com documentation recommends adding a `user-agent` header.
+Configuring the Client object
+------------------------------
+The project uses `requests` package to interact with the API. 
+The `requests.Session` object is available through the `Client` object. 
+Official Chess.com documentation recommends adding a `User-Agent` header.
 
 .. code-block:: python
 
@@ -55,12 +59,23 @@ Optional Headers can also be set. Official Chess.com documentation recommends ad
 
 All the methods from the module will now include the header when making the request to the API.
 
+The Chess.com API uses Cloudflare cookies `__cf_bm` and `__cfuid`. By default all cookies are blocked by the `Client` object. 
+If you would like to enable them simply set `Client.cookies = True`.
+
+API Reference
+==============
+
+chessdotcom.client
+------------------
+.. automodule:: chessdotcom.client
+   :members: 
+
 chessdotcom.response
-====================
+---------------------
 .. automodule:: chessdotcom.response
    :members:
 
-chessdotcom.client
-==================
-.. automodule:: chessdotcom.client
-   :members: 
+chessdotcom.errors
+-------------------
+.. automodule:: chessdotcom.errors
+   :members:

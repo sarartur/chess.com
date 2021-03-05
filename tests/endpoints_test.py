@@ -3,6 +3,8 @@ import sys
 sys.path.append("../")
 from chessdotcom.client import *
 from chessdotcom import ChessDotComResponse
+from chessdotcom import Client
+Client.session.headers.update(**{"User-Agent": "My Python Application. Contact me at email@example.com"})
 
 def test_endpoints():
 

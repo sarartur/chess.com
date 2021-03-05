@@ -46,10 +46,10 @@
 <h1>Welcome to Chess.com Wrapper’s documentation!<a class="headerlink" href="#welcome-to-chess-com-wrapper-s-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="description">
 <h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
-<p>A full Python Wrapper around Chess.com API which provides public data from the Chess.com
+<p>“A full Python Wrapper around Chess.com API which provides public data from the Chess.com
 website. All endpoints provided by Chess.com’s API are available in the
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
-repetitive code and testing.</p>
+repetitive code and testing.”</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -68,9 +68,9 @@ repetitive code and testing.</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes:</p>
+<div class="section" id="retrieving-data">
+<h2>Retrieving Data<a class="headerlink" href="#retrieving-data" title="Permalink to this headline">¶</a></h2>
+<p>“All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes:”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">get_player_profile</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">get_player_profile</span><span class="p">(</span><span class="s2">&quot;fabianocaruana&quot;</span><span class="p">)</span>
@@ -80,41 +80,36 @@ repetitive code and testing.</p>
 <span class="n">player_name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 </div>
-<p>Optional Headers can also be set. Official Chess.com documentation recommends adding a <cite>user-agent</cite> header.</p>
+</div>
+<div class="section" id="configuring-the-client-object">
+<h2>Configuring the Client object<a class="headerlink" href="#configuring-the-client-object" title="Permalink to this headline">¶</a></h2>
+<p>The project uses <cite>requests</cite> package to interact with the API.
+The <cite>requests.Session</cite> object is available through the <cite>Client</cite> object.
+Official Chess.com documentation recommends adding a <cite>User-Agent</cite> header.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#optional</span>
 <span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">Client</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;My Python Application. Contact me at email@example.com&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>All the methods from the module will now include the header when making the request to the API.</p>
+<p>The Chess.com API uses Cloudflare cookies <cite>__cf_bm</cite> and <cite>__cfuid</cite>. By default all cookies are blocked by the <cite>Client</cite> object.
+If you would like to enable them simply set <cite>Client.cookies = True</cite>.</p>
 </div>
 </div>
-<div class="section" id="module-chessdotcom.response">
-<span id="chessdotcom-response"></span><h1>chessdotcom.response<a class="headerlink" href="#module-chessdotcom.response" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
-<dt id="chessdotcom.response.ChessDotComResponse">
-<em class="property">class </em><code class="sig-prename descclassname">chessdotcom.response.</code><code class="sig-name descname">ChessDotComResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response_data</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">top_level_attr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.response.ChessDotComResponse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Custom object for holding the API’s response.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>json</strong> – Dictionary representation of the API’s response</p></li>
-<li><p><strong>{nested_object}</strong> – Object representation of the API’s response</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
+<div class="section" id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="module-chessdotcom.client">
-<span id="chessdotcom-client"></span><h1>chessdotcom.client<a class="headerlink" href="#module-chessdotcom.client" title="Permalink to this headline">¶</a></h1>
+<span id="chessdotcom-client"></span><h2>chessdotcom.client<a class="headerlink" href="#module-chessdotcom.client" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="chessdotcom.client.Client">
 <em class="property">class </em><code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">Client</code><a class="headerlink" href="#chessdotcom.client.Client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Client for Chess.com Public API. The client is only responsible for making calls.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Variables</dt>
-<dd class="field-odd"><p><strong>headers</strong> – Dictionary containing headers for requests.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>session</strong> – <code class="docutils literal notranslate"><span class="pre">Session</span></code> object from <code class="docutils literal notranslate"><span class="pre">requests</span></code> package.</p></li>
+<li><p><strong>cookies</strong> – set to <cite>True</cite> to allow cookies.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -536,6 +531,41 @@ whether or not a player is online</p>
 </dd></dl>
 
 </div>
+<div class="section" id="module-chessdotcom.response">
+<span id="chessdotcom-response"></span><h2>chessdotcom.response<a class="headerlink" href="#module-chessdotcom.response" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="chessdotcom.response.ChessDotComResponse">
+<em class="property">class </em><code class="sig-prename descclassname">chessdotcom.response.</code><code class="sig-name descname">ChessDotComResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response_text</span><span class="p">:</span> <span class="n">Dict</span></em>, <em class="sig-param"><span class="n">top_level_attr</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.response.ChessDotComResponse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom object for holding the API’s response.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> – Dictionary representation of the API’s response</p></li>
+<li><p><strong>{nested_object}</strong> – Object representation of the API’s response</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-chessdotcom.errors">
+<span id="chessdotcom-errors"></span><h2>chessdotcom.errors<a class="headerlink" href="#module-chessdotcom.errors" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
+<dt id="chessdotcom.errors.ChessDotComError">
+<em class="property">exception </em><code class="sig-prename descclassname">chessdotcom.errors.</code><code class="sig-name descname">ChessDotComError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status_code</span></em>, <em class="sig-param"><span class="n">response_text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.errors.ChessDotComError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Custom Exception object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status_code</strong> – Contains the status code of the API’s response.</p></li>
+<li><p><strong>json</strong> – Dictionary representation of the API’s response</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -550,11 +580,16 @@ whether or not a player is online</p>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#retrieving-data">Retrieving Data</a></li>
+<li><a class="reference internal" href="#configuring-the-client-object">Configuring the Client object</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-chessdotcom.response">chessdotcom.response</a></li>
+<li><a class="reference internal" href="#api-reference">API Reference</a><ul>
 <li><a class="reference internal" href="#module-chessdotcom.client">chessdotcom.client</a></li>
+<li><a class="reference internal" href="#module-chessdotcom.response">chessdotcom.response</a></li>
+<li><a class="reference internal" href="#module-chessdotcom.errors">chessdotcom.errors</a></li>
+</ul>
+</li>
 </ul>
 
   <div role="note" aria-label="source link">

@@ -1,23 +1,23 @@
+import json
+
 class ChessDotComError(Exception):
+    """
+    Custom Exception object.
 
-    __DEFAULT_MESSAGE__ = 'Response not 200'
-    __DEFAULT_REFERENCE__ = "https://www.chess.com/news/view/published-data-api"
+    :ivar status_code: Contains the status code of the API's response.
+    :ivar json: Dictionary representation of the API's response
+    """
 
-    def __init__(self, status_code, message = None, reference = None):
-        if not message:
-            message = ChessDotComError.__DEFAULT_MESSAGE__
-        if not reference:
-            reference = ChessDotComError.__DEFAULT_REFERENCE__
-       
-        super().__init__(self, message)
-        self.message = message
+    def __init__(self, status_code, response_text):
+        super().__init__(self)
+        self.json = json.loads(response_text)
         self.status_code = status_code
-        self.reference = reference
-
 
     def __str__(self):
         return (
-            f"[MESSAGE] -- {self.message}."
-            f"[STATUS CODE] -- {self.status_code} "
-            f"[REFERENCE] -- {self.reference} "
+            f"ChessDotComError(status_code={self.status_code}, "
+                            f"json={self.json})"
         )
+
+    def __repr__(self):
+        return self.__str__()
