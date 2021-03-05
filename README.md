@@ -17,6 +17,8 @@ response = get_player_profile("fabianocaruana")
 player_name = response.json['player']['name']
 #or
 player_name = response.player.name
+
+print(response)
 ```
 Optional Headers can also be set. Official Chess.com documentation recommends adding a `user-agent` header.
 ``` python

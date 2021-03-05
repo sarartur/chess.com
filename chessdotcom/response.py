@@ -3,7 +3,7 @@ from types import SimpleNamespace
 import json
 
 from chessdotcom.errors import ChessDotComError
-from chessdotcom.types import Node
+from chessdotcom.types import Collection
 
 class ChessDotComResponse(object):
     """
@@ -43,9 +43,9 @@ class ChessDotComResponse(object):
         self.json = dict_
 
     def _create_object_attrs(self, response_data, top_level_attr):
-        attrs = json.loads(response_data.decode('utf-8'), object_hook=lambda d: Node(**d))
+        attrs = json.loads(response_data.decode('utf-8'), object_hook=lambda d: Collection(**d))
         if top_level_attr:
-            setattr(self, top_level_attr, Node(**attrs.__dict__))
+            setattr(self, top_level_attr, Collection(**attrs.__dict__))
         else:
             self.__dict__.update(**attrs.__dict__)
 

@@ -1,10 +1,10 @@
 from types import SimpleNamespace
 import re
 
-class Node(SimpleNamespace):
+class Collection(SimpleNamespace):
 
     def __init__(self, **kwargs):
-        clean_kwargs = {Node.clean(key): value for key, value in kwargs.items()}
+        clean_kwargs = {Collection.clean(key): value for key, value in kwargs.items()}
         SimpleNamespace.__init__(self, **clean_kwargs)
 
     @staticmethod
