@@ -61,15 +61,10 @@ Official Chess.com documentation recommends adding a `User-Agent` header.
       "Contact me at email@example.com"
    )
 
-All the methods from the module will now include the header when making the request to the API.
+All the methods from the module will now include the header when making a request to the API.
 
 API Reference
 ==============
-
-chessdotcom.client
-------------------
-.. automodule:: chessdotcom.client
-   :members: 
 
 chessdotcom.response
 ---------------------
@@ -80,3 +75,8 @@ chessdotcom.errors
 -------------------
 .. automodule:: chessdotcom.errors
    :members:
+
+chessdotcom.client
+------------------
+.. automodule:: chessdotcom.client
+   :members: 
