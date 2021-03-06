@@ -1,23 +1,22 @@
 import json
 
-class ChessDotComError(Exception):
+from chessdotcom.types import BaseType
+
+class ChessDotComError(BaseType, Exception):
     """
     Custom Exception object.
 
     :ivar status_code: Contains the status code of the API's response.
-    :ivar json: Dictionary representation of the API's response
+    :ivar json: Dictionary representation of the API's response.
+    :ivar text: API's raw response decoded into a string.
     """
 
-    def __init__(self, status_code, response_text):
+    def __init__(self, status_code: int, response_text: str) -> None:
         super().__init__(self)
-        self.json = json.loads(response_text)
+        self._create_json_attr(response_text)
         self.status_code = status_code
+        self.text = response_text
 
-    def __str__(self):
-        return (
-            f"ChessDotComError(status_code={self.status_code}, "
-                            f"json={self.json})"
-        )
-
-    def __repr__(self):
-        return self.__str__()
+    def _create_json_attr(self, response_text: str) -> None:
+        try: self.json = json.loads(response_text)
+        except: self.json = {}

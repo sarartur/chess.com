@@ -20,7 +20,7 @@ class Client:
     proxies = {}
 
     @classmethod
-    def do_get_request(cls, path: str, **kwargs):
+    def do_get_request(cls, path: str, **kwargs) -> requests.Response:
         r = requests.get(
             url = Client._base_url + path, 
             headers = cls.headers,
@@ -31,7 +31,7 @@ class Client:
             raise ChessDotComError(status_code = r.status_code, response_text = r.text)
         return r
 
-def get_player_profile(username: str, **kwargs):
+def get_player_profile(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing information about
@@ -41,7 +41,7 @@ def get_player_profile(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'player')
 
 
-def get_titled_players(title_abbrev: str, **kwargs):
+def get_titled_players(title_abbrev: str, **kwargs) -> ChessDotComResponse:
     """
     :param title_abbrev: abbreviation of chess title.
     :returns: ``ChessDotComResponse`` object containing a list of usernames.
@@ -50,7 +50,7 @@ def get_titled_players(title_abbrev: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_player_stats(username: str, **kwargs):
+def get_player_stats(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing information about the
@@ -60,7 +60,7 @@ def get_player_stats(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'stats')
 
 
-def is_player_online(username: str, **kwargs):
+def is_player_online(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing infomation about
@@ -70,7 +70,7 @@ def is_player_online(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_player_current_games(username: str, **kwargs):
+def get_player_current_games(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
@@ -80,7 +80,7 @@ def get_player_current_games(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_player_current_games_to_move(username: str, **kwargs):
+def get_player_current_games_to_move(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games 
@@ -90,7 +90,7 @@ def get_player_current_games_to_move(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_player_game_archives(username: str, **kwargs):
+def get_player_game_archives(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a 
@@ -102,7 +102,8 @@ def get_player_game_archives(username: str, **kwargs):
 
 def get_player_games_by_month(username: str, year: Optional[Union[str, int, None]] = None, 
                                 month: Optional[Union[str, int, None]] = None, 
-                                datetime_obj: Optional[Union[datetime, None]] = None, **kwargs):
+                                datetime_obj: Optional[Union[datetime, None]] = None, 
+                                **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :param year: the year (yyyy).
@@ -119,7 +120,8 @@ def get_player_games_by_month(username: str, year: Optional[Union[str, int, None
 
 def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, None]] = None, 
                                 month: Optional[Union[str, int, None]] = None, 
-                                datetime_obj: Optional[Union[datetime, None]] = None, **kwargs):
+                                datetime_obj: Optional[Union[datetime, None]] = None, 
+                                **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :param year: the year (yyyy).
@@ -133,7 +135,7 @@ def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, 
     r = Client.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}/pgn", **kwargs)
     return ChessDotComResponse(response_text = json.dumps({'png': r.text}))
 
-def get_player_clubs(username: str, **kwargs):
+def get_player_clubs(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing 
@@ -143,7 +145,7 @@ def get_player_clubs(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_player_team_matches(username: str, **kwargs):
+def get_player_team_matches(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of team matches the player has attended,
@@ -153,7 +155,7 @@ def get_player_team_matches(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'matches')
 
 
-def get_player_tournaments(username: str, **kwargs):
+def get_player_tournaments(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a 
@@ -164,7 +166,7 @@ def get_player_tournaments(username: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournaments')
 
 
-def get_club_details(url_id: str, **kwargs):
+def get_club_details(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing additional details about a club.
@@ -173,7 +175,7 @@ def get_club_details(url_id: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'club')
 
 
-def get_club_members(url_id: str, **kwargs):
+def get_club_members(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing a list of club members.
@@ -182,7 +184,7 @@ def get_club_members(url_id: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'members')
 
 
-def get_club_matches(url_id: str, **kwargs):
+def get_club_matches(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing a list of daily and club matches.
@@ -191,7 +193,7 @@ def get_club_matches(url_id: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'matches')
 
 
-def get_tournament_details(url_id: str, **kwargs):
+def get_tournament_details(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing details about a daily, 
@@ -201,7 +203,7 @@ def get_tournament_details(url_id: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament')
 
 
-def get_tournament_round(url_id: str, round_num: int, **kwargs):
+def get_tournament_round(url_id: str, round_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
@@ -212,7 +214,8 @@ def get_tournament_round(url_id: str, round_num: int, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament_round')
 
 
-def get_tournament_round_group_details(url_id: str, round_num: int, group_num: int, **kwargs):
+def get_tournament_round_group_details(url_id: str, round_num: int, 
+                                            group_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
@@ -224,7 +227,7 @@ def get_tournament_round_group_details(url_id: str, round_num: int, group_num: i
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament_round_group')
 
 
-def get_team_match(match_id: int, **kwargs):
+def get_team_match(match_id: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :returns: ``ChessDotComResponse`` object containing
@@ -234,7 +237,7 @@ def get_team_match(match_id: int, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'match')
 
 
-def get_team_match_board(match_id: int, board_num: int, **kwargs):
+def get_team_match_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
@@ -245,17 +248,17 @@ def get_team_match_board(match_id: int, board_num: int, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'match_board')
 
 
-def get_team_match_live(match_id: int, **kwargs):
+def get_team_match_live(match_id: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :returns: ``ChessDotComResponse`` object containing
                 details about a team match and players playing that match.
     """
     r = Client.do_get_request(path = f"/match/live/{match_id}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = "match_live")
+    return ChessDotComResponse(response_text = r.text, top_level_attr = "match")
 
 
-def get_team_match_live_board(match_id: int, board_num: int, **kwargs):
+def get_team_match_live_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
@@ -263,10 +266,10 @@ def get_team_match_live_board(match_id: int, board_num: int, **kwargs):
                 about a team match board.
     """
     r = Client.do_get_request(path = f"/match/live/{match_id}/{board_num}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = "match_live_board")
+    return ChessDotComResponse(response_text = r.text, top_level_attr = "match_board")
 
 
-def get_country_details(iso: str, **kwargs):
+def get_country_details(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing
@@ -276,7 +279,7 @@ def get_country_details(iso: str, **kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'country')
 
 
-def get_country_players(iso: str, **kwargs):
+def get_country_players(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing a list of usernames for players
@@ -286,7 +289,7 @@ def get_country_players(iso: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_country_clubs(iso: str, **kwargs):
+def get_country_clubs(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing a list of URLs for clubs identified
@@ -296,7 +299,7 @@ def get_country_clubs(iso: str, **kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_current_daily_puzzle(**kwargs):
+def get_current_daily_puzzle(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about the daily puzzle found in www.chess.com.
@@ -305,7 +308,7 @@ def get_current_daily_puzzle(**kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'puzzle')
 
 
-def get_random_daily_puzzle(**kwargs):
+def get_random_daily_puzzle(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about a randomly picked daily puzzle.
@@ -314,7 +317,7 @@ def get_random_daily_puzzle(**kwargs):
     return ChessDotComResponse(response_text = r.text, top_level_attr = 'puzzle')
 
 
-def get_streamers(**kwargs):
+def get_streamers(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing 
                 information about Chess.com streamers.
@@ -323,7 +326,7 @@ def get_streamers(**kwargs):
     return ChessDotComResponse(response_text = r.text)
 
 
-def get_leaderboards(**kwargs):
+def get_leaderboards(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about top 50 player for daily and live games, tactics and lessons.
