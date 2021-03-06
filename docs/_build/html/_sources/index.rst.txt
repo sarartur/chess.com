@@ -48,19 +48,20 @@ Retrieving Data
 Configuring the Client object
 ------------------------------
 The project uses `requests` package to interact with the API. 
-The `requests.Session` object is available through the `Client` object. 
-Official Chess.com documentation recommends adding a `User-Agent` header.
+Headers and proxies can be set through the `Client` object. 
+Official Chess.com documentation recommends adding a `User-Agent` header. 
 
 .. code-block:: python
 
    #optional
    from chessdotcom import Client
-   Client.headers = {"User-Agent": "My Python Application. Contact me at email@example.com"}
+
+   Client.headers["User-Agent"] = (
+      "My Python Application. "
+      "Contact me at email@example.com"
+   )
 
 All the methods from the module will now include the header when making the request to the API.
-
-The Chess.com API uses Cloudflare cookies `__cf_bm` and `__cfuid`. By default all cookies are blocked by the `Client` object. 
-If you would like to enable them simply set `Client.cookies = True`.
 
 API Reference
 ==============

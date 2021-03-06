@@ -51,3 +51,4 @@ class ChessDotComResponse(object):
         else:
             self.__dict__.update(**attrs.__dict__)
 
+

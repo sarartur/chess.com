@@ -13,4 +13,5 @@ class Collection(SimpleNamespace):
         string = re.sub('^[^a-zA-Z_]+', '', string)
         return string
   
+  
 

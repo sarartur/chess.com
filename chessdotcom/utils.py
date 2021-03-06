@@ -24,3 +24,4 @@ def resolve_date(year, month, date: datetime) -> (str, str):
         return str(date.year), str(date.month).zfill(2)
     else:
         raise ValueError("You must provide both the year and the month, or a datetime.datetime object")
+
