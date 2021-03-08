@@ -10,6 +10,7 @@ Refer to [readthedocs](https://chesscom.readthedocs.io/) and [offical api docume
 
 ### Retrieving Data
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
+All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
 #### Synchronous
 ``` python
 from chessdotcom import get_player_profile
@@ -21,7 +22,6 @@ player_name = response.json['player']['name']
 player_name = response.player.name
 ```
 #### Asynchronous 
-All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
 ``` python 
 from asyncio import gather
 
