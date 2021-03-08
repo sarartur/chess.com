@@ -3,11 +3,13 @@ Python wrapper for Chess.com API which provides public data from the chess.com w
 ## Installation 
 **The package requires Python 3.7 or higher**.
 
-Install from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.com``` 
+Install latest version from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.com``` 
+
+## Resources
+* Documentation: [readthedocs.org](https://chesscom.readthedocs.io/)
+* Published-Data API: [chess.com](https://www.chess.com/news/view/published-data-api)
 
 ## Usage
-Refer to [readthedocs](https://chesscom.readthedocs.io/) and [offical api documentation](https://www.chess.com/news/view/published-data-api) docs for more information on the usage.
-
 ### Retrieving Data
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
@@ -48,3 +50,6 @@ Client.config["headers"]["User-Agent"] = (
 )
 ```
 All the methods from the module will now include the header when making a request to the API.
+
+### Contact
+* Email me at <saradzhyanatur@gmail.com> or open a new [Issue](https://github.com/sarartur/chess.com/issues) on Github.
