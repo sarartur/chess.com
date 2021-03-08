@@ -22,7 +22,7 @@ class Client:
 
     :cvar config: Dictionary containing extra keyword arguments for requests to the API
                     (headers, proxy, etc).
-    :cvar loop: asyncio event loop.
+    :cvar loop: Asyncio event loop.
     :cvar aio: Determines if the functions behave asynchronously.
     """
     loop = get_event_loop()
