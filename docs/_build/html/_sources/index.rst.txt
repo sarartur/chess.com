@@ -31,11 +31,10 @@ Install from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.c
 Retrieving Data
 ---------------
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
+All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
 
 Synchronous
 ^^^^^^^^^^^
-All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
-
 .. code-block:: python
    
    from chessdotcom import get_player_profile
@@ -48,8 +47,6 @@ All the functions return a `ChessDotComResponse` object. The data can be accesse
 
 Asynchronous
 ^^^^^^^^^^^^
-All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
-
 .. code-block:: python
    
    from asyncio import gather

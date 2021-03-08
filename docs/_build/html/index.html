@@ -68,10 +68,10 @@ repetitive code and testing.”</p>
 </div>
 <div class="section" id="retrieving-data">
 <h2>Retrieving Data<a class="headerlink" href="#retrieving-data" title="Permalink to this headline">¶</a></h2>
-<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes.</p>
+<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes.
+All functions can be made asynchronous. The package uses [aiohttp](<a class="reference external" href="https://docs.aiohttp.org/en/stable/">https://docs.aiohttp.org/en/stable/</a>) to send requests to the API.</p>
 <div class="section" id="synchronous">
 <h3>Synchronous<a class="headerlink" href="#synchronous" title="Permalink to this headline">¶</a></h3>
-<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">get_player_profile</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">get_player_profile</span><span class="p">(</span><span class="s2">&quot;fabianocaruana&quot;</span><span class="p">)</span>
@@ -84,7 +84,6 @@ repetitive code and testing.”</p>
 </div>
 <div class="section" id="asynchronous">
 <h3>Asynchronous<a class="headerlink" href="#asynchronous" title="Permalink to this headline">¶</a></h3>
-<p>All functions can be made asynchronous. The package uses [aiohttp](<a class="reference external" href="https://docs.aiohttp.org/en/stable/">https://docs.aiohttp.org/en/stable/</a>) to send requests to the API.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">gather</span>
 
 <span class="kn">from</span> <span class="nn">chessdotcom.aio</span> <span class="kn">import</span> <span class="n">get_player_profile</span><span class="p">,</span> <span class="n">Client</span>
