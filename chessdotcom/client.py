@@ -1,106 +1,143 @@
-import requests
 import json
-from typing import Dict, Optional, Union
+from typing import (
+    Dict, 
+    Optional, 
+    Union
+)
 from datetime import datetime
+from aiohttp import ClientSession
+from asyncio import get_event_loop
+from functools import wraps
 
-from chessdotcom.errors import ChessDotComError
-from chessdotcom.response import ChessDotComResponse
+from chessdotcom.types import (
+    ChessDotComError, 
+    ChessDotComResponse, 
+    Resource
+)
 from chessdotcom.utils import resolve_date
-
 
 class Client:
     """
     Client for Chess.com Public API. The client is only responsible for making calls.
 
-    :cvar headers: Dictionary containing request headers.
-    :cvar proxies: Dictionary containing proxy information.
+    :cvar config: Dictionary containing extra keyword arguments for requests to the API
+                    (headers, proxy, etc).
+    :cvar aio: Determines if the functions behave asynchronously.
     """
-    _base_url = "https://api.chess.com/pub"
-    headers = {}
-    proxies = {}
+    loop = get_event_loop()
+    aio = False
+    config = {"headers": {}}
 
     @classmethod
-    def do_get_request(cls, path: str, **kwargs) -> requests.Response:
-        r = requests.get(
-            url = Client._base_url + path, 
-            headers = cls.headers,
-            proxies = cls.proxies,
-            **kwargs
-        )
-        if r.status_code != 200:
-            raise ChessDotComError(status_code = r.status_code, response_text = r.text)
-        return r
+    async def do_get_request(cls, url: str, **kwargs):
+        async with ClientSession(loop = cls.loop) as session:
+            async with session.get(
+                    url = url,
+                    **Client.config
+                ) as r:
+                text = await r.text()
+                if r.status != 200:
+                    raise ChessDotComError(status_code = r.status, response_text = text)
+                return text
 
-def get_player_profile(username: str, **kwargs) -> ChessDotComResponse:
+    @classmethod
+    def endpoint(cls, func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            async def handler(*args, **kwargs):
+                resource = await func(*args, **kwargs)
+                text = await Client.do_get_request(resource.url, **resource.request_extras)
+                return ChessDotComResponse(text, resource.top_level_attr, resource.no_json)
+            return handler(*args, **kwargs) if Client.aio else Client.loop.run_until_complete(handler(*args, **kwargs))
+        return wrapper
+
+@Client.endpoint
+async def get_player_profile(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing information about
                 the player's profile.
     """
-    r = Client.do_get_request(path = f"/player/{username}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'player')
+    return Resource(
+        uri = f"/player/{username}",
+        top_level_attr = "player",
+        **kwargs
+    )
 
-
-def get_titled_players(title_abbrev: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_titled_players(title_abbrev: str, **kwargs) -> ChessDotComResponse:
     """
     :param title_abbrev: abbreviation of chess title.
     :returns: ``ChessDotComResponse`` object containing a list of usernames.
     """
-    r = Client.do_get_request(path = f"/titled/{title_abbrev}", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/titled/{title_abbrev}",
+        **kwargs
+    )
 
-
-def get_player_stats(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_stats(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing information about the
                 plyers's ratings, win/loss, and other stats.
     """
-    r = Client.do_get_request(path = f"/player/{username}/stats", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'stats')
+    return Resource(
+        uri = f"/player/{username}/stats",
+        top_level_attr = "stats",
+        **kwargs
+    )
 
-
-def is_player_online(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def is_player_online(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing infomation about
                 whether or not a player is online 
     """
-    r = Client.do_get_request(path = f"/player/{username}/is-online", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/is-online",
+        **kwargs
+    )
 
-
-def get_player_current_games(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_current_games(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
                 that a player is currently playing.
     """
-    r = Client.do_get_request(path = f"/player/{username}/games", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/games",
+        **kwargs
+    )
 
-
-def get_player_current_games_to_move(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_current_games_to_move(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games 
                 where it is the player's turn to act.
     """
-    r = Client.do_get_request(path = f"/player/{username}/games/to-move", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/games/to-move",
+        **kwargs
+    )
 
-
-def get_player_game_archives(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_game_archives(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a 
                 list of monthly archives available for this player.
     """
-    r = Client.do_get_request(path = f"/player/{username}/games/archives", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/games/archives",
+        **kwargs
+    )
 
-
-def get_player_games_by_month(username: str, year: Optional[Union[str, int, None]] = None, 
+@Client.endpoint
+async def get_player_games_by_month(username: str, year: Optional[Union[str, int, None]] = None, 
                                 month: Optional[Union[str, int, None]] = None, 
                                 datetime_obj: Optional[Union[datetime, None]] = None, 
                                 **kwargs) -> ChessDotComResponse:
@@ -114,11 +151,13 @@ def get_player_games_by_month(username: str, year: Optional[Union[str, int, None
                 Chess games that a player has finished.
     """
     yyyy, mm = resolve_date(year, month, datetime_obj)
-    r = Client.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/games/{yyyy}/{mm}",
+        **kwargs
+    )
 
-
-def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, None]] = None, 
+@Client.endpoint
+async def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, None]] = None, 
                                 month: Optional[Union[str, int, None]] = None, 
                                 datetime_obj: Optional[Union[datetime, None]] = None, 
                                 **kwargs) -> ChessDotComResponse:
@@ -132,89 +171,117 @@ def get_player_games_by_month_pgn(username: str, year: Optional[Union[str, int, 
                 standard multi-game format PGN containing all games for a month.
     """
     yyyy, mm = resolve_date(year, month, datetime_obj)
-    r = Client.do_get_request(path = f"/player/{username}/games/{yyyy}/{mm}/pgn", **kwargs)
-    return ChessDotComResponse(response_text = json.dumps({'png': r.text}))
+    return Resource(
+        uri = f"/player/{username}/games/{yyyy}/{mm}/pgn",
+        top_level_attr = "png",
+        no_json = True,
+        **kwargs
+    )
 
-def get_player_clubs(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_clubs(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing 
             a list of clubs the player is a member of.
     """
-    r = Client.do_get_request(path = f"/player/{username}/clubs", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/player/{username}/clubs",
+        **kwargs
+    )
 
-
-def get_player_team_matches(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_team_matches(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a list of team matches the player has attended,
                 is participating or is currently registered.
     """
-    r = Client.do_get_request(path = f"/player/{username}/matches", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'matches')
+    return Resource(
+        uri = f"/player/{username}/clubs",
+        top_level_attr = "matches",
+        **kwargs
+    )
 
-
-def get_player_tournaments(username: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_player_tournaments(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :returns: ``ChessDotComResponse`` object containing a 
                 list of tournaments the player is registered,
                 is attending or has attended in the past.
     """
-    r = Client.do_get_request(path = f"/player/{username}/tournaments", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournaments')
+    return Resource(
+        uri = f"/player/{username}/tournaments",
+        top_level_attr = "tournaments",
+        **kwargs
+    )
 
-
-def get_club_details(url_id: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_club_details(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing additional details about a club.
     """
-    r = Client.do_get_request(path = f"/club/{url_id}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'club')
+    return Resource(
+        uri = f"/club/{url_id}",
+        top_level_attr = "club",
+        **kwargs
+    )
 
-
-def get_club_members(url_id: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_club_members(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing a list of club members.
     """
-    r = Client.do_get_request(path = f"/club/{url_id}/members", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'members')
+    return Resource(
+        uri = f"/club/{url_id}/members",
+        top_level_attr = "members",
+        **kwargs
+    )
 
-
-def get_club_matches(url_id: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_club_matches(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing a list of daily and club matches.
     """
-    r = Client.do_get_request(path = f"/club/{url_id}/matches", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'matches')
+    return Resource(
+        uri = f"/club/{url_id}/matches",
+        top_level_attr = "matches",
+        **kwargs
+    )
 
-
-def get_tournament_details(url_id: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_tournament_details(url_id: str, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :returns: ``ChessDotComResponse`` object containing details about a daily, 
                 live and arena tournament.
     """
-    r = Client.do_get_request(path = f"/tournament/{url_id}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament')
+    return Resource(
+        uri = f"/tournament/{url_id}",
+        top_level_attr = "tournament",
+        **kwargs
+    )
 
-
-def get_tournament_round(url_id: str, round_num: int, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_tournament_round(url_id: str, round_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
     :returns: ``ChessDotComResponse`` object containing
                  details about a tournament's round.
     """
-    r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament_round')
+    return Resource(
+        uri = f"/tournament/{url_id}/{round_num}",
+        top_level_attr = "tournament_round",
+        **kwargs
+    )
 
-
-def get_tournament_round_group_details(url_id: str, round_num: int, 
+@Client.endpoint
+async def get_tournament_round_group_details(url_id: str, round_num: int, 
                                             group_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param url_id: URL for the club's web page on www.chess.com.
@@ -223,114 +290,146 @@ def get_tournament_round_group_details(url_id: str, round_num: int,
     :returns: ``ChessDotComResponse`` object containing 
                 details about a tournament's round group.
     """
-    r = Client.do_get_request(path = f"/tournament/{url_id}/{round_num}/{group_num}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'tournament_round_group')
+    return Resource(
+        uri = f"/tournament/{url_id}/{round_num}/{group_num}",
+        top_level_attr = "tournament_round_group",
+        **kwargs
+    )
 
-
-def get_team_match(match_id: int, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_team_match(match_id: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :returns: ``ChessDotComResponse`` object containing
                 details about a team match and players playing that match.
     """
-    r = Client.do_get_request(path = f"/match/{match_id}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'match')
+    return Resource(
+        uri = f"/match/{match_id}",
+        top_level_attr = "match",
+        **kwargs
+    )
 
-
-def get_team_match_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_team_match_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
     :returns: ``ChessDotComResponse`` object containing
                 details about a team match board.
     """
-    r = Client.do_get_request(path = f"/match/{match_id}/{board_num}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'match_board')
+    return Resource(
+        uri = f"/match/{match_id}/{board_num}",
+        top_level_attr = "match_board",
+        **kwargs
+    )
 
-
-def get_team_match_live(match_id: int, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_team_match_live(match_id: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :returns: ``ChessDotComResponse`` object containing
                 details about a team match and players playing that match.
     """
-    r = Client.do_get_request(path = f"/match/live/{match_id}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = "match")
+    return Resource(
+        uri = f"/match/live/{match_id}",
+        top_level_attr = "match",
+        **kwargs
+    )
 
-
-def get_team_match_live_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_team_match_live_board(match_id: int, board_num: int, **kwargs) -> ChessDotComResponse:
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
     :returns: ``ChessDotComResponse`` object containing details 
                 about a team match board.
     """
-    r = Client.do_get_request(path = f"/match/live/{match_id}/{board_num}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = "match_board")
+    return Resource(
+        uri = f"/match/live/{match_id}/{board_num}",
+        top_level_attr = "match_board",
+        **kwargs
+    )
 
-
-def get_country_details(iso: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_country_details(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing
                 additional details about a country.
     """
-    r = Client.do_get_request(path = f"/country/{iso}", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'country')
+    return Resource(
+        uri = f"/country/{iso}",
+        top_level_attr = "country",
+        **kwargs
+    )
 
-
-def get_country_players(iso: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_country_players(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing a list of usernames for players
                 who identify themselves as being in this country.
     """
-    r = Client.do_get_request(path = f"/country/{iso}/players", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/country/{iso}/players",
+        **kwargs
+    )
 
-
-def get_country_clubs(iso: str, **kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_country_clubs(iso: str, **kwargs) -> ChessDotComResponse:
     """
     :param iso: country's 2-character ISO 3166 code.
     :returns: ``ChessDotComResponse`` object containing a list of URLs for clubs identified
                 as being in or associated with this country.
     """
-    r = Client.do_get_request(path = f"/country/{iso}/clubs", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = f"/country/{iso}/clubs",
+        **kwargs
+    )
 
-
-def get_current_daily_puzzle(**kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_current_daily_puzzle(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about the daily puzzle found in www.chess.com.
     """
-    r = Client.do_get_request(path = "/puzzle", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'puzzle')
+    return Resource(
+        uri = "/puzzle",
+        top_level_attr = "puzzle",
+        **kwargs
+    )
 
-
-def get_random_daily_puzzle(**kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_random_daily_puzzle(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about a randomly picked daily puzzle.
     """
-    r = Client.do_get_request(path = "/puzzle/random", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'puzzle')
+    return Resource(
+        uri = "/puzzle/random",
+        top_level_attr = "puzzle",
+        **kwargs
+    )
 
-
-def get_streamers(**kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_streamers(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing 
                 information about Chess.com streamers.
     """
-    r = Client.do_get_request(path = "/streamers", **kwargs)
-    return ChessDotComResponse(response_text = r.text)
+    return Resource(
+        uri = "/streamers",
+        **kwargs
+    )
 
-
-def get_leaderboards(**kwargs) -> ChessDotComResponse:
+@Client.endpoint
+async def get_leaderboards(**kwargs) -> ChessDotComResponse:
     """
     :returns: ``ChessDotComResponse`` object containing
                 information about top 50 player for daily and live games, tactics and lessons.
     """
-    r = Client.do_get_request(path = "/leaderboards", **kwargs)
-    return ChessDotComResponse(response_text = r.text, top_level_attr = 'leaderboards')
-
+    return Resource(
+        uri = "/leaderboards",
+        top_level_attr = "leaderboards",
+        **kwargs
+    )

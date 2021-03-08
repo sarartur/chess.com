@@ -24,16 +24,17 @@ Indices and tables
 
 Installation
 ------------
+**The package requires Python 3.7 or higher**.
 
-Install chess.com by running:
-
-.. code-block::
-
-   pip install chess.com
+Install from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.com``` 
 
 Retrieving Data
 ---------------
-"All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes:"
+All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
+
+Synchronous
+^^^^^^^^^^^
+All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
 .. code-block:: python
    
@@ -44,6 +45,23 @@ Retrieving Data
    player_name = response.json['player']['name']
    #or
    player_name = response.player.name
+
+Asynchronous
+^^^^^^^^^^^^
+All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
+
+.. code-block:: python
+   
+   from asyncio import gather
+
+   from chessdotcom.aio import get_player_profile, Client
+   #or
+   from chessdotcom import get_player_profile, Client
+   Client.aio = True
+
+   usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
+   cors = [get_player_profile(name) for name in usernames]
+   responses = Client.loop.run_until_complete(gather(*cors))
 
 Configuring the Client object
 ------------------------------
@@ -66,14 +84,9 @@ All the methods from the module will now include the header when making a reques
 API Reference
 ==============
 
-chessdotcom.response
+chessdotcom.types
 ---------------------
-.. automodule:: chessdotcom.response
-   :members:
-
-chessdotcom.errors
--------------------
-.. automodule:: chessdotcom.errors
+.. automodule:: chessdotcom.types
    :members:
 
 chessdotcom.client

@@ -1,4 +1,3 @@
-from chessdotcom.errors import ChessDotComError
+from chessdotcom.types import ChessDotComError, ChessDotComResponse
 from chessdotcom.client import *
-from chessdotcom.response import ChessDotComResponse
 

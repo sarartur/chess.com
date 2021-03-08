@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="chess.com", 
-    version="1.6.4",
+    version="1.7.0",
     author="Artur Saradzhyan",
     author_email="saradzhyanartur@gmail.com",
     description="Python Wrapper around Chess.com API",
@@ -20,5 +20,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.7',
 )

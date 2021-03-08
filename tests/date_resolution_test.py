@@ -27,7 +27,6 @@ def test_date_resolution():
     except ValueError:
         pass
 
-
 if __name__ == "__main__":
     test_date_resolution()
 
