@@ -8,9 +8,9 @@ Install from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.c
 ## Usage
 Refer to [readthedocs](https://chesscom.readthedocs.io/) and [offical api documentation](https://www.chess.com/news/view/published-data-api) docs for more information on the usage.
 
-#### Retrieving Data
+### Retrieving Data
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
-##### Synchronous
+#### Synchronous
 ``` python
 from chessdotcom import get_player_profile
 
@@ -20,7 +20,7 @@ player_name = response.json['player']['name']
 #or
 player_name = response.player.name
 ```
-##### Asynchronous 
+#### Asynchronous 
 All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
 ``` python 
 from asyncio import gather
@@ -36,7 +36,7 @@ responses = Client.loop.run_until_complete(gather(*cors))
 ```
 **important**: The API will begin to rate limit the client if too many requests are made at once.
 
-#### Configuring the Client object
+### Configuring the Client object
 Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation recommends adding a `User-Agent` header. 
 ``` python
 #optional
