@@ -26,12 +26,12 @@ Installation
 ------------
 **The package requires Python 3.7 or higher**.
 
-Install from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.com``` 
+Install from `PyPI <https://pypi.org/project/chess.com/>`_: ``pip install chess.com``
 
 Retrieving Data
 ---------------
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
-All functions can be made asynchronous. The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) to send requests to the API. 
+All functions can be made asynchronous. The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>`_ to send requests to the API. 
 
 Synchronous
 ^^^^^^^^^^^
