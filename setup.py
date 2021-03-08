@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="chess.com", 
-    version="1.7.0",
+    version="1.7.1",
     author="Artur Saradzhyan",
     author_email="saradzhyanartur@gmail.com",
-    description="Python Wrapper around Chess.com API",
+    description="Python Wrapper for Chess.com API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/sarartur/chess.com",

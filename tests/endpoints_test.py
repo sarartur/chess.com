@@ -5,9 +5,9 @@ from datetime import datetime
 from chessdotcom.client import *
 from chessdotcom import ChessDotComResponse
 
-def test_endpoints(print_ = True, break_ = False):
+def test_endpoints(print_ = False, break_ = False):
 
-    Client.config['headers']['user-agent'] = 'chess.com wrapper. Pypi chess.com.'
+    Client.config['headers']['user-agent'] = 'chess.com wrapper testing scripts. Contact me at saradzhyanartur@gmail.com'
 
     data = get_player_profile("fabianocaruana")
     assert(isinstance(data, ChessDotComResponse))

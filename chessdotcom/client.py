@@ -22,6 +22,7 @@ class Client:
 
     :cvar config: Dictionary containing extra keyword arguments for requests to the API
                     (headers, proxy, etc).
+    :cvar loop: asyncio event loop.
     :cvar aio: Determines if the functions behave asynchronously.
     """
     loop = get_event_loop()
@@ -41,14 +42,17 @@ class Client:
                 return text
 
     @classmethod
+    async def handler(cls, func, *args, **kwargs):
+        resource = await func(*args, **kwargs)
+        text = await Client.do_get_request(resource.url, **resource.request_extras)
+        return ChessDotComResponse(text, resource.top_level_attr, resource.no_json)
+
+    @classmethod
     def endpoint(cls, func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            async def handler(*args, **kwargs):
-                resource = await func(*args, **kwargs)
-                text = await Client.do_get_request(resource.url, **resource.request_extras)
-                return ChessDotComResponse(text, resource.top_level_attr, resource.no_json)
-            return handler(*args, **kwargs) if Client.aio else Client.loop.run_until_complete(handler(*args, **kwargs))
+            return cls.handler(func, *args, **kwargs) if Client.aio else cls.loop.run_until_complete(
+                cls.handler(func, *args, **kwargs))
         return wrapper
 
 @Client.endpoint

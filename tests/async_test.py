@@ -10,7 +10,7 @@ from datetime import datetime
 
 def test_endpoints(print_ = False, break_ = False):
 
-    Client.config['headers']['user-agent'] = 'chess.com wrapper. Pypi chess.com.'
+    Client.config['headers']['user-agent'] = 'chess.com wrapper testing scripts. Contact me at saradzhyanartur@gmail.com'
 
     cors = []
 
@@ -44,9 +44,7 @@ def test_endpoints(print_ = False, break_ = False):
     cors.append(get_streamers())
     cors.append(get_leaderboards())
 
-    loop = get_event_loop()
-    loop.run_until_complete(gather(*cors))
-
+    return Client.loop.run_until_complete(gather(*cors))
 
 
 if __name__ == "__main__":
@@ -54,7 +52,9 @@ if __name__ == "__main__":
     test_endpoints()
     end = datetime.now()
     print(end - start)
-
+    for result in test_endpoints():
+        print(result)
+        input()
 
 
 
