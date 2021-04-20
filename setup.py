@@ -7,7 +7,7 @@ setuptools.setup(
     name="chess.com", 
     version="1.7.5",
     author="Artur Saradzhyan",
-    author_email="saradzhyanartur@gmail.com",
+    author_email="sarartur.ruk@gmail.com",
     description="Python Wrapper for Chess.com API",
     long_description=long_description,
     long_description_content_type="text/markdown",
