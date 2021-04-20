@@ -52,4 +52,4 @@ Client.config["headers"]["User-Agent"] = (
 All the methods from the module will now include the header when making a request to the API.
 
 ### Contact
-* Email me at <saradzhyanatur@gmail.com> or open a new [Issue](https://github.com/sarartur/chess.com/issues) on Github.
+* Email me at <sarartur.ruk@gmail.com> or open a new [Issue](https://github.com/sarartur/chess.com/issues) on Github.

@@ -1,6 +1,7 @@
 import sys
 sys.path.append("../")
 from datetime import datetime
+from asyncio import new_event_loop
 
 from chessdotcom.client import *
 from chessdotcom import ChessDotComResponse
@@ -8,6 +9,8 @@ from chessdotcom import ChessDotComResponse
 def test_endpoints(print_ = False, break_ = False):
 
     Client.config['headers']['user-agent'] = 'chess.com wrapper testing scripts. Contact me at saradzhyanartur@gmail.com'
+    Client.loop = new_event_loop()
+
 
     data = get_player_profile("fabianocaruana")
     assert(isinstance(data, ChessDotComResponse))
