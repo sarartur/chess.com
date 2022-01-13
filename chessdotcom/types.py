@@ -1,6 +1,7 @@
 from types import SimpleNamespace
 import re
 import json
+from multidict import CIMultiDictProxy
 
 class Collection(SimpleNamespace):
 
@@ -82,7 +83,7 @@ class ChessDotComResponse(BaseType):
         else:
             self.__dict__.update(**attrs.__dict__)
     
-class ChessDotComError(BaseType, Exception):
+class ChessDotComError(Exception):
     """
     Custom Exception object.
 
@@ -97,6 +98,9 @@ class ChessDotComError(BaseType, Exception):
         self.status_code = status_code
         self.text = response_text
         self.header = headers
+
+    def __str__(self):
+        return f'{type(self)}(status_code={self.status_code}, text={self.text})'
 
     def _create_json_attr(self, response_text: str) -> None:
         try: self.json = json.loads(response_text)

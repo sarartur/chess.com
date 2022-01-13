@@ -39,14 +39,14 @@ def test_endpoints(print_ = False, break_ = False):
     if break_:
         input()
 
-    data = is_player_online("fabianocaruana")
-    assert(isinstance(data, ChessDotComResponse))
-    print(data.__dict__.keys())
-    assert(len(data.__dict__.keys()) == 3)
-    if print_:
-        print(data)
-    if break_:
-        input()
+    # data = is_player_online("fabianocaruana")
+    # assert(isinstance(data, ChessDotComResponse))
+    # print(data.__dict__.keys())
+    # assert(len(data.__dict__.keys()) == 3)
+    # if print_:
+    #     print(data)
+    # if break_:
+    #     input()
 
     data = get_player_current_games("fabianocaruana")
     assert(isinstance(data, ChessDotComResponse))

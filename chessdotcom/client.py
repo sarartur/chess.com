@@ -38,7 +38,7 @@ class Client:
                 ) as r:
                 text = await r.text()
                 if r.status != 200:
-                    raise ChessDotComError(status_code = r.status, response_text = text, headers = r.headers())
+                    raise ChessDotComError(status_code = r.status, response_text = text, headers = r.headers)
                 return text
 
     @classmethod
@@ -89,18 +89,6 @@ def get_player_stats(username: str, **kwargs) -> ChessDotComResponse:
     return Resource(
         uri = f"/player/{username}/stats",
         top_level_attr = "stats",
-        **kwargs
-    )
-
-@Client.endpoint
-def is_player_online(username: str, **kwargs) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :returns: ``ChessDotComResponse`` object containing infomation about
-                whether or not a player is online 
-    """
-    return Resource(
-        uri = f"/player/{username}/is-online",
         **kwargs
     )
 
