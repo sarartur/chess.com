@@ -38,7 +38,7 @@ class Client:
                 ) as r:
                 text = await r.text()
                 if r.status != 200:
-                    raise ChessDotComError(status_code = r.status, response_text = text)
+                    raise ChessDotComError(status_code = r.status, response_text = text, headers = r.headers())
                 return text
 
     @classmethod

@@ -91,11 +91,12 @@ class ChessDotComError(BaseType, Exception):
     :ivar text: API's raw response decoded into a string.
     """
 
-    def __init__(self, status_code: int, response_text: str) -> None:
+    def __init__(self, status_code: int, response_text: str, headers: CIMultiDictProxy) -> None:
         super().__init__()
         self._create_json_attr(response_text)
         self.status_code = status_code
         self.text = response_text
+        self.header = headers
 
     def _create_json_attr(self, response_text: str) -> None:
         try: self.json = json.loads(response_text)
