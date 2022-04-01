@@ -3,8 +3,7 @@ sys.path.append("../")
 from datetime import datetime
 
 from chessdotcom.aio import *
-from chessdotcom import ChessDotComResponse
-from asyncio import gather, get_event_loop
+from asyncio import gather
 from datetime import datetime
 
 
@@ -16,7 +15,7 @@ def test_endpoints(print_ = False, break_ = False):
 
     cors.append(get_player_profile("fabianocaruana"))
     cors.append(get_player_stats("fabianocaruana"))
-    cors.append(is_player_online("fabianocaruana"))
+    # cors.append(is_player_online("fabianocaruana"))
     cors.append(get_player_current_games("fabianocaruana"))
     cors.append(get_player_current_games("fabianocaruana"))
     cors.append(get_player_current_games_to_move("fabianocaruana"))
