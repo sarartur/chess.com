@@ -1,4 +1,5 @@
 <img src="https://img.shields.io/github/issues/sarartur/chess.com">  <img src="https://img.shields.io/github/forks/sarartur/chess.com">   <img src="https://img.shields.io/github/stars/sarartur/chess.com">   <img src="https://img.shields.io/github/license/sarartur/chess.com">
+---
 # Python wrapper for Chess.com Public API
 Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 ## Installation 
