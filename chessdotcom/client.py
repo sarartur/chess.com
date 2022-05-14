@@ -91,18 +91,6 @@ def get_player_stats(username: str, **kwargs) -> ChessDotComResponse:
     )
 
 @Client.endpoint
-def is_player_online(username: str, **kwargs) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :returns: ``ChessDotComResponse`` object containing infomation about
-                whether or not a player is online 
-    """
-    return Resource(
-        uri = f"/player/{username}/is-online",
-        **kwargs
-    )
-
-@Client.endpoint
 def get_player_current_games(username: str, **kwargs) -> ChessDotComResponse:
     """
     :param username: username of the player.
