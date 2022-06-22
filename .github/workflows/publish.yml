@@ -27,6 +27,7 @@ jobs:
 
       - name: Test with pytest
         run: |
+          pip install pytest
           pytest
 
       - name: Build and Upload to TestPyPI
