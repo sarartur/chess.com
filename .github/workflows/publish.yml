@@ -29,7 +29,7 @@ jobs:
           python3 -m pip install pytest
           pytest
 
-      - name: Build and Upload to TestPyPI
+      - name: Build and Upload to PyPi
         if: startsWith(github.ref, 'refs/tags')
         run: |
           python3 setup.py sdist bdist_wheel
