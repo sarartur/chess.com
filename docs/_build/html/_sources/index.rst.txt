@@ -31,7 +31,8 @@ Install from `PyPI <https://pypi.org/project/chess.com/>`_: ``pip install chess.
 Retrieving Data
 ---------------
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
-All functions can be made asynchronous. The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>`_ to send requests to the API. 
+
+The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API. 
 
 Synchronous
 ^^^^^^^^^^^
@@ -49,19 +50,47 @@ Asynchronous
 ^^^^^^^^^^^^
 .. code-block:: python
    
-   from asyncio import gather
+   import asyncio
 
    from chessdotcom.aio import get_player_profile, Client
    #or
-   from chessdotcom import get_player_profile, Client
+   from chessdotcom import Client
    Client.aio = True
 
    usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
-   cors = [get_player_profile(name) for name in usernames]
-   responses = Client.loop.run_until_complete(gather(*cors))
 
-Configuring the Client object
-------------------------------
+   cors = [get_player_profile(name) for name in usernames]
+
+   async def gather_cors(cors):
+      responses = await asyncio.gather(*cors)
+      return responses
+
+   responses = asyncio.run(gather_cors(cors))
+
+Managing Rate Limit
+^^^^^^^^^^^^^^^^^^^
+
+The package offers several ways to deal with the rate limit. 
+Every function accepts a `tts` parameter which controls the number of seconds the `Client` will wait before making the request. 
+This is useful if running a lot of coroutines at once.
+
+.. code-block:: python
+
+   cors = [get_player_profile(name, tts= i / 10) for i, name in enumerate(usernames)]
+
+The second method is to adjust the ```rate_limit_handler```.
+
+.. code-block:: python
+
+   Client.rate_limit_handler.tries = 2
+   Client.rate_limit_handler.tts = 4
+
+If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
+
+Configuring headers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 The project uses `requests` package to interact with the API. 
 Headers and proxies can be set through the `Client` object. 
 Official Chess.com documentation recommends adding a `User-Agent` header. 
@@ -71,12 +100,12 @@ Official Chess.com documentation recommends adding a `User-Agent` header.
    #optional
    from chessdotcom import Client
 
-   Client.headers["User-Agent"] = (
+   Client.request_config["User-Agent"] = (
       "My Python Application. "
       "Contact me at email@example.com"
    )
 
-All the methods from the module will now include the header when making a request to the API.
+All the methods from the package will now include the header when making a request to the API.
 
 API Reference
 ==============

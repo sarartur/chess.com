@@ -2,19 +2,20 @@
 
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Chess.com Wrapper’s documentation! &#8212; Chess.com Wrapper 1.2 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Welcome to Chess.com Wrapper’s documentation! &#8212; Chess.com Wrapper 2.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/bizstyle.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,7 +33,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Chess.com Wrapper 1.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Chess.com Wrapper 2.0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Welcome to Chess.com Wrapper’s documentation!</a></li> 
       </ul>
     </div>  
@@ -42,36 +43,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="welcome-to-chess-com-wrapper-s-documentation">
-<h1>Welcome to Chess.com Wrapper’s documentation!<a class="headerlink" href="#welcome-to-chess-com-wrapper-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="description">
-<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+  <section id="welcome-to-chess-com-wrapper-s-documentation">
+<h1>Welcome to Chess.com Wrapper’s documentation!<a class="headerlink" href="#welcome-to-chess-com-wrapper-s-documentation" title="Permalink to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this heading">¶</a></h2>
 <p>“A full Python Wrapper around Chess.com API which provides public data from the Chess.com
 website. All endpoints provided by Chess.com’s API are available in the
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
 repetitive code and testing.”</p>
 <div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
 <li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
 <li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
 </ul>
-</div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
 <p><strong>The package requires Python 3.7 or higher</strong>.</p>
 <p>Install from <a class="reference external" href="https://pypi.org/project/chess.com/">PyPI</a>: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">chess.com</span></code></p>
-</div>
-<div class="section" id="retrieving-data">
-<h2>Retrieving Data<a class="headerlink" href="#retrieving-data" title="Permalink to this headline">¶</a></h2>
-<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes.
-All functions can be made asynchronous. The package uses <a class="reference external" href="https://docs.aiohttp.org/en/stable/">aiohttp</a> to send requests to the API.</p>
-<div class="section" id="synchronous">
-<h3>Synchronous<a class="headerlink" href="#synchronous" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="retrieving-data">
+<h2>Retrieving Data<a class="headerlink" href="#retrieving-data" title="Permalink to this heading">¶</a></h2>
+<p>All the functions return a <cite>ChessDotComResponse</cite> object. The data can be accessed in dictionary format or via attributes.</p>
+<p>The package uses <cite>aiohttp &lt;https://docs.aiohttp.org/en/stable/&gt;</cite> for asynchronous requests and <cite>requests &lt;https://requests.readthedocs.io/en/latest/&gt;</cite> for synchronous requests to interact with the API.</p>
+<section id="synchronous">
+<h3>Synchronous<a class="headerlink" href="#synchronous" title="Permalink to this heading">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">get_player_profile</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">get_player_profile</span><span class="p">(</span><span class="s2">&quot;fabianocaruana&quot;</span><span class="p">)</span>
@@ -81,50 +82,71 @@ All functions can be made asynchronous. The package uses <a class="reference ext
 <span class="n">player_name</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">player</span><span class="o">.</span><span class="n">name</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="asynchronous">
-<h3>Asynchronous<a class="headerlink" href="#asynchronous" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">asyncio</span> <span class="kn">import</span> <span class="n">gather</span>
+</section>
+<section id="asynchronous">
+<h3>Asynchronous<a class="headerlink" href="#asynchronous" title="Permalink to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
 <span class="kn">from</span> <span class="nn">chessdotcom.aio</span> <span class="kn">import</span> <span class="n">get_player_profile</span><span class="p">,</span> <span class="n">Client</span>
 <span class="c1">#or</span>
-<span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">get_player_profile</span><span class="p">,</span> <span class="n">Client</span>
+<span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">Client</span>
 <span class="n">Client</span><span class="o">.</span><span class="n">aio</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="n">usernames</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;fabianocaruana&quot;</span><span class="p">,</span> <span class="s2">&quot;GMHikaruOnTwitch&quot;</span><span class="p">,</span> <span class="s2">&quot;MagnusCarlsen&quot;</span><span class="p">,</span> <span class="s2">&quot;GarryKasparov&quot;</span><span class="p">]</span>
+
 <span class="n">cors</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_player_profile</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">usernames</span><span class="p">]</span>
-<span class="n">responses</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">cors</span><span class="p">))</span>
+
+<span class="k">async</span> <span class="k">def</span> <span class="nf">gather_cors</span><span class="p">(</span><span class="n">cors</span><span class="p">):</span>
+   <span class="n">responses</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">cors</span><span class="p">)</span>
+   <span class="k">return</span> <span class="n">responses</span>
+
+<span class="n">responses</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">gather_cors</span><span class="p">(</span><span class="n">cors</span><span class="p">))</span>
 </pre></div>
 </div>
+</section>
+<section id="managing-rate-limit">
+<h3>Managing Rate Limit<a class="headerlink" href="#managing-rate-limit" title="Permalink to this heading">¶</a></h3>
+<p>The package offers several ways to deal with the rate limit.
+Every function accepts a <cite>tts</cite> parameter which controls the number of seconds the <cite>Client</cite> will wait before making the request.
+This is useful if running a lot of coroutines at once.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cors</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_player_profile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">tts</span><span class="o">=</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">usernames</span><span class="p">)]</span>
+</pre></div>
 </div>
+<p>The second method is to adjust the <code class="docutils literal notranslate"><span class="pre">`rate_limit_handler`</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Client</span><span class="o">.</span><span class="n">rate_limit_handler</span><span class="o">.</span><span class="n">tries</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Client</span><span class="o">.</span><span class="n">rate_limit_handler</span><span class="o">.</span><span class="n">tts</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
 </div>
-<div class="section" id="configuring-the-client-object">
-<h2>Configuring the Client object<a class="headerlink" href="#configuring-the-client-object" title="Permalink to this headline">¶</a></h2>
+<p>If the initial request gets rate limited the client will automatically retry the request <strong>2 more times</strong> with an interval of <strong>4 seconds</strong>.</p>
+</section>
+<section id="configuring-headers">
+<h3>Configuring headers<a class="headerlink" href="#configuring-headers" title="Permalink to this heading">¶</a></h3>
 <p>The project uses <cite>requests</cite> package to interact with the API.
 Headers and proxies can be set through the <cite>Client</cite> object.
 Official Chess.com documentation recommends adding a <cite>User-Agent</cite> header.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#optional</span>
 <span class="kn">from</span> <span class="nn">chessdotcom</span> <span class="kn">import</span> <span class="n">Client</span>
 
-<span class="n">Client</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+<span class="n">Client</span><span class="o">.</span><span class="n">request_config</span><span class="p">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
    <span class="s2">&quot;My Python Application. &quot;</span>
    <span class="s2">&quot;Contact me at email@example.com&quot;</span>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>All the methods from the module will now include the header when making a request to the API.</p>
-</div>
-</div>
-<div class="section" id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-chessdotcom.types">
-<span id="chessdotcom-types"></span><h2>chessdotcom.types<a class="headerlink" href="#module-chessdotcom.types" title="Permalink to this headline">¶</a></h2>
+<p>All the methods from the package will now include the header when making a request to the API.</p>
+</section>
+</section>
+</section>
+<section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading">¶</a></h1>
+<section id="module-chessdotcom.types">
+<span id="chessdotcom-types"></span><h2>chessdotcom.types<a class="headerlink" href="#module-chessdotcom.types" title="Permalink to this heading">¶</a></h2>
 <dl class="py exception">
-<dt id="chessdotcom.types.ChessDotComError">
-<em class="property">exception </em><code class="sig-prename descclassname">chessdotcom.types.</code><code class="sig-name descname">ChessDotComError</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">status_code</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">response_text</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.ChessDotComError" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.types.ChessDotComError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chessdotcom.types.</span></span><span class="sig-name descname"><span class="pre">ChessDotComError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CIMultiDictProxy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.ChessDotComError" title="Permalink to this definition">¶</a></dt>
 <dd><p>Custom Exception object.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>status_code</strong> – Contains the status code of the API’s response.</p></li>
 <li><p><strong>json</strong> – Dictionary representation of the API’s response.</p></li>
@@ -135,11 +157,11 @@ Official Chess.com documentation recommends adding a <cite>User-Agent</cite> hea
 </dd></dl>
 
 <dl class="py class">
-<dt id="chessdotcom.types.ChessDotComResponse">
-<em class="property">class </em><code class="sig-prename descclassname">chessdotcom.types.</code><code class="sig-name descname">ChessDotComResponse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">response_text</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">top_level_attr</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">no_json</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.ChessDotComResponse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.types.ChessDotComResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chessdotcom.types.</span></span><span class="sig-name descname"><span class="pre">ChessDotComResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_level_attr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">no_json</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.ChessDotComResponse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Custom object for holding the API’s response.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>json</strong> – Dictionary representation of the API’s response.</p></li>
 <li><p><strong>{nested_object}</strong> – Object representation of the API’s response.</p></li>
@@ -150,76 +172,107 @@ Official Chess.com documentation recommends adding a <cite>User-Agent</cite> hea
 </dd></dl>
 
 <dl class="py class">
-<dt id="chessdotcom.types.Collection">
-<em class="property">class </em><code class="sig-prename descclassname">chessdotcom.types.</code><code class="sig-name descname">Collection</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.Collection" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.types.Collection">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chessdotcom.types.</span></span><span class="sig-name descname"><span class="pre">Collection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.types.Collection" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-</div>
-<div class="section" id="module-chessdotcom.client">
-<span id="chessdotcom-client"></span><h2>chessdotcom.client<a class="headerlink" href="#module-chessdotcom.client" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-chessdotcom.client">
+<span id="chessdotcom-client"></span><h2>chessdotcom.client<a class="headerlink" href="#module-chessdotcom.client" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
-<dt id="chessdotcom.client.Client">
-<em class="property">class </em><code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">Client</code><a class="headerlink" href="#chessdotcom.client.Client" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.Client">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><a class="headerlink" href="#chessdotcom.client.Client" title="Permalink to this definition">¶</a></dt>
 <dd><p>Client for Chess.com Public API. The client is only responsible for making calls.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Variables</dt>
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>config</strong> – Dictionary containing extra keyword arguments for requests to the API
+<li><p><strong>request_config</strong> – Dictionary containing extra keyword arguments for requests to the API
 (headers, proxy, etc).</p></li>
-<li><p><strong>loop</strong> – Asyncio event loop.</p></li>
 <li><p><strong>aio</strong> – Determines if the functions behave asynchronously.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Loop_callback<span class="colon">:</span></dt>
+<dd class="field-even"><p>Function that returns the current loop for aiohttp.ClientSession.</p>
+</dd>
+<dt class="field-odd">Rate_limit_handler<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A RateLimitHandler object. See <code class="xref py py-obj docutils literal notranslate"><span class="pre">chessdotcom.types.RateLimitHandler</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="chessdotcom.client.RateLimitHandler">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">RateLimitHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chessdotcom.client.RateLimitHandler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rate Limit Handler for handling 429 responses from the API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Tts<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The time the client will wait after a 429 response if there are tries remaining.</p>
+</dd>
+<dt class="field-even">Retries<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of times the client will retry calling the API after the first attempt.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_club_details">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_club_details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_club_details" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_club_details">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_club_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_club_details" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing additional details about a club.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_club_matches">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_club_matches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_club_matches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_club_matches">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_club_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_club_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of daily and club matches.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_club_members">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_club_members</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_club_members" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_club_members">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_club_members</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_club_members" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of club members.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_country_clubs">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_country_clubs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_country_clubs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_country_clubs">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_country_clubs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_country_clubs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of URLs for clubs identified
 as being in or associated with this country.</p>
 </dd>
@@ -227,13 +280,16 @@ as being in or associated with this country.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_country_details">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_country_details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_country_details" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_country_details">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_country_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_country_details" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 additional details about a country.</p>
 </dd>
@@ -241,13 +297,16 @@ additional details about a country.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_country_players">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_country_players</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">iso</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_country_players" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_country_players">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_country_players</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iso</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_country_players" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>iso</strong> – country’s 2-character ISO 3166 code.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of usernames for players
 who identify themselves as being in this country.</p>
 </dd>
@@ -255,35 +314,44 @@ who identify themselves as being in this country.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_current_daily_puzzle">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_current_daily_puzzle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_current_daily_puzzle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_current_daily_puzzle">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_current_daily_puzzle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_current_daily_puzzle" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tts</strong> – the time the client will wait before making the first request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 information about the daily puzzle found in www.chess.com.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_leaderboards">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_leaderboards</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_leaderboards" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_leaderboards">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_leaderboards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_leaderboards" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tts</strong> – the time the client will wait before making the first request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 information about top 50 player for daily and live games, tactics and lessons.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_clubs">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_clubs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_clubs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_clubs">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_clubs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_clubs" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing 
 a list of clubs the player is a member of.</p>
 </dd>
@@ -291,13 +359,16 @@ a list of clubs the player is a member of.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_current_games">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_current_games</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_current_games" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_current_games">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_current_games</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_current_games" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of Daily Chess games
 that a player is currently playing.</p>
 </dd>
@@ -305,13 +376,16 @@ that a player is currently playing.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_current_games_to_move">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_current_games_to_move</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_current_games_to_move" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_current_games_to_move">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_current_games_to_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_current_games_to_move" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of Daily Chess games 
 where it is the player’s turn to act.</p>
 </dd>
@@ -319,13 +393,16 @@ where it is the player’s turn to act.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_game_archives">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_game_archives</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_game_archives" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_game_archives">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_game_archives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_game_archives" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a 
 list of monthly archives available for this player.</p>
 </dd>
@@ -333,19 +410,20 @@ list of monthly archives available for this player.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_games_by_month">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_games_by_month</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">year</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">month</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datetime_obj</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_games_by_month" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_games_by_month">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_games_by_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_games_by_month" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> – username of the player.</p></li>
 <li><p><strong>year</strong> – the year (yyyy).</p></li>
 <li><p><strong>month</strong> – the month (mm).</p></li>
 <li><p><strong>date</strong> – datetime.datetime of the month. Can be passed in instead of month
 and year parameters.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of live and daily 
 Chess games that a player has finished.</p>
 </dd>
@@ -353,10 +431,10 @@ Chess games that a player has finished.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_games_by_month_pgn">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_games_by_month_pgn</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">year</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">month</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>Union<span class="p">[</span>str<span class="p">, </span>int<span class="p">]</span><span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="n">datetime_obj</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>datetime.datetime<span class="p">]</span></span> <span class="o">=</span> <span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_games_by_month_pgn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_games_by_month_pgn">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_games_by_month_pgn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datetime_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">datetime</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_games_by_month_pgn" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>username</strong> – username of the player.</p></li>
 <li><p><strong>year</strong> – the year (yyyy).</p></li>
@@ -365,7 +443,7 @@ Chess games that a player has finished.</p>
 and year parameters.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing 
 standard multi-game format PGN containing all games for a month.</p>
 </dd>
@@ -373,13 +451,16 @@ standard multi-game format PGN containing all games for a month.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_profile">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_profile</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_profile" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_profile">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_profile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing information about
 the player’s profile.</p>
 </dd>
@@ -387,13 +468,16 @@ the player’s profile.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_stats">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_stats" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_stats">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_stats" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing information about the
 plyers’s ratings, win/loss, and other stats.</p>
 </dd>
@@ -401,13 +485,16 @@ plyers’s ratings, win/loss, and other stats.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_team_matches">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_team_matches</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_team_matches" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_team_matches">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_team_matches</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_team_matches" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of team matches the player has attended,
 is participating or is currently registered.</p>
 </dd>
@@ -415,13 +502,16 @@ is participating or is currently registered.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_player_tournaments">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_player_tournaments</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_player_tournaments" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_player_tournaments">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_player_tournaments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_player_tournaments" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a 
 list of tournaments the player is registered,
 is attending or has attended in the past.</p>
@@ -430,35 +520,44 @@ is attending or has attended in the past.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_random_daily_puzzle">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_random_daily_puzzle</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_random_daily_puzzle" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_random_daily_puzzle">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_random_daily_puzzle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_random_daily_puzzle" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tts</strong> – the time the client will wait before making the first request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 information about a randomly picked daily puzzle.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_streamers">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_streamers</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_streamers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_streamers">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_streamers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_streamers" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing 
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tts</strong> – the time the client will wait before making the first request.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing 
 information about Chess.com streamers.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_team_match">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_team_match</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_team_match" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_team_match">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_team_match</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_team_match" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>match_id</strong> – the id of the match.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match_id</strong> – the id of the match.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 details about a team match and players playing that match.</p>
 </dd>
@@ -466,16 +565,17 @@ details about a team match and players playing that match.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_team_match_board">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_team_match_board</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">board_num</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_team_match_board" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_team_match_board">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_team_match_board</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">board_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_team_match_board" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>match_id</strong> – the id of the match.</p></li>
 <li><p><strong>board_num</strong> – the number of the board.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 details about a team match board.</p>
 </dd>
@@ -483,13 +583,16 @@ details about a team match board.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_team_match_live">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_team_match_live</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_team_match_live" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_team_match_live">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_team_match_live</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_team_match_live" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>match_id</strong> – the id of the match.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match_id</strong> – the id of the match.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 details about a team match and players playing that match.</p>
 </dd>
@@ -497,16 +600,17 @@ details about a team match and players playing that match.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_team_match_live_board">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_team_match_live_board</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match_id</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">board_num</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_team_match_live_board" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_team_match_live_board">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_team_match_live_board</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">match_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">board_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_team_match_live_board" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>match_id</strong> – the id of the match.</p></li>
 <li><p><strong>board_num</strong> – the number of the board.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing details 
 about a team match board.</p>
 </dd>
@@ -514,26 +618,32 @@ about a team match board.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_titled_players">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_titled_players</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title_abbrev</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_titled_players" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_titled_players">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_titled_players</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title_abbrev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_titled_players" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>title_abbrev</strong> – abbreviation of chess title.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title_abbrev</strong> – abbreviation of chess title.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing a list of usernames.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_tournament_details">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_tournament_details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_tournament_details" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_tournament_details">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_tournament_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_tournament_details" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing details about a daily, 
 live and arena tournament.</p>
 </dd>
@@ -541,16 +651,17 @@ live and arena tournament.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_tournament_round">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_tournament_round</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">round_num</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_tournament_round" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_tournament_round">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_tournament_round</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">round_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_tournament_round" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
 <li><p><strong>round_num</strong> – the round of the tournament.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing
 details about a tournament’s round.</p>
 </dd>
@@ -558,17 +669,18 @@ details about a tournament’s round.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.get_tournament_round_group_details">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">get_tournament_round_group_details</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url_id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">round_num</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">group_num</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.get_tournament_round_group_details" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.get_tournament_round_group_details">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">get_tournament_round_group_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">round_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.get_tournament_round_group_details" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>url_id</strong> – URL for the club’s web page on www.chess.com.</p></li>
 <li><p><strong>round_num</strong> – the round of the tournament.</p></li>
 <li><p><strong>group_num</strong> – the group in the tournament.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing 
 details about a tournament’s round group.</p>
 </dd>
@@ -576,21 +688,24 @@ details about a tournament’s round group.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt id="chessdotcom.client.is_player_online">
-<code class="sig-prename descclassname">chessdotcom.client.</code><code class="sig-name descname">is_player_online</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">username</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse">chessdotcom.types.ChessDotComResponse</a><a class="headerlink" href="#chessdotcom.client.is_player_online" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="chessdotcom.client.is_player_online">
+<span class="sig-prename descclassname"><span class="pre">chessdotcom.client.</span></span><span class="sig-name descname"><span class="pre">is_player_online</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#chessdotcom.types.ChessDotComResponse" title="chessdotcom.types.ChessDotComResponse"><span class="pre">ChessDotComResponse</span></a></span></span><a class="headerlink" href="#chessdotcom.client.is_player_online" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>username</strong> – username of the player.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username</strong> – username of the player.</p></li>
+<li><p><strong>tts</strong> – the time the client will wait before making the first request.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">ChessDotComResponse</span></code> object containing infomation about
 whether or not a player is online</p>
 </dd>
 </dl>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -599,8 +714,9 @@ whether or not a player is online</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Welcome to Chess.com Wrapper’s documentation!</a><ul>
 <li><a class="reference internal" href="#description">Description</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -608,9 +724,10 @@ whether or not a player is online</p>
 <li><a class="reference internal" href="#retrieving-data">Retrieving Data</a><ul>
 <li><a class="reference internal" href="#synchronous">Synchronous</a></li>
 <li><a class="reference internal" href="#asynchronous">Asynchronous</a></li>
+<li><a class="reference internal" href="#managing-rate-limit">Managing Rate Limit</a></li>
+<li><a class="reference internal" href="#configuring-headers">Configuring headers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#configuring-the-client-object">Configuring the Client object</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#api-reference">API Reference</a><ul>
@@ -620,6 +737,7 @@ whether or not a player is online</p>
 </li>
 </ul>
 
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -631,12 +749,12 @@ whether or not a player is online</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -650,13 +768,13 @@ whether or not a player is online</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Chess.com Wrapper 1.2 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="#">Chess.com Wrapper 2.0.1 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Welcome to Chess.com Wrapper’s documentation!</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Artur Saradzhyan.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
     </div>
   </body>
 </html>
