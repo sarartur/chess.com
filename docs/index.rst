@@ -1,4 +1,4 @@
-Welcome to Chess.com Wrapper's documentation!
+Welcome to Chess.com Wrapper's Documentation!
 =============================================
 Description
 ------------
@@ -20,7 +20,8 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-
+Getting Started
+=============================================
 
 Installation
 ------------

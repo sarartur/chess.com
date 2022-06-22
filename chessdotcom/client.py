@@ -56,7 +56,7 @@ class Client:
                     (headers, proxy, etc).
     :cvar aio: Determines if the functions behave asynchronously.
     :loop_callback: Function that returns the current loop for aiohttp.ClientSession.
-    :rate_limit_handler: A RateLimitHandler object. See :obj:`chessdotcom.types.RateLimitHandler`.
+    :rate_limit_handler: A RateLimitHandler object. See :obj:`chessdotcom.client.RateLimitHandler`.
     """
 
     aio = False
