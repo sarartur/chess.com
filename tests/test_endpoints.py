@@ -119,7 +119,7 @@ def test_endpoints_async():
 
     usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
 
-    usernames_multiplied = usernames * 20
+    usernames_multiplied = usernames * 5
 
     cors = [client.get_player_profile(name) for name in usernames_multiplied]
 

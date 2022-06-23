@@ -40,8 +40,7 @@ usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKaspar
 cors = [get_player_profile(name) for name in usernames]
 
 async def gather_cors(cors):
-    responses = await asyncio.gather(*cors)
-    return responses
+    return await asyncio.gather(*cors)
 
 responses = asyncio.run(gather_cors(cors))
 

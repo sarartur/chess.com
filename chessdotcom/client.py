@@ -115,8 +115,7 @@ class Client:
     def endpoint(cls, func):
         @wraps(func)
         def wrapper(*args, **kwargs):
-            resource = func(*args, **kwargs)
-            return cls.do_get_request(resource)
+            return cls.do_get_request(func(*args, **kwargs))
 
         return wrapper
 
