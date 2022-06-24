@@ -49,9 +49,9 @@ responses = asyncio.run(gather_cors(cors))
 The package offers several ways to deal with the rate limit. Every function accepts a `tts` parameter which controls the number of seconds the `Client` will wait before making the request. This is useful if running a lot of coroutines at once.
  
  ``` python 
- cors = [get_player_profile(name, tts= i / 10) for i, name in enumerate(usernames)]
+ cors = [get_player_profile(name, tts = i / 10) for i, name in enumerate(usernames)]
 ```
-The second method is to adjust the ```rate_limit_handler```.
+The second method is to adjust the ```rate_limit_handler``` attribute of the `Client` object.
 
 ``` python
 Client.rate_limit_handler.tries = 2
@@ -59,14 +59,9 @@ Client.rate_limit_handler.tts = 4
 ```
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
-
- 
-
-
-#### Configuring headers
+#### Configuring Headers
 Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation recommends adding a `User-Agent` header. 
 ``` python
-#optional
 from chessdotcom import Client
 
 Client.request_config["headers"]["User-Agent"] = (

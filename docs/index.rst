@@ -77,9 +77,9 @@ This is useful if running a lot of coroutines at once.
 
 .. code-block:: python
 
-   cors = [get_player_profile(name, tts= i / 10) for i, name in enumerate(usernames)]
+   cors = [get_player_profile(name, tts = i / 10) for i, name in enumerate(usernames)]
 
-The second method is to adjust the ```rate_limit_handler```.
+The second method is to adjust the `rate_limit_handler` attribute of the `Client` object.
 
 .. code-block:: python
 
@@ -88,7 +88,7 @@ The second method is to adjust the ```rate_limit_handler```.
 
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
-Configuring headers
+Configuring Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
