@@ -1,5 +1,5 @@
 # Python wrapper for Chess.com Public API
-<img src="https://img.shields.io/github/issues/sarartur/chess.com">  <img src="https://img.shields.io/github/forks/sarartur/chess.com">   <img src="https://img.shields.io/github/stars/sarartur/chess.com">   <img src="https://img.shields.io/github/license/sarartur/chess.com"> <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6">  <img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/workflow/status/sarartur/chess.com/Test%20&%20Upload%20to%20PyPi">
+<img src="https://img.shields.io/github/issues/sarartur/chess.com">  <img src="https://img.shields.io/github/forks/sarartur/chess.com">   <img src="https://img.shields.io/github/stars/sarartur/chess.com">   <img src="https://img.shields.io/github/license/sarartur/chess.com"> <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6">  <img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/build_and_publish.yml">
 ---
 Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 ## Installation 
@@ -23,17 +23,14 @@ from chessdotcom import get_player_profile
 response = get_player_profile("fabianocaruana")
 
 player_name = response.json['player']['name']
-#or
+
 player_name = response.player.name
 ```
 #### Asynchronous 
 ``` python 
 import asyncio
 
-from chessdotcom.aio import get_player_profile, Client
-#or
-from chessdotcom import Client
-Client.aio = True
+from chessdotcom.aio import get_player_profile
 
 usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
 
