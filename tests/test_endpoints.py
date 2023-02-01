@@ -132,8 +132,6 @@ def test_endpoints_async():
     assert all(isinstance(r, ChessDotComResponse) for r in responses)
     assert len(responses) == len(usernames_multiplied)
 
-    return responses
-
 
 if is_main:
     test_endpoints()
