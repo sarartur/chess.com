@@ -66,6 +66,14 @@ class Client:
 
     @classmethod
     def _do_sync_get_request(cls, resource):
+        if "user-agent" not in [
+            header.lower() for header in cls.request_config["headers"].keys()
+        ]:
+            warnings.warn(
+                "Calls to api.chess.com require an updated 'User-Agent' header. You can update "
+                "this with something like chessdotcom.Client.request_config['headers']['User-Agent'] "
+                "= 'My Python Application. Contact me at email@example.com'"
+            )
         r = requests.get(
             **resource.request_config,
             **cls.request_config,

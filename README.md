@@ -18,12 +18,16 @@ All the functions return a `ChessDotComResponse` object. The data can be accesse
 The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) for asynchronous requests and [requests](https://requests.readthedocs.io/en/latest/) for synchronous requests to interact with the API. 
 #### Synchronous
 ``` python
-from chessdotcom import get_player_profile
-
+from chessdotcom import get_player_profile, Client
+   
+Client.request_config["headers"]["User-Agent"] = (
+    "My Python Application. "
+    "Contact me at email@example.com"
+)
 response = get_player_profile("fabianocaruana")
 
 player_name = response.json['player']['name']
-
+#or
 player_name = response.player.name
 ```
 #### Asynchronous 
@@ -57,7 +61,7 @@ Client.rate_limit_handler.tts = 4
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
 #### Configuring Headers
-Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation recommends adding a `User-Agent` header. 
+Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation requires adding a `User-Agent` header. 
 ``` python
 from chessdotcom import Client
 
