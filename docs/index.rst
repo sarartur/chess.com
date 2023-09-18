@@ -101,10 +101,12 @@ Official Chess.com documentation recommends adding a `User-Agent` header.
    #optional
    from chessdotcom import Client
 
-   Client.request_config["User-Agent"] = (
-      "My Python Application. "
-      "Contact me at email@example.com"
-   )
+   Client.request_config["headers"] = {
+      "User-Agent": (
+         "My Python Application. "
+         "Contact me at email@example.com"
+         )
+   }
 
 All the methods from the package will now include the header when making a request to the API.
 
