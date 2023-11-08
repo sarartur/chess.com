@@ -13,8 +13,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/sarartur/chess.com",
     packages=setuptools.find_packages(),
-    install_requires=["aiohttp==3.8.3", "requests==2.28.0"],
-    setup_requires=["aiohttp==3.8.3", "requests==2.28.0"],
+    install_requires=["aiohttp==3.8.3", "requests==2.31.0"],
+    setup_requires=["aiohttp==3.8.3", "requests==2.31.0"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
