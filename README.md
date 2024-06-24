@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI - Version](https://img.shields.io/pypi/v/chess.com)](https://pypi.org/project/chess.com/)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/chess.com?color=007EC6)](https://pypi.org/project/chess.com/)
-[![GitHub Workflow Status (event)](https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/python-package.yml)](https://github.com/sarartur/chess.com/actions/workflows/python-package.yml)
+[![GitHub Workflow Status (event)](https://img.shields.io/github/actions/workflow/status/Naviamold1/chess.com/python-package.yml)](https://github.com/Naviamold1/chess.com/actions/workflows/python-package.yml)
 
 Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods.
 
