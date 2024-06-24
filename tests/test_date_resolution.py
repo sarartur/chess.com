@@ -1,11 +1,11 @@
 import sys
+from datetime import datetime
+
+from chessdotcom.utils import resolve_date
 
 is_main = __name__ == "__main__"
 if is_main:
     sys.path.append("../")
-
-from datetime import datetime
-from chessdotcom.utils import resolve_date
 
 
 def test_date_resolution():

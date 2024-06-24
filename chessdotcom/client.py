@@ -16,7 +16,6 @@ from chessdotcom.utils import resolve_date
 
 
 class RateLimitHandler(object):
-
     """
     Rate Limit Handler for handling 429 responses from the API.
 
@@ -61,7 +60,10 @@ class Client:
 
     aio = False
     request_config = {"headers": {}}
-    loop_callback = lambda: asyncio.get_running_loop()
+
+    def loop_callback():
+        return asyncio.get_running_loop()
+
     rate_limit_handler = RateLimitHandler()
 
     @classmethod

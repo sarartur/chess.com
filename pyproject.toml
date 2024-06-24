@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "chess-com"
+version = "2.1.0"
+description = "Python Wrapper for Chess.com API"
+authors = ["Artur Saradzhyan <sarartur.ruk@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "chessdotcom"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.9.5"
+requests = "^2.32.3"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.10"
+pre-commit = "^3.7.1"
+pytest = "^8.2.2"
+
+[tool.ruff.lint]
+ignore = ["F401"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

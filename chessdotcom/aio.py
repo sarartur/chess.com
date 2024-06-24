@@ -1,3 +1,3 @@
-from chessdotcom.client import *
+from chessdotcom.client import *  # noqa: F403
 
-Client.aio = True
+Client.aio = True  # noqa: F405

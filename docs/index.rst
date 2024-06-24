@@ -2,8 +2,8 @@ Welcome to Chess.com Wrapper's Documentation!
 =============================================
 Description
 ------------
-"A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
-website. All endpoints provided by Chess.com's API are available in the 
+"A full Python Wrapper around Chess.com API which provides public data from the Chess.com
+website. All endpoints provided by Chess.com's API are available in the
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
 repetitive code and testing."
 
@@ -33,14 +33,14 @@ Retrieving Data
 ---------------
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
-The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API. 
+The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API.
 
 Synchronous
 ^^^^^^^^^^^
 .. code-block:: python
-   
+
    from chessdotcom import get_player_profile, Client
-   
+
    Client.request_config["headers"]["User-Agent"] = (
       "My Python Application. "
       "Contact me at email@example.com"
@@ -54,7 +54,7 @@ Synchronous
 Asynchronous
 ^^^^^^^^^^^^
 .. code-block:: python
-   
+
    import asyncio
 
    from chessdotcom.aio import get_player_profile, Client
@@ -75,8 +75,8 @@ Asynchronous
 Managing Rate Limit
 ^^^^^^^^^^^^^^^^^^^
 
-The package offers several ways to deal with the rate limit. 
-Every function accepts a `tts` parameter which controls the number of seconds the `Client` will wait before making the request. 
+The package offers several ways to deal with the rate limit.
+Every function accepts a `tts` parameter which controls the number of seconds the `Client` will wait before making the request.
 This is useful if running a lot of coroutines at once.
 
 .. code-block:: python
@@ -96,9 +96,9 @@ Configuring Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-The project uses `requests` package to interact with the API. 
-Headers and proxies can be set through the `Client` object. 
-Official Chess.com documentation requires adding a `User-Agent` header. 
+The project uses `requests` package to interact with the API.
+Headers and proxies can be set through the `Client` object.
+Official Chess.com documentation requires adding a `User-Agent` header.
 
 .. code-block:: python
 
@@ -122,4 +122,4 @@ chessdotcom.types
 chessdotcom.client
 ------------------
 .. automodule:: chessdotcom.client
-   :members: 
+   :members:

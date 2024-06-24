@@ -1,12 +1,13 @@
-import sys
 import asyncio
+import sys
+
+from chessdotcom import Client
+from chessdotcom.types import ChessDotComError, Resource
 
 is_main = __name__ == "__main__"
 if is_main:
     sys.path.append("../")
 
-from chessdotcom.types import Resource, ChessDotComError
-from chessdotcom import Client
 
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())

@@ -1,8 +1,9 @@
-from types import SimpleNamespace
-import re
 import json
-from multidict import CIMultiDictProxy
+import re
 import warnings
+from types import SimpleNamespace
+
+from multidict import CIMultiDictProxy
 
 
 class Collection(SimpleNamespace):
@@ -36,7 +37,6 @@ class BaseType(object):
 
 
 class Resource(object):
-
     _base_url = "https://api.chess.com/pub"
 
     def __init__(
@@ -124,5 +124,5 @@ class ChessDotComError(Exception):
     def _create_json_attr(self, response_text: str) -> None:
         try:
             self.json = json.loads(response_text)
-        except:
+        except Exception:
             self.json = {}
