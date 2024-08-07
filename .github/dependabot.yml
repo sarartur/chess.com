@@ -9,3 +9,12 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    groups:
+      python-packages:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-packages:
+        dependency-type: "development"
