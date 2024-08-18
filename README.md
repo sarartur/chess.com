@@ -1,5 +1,7 @@
 # Python wrapper for Chess.com Public API
 
+> Maintained Fork
+
 [![Github Issues](https://img.shields.io/github/issues/sarartur/chess.com)](https://github.com/sarartur/chess.com/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/sarartur/chess.com)](https://github.com/sarartur/chess.com/forks)
 [![Github Stars](https://img.shields.io/github/stars/sarartur/chess.com)](https://github.com/sarartur/chess.com/stargazers)
@@ -14,7 +16,11 @@ Python wrapper for Chess.com API which provides public data from the chess.com w
 
 **The package requires Python 3.9 or higher**.
 
-Install latest version from [PyPI](https://pypi.org/project/chess.com/): `pip install chess.com`
+Install latest version from [PyPI](https://pypi.org/project/chess.com/):
+
+```py
+pip install nav-chess.com
+```
 
 ## Resources
 
@@ -22,6 +28,19 @@ Install latest version from [PyPI](https://pypi.org/project/chess.com/): `pip in
 - Published-Data API: [chess.com](https://www.chess.com/news/view/published-data-api)
 
 ## Usage
+
+### Configuring Headers
+
+Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation requires adding a `User-Agent` header.
+
+```python
+from chessdotcom import Client
+
+Client.request_config["headers"]["User-Agent"] = (
+    "My Python Application. "
+    "Contact me at email@example.com"
+)
+```
 
 ### Retrieving Data
 
@@ -79,19 +98,6 @@ Client.rate_limit_handler.tts = 4
 ```
 
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
-
-#### Configuring Headers
-
-Headers and and other request parameters can be set through the `Client` object. Official Chess.com documentation requires adding a `User-Agent` header.
-
-```python
-from chessdotcom import Client
-
-Client.request_config["headers"]["User-Agent"] = (
-    "My Python Application. "
-    "Contact me at email@example.com"
-)
-```
 
 All the methods from the package will now include the header when making a request to the API.
 
