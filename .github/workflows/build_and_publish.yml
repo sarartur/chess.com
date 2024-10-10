@@ -3,32 +3,25 @@ name: Test & Upload to PyPi
 on:
   push:
     tags:
-      - '*'
+      - v*
 
   workflow_dispatch:
 
 jobs:
+  test:
+    name: 'Test suite'
+    uses: ./.github/workflows/test.yml
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v1
+      - name: Set up Python
+        uses: actions/setup-python@v1
         with:
-          python-version: 3.8 
-
-      - name: "Installs and upgrades pip, installs other dependencies and installs the package from setup.py"
+          python-version: 3.8
+      - name: Install publishing dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          python3 -m pip install setuptools wheel twine
-          pip install -r requirements.txt
-
-      - name: Test with pytest
-        run: |
-          python3 -m pip install pytest
-          pytest
-
+          pip install setuptools wheel twine
       - name: Build and Upload to PyPi
         run: |
           python3 setup.py sdist bdist_wheel
