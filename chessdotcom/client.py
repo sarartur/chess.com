@@ -1,22 +1,18 @@
-from typing import Optional, Union
-from datetime import datetime
-from aiohttp import ClientSession
-import requests
 import asyncio
-from functools import wraps
 import time
 import warnings
+from datetime import datetime
+from functools import wraps
+from typing import Optional, Union
 
-from chessdotcom.types import (
-    ChessDotComError,
-    ChessDotComResponse,
-    Resource,
-)
+import requests
+from aiohttp import ClientSession
+
+from chessdotcom.types import ChessDotComError, ChessDotComResponse, Resource
 from chessdotcom.utils import resolve_date
 
 
 class RateLimitHandler(object):
-
     """
     Rate Limit Handler for handling 429 responses from the API.
 
@@ -61,8 +57,11 @@ class Client:
 
     aio = False
     request_config = {"headers": {}}
-    loop_callback = lambda: asyncio.get_running_loop()
     rate_limit_handler = RateLimitHandler()
+
+    @classmethod
+    def loop_callback(cls):
+        return asyncio.get_running_loop()
 
     @classmethod
     def _do_sync_get_request(cls, resource):
@@ -70,14 +69,12 @@ class Client:
             header.lower() for header in cls.request_config["headers"].keys()
         ]:
             warnings.warn(
-                "Calls to api.chess.com require an updated 'User-Agent' header. You can update "
-                "this with something like chessdotcom.Client.request_config['headers']['User-Agent'] "
+                "Calls to api.chess.com require an updated 'User-Agent' header. "
+                "You can update this with something like "
+                "chessdotcom.Client.request_config['headers']['User-Agent'] "
                 "= 'My Python Application. Contact me at email@example.com'"
             )
-        r = requests.get(
-            **resource.request_config,
-            **cls.request_config,
-        )
+        r = requests.get(**resource.request_config, **cls.request_config, timeout=30)
         resource.times_requested += 1
 
         if r.status_code != 200:
@@ -289,7 +286,8 @@ def get_player_team_matches(username: str, tts=0, **kwargs) -> ChessDotComRespon
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of team matches the player has attended,
+    :returns: ``ChessDotComResponse`` object containing a list of team matches
+                the player has attended,
                 is participating or is currently registered.
     """
     return Resource(
