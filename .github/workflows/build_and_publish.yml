@@ -1,9 +1,9 @@
 name: Test & Upload to PyPi
 
 on:
-  create:
+  push:
     tags:
-      - v*
+      - '*'
 
   workflow_dispatch:
 
@@ -34,5 +34,4 @@ jobs:
           python3 setup.py sdist bdist_wheel
           python3 -m twine upload dist/*
         env:
-          TWINE_USERNAME: ${{ secrets.TWINE_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
