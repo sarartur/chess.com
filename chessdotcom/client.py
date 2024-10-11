@@ -97,7 +97,7 @@ class Client:
                 "chessdotcom.Client.request_config['headers']['User-Agent'] "
                 "= 'My Python Application. Contact me at email@example.com'"
             )
-        r = requests.get(self._merge_request_options(resource), timeout=30)
+        r = requests.get(**self._merge_request_options(resource), timeout=30)
         resource.times_requested += 1
 
         if r.status_code != 200:
@@ -110,7 +110,7 @@ class Client:
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
-            async with session.get(self._merge_request_options(resource)) as r:
+            async with session.get(**self._merge_request_options(resource)) as r:
                 text = await r.text()
                 resource.times_requested += 1
 
