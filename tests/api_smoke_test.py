@@ -1,19 +1,14 @@
-import sys
 import asyncio
+import sys
 
-is_main = __name__ == "__main__"
-if is_main:
-    sys.path.append("../")
-
-from chessdotcom import client
-from chessdotcom import ChessDotComResponse
+from chessdotcom import ChessDotComResponse, client
 
 if sys.platform.startswith("win"):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 client.Client.request_config["headers"][
     "user-agent"
-] = "chess.com wrapper testing scripts. Contact me at sarartur.ruk@gmail.com"
+] = "chess.com wrapper testing scripts. https://github.com/sarartur/chess.com"
 
 
 def test_endpoints():
@@ -111,7 +106,6 @@ def test_endpoints():
 
 
 def test_endpoints_async():
-
     client.Client.aio = True
 
     client.Client.rate_limit_handler.retries = 2
@@ -131,8 +125,3 @@ def test_endpoints_async():
 
     assert all(isinstance(r, ChessDotComResponse) for r in responses)
     assert len(responses) == len(usernames_multiplied)
-
-
-if is_main:
-    test_endpoints()
-    data = test_endpoints_async()

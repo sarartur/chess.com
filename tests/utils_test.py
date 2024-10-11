@@ -1,14 +1,9 @@
-import sys
-
-is_main = __name__ == "__main__"
-if is_main:
-    sys.path.append("../")
-
 from datetime import datetime
+
 from chessdotcom.utils import resolve_date
 
 
-def test_date_resolution():
+def test_resolve_date():
     yyyy, mm = resolve_date(1981, 1, None)
     assert yyyy == "1981" and mm == "01"
     yyyy, mm = resolve_date("1981", "1", None)
@@ -32,7 +27,3 @@ def test_date_resolution():
         assert False
     except ValueError:
         pass
-
-
-if is_main:
-    test_date_resolution()
