@@ -65,7 +65,7 @@ Headers and and other request parameters can be set through the `Client` object.
 ``` python
 from chessdotcom import Client
 
-Client.request_config["headers"]["User-Agent"] = (
+Client.default_request_options["headers"]["User-Agent"] = (
     "My Python Application. "
     "Contact me at email@example.com"
 )

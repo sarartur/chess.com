@@ -41,7 +41,7 @@ Synchronous
    
    from chessdotcom import get_player_profile, Client
    
-   Client.request_config["headers"]["User-Agent"] = (
+   Client.default_request_options["headers"]["User-Agent"] = (
       "My Python Application. "
       "Contact me at email@example.com"
    )
@@ -104,7 +104,7 @@ Official Chess.com documentation requires adding a `User-Agent` header.
 
    from chessdotcom import Client
 
-   Client.request_config["headers"]["User-Agent"] = (
+   Client.default_request_options["headers"]["User-Agent"] = (
     "My Python Application. "
     "Contact me at email@example.com"
    )
