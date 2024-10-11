@@ -120,6 +120,11 @@ chessdotcom.types
    :members:
 
 chessdotcom.client
-------------------
+---------------------
 .. automodule:: chessdotcom.client
+   :members:
+
+chessdotcom.endpoints
+------------------
+.. automodule:: chessdotcom.endpoints
    :members: 
