@@ -1,9 +1,5 @@
-from chessdotcom.types import ChessDotComError, ChessDotComResponse
-from chessdotcom.client import (
-    Client,
-    RateLimitHandler,
-    get_player_profile,
-    get_player_clubs,
+from .client import Client, RateLimitHandler
+from .endpoints import (
     get_club_details,
     get_club_matches,
     get_club_members,
@@ -12,11 +8,13 @@ from chessdotcom.client import (
     get_country_players,
     get_current_daily_puzzle,
     get_leaderboards,
+    get_player_clubs,
     get_player_current_games,
     get_player_current_games_to_move,
     get_player_game_archives,
     get_player_games_by_month,
     get_player_games_by_month_pgn,
+    get_player_profile,
     get_player_stats,
     get_player_team_matches,
     get_player_tournaments,
@@ -31,3 +29,4 @@ from chessdotcom.client import (
     get_tournament_round,
     get_tournament_round_group_details,
 )
+from .types import ChessDotComError, ChessDotComResponse
