@@ -172,7 +172,7 @@ def get_player_team_matches(username: str, tts=0, **kwargs) -> ChessDotComRespon
                 is participating or is currently registered.
     """
     return Resource(
-        uri=f"/player/{username}/clubs",
+        uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attr="matches",
         request_config=kwargs,
