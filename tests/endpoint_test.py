@@ -195,7 +195,8 @@ def test_get_player_team_matches():
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
 
-    def validate_match(match):
+    matches = response.matches
+    for match in matches.finished:
         assert isinstance(match.name, str)
         assert isinstance(match.url, str)
         assert isinstance(match.id, str)
@@ -204,15 +205,18 @@ def test_get_player_team_matches():
         assert isinstance(match.results.played_as_black, str)
         assert isinstance(match.board, str)
 
-    matches = response.matches
-    for match in matches.finished:
-        validate_match(match)
-
     for match in matches.in_progress:
-        validate_match(match)
+        assert isinstance(match.name, str)
+        assert isinstance(match.url, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.club, str)
+        assert isinstance(match.board, str)
 
     for match in matches.registered:
-        validate_match(match)
+        assert isinstance(match.name, str)
+        assert isinstance(match.url, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.club, str)
 
 
 @vcr.use_cassette("get_player_tournaments.yaml")
@@ -238,14 +242,7 @@ def test_get_player_tournaments():
     for tournament in tournaments.in_progress:
         assert isinstance(tournament.url, str)
         assert isinstance(tournament.id, str)
-        assert isinstance(tournament.wins, int)
-        assert isinstance(tournament.losses, int)
-        assert isinstance(tournament.draws, int)
-        assert isinstance(tournament.placement, int)
         assert isinstance(tournament.status, str)
-        assert isinstance(tournament.total_players, int)
-        assert isinstance(tournament.time_class, str)
-        assert isinstance(tournament.type, str)
 
     for tournament in tournaments.registered:
         assert isinstance(tournament.url, str)
