@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/fabianocaruana/stats
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA42S3Y7CIBCF34XrxvI/0JcxWFlLgrYpuE00ffcd1Lqu6SaGC5Jhzsz5ZriStvMp
+        bUc3hD1priS6lMs9uhxOB9Jww0VF9i570jDgANYaaSoyYrbkc0V2/q9AUKmeAqUBCxjLKnJwR4yQ
+        LuchNXU9TdPm1nrT9se6PNYxfPvaAJcAFKswgtVH3/bjzdgUTljQ6IrEPiXSgMQuo5swKOyMqXeQ
+        3TlGn9dIBFP8hYRbAK7UnUTINZJ/BJ+SGKlZOVStkFglFxLB2ROF0heUGPJllYRa9WLMKI492GMn
+        dI2EU/gVMK1BU2o/JgGjsQOAsGskzFK2oChtFhShTEH5CntffpFAx9m1ObSpKLtw6N5NKmafJrUp
+        Ji2UvcR+ektlokzvkSq0sBTkfXLD+XKJfjueU1cEyyByn13cupz9cchoQOM4ElKgXst5nn8A1O6h
+        6AcDAAA=
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d12d8d8dc7b9059-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '347'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 00:06:58 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=0BTm47Rg1g6fbNubG6oBiCK7SEoZe%2FERLSHDc6sSjSjPoRqaoOjkRyWT535c6WkvdLuFhAQ19AfcpymlaWg3%2F7bWEhjNOGDJ32nLw%2F04MC6%2BqsGyEZgcDjhggeFfUrU%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=FORv.Zj9eU6Rm6L9ph00R6xOcK4cEHrjFuhhZep6gx4-1728691618-1.0.1.1-nNnAE7JK1XPhd9o3jFMN6Dlf649XZpXL2E6Kwzh4Vbkchc96wd0Ox12r3pnQ1hcYvkPqcrO8MySZQHTVtbKEkEvqeZy4b9sWW_qVEhiK_wg;
+        path=/; expires=Sat, 12-Oct-24 00:36:58 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"992eb7c74ddad62a58ad0aca6a4c89c5"
+      expires:
+      - Sat, 12 Oct 2024 00:07:03 GMT
+      last-modified:
+      - Thursday, 10-Oct-2024 00:48:37 GMT+0000
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_player_stats
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d029b174e15439d-IAD
+      x-chesscom-request-id-lb:
+      - 848bd3f66898e692405d4b8959b5352e
+      x-chesscom-servedby:
+      - '144'
+    status:
+      code: 200
+      message: OK
+version: 1
