@@ -85,3 +85,41 @@ def test_get_player_stats():
     assert isinstance(stats.tactics.lowest.date, int)
     assert isinstance(stats.puzzle_rush.best.total_attempts, int)
     assert isinstance(stats.puzzle_rush.best.score, int)
+
+
+@vcr.use_cassette("get_player_current_games.yaml")
+def test_get_player_current_games():
+    response = endpoints.get_player_current_games("afgano29")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    games = response.games
+    for game in games:
+        assert isinstance(game.url, str)
+        assert isinstance(game.move_by, int)
+        assert isinstance(game.pgn, str)
+        assert isinstance(game.time_control, str)
+        assert isinstance(game.start_time, int)
+        assert isinstance(game.last_activity, int)
+        assert isinstance(game.rated, bool)
+        assert isinstance(game.turn, str)
+        assert isinstance(game.fen, str)
+        assert isinstance(game.time_class, str)
+        assert isinstance(game.rules, str)
+        assert isinstance(game.white, str)
+        assert isinstance(game.black, str)
+
+
+@vcr.use_cassette("get_player_current_games_to_move.yaml")
+def test_get_player_current_games_to_move():
+    response = endpoints.get_player_current_games_to_move("afgano29")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    games = response.games
+    for game in games:
+        assert isinstance(game.url, str)
+        assert isinstance(game.move_by, int)
+        assert isinstance(game.last_activity, int)
