@@ -1,0 +1,135 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/1
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d13862ae9118fcc-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '3526'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:05:17 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=Rcxr%2B8tiMM8fSnUQLhTMQXJTsacs9m323ui6AAu51QSspBXcgeeoMGQ%2BFiIKx00946u6ZhkF237HXEUYvZ5BrSbWnVCU1s9teEB3gBS%2BX4%2Boyp489Cj44S%2FM82rz5bU%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Kztg27FZSzbg_xhjzEtEXPDnzwTJOWyuo.lUCu98_Pc-1728698717-1.0.1.1-Olc7uJKSWVsx0Js.s4IJGw.Ba2OGRsmwE0m.LGbMGsETfdwul6IWOfcGp8e4295nzPOuEuA8eNQpRmZ0m9AGVEQabjjQJzmUOzeiHNLxXBg;
+        path=/; expires=Sat, 12-Oct-24 02:35:17 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"9686db17d856cb685504f5beb67f67e1"
+      expires:
+      - Sat, 12 Oct 2024 02:05:22 GMT
+      last-modified:
+      - Wednesday, 09-Oct-2024 07:17:07 GMT+0000
+      link:
+      - <https://api.chess.com/context/TournamentRound.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_tournament_rounds
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d029b2c78a00630-IAD
+      x-chesscom-request-id-lb:
+      - d62602669c96ae58c11d4880a681c488
+      x-chesscom-servedby:
+      - '92'
+    status:
+      code: 200
+      message: OK
+version: 1

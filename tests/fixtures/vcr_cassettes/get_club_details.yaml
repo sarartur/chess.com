@@ -1,0 +1,87 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/club/chess-com-developer-community
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA71WbW/aMBD+K14+bF9IDLQhgXVobSdVkza12qSp2piQ4xzBxbEz2yFD0/77zqGl
+        VG0pqrZ9AXJ57rnnfC/mV/BW5MEomDtX2RGlrBIRn4O1EdclreqMcuk/vClEU5jDEqSuwPinslbC
+        rYJOoFgJyHJ640ne3cDI6RbMc019vDhJhgN81rVyZrU7/hpDLy+RgC3BsAKmORNyNTXMCVUEo2E/
+        7QQllBkYO23xwah3mKYHGMEAc4ARe3G3e9DtDROESmbdlHEnll7WqJf0e8Oel4QB8lKoYPRth6BK
+        shUYmvHaOGFR1JNQMGKxD46pHOWW2uAPocQ+LiVDEWpqHZvLffBXOWdKaRV87wRLYUUmZHsGAWKk
+        4EhxpZHPwI8arNsqTNM0W4xtU3gkbSuJboIj6S1clFgmu/ZAh5mQsPasK6lZbumyRwuj62pNEA0S
+        ACxQGsXdn3FXR3Eap4f92SDpp72owiJ3ghwsN6Jyog10VI033fbKEj2bCS6YJF4ZmWlDji/e2w7J
+        mWMdgudJuM6hfbHpYBuRM3BEqKWWS8hfHNFqPDEThdQvVWar11uG46qSq9b9/Lh2c8I4x+CEktuW
+        l7oQiszBwIgcMTI3MHsz2RwIupY2KiTQT83Zh/rronm3sqdX/bMvySQgjpkCHMKnmWRqgRYDEh+V
+        RhYwBudIadSswEyC8R6cR5SNd+XzEYkxhtW1wURGmze1XH9LMb6fw001I6V9FSIrHFA8Qj+FIbag
+        wUkLG+Hm4elmX7THFfbDbvgZDE5vGA/jFOKEp3x4cMgOGEtYlrN+Pki6w8EQ0q38/ku89Ulhvo/n
+        fbf3FTTYvgIa2s6MnaMI32YhDt2W+P2d9lSgqvLqep4ZX+B4XW/lBrJ16Gd20R7ceygssAx11lK0
+        xcC1T4XGmrQ1lJovni3waepn6vP7Vov8X2m8T39XJ70Ztgfm87w2DyyRx3rq9nrO6iLM/A24CiuN
+        C32FGk/qgpy0NnLR2rwMIixhS7xGWSbhr4Xy28+zR7cJ4eaujdx9k+z+e/H7D/xgHjilCAAA
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d1383a9fafc4ce3-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '795'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:03:35 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=3ZSQ4gc8OwX98dj6vYwgrct%2FlGSGSFBINWGj6lBipxXr8jCKBfkp8cClb%2FmI6lcMojmXbEuSfLLiZJUb6Tavae%2BKUQqygJpm0ouuPjeUccMfdR9pb4VQWXL5vdQ4BLE%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=7pO_GXGbehaSrinP17NYLtHdSnq0tK8M8eDgO0FpAsc-1728698615-1.0.1.1-wFpIOBH7LvolmmvcyXc8yTMk1CmNXOWDqN_ik6E80Hj1MzBpcciXHk2DSQKgyiD8XNQTm_nahTa4fkm5dU.Sk5S6dCSFH0mT_Ol0oWhFkcc;
+        path=/; expires=Sat, 12-Oct-24 02:33:35 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"da778a944da3b42c9ac16b56941d6bee"
+      expires:
+      - Sat, 12 Oct 2024 02:03:40 GMT
+      last-modified:
+      - Friday, 11-Oct-2024 17:38:30 GMT+0000
+      link:
+      - <https://api.chess.com/context/Club.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_club
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d109fc9b97c8f9c-IAD
+      x-chesscom-request-id-lb:
+      - 4238e40f9aa7c52e7ebc75aa3f2c9655
+      x-chesscom-servedby:
+      - '94'
+    status:
+      code: 200
+      message: OK
+version: 1

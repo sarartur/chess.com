@@ -1,0 +1,143 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600
+  response:
+    body:
+      string: !!binary |
+        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
+        f/ERr3/xEW/2f/v7/wBXgPTxFU8AAA==
+    headers:
+      Age:
+      - '578'
+      CF-Cache-Status:
+      - HIT
+      CF-RAY:
+      - 8d1383adfe089011-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '3841'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:03:36 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=oyAzMd5dX8HHZO3bVAopAe5oy76uAbdqfmu27RwlR60sJRnuA4rBC33DkFH8ij4h1bscP98kEawdB3o4DCRJchvnbp7%2FMMqXiOPnRXTB61i3%2BTntDm5xQxaj2zJH8Ek%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Fwl0OeHdEdOOSuA2vsPXyS3GnlSn4UmJHMhc3kLi8qs-1728698616-1.0.1.1-yJQX7owPn2q2TFLs4z3RrQ7_4pLw_SLWHzKeLw7E4VHHFNtVyF4je2DxGB.4iBNMxaI6WizM2PDWtz3bZSpb3pv0GIZWLqF9jURdjAvnwtk;
+        path=/; expires=Sat, 12-Oct-24 02:33:36 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"f70a23c61220d14c5decd896d7a94015"
+      expires:
+      - Sat, 12 Oct 2024 02:53:58 GMT
+      last-modified:
+      - Wednesday, 09-Oct-2024 07:18:26 GMT+0000
+      link:
+      - <https://api.chess.com/context/Tournament.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_tournament
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d029b2baa440aa7-IAD
+      x-chesscom-request-id-lb:
+      - 5231053e54c8850a27d8287b8597f965
+      x-chesscom-servedby:
+      - '158'
+    status:
+      code: 200
+      message: OK
+version: 1

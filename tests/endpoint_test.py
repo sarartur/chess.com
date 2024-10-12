@@ -250,6 +250,7 @@ def test_get_player_tournaments():
         assert isinstance(tournament.status, str)
 
 
+@vcr.use_cassette("get_club_details.yaml")
 def test_get_club_details():
     response = endpoints.get_club_details("chess-com-developer-community")
 
@@ -271,3 +272,200 @@ def test_get_club_details():
     assert isinstance(club.visibility, str)
     assert isinstance(club.join_request, str)
     assert isinstance(club.description, str)
+
+
+@vcr.use_cassette("get_club_members.yaml")
+def test_get_club_members():
+    response = endpoints.get_club_members("chess-com-developer-community")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    members = response.members
+    for member in members.weekly:
+        assert isinstance(member.username, str)
+        assert isinstance(member.joined, int)
+
+    for member in members.monthly:
+        assert isinstance(member.username, str)
+        assert isinstance(member.joined, int)
+
+    for member in members.all_time:
+        assert isinstance(member.username, str)
+        assert isinstance(member.joined, int)
+
+
+@vcr.use_cassette("get_club_matches.yaml")
+def test_get_club_matches():
+    response = endpoints.get_club_matches("chess-com-developer-community")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    matches = response.matches
+    for match in matches.finished:
+        assert isinstance(match.name, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.opponent, str)
+        assert isinstance(match.start_time, int)
+        assert isinstance(match.time_class, str)
+        assert isinstance(match.result, str)
+
+    for match in matches.in_progress:
+        assert isinstance(match.name, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.opponent, str)
+        assert isinstance(match.start_time, int)
+        assert isinstance(match.time_class, str)
+
+    for match in matches.registered:
+        assert isinstance(match.name, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.opponent, str)
+        assert isinstance(match.time_class, str)
+
+
+@vcr.use_cassette("get_tournament_details.yaml")
+def test_get_tournament_details():
+    response = endpoints.get_tournament_details(
+        "-33rd-chesscom-quick-knockouts-1401-1600"
+    )
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    tournament = response.tournament
+
+    assert isinstance(tournament.name, str)
+    assert isinstance(tournament.url, str)
+    assert isinstance(tournament.description, str)
+    assert isinstance(tournament.creator, str)
+    assert isinstance(tournament.status, str)
+    assert isinstance(tournament.finish_time, int)
+    assert isinstance(tournament.settings.type, str)
+    assert isinstance(tournament.settings.rules, str)
+    assert isinstance(tournament.settings.is_rated, bool)
+    assert isinstance(tournament.settings.is_official, bool)
+    assert isinstance(tournament.settings.is_invite_only, bool)
+    assert isinstance(tournament.settings.min_rating, int)
+    assert isinstance(tournament.settings.max_rating, int)
+    assert isinstance(tournament.settings.initial_group_size, int)
+    assert isinstance(tournament.settings.user_advance_count, int)
+    assert isinstance(tournament.settings.use_tiebreak, bool)
+    assert isinstance(tournament.settings.allow_vacation, bool)
+    assert isinstance(tournament.settings.winner_places, int)
+    assert isinstance(tournament.settings.registered_user_count, int)
+    assert isinstance(tournament.settings.games_per_opponent, int)
+    assert isinstance(tournament.settings.total_rounds, int)
+    assert isinstance(tournament.settings.concurrent_games_per_opponent, int)
+    assert isinstance(tournament.settings.time_class, str)
+    assert isinstance(tournament.settings.time_control, str)
+
+    for player in tournament.players:
+        assert isinstance(player.username, str)
+        assert isinstance(player.status, str)
+
+    assert all(isinstance(round, str) for round in tournament.rounds)
+
+
+@vcr.use_cassette("get_tournament_round.yaml")
+def test_get_tournament_round():
+    response = endpoints.get_tournament_round(
+        "-33rd-chesscom-quick-knockouts-1401-1600", 1
+    )
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    round = response.tournament_round
+
+    groups = round.groups
+    assert all(isinstance(group, str) for group in groups)
+
+    for player in round.players:
+        assert isinstance(player.username, str)
+        assert isinstance(player.is_advancing, bool)
+
+
+@vcr.use_cassette("get_tournament_round_group_details(.yaml")
+def test_get_tournament_round_group_details():
+    response = endpoints.get_tournament_round_group_details(
+        "-33rd-chesscom-quick-knockouts-1401-1600", 1, 1
+    )
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    tournament_round_group = response.tournament_round_group
+    assert isinstance(tournament_round_group.fair_play_removals, list)
+
+    for player in tournament_round_group.players:
+        assert isinstance(player.username, str)
+        assert isinstance(player.points, (float, int))
+        assert isinstance(player.is_advancing, bool)
+        assert isinstance(player.tie_break, (float, int))
+
+    for game in tournament_round_group.games:
+        assert isinstance(game.url, str)
+        assert isinstance(game.pgn, str)
+        assert isinstance(game.time_control, str)
+        assert isinstance(game.end_time, int)
+        assert isinstance(game.rated, bool)
+        assert isinstance(game.fen, str)
+        assert isinstance(game.start_time, int)
+        assert isinstance(game.time_class, str)
+        assert isinstance(game.rules, str)
+
+        assert isinstance(game.white.rating, int)
+        assert isinstance(game.white.result, str)
+        assert isinstance(game.white.id, str)
+        assert isinstance(game.white.username, str)
+        assert isinstance(game.white.uuid, str)
+
+        assert isinstance(game.black.rating, int)
+        assert isinstance(game.black.result, str)
+        assert isinstance(game.black.id, str)
+        assert isinstance(game.black.username, str)
+        assert isinstance(game.black.uuid, str)
+
+
+@vcr.use_cassette("get_team_match.yaml")
+def test_get_team_match():
+    response = endpoints.get_team_match(12803)
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    match = response.match
+
+    assert isinstance(match.name, str)
+    assert isinstance(match.url, str)
+    assert isinstance(match.id, str)
+    assert isinstance(match.status, str)
+    assert isinstance(match.start_time, int)
+    assert isinstance(match.end_time, int)
+    assert isinstance(match.boards, int)
+
+    assert isinstance(match.settings.rules, str)
+    assert isinstance(match.settings.time_class, str)
+    assert isinstance(match.settings.time_control, str)
+    assert isinstance(match.settings.min_team_players, int)
+    assert isinstance(match.settings.min_required_games, int)
+    assert isinstance(match.settings.autostart, bool)
+
+    def validate_team(team):
+        assert isinstance(team.id, str)
+        assert isinstance(team.name, str)
+        assert isinstance(team.url, str)
+        assert isinstance(team.score, float)
+        assert isinstance(team.result, str)
+
+        for player in team.players:
+            assert isinstance(player.username, str)
+            assert isinstance(player.stats, str)
+            assert isinstance(player.status, str)
+            assert isinstance(player.played_as_black, str)
+            assert isinstance(player.board, str)
+
+    validate_team(match.teams.team1)
+    validate_team(match.teams.team2)

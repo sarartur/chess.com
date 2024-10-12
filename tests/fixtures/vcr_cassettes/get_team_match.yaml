@@ -1,0 +1,114 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/match/12803
+  response:
+    body:
+      string: !!binary |
+        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
+        ewT3r7UWf//+L1l8VpQmWgAA
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d139c6f0eca3bab-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '2298'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:20:30 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=P9IJYtdH5e9%2BgW8TyLXFUTR6yu2L0dmtv1ayNCCDZjVE4tOgy%2FFlxfEmaMFlacx1eB1wvVh4zrApPBQHIyrPOdUOiPL9FnGO4THu5jzGTJLGOzQlxxMPxjBcf81Qjak%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=Qvmh.D7EflpqtlZIcC4K1SA6LoD5Hurzw0Cc_xK3bzA-1728699630-1.0.1.1-jI5HfUsKCV9129gnbb_bNPx53xhO2MkKcrf63g0JsaGFuiLV275H1KXObdL2bZ9NJDW_aqkezUgtVSB8irnXYZGpS5gZLeGI.qFw_wqQUl4;
+        path=/; expires=Sat, 12-Oct-24 02:50:30 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"be0dded1aba169f8b2937e1f6e6e2a2f"
+      expires:
+      - Sat, 12 Oct 2024 03:20:30 GMT
+      last-modified:
+      - Thursday, 10-Oct-2024 00:48:41 GMT+0000
+      link:
+      - <https://api.chess.com/context/Match.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_match
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d029b2e38c605d3-IAD
+      x-chesscom-request-id-lb:
+      - 246b27c8c6272dc28828172255a943f7
+      x-chesscom-servedby:
+      - '151'
+    status:
+      code: 200
+      message: OK
+version: 1
