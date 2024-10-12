@@ -1,0 +1,75 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/country/XE
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA6tWcshMUbJSyigpKSi20tdPLMjUS85ILS7WS87P1S8oTdJPzi/NKymq1I9wVdJR
+        Ss5PSQWqBrPzEnNBbNe89JzEvBSlWgBjqOYGSwAAAA==
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d13d0dc7c5b8f9d-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '88'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:56:17 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=G5NF2NFiAx1coEKdAWLvN7pUd55ARJU8QqfD8n2H58dqXiEENt8De0owr9Te9fQYzrgeED51lcKGie%2BWDdjbv3PtT7fN7fldw8WUHcfFW0BV2s7J4k9qu35HBQ1P8Io%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=uGQSpXLY3aQiji93.CVLLknyZdtF0dPvB_l5VATLvKg-1728701777-1.0.1.1-nFth48QQJZDPiscBHiXR7euw6JBRWQN5x.V1_3tWvh6lLHWx2zoWc63sxdicr8rIemd_WvCYBBR1H_6SCOo2SbUdZ0FguzCT197crD3wly0;
+        path=/; expires=Sat, 12-Oct-24 03:26:17 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"ef86003ee59d397fd8d1affd5c70c975"
+      expires:
+      - Sat, 12 Oct 2024 03:56:17 GMT
+      last-modified:
+      - Sunday, 15-Sep-2024 00:53:11 GMT+0000
+      link:
+      - <https://api.chess.com/context/Country.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_country
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d029b32ee8f42bb-IAD
+      x-chesscom-request-id-lb:
+      - 469b358c1f59017770a2f40b87243326
+      x-chesscom-servedby:
+      - '144'
+    status:
+      code: 200
+      message: OK
+version: 1
