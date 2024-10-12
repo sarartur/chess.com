@@ -111,9 +111,22 @@ def test_get_player_current_games():
         assert isinstance(game.black, str)
 
 
-@vcr.use_cassette("get_player_current_games_to_move.yaml")
-def test_get_player_current_games_to_move():
-    response = endpoints.get_player_current_games_to_move("afgano29")
+@vcr.use_cassette("get_player_game_archives.yaml")
+def test_get_player_game_archives():
+    response = endpoints.get_player_game_archives("afgano29")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    archives = response.archives
+    assert all(isinstance(url, str) for url in archives)
+
+
+@vcr.use_cassette("get_player_games_by_month.yaml")
+def test_get_player_games_by_month():
+    response = endpoints.get_player_games_by_month(
+        username="fabianocaruana", year="2020", month="05"
+    )
 
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
@@ -121,5 +134,120 @@ def test_get_player_current_games_to_move():
     games = response.games
     for game in games:
         assert isinstance(game.url, str)
-        assert isinstance(game.move_by, int)
-        assert isinstance(game.last_activity, int)
+        assert isinstance(game.pgn, str)
+        assert isinstance(game.time_control, str)
+        assert isinstance(game.end_time, int)
+        assert isinstance(game.accuracies.white, float)
+        assert isinstance(game.accuracies.black, float)
+        assert isinstance(game.tcn, str)
+        assert isinstance(game.uuid, str)
+        assert isinstance(game.initial_setup, str)
+        assert isinstance(game.fen, str)
+        assert isinstance(game.time_class, str)
+        assert isinstance(game.rules, str)
+        assert isinstance(game.eco, str)
+
+        assert isinstance(game.white.rating, int)
+        assert isinstance(game.white.result, str)
+        assert isinstance(game.white.username, str)
+        assert isinstance(game.white.id, str)
+        assert isinstance(game.white.uuid, str)
+
+        assert isinstance(game.black.rating, int)
+        assert isinstance(game.black.result, str)
+        assert isinstance(game.black.username, str)
+        assert isinstance(game.black.id, str)
+        assert isinstance(game.black.uuid, str)
+
+
+@vcr.use_cassette("get_player_games_by_month_pgn.yaml")
+def test_get_player_games_by_month_pgn():
+    response = endpoints.get_player_games_by_month_pgn(
+        username="fabianocaruana", year="2020", month="05"
+    )
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    assert isinstance(response.pgn.pgn, str)
+
+
+@vcr.use_cassette("get_player_clubs.yaml")
+def test_get_player_clubs():
+    response = endpoints.get_player_clubs(username="fabianocaruana")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    for club in response.clubs:
+        assert isinstance(club.id, str)
+        assert isinstance(club.name, str)
+        assert isinstance(club.last_activity, int)
+        assert isinstance(club.icon, str)
+        assert isinstance(club.url, str)
+        assert isinstance(club.joined, int)
+
+
+@vcr.use_cassette("get_player_team_matches.yaml")
+def test_get_player_team_matches():
+    response = endpoints.get_player_team_matches(username="akshayraj_kore")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    def validate_match(match):
+        assert isinstance(match.name, str)
+        assert isinstance(match.url, str)
+        assert isinstance(match.id, str)
+        assert isinstance(match.club, str)
+        assert isinstance(match.results.played_as_white, str)
+        assert isinstance(match.results.played_as_black, str)
+        assert isinstance(match.board, str)
+
+    matches = response.matches
+    for match in matches.finished:
+        validate_match(match)
+
+    for match in matches.in_progress:
+        validate_match(match)
+
+    for match in matches.registered:
+        validate_match(match)
+
+
+@vcr.use_cassette("get_player_tournaments.yaml")
+def test_get_player_tournaments():
+    response = endpoints.get_player_tournaments(username="fabianocaruana")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    tournaments = response.tournaments
+    for tournament in tournaments.finished:
+        assert isinstance(tournament.url, str)
+        assert isinstance(tournament.id, str)
+        assert isinstance(tournament.wins, int)
+        assert isinstance(tournament.losses, int)
+        assert isinstance(tournament.draws, int)
+        assert isinstance(tournament.placement, int)
+        assert isinstance(tournament.status, str)
+        assert isinstance(tournament.total_players, int)
+        assert isinstance(tournament.time_class, str)
+        assert isinstance(tournament.type, str)
+
+    for tournament in tournaments.in_progress:
+        assert isinstance(tournament.url, str)
+        assert isinstance(tournament.id, str)
+        assert isinstance(tournament.wins, int)
+        assert isinstance(tournament.losses, int)
+        assert isinstance(tournament.draws, int)
+        assert isinstance(tournament.placement, int)
+        assert isinstance(tournament.status, str)
+        assert isinstance(tournament.total_players, int)
+        assert isinstance(tournament.time_class, str)
+        assert isinstance(tournament.type, str)
+
+    for tournament in tournaments.registered:
+        assert isinstance(tournament.url, str)
+        assert isinstance(tournament.id, str)
+        assert isinstance(tournament.status, str)
