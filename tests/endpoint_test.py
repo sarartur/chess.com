@@ -3,7 +3,7 @@ from tests.vcr import vcr
 
 
 @vcr.use_cassette("get_player_profile.yaml")
-def test_get_club_details():
+def test_get_player_profile():
     response = endpoints.get_player_profile("fabianocaruana")
 
     assert isinstance(response.json, dict)
@@ -248,3 +248,26 @@ def test_get_player_tournaments():
         assert isinstance(tournament.url, str)
         assert isinstance(tournament.id, str)
         assert isinstance(tournament.status, str)
+
+
+def test_get_club_details():
+    response = endpoints.get_club_details("chess-com-developer-community")
+
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+
+    club = response.club
+    assert isinstance(club.name, str)
+    assert isinstance(club.url, str)
+    assert isinstance(club.icon, str)
+    assert isinstance(club.country, str)
+    assert isinstance(club.id, str)
+    assert isinstance(club.club_id, int)
+    assert isinstance(club.average_daily_rating, int)
+    assert isinstance(club.members_count, int)
+    assert isinstance(club.created, int)
+    assert isinstance(club.last_activity, int)
+    assert all(isinstance(a, str) for a in club.admin)
+    assert isinstance(club.visibility, str)
+    assert isinstance(club.join_request, str)
+    assert isinstance(club.description, str)
