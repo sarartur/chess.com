@@ -3,6 +3,7 @@ import asyncio
 import pytest
 
 from chessdotcom import ChessDotComResponse, Client, endpoints
+from chessdotcom.client import ChessDotComClient, RateLimitHandler
 
 
 @pytest.fixture(autouse=True)
@@ -111,16 +112,15 @@ def test_endpoints():
 
 
 def test_endpoints_async():
-    endpoints.Client.aio = True
-
-    endpoints.Client.rate_limit_handler.retries = 2
-    endpoints.Client.rate_limit_handler.tts = 4
+    client = ChessDotComClient(
+        aio=True, rate_limit_handler=RateLimitHandler(tts=4, retries=2)
+    )
 
     usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
 
     usernames_multiplied = usernames * 5
 
-    cors = [endpoints.get_player_profile(name) for name in usernames_multiplied]
+    cors = [client.get_player_profile(name) for name in usernames_multiplied]
 
     async def gather_cors(cors):
         responses = await asyncio.gather(*cors)
