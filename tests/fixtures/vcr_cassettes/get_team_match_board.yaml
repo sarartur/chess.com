@@ -1,0 +1,97 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/match/12803/1
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d13ab9f09b69047-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1365'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 12 Oct 2024 02:30:52 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=GUdpmvCREw55vas2FvkqLCUo2hVWclcsLZgrJ3Q2Ho1LkZlsWRpsncHzakyYK3m68PEmF49fn7qbzGreGZCTrKavh8n%2F5qKQUlaZyuUxGeVPNLiegb4olCE8s48GLy0%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=fUsUhZmcmXIeJim6hnH94Pq021ReSVAVa5Q6ungBAHE-1728700252-1.0.1.1-5lx3w1KIjq5BuBBqlDRwQ45M4swI3X6BkNrmpnBwtO9eZ1FnnUyQZi5t6y3N9.zxeutoHxhtRCnF8cIn.iKQskrkSNTxUeIr8715ZnwboDI;
+        path=/; expires=Sat, 12-Oct-24 03:00:52 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"e6843c73b0670aa79f8684fe972cce8d"
+      expires:
+      - Sat, 12 Oct 2024 03:30:52 GMT
+      last-modified:
+      - Thursday, 03-Oct-2024 08:24:18 GMT+0000
+      link:
+      - <https://api.chess.com/context/MatchBoard.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_match_board
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8cd32e44e94e4bcd-IAD
+      x-chesscom-request-id-lb:
+      - af7614d8f27e92345cf2e09c4c61ccf3
+      x-chesscom-servedby:
+      - '141'
+    status:
+      code: 200
+      message: OK
+version: 1
