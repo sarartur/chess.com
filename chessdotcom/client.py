@@ -58,17 +58,13 @@ class Client:
     request_config = default_request_options  # to maintain backwards compadibility
 
     rate_limit_handler = RateLimitHandler(tts=0, retries=1)
-    _endpoint_registry = {}
+    endpoints = []
 
     @classmethod
     def endpoint(cls, func):
-        cls._endpoint_registry[func.__name__] = func
+        cls.endpoints.append(func)
 
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            return cls().do_get_request(func(*args, **kwargs))
-
-        return wrapper
+        return cls().activate_endpoint(func)
 
     @staticmethod
     def loop_callback():
@@ -83,6 +79,14 @@ class Client:
         )
 
         return _do_get_request(resource)
+
+    def activate_endpoint(self, endpoint):
+        @wraps(endpoint)
+        def wrapper(*args, **kwargs):
+            return self.do_get_request(endpoint(*args, **kwargs))
+
+        setattr(self, endpoint.__name__, wrapper)
+        return wrapper
 
     def _merge_request_options(self, resource):
         return {**resource.request_config, **self.default_request_options}
@@ -137,8 +141,5 @@ class ChessDotComClient(Client):
         self.rate_limit_handler = rate_limit_handler or RateLimitHandler(
             tts=0, retries=1
         )
-        self._expose_endpoints()
-
-    def _expose_endpoints(self):
-        for name, func in self._endpoint_registry.items():
-            setattr(self, name, func)
+        for endpoint in self.endpoints:
+            self.activate_endpoint(endpoint)
