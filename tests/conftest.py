@@ -3,7 +3,7 @@ import pytest
 from chessdotcom import Client
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def set_headers():
     Client.default_request_options["headers"][
         "user-agent"
