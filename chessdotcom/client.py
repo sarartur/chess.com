@@ -88,20 +88,21 @@ class Client:
         setattr(self, endpoint.__name__, wrapper)
         return wrapper
 
-    def _merge_request_options(self, resource):
-        return {**resource.request_config, **self.default_request_options}
+    def _build_request_options(self, resource):
+        options = {**resource.request_config, **self.default_request_options}
 
-    def _do_sync_get_request(self, resource):
-        if "user-agent" not in [
-            header.lower() for header in self.request_config["headers"].keys()
-        ]:
+        if "user-agent" not in [header.lower() for header in options["headers"].keys()]:
             warnings.warn(
                 "Calls to api.chess.com require an updated 'User-Agent' header. "
                 "You can update this with something like "
                 "chessdotcom.Client.request_config['headers']['User-Agent'] "
                 "= 'My Python Application. Contact me at email@example.com'"
             )
-        r = requests.get(**self._merge_request_options(resource), timeout=30)
+
+        return options
+
+    def _do_sync_get_request(self, resource):
+        r = requests.get(**self._build_request_options(resource), timeout=30)
         resource.times_requested += 1
 
         if r.status_code != 200:
@@ -114,7 +115,7 @@ class Client:
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
-            async with session.get(**self._merge_request_options(resource)) as r:
+            async with session.get(**self._build_request_options(resource)) as r:
                 text = await r.text()
                 resource.times_requested += 1
 
