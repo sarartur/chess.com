@@ -132,11 +132,15 @@ class ChessDotComClient(Client):
     def __init__(
         self,
         aio: bool = False,
+        user_agent: str = None,
         request_config: dict = None,
         rate_limit_handler: RateLimitHandler = None,
     ) -> None:
         self.aio = aio
         self.request_config = request_config or self.request_config
+        if user_agent:
+            self.request_config["headers"]["User-Agent"] = user_agent
+
         self.rate_limit_handler = rate_limit_handler or self.rate_limit_handler
         # Load endpoints to register
         from . import endpoints
