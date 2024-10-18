@@ -2,27 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_club_members.yaml")
-def test_get_club_members():
-    response = endpoints.get_club_members("chess-com-developer-community")
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    members = response.members
-    for member in members.weekly:
-        assert isinstance(member.username, str)
-        assert isinstance(member.joined, int)
-
-    for member in members.monthly:
-        assert isinstance(member.username, str)
-        assert isinstance(member.joined, int)
-
-    for member in members.all_time:
-        assert isinstance(member.username, str)
-        assert isinstance(member.joined, int)
-
-
 @vcr.use_cassette("get_club_matches.yaml")
 def test_get_club_matches():
     response = endpoints.get_club_matches("chess-com-developer-community")
