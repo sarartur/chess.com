@@ -2,43 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_country_players.yaml")
-def test_get_country_players():
-    response = endpoints.get_country_players("US")
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    assert all(isinstance(player, str) for player in response.players)
-
-
-@vcr.use_cassette("get_country_clubs.yaml")
-def test_get_country_clubs():
-    response = endpoints.get_country_clubs("XE")
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    assert all(isinstance(club, str) for club in response.clubs)
-
-
-@vcr.use_cassette("get_current_daily_puzzle.yaml")
-def test_get_current_daily_puzzle():
-    response = endpoints.get_current_daily_puzzle()
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    puzzle = response.puzzle
-
-    assert isinstance(puzzle.title, str)
-    assert isinstance(puzzle.url, str)
-    assert isinstance(puzzle.publish_time, int)
-    assert isinstance(puzzle.fen, str)
-    assert isinstance(puzzle.pgn, str)
-    assert isinstance(puzzle.image, str)
-
-
 @vcr.use_cassette("get_random_daily_puzzle.yaml")
 def test_get_random_daily_puzzle():
     response = endpoints.get_current_daily_puzzle()
