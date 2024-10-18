@@ -4,199 +4,380 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/1/1
   response:
     body:
-      string: !!binary |
-        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
-        T9y/vvvX/wO9Xe1waZoAAA==
+      string: '{"fair_play_removals":[],"games":[{"url":"https://www.chess.com/game/daily/138891582","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"Rockaround\"]\n[Black \"mrtn\"]\n[Result
+        \"1/2-1/2\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/8/8/8/2B5/3k4/1K6 b - - 0 69\"]\n[Timezone \"UTC\"]\n[ECO \"C47\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Four-Knights-Game-Italian-Variation\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:16:59\"]\n[WhiteElo \"1428\"]\n[BlackElo \"1533\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Game drawn by insufficient material\"]\n[StartTime
+        \"02:16:59\"]\n[EndDate \"2016.07.12\"]\n[EndTime \"07:17:22\"]\n[Link \"https://www.chess.com/game/daily/138891582\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. Bc4 h6 5. a3 Bc5 6. d3 Ng4 7. O-O d6 8. Nd5
+        Be6 9. b4 Bd4 10. Nxd4 Nxd4 11. Bb2 b5 12. Ba2 c6 13. Nc3 Qh4 14. h3 Nf6 15.
+        Bxe6 Nxe6 16. Qf3 Qf4 17. Qxf4 Nxf4 18. Rad1 g5 19. d4 exd4 20. Rxd4 Rd8 21.
+        a4 a6 22. e5 dxe5 23. Rxd8+ Kxd8 24. Rd1+ Kc8 25. axb5 axb5 26. Ra1 Kb7 27.
+        Bc1 N6d5 28. Nxd5 Nxd5 29. Bb2 f6 30. c3 Ra8 31. Rxa8 Kxa8 32. g4 Nf4 33.
+        Kh2 Nd3 34. Ba3 Nxf2 35. Kg2 Ne4 36. Kf3 Nxc3 37. Bb2 Nd5 38. Ba3 Kb7 39.
+        Ke4 Ne7 40. Bc1 Kc7 41. Be3 Kd7 42. Bc5 Ke6 43. Bb6 Kd6 44. Bc5+ Ke6 45. Bb6
+        Ng6 46. Bc5 Nf4 47. Bf8 Nxh3 48. Bxh6 Nf2+ 49. Kf3 Nxg4 50. Kxg4 e4 51. Kg3
+        Kd5 52. Bg7 f5 53. Bf8 Kd4 54. Be7 f4+ 55. Kg4 e3 56. Bxg5 Kc4 57. Be7 e2
+        58. Bh4 Kxb4 59. Kxf4 Kc3 60. Ke3 c5 61. Kxe2 Kc2 62. Be7 c4 63. Bc5 Kc3 64.
+        Kd1 b4 65. Kc1 b3 66. Kb1 b2 67. Ba3 Kd2 68. Bxb2 c3 69. Bxc3+ 1/2-1/2\n","time_control":"1/86400","end_time":1468307842,"rated":true,"fen":"8/8/8/8/8/2B5/3k4/1K6
+        b - - 0 69","start_time":1467425819,"time_class":"daily","rules":"chess","white":{"rating":1428,"result":"insufficient","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"black":{"rating":1533,"result":"insufficient","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891616","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"KingKongsBro\"]\n[Black \"mrtn\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"k7/1Q6/1K6/8/8/8/8/8 b - - 16 79\"]\n[Timezone \"UTC\"]\n[ECO \"A00\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Grob-Opening-1...e5\"]\n[UTCDate \"2016.07.02\"]\n[UTCTime
+        \"02:17:00\"]\n[WhiteElo \"1532\"]\n[BlackElo \"1535\"]\n[TimeControl \"1/86400\"]\n[Termination
+        \"KingKongsBro won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate \"2016.07.11\"]\n[EndTime
+        \"11:37:23\"]\n[Link \"https://www.chess.com/game/daily/138891616\"]\n\n1.
+        g4 e5 2. c3 d5 3. d4 Nc6 4. g5 f6 5. h4 Bf5 6. dxe5 Nxe5 7. Bg2 c6 8. gxf6
+        Qxf6 9. Nf3 Ng4 10. Nbd2 Bc5 11. e3 Bd3 12. Nb3 Bxe3 13. fxe3 Be4 14. Qe2
+        Ne7 15. Nfd4 Bxg2 16. Qxg2 Ne5 17. Qe2 O-O-O 18. Bd2 Nc4 19. O-O-O Nf5 20.
+        Qg4 g6 21. e4 Ne5 22. Qh3 dxe4 23. Bg5 Qf7 24. Bxd8 Rxd8 25. Rdf1 Nd3+ 26.
+        Kc2 Rd5 27. Nc1 Nc5 28. h5 Kc7 29. Nxf5 gxf5 30. h6 b5 31. Rhg1 Kb6 32. Rg5
+        f4 33. Rxd5 cxd5 34. Ne2 f3 35. Nd4 a6 36. Nxf3 exf3 37. Rxf3 Qg6+ 38. Qf5
+        Qxh6 39. Qf6+ Qxf6 40. Rxf6+ Kc7 41. Rf7+ Kd6 42. Rxh7 a5 43. Ra7 a4 44. b4
+        Ne4 45. Ra6+ Kc7 46. Re6 Kd7 47. Re5 Kd6 48. Rh5 Nf6 49. Rh6 Ke5 50. Kd3 Nd7
+        51. Rh7 Nb6 52. Rb7 Nc4 53. Rxb5 Nb2+ 54. Kc2 Nc4 55. Rc5 Ke4 56. Rxc4+ dxc4
+        57. Kb2 Kd5 58. Ka3 Ke4 59. Kxa4 Kd3 60. b5 Kxc3 61. b6 Kd2 62. b7 c3 63.
+        b8=Q c2 64. Qb2 Kd1 65. Kb3 c1=Q 66. Qxc1+ Kxc1 67. a4 Kd2 68. a5 Kd3 69.
+        a6 Kd4 70. a7 Kc5 71. a8=Q Kb6 72. Qc8 Kb5 73. Qc4+ Kb6 74. Kb4 Kb7 75. Kb5
+        Ka7 76. Qc7+ Ka8 77. Qd7 Kb8 78. Kb6 Ka8 79. Qb7# 1-0\n","time_control":"1/86400","end_time":1468237043,"rated":true,"fen":"k7/1Q6/1K6/8/8/8/8/8
+        b - - 16 79","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1532,"result":"win","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"black":{"rating":1535,"result":"checkmated","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891602","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"mrtn\"]\n[Black \"KingKongsBro\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/8/N7/P4PkR/1P4P1/1r5P/5RK1 b - - 2 55\"]\n[Timezone \"UTC\"]\n[ECO \"C40\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Kings-Pawn-Opening-Kings-Knight-McConnell-Defense\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1546\"]\n[BlackElo \"1515\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"mrtn won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.08\"]\n[EndTime \"11:48:27\"]\n[Link \"https://www.chess.com/game/daily/138891602\"]\n\n1.
+        e4 e5 2. Nf3 Qf6 3. d4 exd4 4. Bg5 Qb6 5. b3 c5 6. Bc4 d6 7. e5 h6 8. Bh4
+        g5 9. Bg3 Be6 10. Bxe6 fxe6 11. O-O Nd7 12. Nbd2 d5 13. Ne1 Ne7 14. Qh5+ Kd8
+        15. Nef3 Bg7 16. Qf7 Nf5 17. Qh5 Kc7 18. Ne1 Bxe5 19. Bxe5+ Nxe5 20. Nd3 Nxd3
+        21. cxd3 Raf8 22. Nf3 Kd6 23. Nd2 Qb5 24. Qe2 Rf6 25. Nf3 g4 26. Qe5+ Ke7
+        27. Qc7+ Kf8 28. Ne5 Kg8 29. Nxg4 Rf7 30. Qc8+ Kh7 31. Qxe6 Rhf8 32. Ne5 Rg7
+        33. Qxd5 Rfg8 34. Ng6 Qxd3 35. Nf4 Ne7 36. Qxg8+ Rxg8 37. Nxd3 h5 38. Nxc5
+        b5 39. Ne6 d3 40. Rad1 h4 41. Rxd3 a5 42. Rd7 Re8 43. Nc7 Rc8 44. Rxe7+ Kh6
+        45. Nxb5 h3 46. g3 Rc2 47. a4 Kg5 48. Re5+ Kf6 49. Rh5 Rb2 50. Nd4 Rd2 51.
+        Nc6 Rb2 52. Nxa5 Kg6 53. Rxh3 Kg5 54. f4+ Kg4 55. Rh4+ 1-0\n","time_control":"1/86400","end_time":1467978507,"rated":true,"fen":"8/8/8/N7/P4PkR/1P4P1/1r5P/5RK1
+        b - - 2 55","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1546,"result":"win","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"black":{"rating":1515,"result":"resigned","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891584","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"Rockaround\"]\n[Black \"pedege\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/8/8/8/8/r1pRK3/1k6 w - - 3 59\"]\n[Timezone \"UTC\"]\n[ECO \"C55\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Italian-Game-Anti-Fried-Liver-Defense\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1425\"]\n[BlackElo \"1542\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"pedege won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.08\"]\n[EndTime \"10:37:47\"]\n[Link \"https://www.chess.com/game/daily/138891584\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Bc4 h6 4. Nc3 Nf6 5. d3 a6 6. b4 Be7 7. Bb2 O-O 8. b5
+        axb5 9. Nxb5 d6 10. O-O Bd7 11. Re1 Na5 12. Nc3 Nxc4 13. dxc4 c6 14. Ne2 Nxe4
+        15. Qd3 Bf5 16. Qe3 Ng5 17. Rad1 Bxc2 18. Rd2 Be4 19. Rdd1 Rxa2 20. Bxe5 Nxf3+
+        21. gxf3 Bc2 22. Rd2 Qa5 23. Nc3 Ra1 24. Bxg7 Rxe1+ 25. Qxe1 Qg5+ 26. Kf1
+        Kxg7 27. Rxc2 Qh4 28. Ra2 Bf6 29. Ne4 Re8 30. Qa5 Qxh2 31. Qf5 Qh4 32. Rd2
+        Re5 33. Qxf6+ Qxf6 34. Nxf6 Kxf6 35. Rxd6+ Re6 36. Rd4 c5 37. Rf4+ Ke7 38.
+        Rh4 Kd6 39. f4 Kc6 40. f5 Rf6 41. Rh5 b5 42. cxb5+ Kxb5 43. Ke2 c4 44. Kd2
+        Kb4 45. Kc2 Rd6 46. Rh3 Ra6 47. f4 Ra2+ 48. Kc1 Rf2 49. Rxh6 Rxf4 50. Rf6
+        c3 51. Rxf7 Kb3 52. Rd7 Rf1+ 53. Rd1 Rxf5 54. Rd3 Ra5 55. Kd1 Ra2 56. Ke1
+        Kb2 57. Ke2 c2 58. Rd2 Kb1 0-1\n","time_control":"1/86400","end_time":1467974267,"rated":true,"fen":"8/8/8/8/8/8/r1pRK3/1k6
+        w - - 3 59","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1425,"result":"resigned","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"black":{"rating":1542,"result":"win","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891596","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"mrtn\"]\n[Black \"Rockaround\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"4r1k1/p2Q1pp1/7p/2P5/7B/5P2/2P1r1PP/2R3K1 b - - 0 31\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C01\"]\n[ECOUrl \"https://www.chess.com/openings/French-Defense-Exchange-Variation-3...exd5-4.Nf3\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1525\"]\n[BlackElo \"1453\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"mrtn won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.05\"]\n[EndTime \"21:33:10\"]\n[Link \"https://www.chess.com/game/daily/138891596\"]\n\n1.
+        e4 e6 2. Nf3 d5 3. exd5 exd5 4. d4 Nc6 5. Bb5 Nf6 6. Bg5 h6 7. Bh4 Qe7+ 8.
+        Ne5 Qb4+ 9. Nc3 Qxb2 10. Na4 Qxb5 11. Nc3 Qb4 12. Qd3 Nh5 13. Nxc6 bxc6 14.
+        O-O Nf4 15. Qe3+ Ne6 16. a3 Qb2 17. Rfc1 Bxa3 18. Nd1 Qb5 19. Rxa3 Ba6 20.
+        Nc3 Qc4 21. Ra4 Qxa4 22. Nxa4 O-O 23. Nc5 Nxc5 24. dxc5 Rfe8 25. Qg3 Re6 26.
+        Qxc7 Rae8 27. f3 Re2 28. Qxc6 Bc8 29. Qxd5 Be6 30. Qd3 Bd7 31. Qxd7 1-0\n","time_control":"1/86400","end_time":1467754390,"rated":true,"fen":"4r1k1/p2Q1pp1/7p/2P5/7B/5P2/2P1r1PP/2R3K1
+        b - - 0 31","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1525,"result":"win","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"black":{"rating":1453,"result":"resigned","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891610","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"pedege\"]\n[Black \"KingKongsBro\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"7k/R7/8/8/3N3P/8/6K1/8 b - - 3 52\"]\n[Timezone \"UTC\"]\n[ECO \"B00\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Kings-Pawn-Opening-Borg-Defense-2.d4-e6\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1533\"]\n[BlackElo \"1524\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"pedege won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.05\"]\n[EndTime \"13:52:11\"]\n[Link \"https://www.chess.com/game/daily/138891610\"]\n\n1.
+        e4 g5 2. d4 e6 3. e5 Bg7 4. h3 Nc6 5. Nf3 h6 6. Nc3 b6 7. Nh2 d6 8. Bb5 Bb7
+        9. Ng4 h5 10. Nh2 dxe5 11. O-O exd4 12. Ne4 Qd5 13. Bd3 Ne5 14. f3 f6 15.
+        Nc3 Qd8 16. Nb5 Qe7 17. f4 gxf4 18. Bxf4 Nxd3 19. Qxd3 e5 20. Nxd4 O-O-O 21.
+        Qf5+ Kb8 22. Nb5 exf4 23. Rae1 Qc5+ 24. Qxc5 bxc5 25. Rxf4 Nh6 26. Rff1 Ba6
+        27. c4 Rd2 28. b3 Bxb5 29. cxb5 Rxa2 30. Re7 Rg8 31. Nf3 Nf5 32. Rd7 Nd6 33.
+        Rc1 Kc8 34. Re7 Kd8 35. Ree1 Re8 36. Rxe8+ Kxe8 37. Rxc5 f5 38. Rxc7 Bc3 39.
+        Rxc3 Ne4 40. Re3 Kf7 41. h4 Rb2 42. Nd4 Nd6 43. Rg3 Rd2 44. Nf3 Nxb5 45. Nxd2
+        Nd4 46. Rg5 Nxb3 47. Nxb3 f4 48. Rxh5 f3 49. Rh7+ Kg8 50. Rxa7 fxg2 51. Kxg2
+        Kh8 52. Nd4 1-0\n","time_control":"1/86400","end_time":1467726731,"rated":true,"fen":"7k/R7/8/8/3N3P/8/6K1/8
+        b - - 3 52","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1533,"result":"win","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"black":{"rating":1524,"result":"resigned","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891618","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"KingKongsBro\"]\n[Black \"pedege\"]\n[Result
+        \"1/2-1/2\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/4k3/1p2P2p/1P1Pp1pP/4PpP1/n2B3K/8 b - - 27 57\"]\n[Timezone \"UTC\"]\n[ECO
+        \"A04\"]\n[ECOUrl \"https://www.chess.com/openings/Reti-Opening-1...Nf6-2.Nc3\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1533\"]\n[BlackElo \"1526\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.05\"]\n[EndTime \"13:49:10\"]\n[Link \"https://www.chess.com/game/daily/138891618\"]\n\n1.
+        Nf3 Nf6 2. Nc3 d5 3. e3 a6 4. Ne2 Bg4 5. Ne5 Be6 6. Nd4 Qd6 7. Nxe6 Qxe6 8.
+        d4 g6 9. Be2 Bg7 10. O-O O-O 11. c3 Ne4 12. f4 Bxe5 13. fxe5 Nd7 14. Bg4 Qc6
+        15. Bd2 f5 16. Bf3 e6 17. Qe2 Nb6 18. Bxe4 fxe4 19. b3 Rf5 20. Rf4 Raf8 21.
+        Raf1 Qe8 22. Bc1 Nd7 23. g3 g5 24. Rxf5 exf5 25. a4 Qg6 26. Ba3 Rf7 27. c4
+        f4 28. cxd5 f3 29. Qc4 Kg7 30. Qxc7 Nf6 31. Qb6 Nxd5 32. Qxg6+ Kxg6 33. Kf2
+        Rc7 34. Rc1 Rxc1 35. Bxc1 h5 36. h3 g4 37. h4 Kf5 38. Bb2 Nb4 39. Bc3 Nd3+
+        40. Kf1 Nc1 41. b4 Na2 42. Bd2 b5 43. axb5 axb5 44. Ke1 Ke6 45. Kd1 Kd5 46.
+        Ke1 Ke6 47. Kd1 Kd5 48. Ke1 Ke6 49. Kf1 Kd5 50. Kg1 Ke6 51. Kh2 Kd5 52. Kh1
+        Ke6 53. Kh2 Kd5 54. Kh1 Ke6 55. Kh2 Kf5 56. Kh1 Ke6 57. Kh2 1/2-1/2\n","time_control":"1/86400","end_time":1467726550,"rated":true,"fen":"8/8/4k3/1p2P2p/1P1Pp1pP/4PpP1/n2B3K/8
+        b - - 27 57","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1533,"result":"repetition","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"black":{"rating":1526,"result":"repetition","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891590","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"telo21\"]\n[Black \"mrtn\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"r7/1p1QR3/3k2r1/p2P2p1/4qp2/2R4K/PP3P1P/8 b - - 10 51\"]\n[Timezone \"UTC\"]\n[ECO
+        \"B20\"]\n[ECOUrl \"https://www.chess.com/openings/Sicilian-Defense-2.d3-d5\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1480\"]\n[BlackElo \"1519\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"telo21 won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.05\"]\n[EndTime \"08:27:48\"]\n[Link \"https://www.chess.com/game/daily/138891590\"]\n\n1.
+        e4 c5 2. d3 d5 3. Be2 dxe4 4. dxe4 Qa5+ 5. Qd2 Qc7 6. Nf3 Nf6 7. Nc3 e5 8.
+        O-O Nc6 9. Bb5 a6 10. Bd3 Nd4 11. Nxd4 cxd4 12. Ne2 a5 13. c3 Bd6 14. cxd4
+        exd4 15. g3 Bh3 16. Re1 h5 17. Nf4 Bg4 18. Nd5 Nxd5 19. exd5+ Be7 20. Qg5
+        g6 21. Bb5+ Kf8 22. Qf4 Bd6 23. Qxd4 Kg8 24. Bg5 Kh7 25. Rac1 Qb8 26. Bd3
+        Qf8 27. Bf6 Rg8 28. Re4 Bf5 29. Rh4 Bxd3 30. Qxd3 Kh6 31. g4 Bf4 32. Rc3 Qd6
+        33. Bd4 Be5 34. Bxe5 Qxe5 35. Qf3 Qe1+ 36. Kg2 f5 37. g5+ Kxg5 38. Qf4+ Kf6
+        39. Qd6+ Kg5 40. Rg3+ Kh6 41. Qf4+ g5 42. Qd6+ Rg6 43. Rxh5+ Kg7 44. Qd7+
+        Kf6 45. Rh7 Qe4+ 46. Kh3 f4 47. Rf7+ Ke5 48. Re7+ Kd4 49. Qa4+ Kc5 50. Rc3+
+        Kd6 51. Qd7# 1-0\n","time_control":"1/86400","end_time":1467707268,"rated":true,"fen":"r7/1p1QR3/3k2r1/p2P2p1/4qp2/2R4K/PP3P1P/8
+        b - - 10 51","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1480,"result":"win","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"black":{"rating":1519,"result":"checkmated","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891608","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"pedege\"]\n[Black \"mrtn\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/8/5K2/5Rp1/8/4kP1p/6r1 w - - 0 51\"]\n[Timezone \"UTC\"]\n[ECO \"B20\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Sicilian-Defense-Staunton-Cochrane-Variation-2...d6\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1526\"]\n[BlackElo \"1527\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"mrtn won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.05\"]\n[EndTime \"06:03:38\"]\n[Link \"https://www.chess.com/game/daily/138891608\"]\n\n1.
+        e4 c5 2. c4 d6 3. Nf3 Bg4 4. Be2 Nf6 5. Nc3 g6 6. h3 Be6 7. O-O Bg7 8. d4
+        cxd4 9. Nxd4 Qc8 10. a3 O-O 11. Nxe6 Qxe6 12. Bf3 Nc6 13. Re1 Qxc4 14. Nd5
+        Nd4 15. Nxe7+ Kh8 16. Be3 Nxf3+ 17. Qxf3 Nxe4 18. Rac1 Qe6 19. Rc7 Bxb2 20.
+        Bh6 Ng5 21. Rxe6 Nxf3+ 22. gxf3 fxe6 23. Bxf8 Rxf8 24. Kf1 Bxa3 25. Rxb7 Rxf3
+        26. Rxa7 Bc5 27. Ra2 Rxh3 28. Re2 e5 29. Nd5 Rd3 30. Nf6 Kg7 31. Ne4 Rd1+
+        32. Kg2 h5 33. Nxc5 dxc5 34. Rxe5 Rc1 35. Kf3 Kf6 36. Re8 Kf7 37. Rc8 Ke6
+        38. Ke2 g5 39. Kd2 Kd7 40. Rh8 Rh1 41. Kd3 g4 42. Kc4 Kd6 43. Rh6+ Ke5 44.
+        Kxc5 Kf4 45. Kd4 Kf3 46. Rf6+ Ke2 47. Rf5 h4 48. Rf4 Rg1 49. Ke5 h3 50. Kf5
+        h2 0-1\n","time_control":"1/86400","end_time":1467698618,"rated":true,"fen":"8/8/8/5K2/5Rp1/8/4kP1p/6r1
+        w - - 0 51","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1526,"result":"resigned","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"black":{"rating":1527,"result":"win","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891604","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"pedege\"]\n[Black \"Rockaround\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/7Q/5p2/6pk/2Pr4/7P/5PPK/8 b - - 5 39\"]\n[Timezone \"UTC\"]\n[ECO \"C46\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Three-Knights-Opening-3...Bc5\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1533\"]\n[BlackElo \"1461\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"pedege won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"21:42:48\"]\n[Link \"https://www.chess.com/game/daily/138891604\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Nc3 Bc5 4. Be2 Nf6 5. h3 d6 6. O-O O-O 7. Re1 b6 8. a3
+        Re8 9. Bc4 Bb7 10. d3 Na5 11. Bd5 Nxd5 12. Nxd5 Bxd5 13. exd5 Qf6 14. b4 Bd4
+        15. Nxd4 exd4 16. bxa5 bxa5 17. Bb2 Qf5 18. Bxd4 h5 19. Qf3 Qg5 20. c4 Re7
+        21. Rxe7 Qxe7 22. Qxh5 Re8 23. Qg4 f6 24. Bxa7 c5 25. Bb6 a4 26. Ba5 Qe5 27.
+        Re1 Qxe1+ 28. Bxe1 Rxe1+ 29. Kh2 Ra1 30. Qc8+ Kh7 31. Qc6 Rxa3 32. Qxd6 Rxd3
+        33. Qa6 a3 34. d6 Kh6 35. d7 Rxd7 36. Qxa3 g5 37. Qxc5 Kh5 38. Qf5 Rd4 39.
+        Qh7# 1-0\n","time_control":"1/86400","end_time":1467668568,"rated":true,"fen":"8/7Q/5p2/6pk/2Pr4/7P/5PPK/8
+        b - - 5 39","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1533,"result":"win","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"black":{"rating":1461,"result":"checkmated","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891600","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"mrtn\"]\n[Black \"pedege\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"4R3/5p1k/1P4pp/8/4QP1K/6qP/5q2/8 w - - 1 41\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C60\"]\n[ECOUrl \"https://www.chess.com/openings/Ruy-Lopez-Opening-Cozio-Defense-4.d4-exd4-5.Nxd4\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1526\"]\n[BlackElo \"1527\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"pedege won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"21:01:28\"]\n[Link \"https://www.chess.com/game/daily/138891600\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Bb5 Nge7 4. d4 exd4 5. Nxd4 a6 6. Bxc6 Nxc6 7. Nxc6 bxc6
+        8. O-O d5 9. exd5 cxd5 10. Qd4 Be6 11. Nc3 c6 12. Re1 h6 13. f4 Qf6 14. Qb6
+        Rc8 15. Qxa6 Bc5+ 16. Kh1 O-O 17. Qf1 Bf5 18. Bd2 Bxc2 19. Rac1 Bf5 20. h3
+        d4 21. Ne4 Bxe4 22. Rxe4 Bb6 23. Qa6 c5 24. a4 Ra8 25. Qc4 Rad8 26. a5 Ba7
+        27. b4 cxb4 28. Bxb4 Rfe8 29. Rce1 Rxe4 30. Rxe4 d3 31. Be7 Qa1+ 32. Kh2 d2
+        33. Bxd8 d1=Q 34. Re8+ Kh7 35. Qe4+ g6 36. Bb6 Bxb6 37. axb6 Qg1+ 38. Kg3
+        Qa3+ 39. Kh4 Qf2+ 40. g3 Qaxg3# 0-1\n","time_control":"1/86400","end_time":1467666088,"rated":true,"fen":"4R3/5p1k/1P4pp/8/4QP1K/6qP/5q2/8
+        w - - 1 41","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1526,"result":"checkmated","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"black":{"rating":1527,"result":"win","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891588","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"telo21\"]\n[Black \"Rockaround\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"5r1k/6p1/pB5p/7B/P1p1b3/2P3Pn/7P/4R1K1 w - - 7 41\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C02\"]\n[ECOUrl \"https://www.chess.com/openings/French-Defense-Advance-Variation-3...c5-4.c3-Nc6-5.Be3\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1477\"]\n[BlackElo \"1470\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Rockaround won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"18:46:19\"]\n[Link \"https://www.chess.com/game/daily/138891588\"]\n\n1.
+        e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Be3 Bd7 6. Nf3 c4 7. Be2 Nge7 8. O-O
+        Nf5 9. Bd2 Be7 10. Na3 O-O 11. Nc2 b5 12. Ne3 a6 13. b3 f6 14. Nxf5 exf5 15.
+        bxc4 bxc4 16. Rb1 fxe5 17. dxe5 f4 18. Qc1 Bg5 19. Nxg5 Qxg5 20. g3 Qxe5 21.
+        Bf3 fxg3 22. fxg3 Bh3 23. Re1 Qf5 24. Bf4 Rf6 25. Qe3 Raf8 26. Qc5 Rg6 27.
+        Qxd5+ Kh8 28. Qxf5 Bxf5 29. Rb6 Nd8 30. Rb8 h6 31. Rd1 Bd3 32. Bh5 Rgf6 33.
+        Be5 Rf5 34. Bc7 Ne6 35. Rxf8+ Rxf8 36. Bb6 Ng5 37. a4 Nh3+ 38. Kg2 Ng5 39.
+        Re1 Be4+ 40. Kg1 Nh3# 0-1\n","time_control":"1/86400","end_time":1467657979,"rated":true,"fen":"5r1k/6p1/pB5p/7B/P1p1b3/2P3Pn/7P/4R1K1
+        w - - 7 41","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1477,"result":"checkmated","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"black":{"rating":1470,"result":"win","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891612","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"KingKongsBro\"]\n[Black \"Rockaround\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"r4k2/p4p1p/1p4p1/2b1p1P1/PP2P2P/6qb/2R1QP2/6KR w - - 4 35\"]\n[Timezone
+        \"UTC\"]\n[ECO \"A00\"]\n[ECOUrl \"https://www.chess.com/openings/Grob-Opening\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1533\"]\n[BlackElo \"1459\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Rockaround won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"17:02:30\"]\n[Link \"https://www.chess.com/game/daily/138891612\"]\n\n1.
+        g4 e6 2. Nc3 d5 3. b3 c5 4. h4 Nc6 5. d3 Nf6 6. g5 Ng4 7. Bb2 g6 8. Nxd5 Qxd5
+        9. e4 Qd6 10. Bxh8 Qf4 11. Nh3 Qc7 12. Qxg4 Qa5+ 13. c3 Nd4 14. Bxd4 cxd4
+        15. Ke2 Qxc3 16. Bg2 Qc2+ 17. Kf1 Qxd3+ 18. Qe2 Qc3 19. Qe1 Qd3+ 20. Kg1 b6
+        21. Nf4 Qc2 22. Bf1 Bd6 23. Bd3 Qc7 24. Ne2 Kf8 25. Rc1 Qd7 26. Bc4 e5 27.
+        a4 Qg4+ 28. Ng3 Qf4 29. Rc2 Bc5 30. b4 d3 31. Bxd3 Qxg3+ 32. Kf1 Qxd3+ 33.
+        Qe2 Bh3+ 34. Kg1 Qg3# 0-1\n","time_control":"1/86400","end_time":1467651750,"rated":true,"fen":"r4k2/p4p1p/1p4p1/2b1p1P1/PP2P2P/6qb/2R1QP2/6KR
+        w - - 4 35","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1533,"result":"checkmated","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"black":{"rating":1459,"result":"win","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891598","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"mrtn\"]\n[Black \"telo21\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"5r1k/r4pn1/p4N2/1p2p2p/2p1B3/8/P2Q1PPP/5RK1 b - - 0 27\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C41\"]\n[ECOUrl \"https://www.chess.com/openings/Philidor-Defense-Exchange-Variation-4.Nxd4-Nf6-5.Nc3\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1534\"]\n[BlackElo \"1478\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"mrtn won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"16:33:33\"]\n[Link \"https://www.chess.com/game/daily/138891598\"]\n\n1.
+        e4 e5 2. Nf3 d6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 Be7 7. Bc4 b5 8. Bd3
+        c5 9. Nf5 Bxf5 10. exf5 c4 11. Be2 O-O 12. O-O Nfd7 13. Bxe7 Qxe7 14. Bf3
+        Ra7 15. Qd4 Nc5 16. Nd5 Qe5 17. Qg4 Nbd7 18. Rae1 Qxb2 19. c3 Ne5 20. Rxe5
+        dxe5 21. f6 Ne6 22. fxg7 Nxg7 23. Nf6+ Kh8 24. Be4 Qxc3 25. Qh4 h5 26. Qg5
+        Qd2 27. Qxd2 1-0\n","time_control":"1/86400","end_time":1467650013,"rated":true,"fen":"5r1k/r4pn1/p4N2/1p2p2p/2p1B3/8/P2Q1PPP/5RK1
+        b - - 0 27","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1534,"result":"win","@id":"https://api.chess.com/pub/player/mrtn","username":"mrtn","uuid":"becac6e8-bfeb-11dd-802c-000000000000"},"black":{"rating":1478,"result":"resigned","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891580","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"Rockaround\"]\n[Black \"telo21\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"3Q4/2p3pk/5p1p/2P1P3/2b5/4RPPq/7P/2r2NK1 w - - 4 35\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C41\"]\n[ECOUrl \"https://www.chess.com/openings/Philidor-Defense-3.Bc4\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:16:59\"]\n[WhiteElo \"1445\"]\n[BlackElo \"1485\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"telo21 won by resignation\"]\n[StartTime \"02:16:59\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"16:41:52\"]\n[Link \"https://www.chess.com/game/daily/138891580\"]\n\n1.
+        e4 e5 2. Nf3 d6 3. Bc4 h6 4. d3 a6 5. Nc3 Nf6 6. b3 b5 7. Bd5 Nxd5 8. exd5
+        Bb7 9. O-O Be7 10. Re1 O-O 11. a4 Nd7 12. axb5 axb5 13. Rxa8 Bxa8 14. Nxb5
+        Bxd5 15. c4 Bc6 16. g3 Nc5 17. Ba3 Nxb3 18. Nxe5 dxe5 19. Qxb3 Bxa3 20. Nxa3
+        Qf6 21. Re3 Qf5 22. c5 Qh3 23. f3 Ra8 24. Nb1 Re8 25. Nd2 Ra8 26. Qc3 f6 27.
+        Qc4+ Kh8 28. d4 Ra1+ 29. Nf1 Bd5 30. Qd3 Ra2 31. Nd2 Ra1+ 32. Nf1 Rc1 33.
+        dxe5 Bc4 34. Qd8+ Kh7 0-1\n","time_control":"1/86400","end_time":1467650512,"rated":true,"fen":"3Q4/2p3pk/5p1p/2P1P3/2b5/4RPPq/7P/2r2NK1
+        w - - 4 35","start_time":1467425819,"time_class":"daily","rules":"chess","white":{"rating":1445,"result":"resigned","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"black":{"rating":1485,"result":"win","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891614","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"KingKongsBro\"]\n[Black \"telo21\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/1p2b1kp/5pp1/2p1n3/4P2Q/1P2P3/r1K4P/q4B2 w - - 1 38\"]\n[Timezone \"UTC\"]\n[ECO
+        \"A04\"]\n[ECOUrl \"https://www.chess.com/openings/Reti-Opening-Pirc-Invitation\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1545\"]\n[BlackElo \"1484\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"telo21 won by checkmate\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"15:36:10\"]\n[Link \"https://www.chess.com/game/daily/138891614\"]\n\n1.
+        Nf3 d6 2. Nc3 e5 3. Nd5 Nf6 4. Ne3 Be7 5. d4 exd4 6. Qxd4 O-O 7. Bd2 Nc6 8.
+        Qc3 a5 9. O-O-O Nb4 10. Kb1 Be6 11. b3 d5 12. Bc1 c5 13. Bb2 d4 14. Qe1 dxe3
+        15. Rxd8 Rfxd8 16. fxe3 Nfd5 17. Qg3 g6 18. e4 Ne3 19. Nd2 Nexc2 20. Qe5 Nd4
+        21. e3 f6 22. Qf4 Ndc6 23. Bc4 Rxd2 24. Bxe6+ Kg7 25. Rf1 Rxb2+ 26. Ka1 Rxa2+
+        27. Kb1 Rb2+ 28. Ka1 Ne5 29. Bc4 Rxg2 30. Qh4 a4 31. Kb1 a3 32. Rf2 a2+ 33.
+        Ka1 Rg1+ 34. Rf1 Rxf1+ 35. Bxf1 Nc2+ 36. Kb2 a1=Q+ 37. Kxc2 Ra2# 0-1\n","time_control":"1/86400","end_time":1467646570,"rated":true,"fen":"8/1p2b1kp/5pp1/2p1n3/4P2Q/1P2P3/r1K4P/q4B2
+        w - - 1 38","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1545,"result":"checkmated","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"black":{"rating":1484,"result":"win","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891594","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"telo21\"]\n[Black \"KingKongsBro\"]\n[Result
+        \"1/2-1/2\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"4bk2/pp5Q/2p1p3/4P2p/5qpP/P1nB4/P1P3P1/1KB5 w - - 19 36\"]\n[Timezone \"UTC\"]\n[ECO
+        \"B00\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Pawn-Opening-Borg-Defense\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1475\"]\n[BlackElo \"1557\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.04\"]\n[EndTime \"15:15:40\"]\n[Link \"https://www.chess.com/game/daily/138891594\"]\n\n1.
+        e4 g5 2. d3 e6 3. Nf3 h6 4. Bd2 Qe7 5. Bc3 f6 6. Na3 d5 7. Qe2 dxe4 8. Qxe4
+        Qf7 9. O-O-O Bxa3 10. bxa3 Nc6 11. d4 Nge7 12. Bc4 O-O 13. h4 Nd5 14. Bb2
+        f5 15. Qd3 g4 16. Ne5 Nxe5 17. dxe5 c6 18. f3 Qe7 19. fxg4 fxg4 20. Qg6+ Qg7
+        21. Qe4 h5 22. Rhf1 Bd7 23. Rxf8+ Rxf8 24. Rf1 Qh6+ 25. Kb1 Rxf1+ 26. Bxf1
+        Be8 27. Bd3 Qf4 28. Qh7+ Kf8 29. Bc1 Nc3+ 30. Kb2 Na4+ 31. Kb1 Nc3+ 32. Kb2
+        Na4+ 33. Kb1 Nc3+ 34. Kb2 Na4+ 35. Kb1 Nc3+ 1/2-1/2\n","time_control":"1/86400","end_time":1467645340,"rated":true,"fen":"4bk2/pp5Q/2p1p3/4P2p/5qpP/P1nB4/P1P3P1/1KB5
+        w - - 19 36","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1475,"result":"repetition","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"black":{"rating":1557,"result":"repetition","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891586","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"Rockaround\"]\n[Black \"KingKongsBro\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"r3Q1k1/1pp2p1r/3p1B1p/1p1P3q/6p1/6P1/PPP2P1P/4RRK1 b - - 6 23\"]\n[Timezone
+        \"UTC\"]\n[ECO \"B00\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Pawn-Opening-Borg-Defense-2.d4-e6\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1456\"]\n[BlackElo \"1559\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"Rockaround won by resignation\"]\n[StartTime
+        \"02:17:00\"]\n[EndDate \"2016.07.04\"]\n[EndTime \"13:00:31\"]\n[Link \"https://www.chess.com/game/daily/138891586\"]\n\n1.
+        e4 g5 2. d4 e6 3. Nc3 Bg7 4. Be3 d6 5. Bc4 Nc6 6. Nf3 h6 7. O-O Qe7 8. d5
+        Ne5 9. Nxe5 Bxe5 10. Qf3 g4 11. Qe2 Qh4 12. g3 Qh3 13. Bb5+ Ke7 14. dxe6 Bxe6
+        15. Nd5+ Bxd5 16. exd5 Nf6 17. Bd4 a6 18. Bxe5 axb5 19. Bd4+ Kf8 20. Bxf6
+        Rh7 21. Qe4 Kg8 22. Rae1 Qh5 23. Qe8+ 1-0\n","time_control":"1/86400","end_time":1467637231,"rated":true,"fen":"r3Q1k1/1pp2p1r/3p1B1p/1p1P3q/6p1/6P1/PPP2P1P/4RRK1
+        b - - 6 23","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1456,"result":"win","@id":"https://api.chess.com/pub/player/rockaround","username":"Rockaround","uuid":"7080aa8a-1172-11e6-8048-000000000000"},"black":{"rating":1559,"result":"resigned","@id":"https://api.chess.com/pub/player/kingkongsbro","username":"KingKongsBro","uuid":"52821558-e744-11e5-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891592","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"telo21\"]\n[Black \"pedege\"]\n[Result
+        \"1-0\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"5r2/8/4K3/5R2/4P2k/8/8/8 b - - 4 43\"]\n[Timezone \"UTC\"]\n[ECO \"C55\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Italian-Game-Anti-Fried-Liver-Defense\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1490\"]\n[BlackElo \"1520\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"telo21 won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.03\"]\n[EndTime \"09:01:54\"]\n[Link \"https://www.chess.com/game/daily/138891592\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Bc4 h6 4. O-O Nf6 5. Nc3 a6 6. d4 exd4 7. Nxd4 Ne5 8.
+        Bb3 Bc5 9. Nf5 O-O 10. Bf4 d6 11. Nd5 Bxf5 12. exf5 Ne4 13. Ne3 Qh4 14. Bxe5
+        dxe5 15. Qg4 Qxg4 16. Nxg4 Nd2 17. Rfd1 Nxb3 18. axb3 f6 19. Rd7 Bb6 20. c4
+        Rfd8 21. Rad1 Rxd7 22. Rxd7 h5 23. Ne3 Bxe3 24. fxe3 Rc8 25. b4 b6 26. Kf2
+        Kh7 27. e4 Kh6 28. h4 c5 29. bxc5 Rxc5 30. b3 b5 31. cxb5 Rxb5 32. Ra7 Rxb3
+        33. Rxa6 Rb4 34. Kf3 Rb8 35. Re6 Rf8 36. g4 hxg4+ 37. Kxg4 g6 38. Re7 gxf5+
+        39. Kxf5 Rh8 40. Kxf6 Kh5 41. Rxe5+ Kxh4 42. Rf5 Rf8+ 43. Ke6 1-0\n","time_control":"1/86400","end_time":1467536514,"rated":true,"fen":"5r2/8/4K3/5R2/4P2k/8/8/8
+        b - - 4 43","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1490,"result":"win","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"black":{"rating":1520,"result":"resigned","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"},{"url":"https://www.chess.com/game/daily/138891606","pgn":"[Event
+        \"33rd Chess.com Quick Knockouts (1401-1600) - Round 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2016.07.02\"]\n[Round \"-\"]\n[White \"pedege\"]\n[Black \"telo21\"]\n[Result
+        \"0-1\"]\n[Tournament \"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600\"]\n[CurrentPosition
+        \"8/8/5p2/6p1/1p4P1/pPk4P/2Pb4/1K6 w - - 1 43\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C41\"]\n[ECOUrl \"https://www.chess.com/openings/Philidor-Defense-3.Nc3\"]\n[UTCDate
+        \"2016.07.02\"]\n[UTCTime \"02:17:00\"]\n[WhiteElo \"1528\"]\n[BlackElo \"1482\"]\n[TimeControl
+        \"1/86400\"]\n[Termination \"telo21 won by resignation\"]\n[StartTime \"02:17:00\"]\n[EndDate
+        \"2016.07.03\"]\n[EndTime \"09:01:38\"]\n[Link \"https://www.chess.com/game/daily/138891606\"]\n\n1.
+        e4 e5 2. Nf3 d6 3. Nc3 Nf6 4. h3 a6 5. Be2 Be7 6. O-O O-O 7. Re1 b5 8. a3
+        Bb7 9. d3 Nbd7 10. Bg5 h6 11. Bxf6 Nxf6 12. Nh2 d5 13. Bf3 dxe4 14. Nxe4 Nxe4
+        15. Bxe4 Bxe4 16. Rxe4 Bd6 17. Qh5 Qg5 18. Qxg5 hxg5 19. Nf3 f6 20. d4 exd4
+        21. Nxd4 c5 22. Ne6 Rfe8 23. f3 Kf7 24. Rae1 Re7 25. f4 gxf4 26. Nxf4 Rae8
+        27. Rxe7+ Rxe7 28. Rxe7+ Kxe7 29. g3 Kf7 30. Kf2 g5 31. Nd5 a5 32. g4 b4 33.
+        axb4 cxb4 34. b3 Ke6 35. Nb6 Bc7 36. Nc4 Kd5 37. Kf3 Kd4 38. Ke2 Kc3 39. Kd1
+        a4 40. Nd2 a3 41. Kc1 Bf4 42. Kb1 Bxd2 0-1\n","time_control":"1/86400","end_time":1467536498,"rated":true,"fen":"8/8/5p2/6p1/1p4P1/pPk4P/2Pb4/1K6
+        w - - 1 43","start_time":1467425820,"time_class":"daily","rules":"chess","white":{"rating":1528,"result":"resigned","@id":"https://api.chess.com/pub/player/pedege","username":"pedege","uuid":"940ff482-89bb-11df-8037-000000000000"},"black":{"rating":1482,"result":"win","@id":"https://api.chess.com/pub/player/telo21","username":"telo21","uuid":"b212d146-3ad1-11e3-804e-000000000000"},"tournament":"https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600"}],"players":[{"username":"mrtn","points":4.5,"is_advancing":false,"tie_break":17.25},{"username":"pedege","points":4.5,"is_advancing":false,"tie_break":14.5},{"username":"telo21","points":5.5,"is_advancing":true,"tie_break":20},{"username":"kingkongsbro","points":2,"is_advancing":false,"tie_break":9.5},{"username":"rockaround","points":3.5,"is_advancing":false,"tie_break":11.75}]}'
     headers:
-      Age:
-      - '664'
       CF-Cache-Status:
       - HIT
       CF-RAY:
-      - 8d139c6def184d18-BOS
+      - 8d44ba591b214d0c-BOS
       Cache-Control:
       - public, max-age=3600
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '8224'
+      - '39529'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 02:20:29 GMT
+      - Fri, 18 Oct 2024 01:24:17 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=jDC1tE%2BzJZ7iXFYYyAfSNzyuSZT%2BYltSo2INrbFIFWHsYsTdEKpsMnBYHZd3fCrCfRMSRn9dPDI%2BQ6Jz4v0pXVURQksHRm4ItyG%2ByumX%2BrBM1Wg8i1QHKovEGgqG4VM%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=mfWyxTM544PgbghxgBUaXsBBDWOHwGpMSTSR%2BlGRyTXOh9tgKZNQnMc8ocFwNdKji%2FJ3SVgp34FjfYsjt%2F6a1F8ItHNvhhApAWcSYb%2FilR%2FAeNlaKCUHRjTV91bNP2Y%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=clSZUSTLIayuTuICzm1XED9FsyeP8se3ybI_AJR8to8-1728699629-1.0.1.1-DV9VvZd4cyCOlu_31out_c.prbtY2jO6w6L5RaBpJiD0.jvO3dSSgms0gFeuWil8pvvNM1Vuy_KLPSfXxswMSfNRMZ.cnkBN0UBwmW9KcxU;
-        path=/; expires=Sat, 12-Oct-24 02:50:29 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=jSyu9_NOZC_CjLheF8hepNukmZsxOp1WfxS7iWrthes-1729214657-1.0.1.1-etEJrbWtx5LtrA9WivzPJIMABVoBjO16yDyhF6mXsSvj5D.biIlP9.AF3F1fEe.nxowHkTIqfcE6cvTCiZfRsNc0DvJQv9MmZn3UMN73L.U;
+        path=/; expires=Fri, 18-Oct-24 01:54:17 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
       - W/"464bb980935209424e9357de90acf6db"
       expires:
-      - Sat, 12 Oct 2024 03:09:25 GMT
+      - Fri, 18 Oct 2024 01:37:31 GMT
       last-modified:
-      - Thursday, 03-Oct-2024 08:23:50 GMT+0000
+      - Sunday, 13-Oct-2024 09:07:31 GMT+0000
       link:
       - <https://api.chess.com/context/TournamentRoundGroup.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -209,11 +390,11 @@ interactions:
       x-chesscom-meta:
       - lean=cached
       x-chesscom-request-id-cdn:
-      - 8cd32e443f6eac0c-IAD
+      - 8d23a9ffad0addb8-IAD
       x-chesscom-request-id-lb:
-      - 35f92473499f3f6b1a9a96b12736ea67
+      - 36dd281292fdf981575b886d0abb2a52
       x-chesscom-servedby:
-      - '141'
+      - '151'
     status:
       code: 200
       message: OK

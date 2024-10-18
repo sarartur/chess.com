@@ -4,89 +4,126 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/match/live/5833/1
   response:
     body:
-      string: !!binary |
-        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
+      string: '{"board_scores":{"edr0nt":1,"insan3_7":1},"games":[{"url":"https://www.chess.com/game/live/4415534338","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.01.19\"]\n[Round \"-\"]\n[White
+        \"edr0nt\"]\n[Black \"InSaN3_7\"]\n[Result \"1-0\"]\n[Match \"https://www.chess.com/club/matches/live/5833\"]\n[CurrentPosition
+        \"4Rk2/3Q4/2p2qp1/1r1p4/8/1P4p1/2P2PP1/6K1 b - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C22\"]\n[ECOUrl \"https://www.chess.com/openings/Center-Game-Accepted-Normal-Variation\"]\n[UTCDate
+        \"2020.01.19\"]\n[UTCTime \"22:01:04\"]\n[WhiteElo \"1851\"]\n[BlackElo \"1909\"]\n[TimeControl
+        \"300+2\"]\n[Termination \"edr0nt won by checkmate\"]\n[StartTime \"22:01:04\"]\n[EndDate
+        \"2020.01.19\"]\n[EndTime \"22:09:34\"]\n[Link \"https://www.chess.com/game/live/4415534338\"]\n\n1.
+        e4 {[%clk 0:05:01.9]} 1... e5 {[%clk 0:04:59.7]} 2. d4 {[%clk 0:05:03]} 2...
+        exd4 {[%clk 0:05:00.5]} 3. Qxd4 {[%clk 0:05:04.9]} 3... Nc6 {[%clk 0:05:01.3]}
+        4. Qd1 {[%clk 0:05:05.2]} 4... Bc5 {[%clk 0:04:53.4]} 5. Nf3 {[%clk 0:05:05.6]}
+        5... Nf6 {[%clk 0:04:54.5]} 6. Bd3 {[%clk 0:05:05.6]} 6... O-O {[%clk 0:04:54]}
+        7. O-O {[%clk 0:05:05.6]} 7... Re8 {[%clk 0:04:53.7]} 8. h3 {[%clk 0:05:06.4]}
+        8... d6 {[%clk 0:04:53.2]} 9. Re1 {[%clk 0:05:07.5]} 9... h6 {[%clk 0:04:52.6]}
+        10. Be3 {[%clk 0:05:08.2]} 10... Nxe4 {[%clk 0:04:47.7]} 11. Bxc5 {[%clk 0:05:01.2]}
+        11... Nxc5 {[%clk 0:04:49.6]} 12. Rxe8+ {[%clk 0:05:02.3]} 12... Qxe8 {[%clk
+        0:04:51.5]} 13. Nc3 {[%clk 0:05:03.3]} 13... Nxd3 {[%clk 0:04:50.7]} 14. Qxd3
+        {[%clk 0:05:05.2]} 14... Ne5 {[%clk 0:04:44.8]} 15. Nxe5 {[%clk 0:05:05.2]}
+        15... Qxe5 {[%clk 0:04:46.7]} 16. Qd2 {[%clk 0:05:01.7]} 16... Be6 {[%clk
+        0:04:42.4]} 17. Re1 {[%clk 0:04:49.8]} 17... Qf6 {[%clk 0:04:42.4]} 18. Ne4
+        {[%clk 0:04:50.5]} 18... Qg6 {[%clk 0:04:32.2]} 19. Ng3 {[%clk 0:04:47.8]}
+        19... h5 {[%clk 0:04:27.4]} 20. h4 {[%clk 0:04:38.9]} 20... Bg4 {[%clk 0:04:25.4]}
+        21. Qc3 {[%clk 0:04:33.2]} 21... c6 {[%clk 0:04:14.7]} 22. Ne4 {[%clk 0:04:27.6]}
+        22... d5 {[%clk 0:03:50.9]} 23. Ng3 {[%clk 0:04:22.7]} 23... f6 {[%clk 0:03:43.8]}
+        24. Qb3 {[%clk 0:04:12]} 24... b5 {[%clk 0:03:31.3]} 25. a4 {[%clk 0:04:11.8]}
+        25... Rb8 {[%clk 0:03:25.6]} 26. axb5 {[%clk 0:04:05.1]} 26... Rxb5 {[%clk
+        0:03:24.2]} 27. Qc3 {[%clk 0:04:05.9]} 27... Bd7 {[%clk 0:03:15.9]} 28. Re7
+        {[%clk 0:03:52]} 28... Qg4 {[%clk 0:03:15.6]} 29. b3 {[%clk 0:03:40.8]} 29...
+        Kf8 {[%clk 0:02:55.1]} 30. Re1 {[%clk 0:03:40.3]} 30... Qxh4 {[%clk 0:02:45.7]}
+        31. Qe3 {[%clk 0:03:36.3]} 31... f5 {[%clk 0:02:27.7]} 32. Nxf5 {[%clk 0:03:18.8]}
+        32... Qf6 {[%clk 0:02:04.1]} 33. Ng3 {[%clk 0:03:10.9]} 33... g6 {[%clk 0:01:55]}
+        34. Qxa7 {[%clk 0:03:02.6]} 34... h4 {[%clk 0:01:24.5]} 35. Qxd7 {[%clk 0:02:46]}
+        35... hxg3 {[%clk 0:01:23.8]} 36. Re8# {[%clk 0:02:46.9]} 1-0\n","time_control":"300+2","end_time":1579471774,"rated":true,"fen":"4Rk2/3Q4/2p2qp1/1r1p4/8/1P4p1/2P2PP1/6K1
+        b - -","time_class":"blitz","rules":"chess","white":{"rating":1851,"result":"win","@id":"https://api.chess.com/pub/player/edr0nt","username":"edr0nt","uuid":"78b752de-cdb7-11e5-803c-000000000000"},"black":{"rating":1909,"result":"checkmated","@id":"https://api.chess.com/pub/player/insan3_7","username":"InSaN3_7","uuid":"32c57b80-a4a9-11e9-b9f7-9194ac470c80"},"eco":"https://www.chess.com/openings/Center-Game-Accepted-Normal-Variation"},{"url":"https://www.chess.com/game/live/4415556582","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.01.19\"]\n[Round \"-\"]\n[White
+        \"InSaN3_7\"]\n[Black \"edr0nt\"]\n[Result \"1-0\"]\n[Match \"https://www.chess.com/club/matches/live/5833\"]\n[CurrentPosition
+        \"8/8/8/6Qk/7P/K7/8/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"B01\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8\"]\n[UTCDate
+        \"2020.01.19\"]\n[UTCTime \"22:09:44\"]\n[WhiteElo \"1919\"]\n[BlackElo \"1844\"]\n[TimeControl
+        \"300+2\"]\n[Termination \"InSaN3_7 won by checkmate\"]\n[StartTime \"22:09:44\"]\n[EndDate
+        \"2020.01.19\"]\n[EndTime \"22:17:56\"]\n[Link \"https://www.chess.com/game/live/4415556582\"]\n\n1.
+        e4 {[%clk 0:05:01.9]} 1... d5 {[%clk 0:05:01.9]} 2. exd5 {[%clk 0:05:02.6]}
+        2... Qxd5 {[%clk 0:05:03.5]} 3. Nc3 {[%clk 0:05:03.8]} 3... Qd8 {[%clk 0:05:04.8]}
+        4. d4 {[%clk 0:05:03.2]} 4... Nf6 {[%clk 0:05:06.2]} 5. Bf4 {[%clk 0:04:56.6]}
+        5... Bg4 {[%clk 0:05:05.9]} 6. Nf3 {[%clk 0:04:52]} 6... e6 {[%clk 0:05:05.8]}
+        7. Be2 {[%clk 0:04:51.8]} 7... Bd6 {[%clk 0:05:06]} 8. Bxd6 {[%clk 0:04:51.7]}
+        8... cxd6 {[%clk 0:05:07.9]} 9. O-O {[%clk 0:04:53.1]} 9... O-O {[%clk 0:05:08.3]}
+        10. a3 {[%clk 0:04:50.1]} 10... a6 {[%clk 0:05:09]} 11. h3 {[%clk 0:04:49.8]}
+        11... Bh5 {[%clk 0:05:09.7]} 12. Re1 {[%clk 0:04:49.1]} 12... Re8 {[%clk 0:05:10.2]}
+        13. Rc1 {[%clk 0:04:46.7]} 13... Nbd7 {[%clk 0:05:04.3]} 14. Nd2 {[%clk 0:04:44.7]}
+        14... Bxe2 {[%clk 0:05:00.6]} 15. Qxe2 {[%clk 0:04:44.1]} 15... e5 {[%clk
+        0:05:00.9]} 16. d5 {[%clk 0:04:42.3]} 16... Nb6 {[%clk 0:04:52.2]} 17. Qf3
+        {[%clk 0:04:29.5]} 17... Rc8 {[%clk 0:04:46.8]} 18. Nde4 {[%clk 0:04:30.6]}
+        18... Nxe4 {[%clk 0:04:40.8]} 19. Nxe4 {[%clk 0:04:31.5]} 19... Nxd5 {[%clk
+        0:04:42.3]} 20. Rcd1 {[%clk 0:04:32.7]} 20... Rc5 {[%clk 0:04:29.7]} 21. Rxd5
+        {[%clk 0:04:30.7]} 21... Rxd5 {[%clk 0:04:29.3]} 22. Nf6+ {[%clk 0:04:31.9]}
+        22... gxf6 {[%clk 0:04:28.9]} 23. Qxd5 {[%clk 0:04:33.1]} 23... Qe7 {[%clk
+        0:04:27.2]} 24. f4 {[%clk 0:04:34.1]} 24... Qe6 {[%clk 0:04:24.4]} 25. Qxe6
+        {[%clk 0:04:33.8]} 25... Rxe6 {[%clk 0:04:26.3]} 26. Kf2 {[%clk 0:04:12.8]}
+        26... h5 {[%clk 0:04:12]} 27. Rd1 {[%clk 0:04:07.6]} 27... f5 {[%clk 0:04:11]}
+        28. Rd5 {[%clk 0:04:05.4]} 28... f6 {[%clk 0:04:10.2]} 29. b4 {[%clk 0:03:59.8]}
+        29... Kf7 {[%clk 0:04:07.7]} 30. c4 {[%clk 0:03:59.5]} 30... b6 {[%clk 0:04:07.6]}
+        31. Kf3 {[%clk 0:03:55.2]} 31... Kg6 {[%clk 0:04:07.6]} 32. h4 {[%clk 0:03:52.9]}
+        32... Kf7 {[%clk 0:04:01.8]} 33. g3 {[%clk 0:03:47.7]} 33... Ke7 {[%clk 0:03:56.4]}
+        34. a4 {[%clk 0:03:44.7]} 34... Kd7 {[%clk 0:03:49.2]} 35. a5 {[%clk 0:03:31.2]}
+        35... bxa5 {[%clk 0:03:49.3]} 36. Rxa5 {[%clk 0:03:31.2]} 36... exf4 {[%clk
+        0:03:46.9]} 37. Kxf4 {[%clk 0:03:30]} 37... Re4+ {[%clk 0:03:47.1]} 38. Kxf5
+        {[%clk 0:03:28.7]} 38... Rxc4 {[%clk 0:03:48.2]} 39. Kxf6 {[%clk 0:03:28.3]}
+        39... Rxb4 {[%clk 0:03:39.7]} 40. Rxh5 {[%clk 0:03:28.2]} 40... Rg4 {[%clk
+        0:03:40]} 41. Rg5 {[%clk 0:03:24.1]} 41... Re4 {[%clk 0:03:41]} 42. g4 {[%clk
+        0:03:20.1]} 42... Re6+ {[%clk 0:03:33.7]} 43. Kf5 {[%clk 0:03:21.1]} 43...
+        Re5+ {[%clk 0:03:33.1]} 44. Kf4 {[%clk 0:03:21.7]} 44... a5 {[%clk 0:03:11.9]}
+        45. Rxe5 {[%clk 0:03:08.7]} 45... dxe5+ {[%clk 0:03:13.8]} 46. Kxe5 {[%clk
+        0:03:10.5]} 46... a4 {[%clk 0:03:15]} 47. Kd4 {[%clk 0:02:36.6]} 47... Ke6
+        {[%clk 0:03:10]} 48. Kc4 {[%clk 0:02:33]} 48... Ke5 {[%clk 0:03:10.8]} 49.
+        g5 {[%clk 0:02:33.1]} 49... Kf5 {[%clk 0:03:11.3]} 50. Kb4 {[%clk 0:02:34.2]}
+        50... a3 {[%clk 0:03:11.2]} 51. Kxa3 {[%clk 0:02:35.5]} 51... Kg4 {[%clk 0:03:13.1]}
+        52. g6 {[%clk 0:02:36.7]} 52... Kh5 {[%clk 0:03:12]} 53. g7 {[%clk 0:02:38.6]}
+        53... Kh6 {[%clk 0:03:13.4]} 54. g8=Q {[%clk 0:02:40.5]} 54... Kh5 {[%clk
+        0:03:14.4]} 55. Qg5# {[%clk 0:02:39.8]} 1-0\n","time_control":"300+2","end_time":1579472276,"rated":true,"fen":"8/8/8/6Qk/7P/K7/8/8
+        b - -","time_class":"blitz","rules":"chess","white":{"rating":1919,"result":"win","@id":"https://api.chess.com/pub/player/insan3_7","username":"InSaN3_7","uuid":"32c57b80-a4a9-11e9-b9f7-9194ac470c80"},"black":{"rating":1844,"result":"checkmated","@id":"https://api.chess.com/pub/player/edr0nt","username":"edr0nt","uuid":"78b752de-cdb7-11e5-803c-000000000000"},"eco":"https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8"}]}'
     headers:
       CF-Cache-Status:
       - REVALIDATED
       CF-RAY:
-      - 8d445898bada4cc6-BOS
+      - 8d44ba5209a54d08-BOS
       Cache-Control:
       - public, max-age=3600
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '2211'
+      - '7612'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 18 Oct 2024 00:17:33 GMT
+      - Fri, 18 Oct 2024 01:24:16 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=Yim0dm3%2F04c9H9ahxxqx9N1Tao9icLnO%2BSKZFfO71HnmtrJeWBGuA%2FmBdRchzEvfs4Tuzz6P%2FO6i%2FomS9ZR%2B6EVmkNEzIi92QSlqRYwPtkzmfj4W5NYdbDWH33nBjT8%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=n3URgPEE5jEZosxJ064D4tVLzj%2BP94RQyUjoc3p9vnVNBI0PIJi3aLKRRzig32P3jDWM8XG4PeHtwyfN60nqyjEwT%2FmUAxc3cFCLcJ7l07xLfOaoKAF81n8YLGMpBzY%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=1wG8Af04KSTBjMUDaVBmtgxx8IbPkebY99akPYWqMFE-1729210653-1.0.1.1-3BzhcVddWZp9qKUau_RVEHq8Y5IVpbw2CK.ssBl0fPooy51EXVrvdIC4EirGnNE3Y8zQ.gP3rvT0FaZDpJhVWqhq0hzhhBA5obBly3Of1uQ;
-        path=/; expires=Fri, 18-Oct-24 00:47:33 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=N3UxW53d8CIf56GY_66BuywSaKuTEDwRkxKXFICKYIA-1729214656-1.0.1.1-gfZvvP6QYkUrq4VAQhdf1spwXPsN6PhG3pcBx8OpPxgdKK06eUsayeGU8u7lda3ZhkXyAW1iuQrH2PQc9bLPGL3VMe9T.q3Nrgs6R22dO4U;
+        path=/; expires=Fri, 18-Oct-24 01:54:16 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
       - W/"cb0d4a8e4ff19a27d98d4626e8c7a1ad"
       expires:
-      - Fri, 18 Oct 2024 01:17:33 GMT
+      - Fri, 18 Oct 2024 02:24:16 GMT
       last-modified:
       - Thursday, 17-Oct-2024 22:35:01 GMT+0000
       link:

@@ -1,3 +1,5 @@
+import pytest
+
 from tests.vcr import vcr
 
 
@@ -14,6 +16,16 @@ def test_with_client(client):
     response = client.get_tournament_round_group_details(
         url_id="-33rd-chesscom-quick-knockouts-1401-1600", round_num=1, group_num=1
     )
+    validate_response(response)
+
+
+@pytest.mark.asyncio
+async def test_with_async_client(async_client):
+    with vcr.use_cassette("get_tournament_round_group_details.yaml"):
+        response = await async_client.get_tournament_round_group_details(
+            url_id="-33rd-chesscom-quick-knockouts-1401-1600", round_num=1, group_num=1
+        )
+
     validate_response(response)
 
 

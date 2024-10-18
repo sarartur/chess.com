@@ -1,3 +1,5 @@
+import pytest
+
 from tests.vcr import vcr
 
 
@@ -10,6 +12,14 @@ def test_with_endpoints(endpoints):
 @vcr.use_cassette("get_team_match_board.yaml")
 def test_with_client(client):
     response = client.get_team_match_board(match_id=12803, board_num=1)
+    validate_response(response)
+
+
+@pytest.mark.asyncio
+async def test_with_async_client(async_client):
+    with vcr.use_cassette("get_team_match_board.yaml"):
+        response = await async_client.get_team_match_board(match_id=12803, board_num=1)
+
     validate_response(response)
 
 

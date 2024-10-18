@@ -4,59 +4,54 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/puzzle
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA4VPTW+DMAz9K1am7dAV8gEDVKnaaTsMCU27lmniI4WoIUEkiMG0/77Q9lrN1js8
-        +/nZ/kFWWMnRDr3p6sRnoRo46gHetRFWaIW2aByka7fW9maH8TRNftVyY/xKd7guhJy9M/f6cVkk
-        x4yw0KPEo9TN9mMphWm/rOjcDhqzJAqIiy06cuVc6UmlIVYxDrIQs+wJJ5eECTyXBM4mzSo9fHAz
-        Sgs52uToMx9ydXh9yRz93+OqX0F9yOr4EdIiAeZDWsWQVREErvxdJZDxGMJVUkZ3sHG7RVc0/Pb7
-        syp1MdTP7pv9rTvuGZkcvCuIA30wYuF7hn7/ANVh7tGAAQAA
+      string: '{"title":"Tactical Stars Align","url":"https://www.chess.com/daily-chess-puzzle/2024-10-17","publish_time":1729148400,"fen":"r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1
+        w - - 0 1","pgn":"[Result \"*\"]\r\n[FEN \"r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1
+        w - - 0 1\"]\r\n\r\n1. Rh5 gxh5 2. Qxb6 *","image":"https://www.chess.com/dynboard?fen=r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1%20w%20-%20-%200%201&size=2"}'
     headers:
+      Accept-Ranges:
+      - bytes
       CF-Cache-Status:
       - REVALIDATED
       CF-RAY:
-      - 8d13d66c6b2d8fb5-BOS
+      - 8d44ba5bd98b8fb4-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '264'
+      - '421'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 03:00:05 GMT
+      - Fri, 18 Oct 2024 01:24:17 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ZW%2Ff2VCBjUlO6F2xqzLnjCmLLxxSNvE7QLrh9La9Nd082YfZiiX%2BobGhh8iL5tk1AVxty7NjxNZ42gePySlDIK1BV0Z8zg7pZkw%2Bv9inS2%2FmvJ9DvhtZfn8rwlxY%2FHs%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=3lWRpA2F1E3Ae6tzn5xa8UsaJuCJ8%2BFi3Wrj3aAQtzZmvYMhOq%2FFwu294hOs9nvvVI2h7TqN%2BLPbjZF20DI4eA9O%2FNXy1gNU%2BJwNNBwZxpwI37pG8ZblQvczzyQfVTQ%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=ealOWJF5_26MVoOAzPMR6LiI0x0qSPTiwrg0O8.E7sE-1728702005-1.0.1.1-TpNyy.W6Ps5r9l9rYb9diVxAoTIQzuzsQjqX0WE0wLluwt5izwf9rmHjBKfTAROwnvSWWHutGI2WrirwscSNUed5_MMw4amzRpj8kARxBZk;
-        path=/; expires=Sat, 12-Oct-24 03:30:05 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=ujfTU2wl0lxxv6b2JMnUziLO1PaYWwuKAAIOkyz_opg-1729214657-1.0.1.1-Ka8DbYdgZKvDhgOoJMZhrYQIcTjCG_e4016uK.G6M0aUVjTWzJDoOFrfVDYl63GDDsKbTHl0XsX_r6xpbbzvvl07dKg1xh.v6Och1Zwm7uc;
+        path=/; expires=Fri, 18-Oct-24 01:54:17 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       Vary:
       - Accept-Encoding
       access-control-allow-origin:
       - '*'
       etag:
-      - W/"5758801c60b14be24b6b00759d4fcd79"
+      - W/"4e245de86bc04c32450e0cc81e298653"
       expires:
-      - Sat, 12 Oct 2024 03:00:10 GMT
+      - Fri, 18 Oct 2024 01:24:22 GMT
       last-modified:
-      - Friday, 11-Oct-2024 08:44:00 GMT+0000
+      - Thursday, 17-Oct-2024 07:54:59 GMT+0000
       link:
       - <https://api.chess.com/context/DailyPuzzle.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -67,11 +62,11 @@ interactions:
       x-chesscom-meta:
       - lean=cached
       x-chesscom-request-id-cdn:
-      - 8d0dcefdf83d0aaf-IAD
+      - 8d3ec0c429fe22df-IAD
       x-chesscom-request-id-lb:
-      - 6473d1f81006b90ffa0f527f6dee843a
+      - b64d1583c46796d46d5c0a5dee6bb70e
       x-chesscom-servedby:
-      - '150'
+      - '86'
     status:
       code: 200
       message: OK

@@ -4,59 +4,48 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/player/fabianocaruana/stats
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA42S3Y7CIBCF34XrxvI/0JcxWFlLgrYpuE00ffcd1Lqu6SaGC5Jhzsz5ZriStvMp
-        bUc3hD1priS6lMs9uhxOB9Jww0VF9i570jDgANYaaSoyYrbkc0V2/q9AUKmeAqUBCxjLKnJwR4yQ
-        LuchNXU9TdPm1nrT9se6PNYxfPvaAJcAFKswgtVH3/bjzdgUTljQ6IrEPiXSgMQuo5swKOyMqXeQ
-        3TlGn9dIBFP8hYRbAK7UnUTINZJ/BJ+SGKlZOVStkFglFxLB2ROF0heUGPJllYRa9WLMKI492GMn
-        dI2EU/gVMK1BU2o/JgGjsQOAsGskzFK2oChtFhShTEH5CntffpFAx9m1ObSpKLtw6N5NKmafJrUp
-        Ji2UvcR+ektlokzvkSq0sBTkfXLD+XKJfjueU1cEyyByn13cupz9cchoQOM4ElKgXst5nn8A1O6h
-        6AcDAAA=
+      string: '{"chess_rapid":{"last":{"rating":2823,"date":1727799848,"rd":42},"best":{"rating":3045,"date":1567282891,"game":"https://www.chess.com/game/live/87247703041"},"record":{"win":186,"loss":74,"draw":139}},"chess_bullet":{"last":{"rating":3152,"date":1722977255,"rd":34},"best":{"rating":3152,"date":1722977255,"game":"https://www.chess.com/game/live/88461616105"},"record":{"win":954,"loss":321,"draw":100}},"chess_blitz":{"last":{"rating":3064,"date":1729031436,"rd":41},"best":{"rating":3207,"date":1716676009,"game":"https://www.chess.com/game/live/78621077395"},"record":{"win":1906,"loss":571,"draw":359}},"fide":2835,"tactics":{"highest":{"rating":3519,"date":1686676974},"lowest":{"rating":1354,"date":1363907400}},"puzzle_rush":{"best":{"total_attempts":67,"score":64}}}'
     headers:
       CF-Cache-Status:
       - REVALIDATED
       CF-RAY:
-      - 8d12d8d8dc7b9059-BOS
+      - 8d44ba445e9f8ffd-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '347'
+      - '775'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 00:06:58 GMT
+      - Fri, 18 Oct 2024 01:24:14 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=0BTm47Rg1g6fbNubG6oBiCK7SEoZe%2FERLSHDc6sSjSjPoRqaoOjkRyWT535c6WkvdLuFhAQ19AfcpymlaWg3%2F7bWEhjNOGDJ32nLw%2F04MC6%2BqsGyEZgcDjhggeFfUrU%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=51Nn6b8my0RSbAgbnjt4kkpz1221n73XuVabM9YwwsGICpH7aGB4TI2GeiAHsT%2F6huLYM2EJZ6n%2BrsMRfCItIYUfSOxYXCG9D5rJHCxXqi3PNSWuMlyBTBKAJveAGb4%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=FORv.Zj9eU6Rm6L9ph00R6xOcK4cEHrjFuhhZep6gx4-1728691618-1.0.1.1-nNnAE7JK1XPhd9o3jFMN6Dlf649XZpXL2E6Kwzh4Vbkchc96wd0Ox12r3pnQ1hcYvkPqcrO8MySZQHTVtbKEkEvqeZy4b9sWW_qVEhiK_wg;
-        path=/; expires=Sat, 12-Oct-24 00:36:58 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=mFcbrDu9sjZMZ1RMW9z2OFEEoIZkJ9gxEbcxeZCV8xk-1729214654-1.0.1.1-NBB2O2H8SQ8_yKIB3fb5DpO6OTvMGyyzkjIxlMaMz_PnIMA5lyVbOMJc9rMouMEP5sL8inCl7xHtELIwUBuwXpym1coDh3aY.NPTcRGX75c;
+        path=/; expires=Fri, 18-Oct-24 01:54:14 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
-      - W/"992eb7c74ddad62a58ad0aca6a4c89c5"
+      - W/"a1aa35b2a82c853415466029954fbd0d"
       expires:
-      - Sat, 12 Oct 2024 00:07:03 GMT
+      - Fri, 18 Oct 2024 01:24:19 GMT
       last-modified:
-      - Thursday, 10-Oct-2024 00:48:37 GMT+0000
+      - Thursday, 17-Oct-2024 09:47:10 GMT+0000
       strict-transport-security:
       - max-age=63072000; includeSubDomains; preload
       vary:
@@ -66,11 +55,11 @@ interactions:
       x-chesscom-meta:
       - lean=published
       x-chesscom-request-id-cdn:
-      - 8d029b174e15439d-IAD
+      - 8d3f5d9f9e2503f3-IAD
       x-chesscom-request-id-lb:
-      - 848bd3f66898e692405d4b8959b5352e
+      - 45bb33b43e6018bbab4719f27dca6fdc
       x-chesscom-servedby:
-      - '144'
+      - '147'
     status:
       code: 200
       message: OK

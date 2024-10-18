@@ -1,3 +1,5 @@
+import pytest
+
 from tests.vcr import vcr
 
 
@@ -10,6 +12,14 @@ def test_with_endpoints(endpoints):
 @vcr.use_cassette("get_player_game_archives.yaml")
 def test_with_client(client):
     response = client.get_player_game_archives(username="afgano29")
+    validate_response(response)
+
+
+@pytest.mark.asyncio
+async def test_with_async_client(async_client):
+    with vcr.use_cassette("get_player_game_archives.yaml"):
+        response = await async_client.get_player_game_archives(username="afgano29")
+
     validate_response(response)
 
 

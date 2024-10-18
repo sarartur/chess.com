@@ -4,11 +4,9 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/player/fabianocaruana/games/2020/05/pgn
@@ -1443,7 +1441,7 @@ interactions:
       CF-Cache-Status:
       - REVALIDATED
       CF-RAY:
-      - 8d132fb45afb8d17-BOS
+      - 8d44ba2b7f638fcc-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
@@ -1453,16 +1451,16 @@ interactions:
       Content-Type:
       - application/vnd.chess-pgn; charset=utf-8; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 01:06:16 GMT
+      - Fri, 18 Oct 2024 01:24:10 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=51QAjrCnDPeCeGF8xqkJKl%2FL%2FeTyms%2BnG8CBlnpT9bLz%2Fbg%2F0y5d2AGQcuhA%2Fuu3BsxoHJyEYLtLZADZcxnJoDQQkT54o3Ddq1I6wW%2B%2FCd9fd70%2FeBJxT2I94G%2BMU1w%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=MYL6AjATmBIk8sBaVT3%2FkZkwh3pqD2mH5fIyjMdEbQC0dSMqiQJL33giHEmdLKVogSoE%2BduivNnaxle4ry8PE1anPtMnCTjDUn2FLQPASVnbS3aP2CnRNo7phktx2P0%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=9AbFYNGeJHc2b_Nt_5i5jHcSF1a3tElgaFrpI6c5O.Y-1728695176-1.0.1.1-HpROIKNtNLpzA1hph6YemIvBelvZtVf.yvqp.TRgmFgD0cwr3w2vUfV7fRax6zs_T.SkuXNlMgoo9ijXxGmzvgRSq2oeBoubJ_u3qMUnYkI;
-        path=/; expires=Sat, 12-Oct-24 01:36:16 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=HWlj.PzjCXLo2rLfHnJw4ZdaW66HD84kcLiiGbqJv4g-1729214650-1.0.1.1-785YdrONSSsuSQlzf5EKa7ZNxW_3Qv1HKPrAsy_4eteE5C7bX2GVHfrmVjenNTo4FyT92H0u4LLzX0u6yUya1BBKuGGRlrQ2ViyMlIIlY1I;
+        path=/; expires=Fri, 18-Oct-24 01:54:10 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       Vary:
       - Accept-Encoding
@@ -1473,9 +1471,9 @@ interactions:
       etag:
       - W/"a902f8f3426209a1da37d60a74a3f401"
       expires:
-      - Sat, 12 Oct 2024 01:06:21 GMT
+      - Fri, 18 Oct 2024 01:24:15 GMT
       last-modified:
-      - Thursday, 10-Oct-2024 00:48:38 GMT+0000
+      - Thursday, 17-Oct-2024 22:34:57 GMT+0000
       link:
       - <https://api.chess.com/context/GamesPgn.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -1486,11 +1484,11 @@ interactions:
       x-chesscom-meta:
       - lean=published
       x-chesscom-request-id-cdn:
-      - 8d029b1e9a0c3b0b-IAD
+      - 8d43c24f7be0c957-IAD
       x-chesscom-request-id-lb:
-      - 1412e8f0f82e95950d8488a471729f6d
+      - 70a5834f396ae77e4e6905fb312f4981
       x-chesscom-servedby:
-      - '83'
+      - '146'
     status:
       code: 200
       message: OK

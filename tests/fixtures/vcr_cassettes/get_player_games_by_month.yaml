@@ -4,415 +4,825 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/player/fabianocaruana/games/2020/05
   response:
     body:
-      string: !!binary |
-        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
-        sns5eo7Cxe6i9fLEPw8mrZt1pV5JwiDcVvzb4Tas95J6PB5d17dTEVYacTRt3jaeG/XrJIzC+fNl
-        t7kNg8kguNyq75oeRruz6/rT8pI0SETOmvXb5fC2O13ftGan7Lp5Ta/X0+7ldPu5OZiQ7urkkkxW
-        3c7jK2mcXLRuhssOWZ58bT28tC5eL0j4cn4TnKwDsnol3fNPXfJca9a2tcamtt1crq/D6PXb5c31
-        +qazPulcfBtc3G6r5KLaiMjg8WJzMr1tTbfti8cuodsmjbr1i5NGdXNx2mjd1lcXpDm9vajWLz5N
-        Tz5drCYXt/XO7UXnMmInU9ad1i5uZbuuajvZxsnV2W7UvZq83nYvO93qaF19bnSvup3uWa1br23X
-        n56nr5Pp8+Tqufrp67Z2tak+b2Zfzr+2z1/aL7XtrLKtvQxrV5XN1fXw6Zo+Del1vfPclH9nHdJ8
-        flo/NzdXzWciP+s0GF2fUHZ1xj6f0CZr1D7z2hX//Ur+6Fm3w7pMatJm8yBV5sijfq8/ZKNSmAxp
-        idKkVwop56Wkz4eCEHm2ESp/+mH2sH7oTf6+StabhRSTH40SpSM/eGJO9XjSW0lVlFq6kFVKbd1M
-        lGoe6ZdP+W+roX8oNX6YjY8+qOdd+WP6gVv+3PODWhL/VzfXvZzKr8q8nC42/ePFpPeSLI9H5kl3
-        YJ50VT9XyXLWUysGPfdmxiDpDwc9T5TCEfXUGLBSSEivRDL/Hf0jXTCZhvrczzQ0fTgevr29+2d9
-        2Fb4uWmnP/A4HYZhaci9QLWTqnaSXDuTwfy75Ib3v9fLb3wPX0JwLvzo38+X6Dz0k0myuO/N1m8n
-        TPix0mJa508t/ZeWL39nS++trIkTFr6PNVGbjScPq/t0Ds7mm2WpPnsY369Xpbr6kYdhUjqTvZTC
-        6/W81HiYJfJ4CcqVMSt9kr/Csvo9TsJ38Co8jXK+lVcR+NEv4VXIdfIwNj9TwKwAbXoTs0LeKyJ5
-        JXk3s8Jo6J5ZMUDMCn0QF/Eq7GMpevPznL1ZSKyQF2b9+KPujJAYYO1ejt9w1BcaiFK9bCHqgnty
-        MJZ7AL9Qo8951oe913tFDA4L6OJHcy8FC/Nv5qqQGEAm9+6tb0+mqIDFISxCgEt8N0phnn7gqQct
-        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
+      string: '{"games":[{"url":"https://www.chess.com/game/live/4814018950","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.05\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"viditchess\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"7k/5BB1/6K1/8/8/8/8/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"C65\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense-4.d3-Bc5\"]\n[UTCDate
+        \"2020.05.05\"]\n[UTCTime \"13:07:02\"]\n[WhiteElo \"2773\"]\n[BlackElo \"2636\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by checkmate\"]\n[StartTime
+        \"13:07:02\"]\n[EndDate \"2020.05.05\"]\n[EndTime \"14:30:59\"]\n[Link \"https://www.chess.com/game/live/4814018950\"]\n\n1.
+        e4 {[%clk 0:25:02.6]} 1... e5 {[%clk 0:25:06.8]} 2. Nf3 {[%clk 0:25:11]} 2...
+        Nc6 {[%clk 0:25:15.1]} 3. Bb5 {[%clk 0:25:19.9]} 3... Nf6 {[%clk 0:25:23]}
+        4. d3 {[%clk 0:25:28.6]} 4... Bc5 {[%clk 0:25:31.6]} 5. Ba4 {[%clk 0:25:19.2]}
+        5... O-O {[%clk 0:25:14.4]} 6. O-O {[%clk 0:25:25.3]} 6... d6 {[%clk 0:25:02.1]}
+        7. c3 {[%clk 0:25:28.6]} 7... Ne7 {[%clk 0:24:38.7]} 8. Re1 {[%clk 0:25:29.9]}
+        8... Ng6 {[%clk 0:24:41.4]} 9. Nbd2 {[%clk 0:25:07.2]} 9... c6 {[%clk 0:23:59.2]}
+        10. Nf1 {[%clk 0:24:59.9]} 10... d5 {[%clk 0:21:42.4]} 11. exd5 {[%clk 0:24:27.4]}
+        11... Nxd5 {[%clk 0:21:43.7]} 12. Ng3 {[%clk 0:24:32]} 12... Re8 {[%clk 0:21:15.3]}
+        13. h3 {[%clk 0:24:32.6]} 13... Bb6 {[%clk 0:20:46.8]} 14. Bc2 {[%clk 0:24:38.5]}
+        14... h6 {[%clk 0:20:06.5]} 15. Bd2 {[%clk 0:24:15.2]} 15... Bc7 {[%clk 0:17:48.5]}
+        16. d4 {[%clk 0:23:40.6]} 16... exd4 {[%clk 0:17:56.3]} 17. Rxe8+ {[%clk 0:23:49.2]}
+        17... Qxe8 {[%clk 0:18:06.2]} 18. Nxd4 {[%clk 0:23:56.7]} 18... Bd7 {[%clk
+        0:16:52]} 19. Qf3 {[%clk 0:23:53.8]} 19... Qe5 {[%clk 0:14:34.2]} 20. Re1
+        {[%clk 0:23:51.3]} 20... Qd6 {[%clk 0:13:06.5]} 21. Kf1 {[%clk 0:23:21.2]}
+        21... Ne5 {[%clk 0:07:27.6]} 22. Qe2 {[%clk 0:22:40.8]} 22... Re8 {[%clk 0:07:01.1]}
+        23. Ndf5 {[%clk 0:22:38.3]} 23... Qf8 {[%clk 0:06:54.9]} 24. Qh5 {[%clk 0:22:04]}
+        24... Bxf5 {[%clk 0:04:28.6]} 25. Nxf5 {[%clk 0:22:08.7]} 25... Ng6 {[%clk
+        0:04:23.8]} 26. Rxe8 {[%clk 0:21:55.8]} 26... Qxe8 {[%clk 0:04:33.7]} 27.
+        g3 {[%clk 0:21:57.1]} 27... Nf6 {[%clk 0:04:08.8]} 28. Qf3 {[%clk 0:22:00.2]}
+        28... Qd8 {[%clk 0:04:03.9]} 29. Bc1 {[%clk 0:21:25.5]} 29... Qd5 {[%clk 0:03:36.8]}
+        30. Qxd5 {[%clk 0:21:32.3]} 30... Nxd5 {[%clk 0:03:46.6]} 31. Ke2 {[%clk 0:21:29]}
+        31... Kf8 {[%clk 0:03:55.1]} 32. h4 {[%clk 0:21:32]} 32... Ne5 {[%clk 0:03:48.4]}
+        33. Bb3 {[%clk 0:20:56.1]} 33... Ne7 {[%clk 0:03:49.9]} 34. Nxe7 {[%clk 0:20:31.3]}
+        34... Kxe7 {[%clk 0:03:58.9]} 35. h5 {[%clk 0:20:32.6]} 35... Nd7 {[%clk 0:04:02.6]}
+        36. Bd1 {[%clk 0:20:29.8]} 36... Nf6 {[%clk 0:04:02.5]} 37. Kd3 {[%clk 0:20:37.3]}
+        37... Bb6 {[%clk 0:03:51.1]} 38. f4 {[%clk 0:20:42.6]} 38... g6 {[%clk 0:02:58.4]}
+        39. hxg6 {[%clk 0:19:59.4]} 39... fxg6 {[%clk 0:03:08.3]} 40. Ke2 {[%clk 0:19:53.9]}
+        40... Nd5 {[%clk 0:02:09.6]} 41. Kf3 {[%clk 0:19:52.1]} 41... h5 {[%clk 0:02:06.8]}
+        42. Bd2 {[%clk 0:19:39.2]} 42... Kf6 {[%clk 0:02:06.8]} 43. c4 {[%clk 0:19:18.7]}
+        43... Ne7 {[%clk 0:02:15.9]} 44. Bc3+ {[%clk 0:19:27.3]} 44... Ke6 {[%clk
+        0:02:23.9]} 45. b4 {[%clk 0:19:32.4]} 45... Nf5 {[%clk 0:02:26.7]} 46. c5
+        {[%clk 0:19:39.9]} 46... Bc7 {[%clk 0:02:26.6]} 47. Bb3+ {[%clk 0:19:37.8]}
+        47... Ke7 {[%clk 0:02:35.7]} 48. Bc4 {[%clk 0:19:07.2]} 48... b6 {[%clk 0:02:11.1]}
+        49. a4 {[%clk 0:18:36.4]} 49... bxc5 {[%clk 0:02:19.6]} 50. bxc5 {[%clk 0:18:46.3]}
+        50... Ke8 {[%clk 0:02:02.8]} 51. a5 {[%clk 0:17:04.7]} 51... Bd8 {[%clk 0:02:08.7]}
+        52. Bd3 {[%clk 0:13:57]} 52... Be7 {[%clk 0:02:11.3]} 53. Bb4 {[%clk 0:13:34]}
+        53... Bf6 {[%clk 0:01:38.3]} 54. a6 {[%clk 0:13:29.8]} 54... Be7 {[%clk 0:00:52.3]}
+        55. g4 {[%clk 0:12:16.9]} 55... hxg4+ {[%clk 0:01:01]} 56. Kxg4 {[%clk 0:12:26.8]}
+        56... Ne3+ {[%clk 0:00:32.6]} 57. Kf3 {[%clk 0:12:35.7]} 57... Nd5 {[%clk
+        0:00:21.9]} 58. Bxg6+ {[%clk 0:12:41.2]} 58... Kf8 {[%clk 0:00:31.2]} 59.
+        Ba3 {[%clk 0:11:54.8]} 59... Nc7 {[%clk 0:00:40.1]} 60. Bd3 {[%clk 0:12:03.2]}
+        60... Ne6 {[%clk 0:00:49.3]} 61. Bc4 {[%clk 0:12:03.7]} 61... Nxc5 {[%clk
+        0:00:42.4]} 62. Bc1 {[%clk 0:11:33.7]} 62... Nd7 {[%clk 0:00:44.8]} 63. Ke4
+        {[%clk 0:11:37.5]} 63... Bc5 {[%clk 0:00:44]} 64. Kf5 {[%clk 0:10:37.9]} 64...
+        Ke7 {[%clk 0:00:52.7]} 65. Bb2 {[%clk 0:10:47]} 65... Be3 {[%clk 0:00:57.5]}
+        66. Be2 {[%clk 0:10:38.2]} 66... Nb6 {[%clk 0:00:45.4]} 67. Bf3 {[%clk 0:09:49.9]}
+        67... c5 {[%clk 0:00:50.1]} 68. Bf6+ {[%clk 0:09:50.7]} 68... Kf7 {[%clk 0:00:48.8]}
+        69. Bh5+ {[%clk 0:09:59]} 69... Kf8 {[%clk 0:00:56.4]} 70. Be5 {[%clk 0:09:22.5]}
+        70... c4 {[%clk 0:00:29.4]} 71. Ke4 {[%clk 0:08:03]} 71... Bc5 {[%clk 0:00:27.6]}
+        72. f5 {[%clk 0:08:11.9]} 72... Nd7 {[%clk 0:00:34.2]} 73. Bc3 {[%clk 0:08:20.6]}
+        73... Be7 {[%clk 0:00:36.1]} 74. Be2 {[%clk 0:07:07.1]} 74... Nc5+ {[%clk
+        0:00:40.4]} 75. Ke5 {[%clk 0:07:16.1]} 75... Nxa6 {[%clk 0:00:43.3]} 76. Bxc4
+        {[%clk 0:07:19.3]} 76... Nc5 {[%clk 0:00:47.1]} 77. Bd2 {[%clk 0:07:03.6]}
+        77... Nd7+ {[%clk 0:00:33.2]} 78. Ke6 {[%clk 0:07:09.2]} 78... Nc5+ {[%clk
+        0:00:42]} 79. Kd5 {[%clk 0:07:18.3]} 79... Kg7 {[%clk 0:00:28.9]} 80. Be2
+        {[%clk 0:06:24.9]} 80... Kf6 {[%clk 0:00:37]} 81. Bg4 {[%clk 0:06:33.8]} 81...
+        Nd7 {[%clk 0:00:38.3]} 82. Bc3+ {[%clk 0:06:25.6]} 82... Kg5 {[%clk 0:00:44.9]}
+        83. Bh3 {[%clk 0:06:34.7]} 83... Bf6 {[%clk 0:00:31.1]} 84. Bd2+ {[%clk 0:06:29.7]}
+        84... Kh4 {[%clk 0:00:40.1]} 85. Bf1 {[%clk 0:06:39.2]} 85... Bg5 {[%clk 0:00:29.5]}
+        86. Bb4 {[%clk 0:06:26.7]} 86... Nf6+ {[%clk 0:00:19.5]} 87. Ke6 {[%clk 0:06:30.2]}
+        87... Ne4 {[%clk 0:00:25.4]} 88. Bd3 {[%clk 0:06:10.8]} 88... Ng3 {[%clk 0:00:18.6]}
+        89. f6 {[%clk 0:06:17.6]} 89... Bxf6 {[%clk 0:00:27.4]} 90. Kxf6 {[%clk 0:06:27.5]}
+        90... Kg4 {[%clk 0:00:34.9]} 91. Ke5 {[%clk 0:06:35.4]} 91... Kf3 {[%clk 0:00:34]}
+        92. Ba6 {[%clk 0:06:44.1]} 92... Ne2 {[%clk 0:00:34.8]} 93. Bd2 {[%clk 0:06:48.4]}
+        93... Ng3 {[%clk 0:00:39.7]} 94. Bg5 {[%clk 0:06:46.2]} 94... Ne4 {[%clk 0:00:42.4]}
+        95. Bb7 {[%clk 0:06:53.5]} 95... Kg4 {[%clk 0:00:51.2]} 96. Be3 {[%clk 0:07:01.4]}
+        96... Ng3 {[%clk 0:00:57.5]} 97. Bf2 {[%clk 0:07:01.9]} 97... a5 {[%clk 0:01:03.9]}
+        98. Bc6 {[%clk 0:07:07.4]} 98... a4 {[%clk 0:01:11.8]} 99. Bxa4 {[%clk 0:07:15.6]}
+        99... Kf3 {[%clk 0:01:20.6]} 100. Bd4 {[%clk 0:07:21.8]} 100... Kg4 {[%clk
+        0:00:34.9]} 101. Bd1+ {[%clk 0:07:26.4]} 101... Kg5 {[%clk 0:00:28.8]} 102.
+        Be3+ {[%clk 0:07:27.5]} 102... Kg6 {[%clk 0:00:35.6]} 103. Bc2+ {[%clk 0:07:25.9]}
+        103... Kf7 {[%clk 0:00:37.7]} 104. Bd1 {[%clk 0:06:50.5]} 104... Kg6 {[%clk
+        0:00:44]} 105. Ke6 {[%clk 0:06:59.7]} 105... Nh5 {[%clk 0:00:27.6]} 106. Bc2+
+        {[%clk 0:07:07.4]} 106... Kg7 {[%clk 0:00:35]} 107. Ke7 {[%clk 0:07:06.1]}
+        107... Ng3 {[%clk 0:00:30.6]} 108. Bd3 {[%clk 0:06:29.3]} 108... Nh5 {[%clk
+        0:00:37.2]} 109. Bg5 {[%clk 0:06:02.8]} 109... Ng3 {[%clk 0:00:37.6]} 110.
+        Ke6 {[%clk 0:06:11]} 110... Nh5 {[%clk 0:00:29.7]} 111. Kf5 {[%clk 0:05:46.3]}
+        111... Kf7 {[%clk 0:00:38.7]} 112. Bc4+ {[%clk 0:05:53.8]} 112... Kg7 {[%clk
+        0:00:46.6]} 113. Bh4 {[%clk 0:05:45]} 113... Kh6 {[%clk 0:00:40.1]} 114. Bf7
+        {[%clk 0:05:48.6]} 114... Ng7+ {[%clk 0:00:36]} 115. Kg4 {[%clk 0:05:54.6]}
+        115... Kh7 {[%clk 0:00:16.6]} 116. Kg5 {[%clk 0:05:54.1]} 116... Kh8 {[%clk
+        0:00:15.5]} 117. Kg6 {[%clk 0:05:55.9]} 117... Ne6 {[%clk 0:00:12]} 118. Bf6+
+        {[%clk 0:06:03.8]} 118... Ng7 {[%clk 0:00:20.1]} 119. Bxg7# {[%clk 0:06:12.9]}
+        1-0\n","time_control":"1500+10","end_time":1588689059,"rated":false,"accuracies":{"white":98.03520622335238,"black":96.87336633988807},"tcn":"mC0Kgv5QfH!Tlt9IHy8!egZRksQ0fe0UblYQlfRJCJTJfw98pxIPyk3VclPYtBKBe878vB6Zdv8KaeKRgfUKvm48BLR9mNZLwLKUe898owJTNv87lc7JvJTJfm!9xFUKkrJ0L090FNKZrdZTmtYPnD2UNU1UtmTJmvVNcl0TsAJ0lsTSjz0LAIPYdrS0rAXPiyPIzI08yGY7At70sz0TGOT0wENEvELuEvuJtU89zqJYUtYStASIqcIZvC0ICL90cjIuAmZPmvQIjT01vN19TKIALCuIDLPZKsI0NmZICKIOmAOIslIZKSZISJ92Am2TmEIZlsTMEx0TslMFxfTMlzZTJSTCftCwLTMTSTFETKEvtOwmzlmwlMwCOXvEMuCwunWGXQGyQyEvnBvEydEMBuMUdkU1kd1UKSwNdkU2S0NwktwNuMNw0SwNSL21tA12MF2VA1N2LEV3EM3?MU2SFTS2T2","uuid":"516abd2f-8ed1-11ea-8133-eb3d40010001","initial_setup":"","fen":"7k/5BB1/6K1/8/8/8/8/8
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2636,"result":"checkmated","@id":"https://api.chess.com/pub/player/viditchess","username":"viditchess","uuid":"6c531d88-d357-11e1-8000-000000000000"},"eco":"https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense-4.d3-Bc5"},{"url":"https://www.chess.com/game/live/4814433469","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.05\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"Sibelephant\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"6R1/8/1K3kP1/8/1P6/8/2r5/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"A28\"]\n[ECOUrl
+        \"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line...7.Bg2-O-O-8.O-O-Re8\"]\n[UTCDate
+        \"2020.05.05\"]\n[UTCTime \"15:01:32\"]\n[WhiteElo \"2773\"]\n[BlackElo \"2769\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"15:01:32\"]\n[EndDate \"2020.05.05\"]\n[EndTime \"15:49:45\"]\n[Link \"https://www.chess.com/game/live/4814433469\"]\n\n1.
+        c4 {[%clk 0:25:09]} 1... e5 {[%clk 0:25:01.2]} 2. g3 {[%clk 0:25:17.6]} 2...
+        Nc6 {[%clk 0:25:04.5]} 3. Bg2 {[%clk 0:25:25.4]} 3... g6 {[%clk 0:25:13.7]}
+        4. Nc3 {[%clk 0:25:32.4]} 4... Bg7 {[%clk 0:25:23]} 5. Nf3 {[%clk 0:25:37.7]}
+        5... Nf6 {[%clk 0:25:31.2]} 6. d4 {[%clk 0:25:45.4]} 6... exd4 {[%clk 0:25:40.3]}
+        7. Nxd4 {[%clk 0:25:55.3]} 7... O-O {[%clk 0:25:49.5]} 8. O-O {[%clk 0:26:04.5]}
+        8... Re8 {[%clk 0:25:58.7]} 9. Nc2 {[%clk 0:26:11.8]} 9... d6 {[%clk 0:26:06.7]}
+        10. Qd2 {[%clk 0:26:20.7]} 10... a5 {[%clk 0:26:13.6]} 11. b3 {[%clk 0:26:27.4]}
+        11... Bf5 {[%clk 0:26:18.9]} 12. Ne3 {[%clk 0:26:20.9]} 12... Be4 {[%clk 0:26:20]}
+        13. Bb2 {[%clk 0:26:27.2]} 13... Bxg2 {[%clk 0:26:17.5]} 14. Nxg2 {[%clk 0:26:37.1]}
+        14... Nd7 {[%clk 0:22:21.8]} 15. Nd5 {[%clk 0:26:34.1]} 15... Bxb2 {[%clk
+        0:21:19.5]} 16. Qxb2 {[%clk 0:26:44]} 16... Nb4 {[%clk 0:21:21.6]} 17. Ngf4
+        {[%clk 0:26:33.8]} 17... Nxd5 {[%clk 0:21:22.7]} 18. cxd5 {[%clk 0:26:31]}
+        18... Qf6 {[%clk 0:21:22.1]} 19. Qd2 {[%clk 0:26:02.2]} 19... Nc5 {[%clk 0:19:54.4]}
+        20. f3 {[%clk 0:25:43.6]} 20... Qe5 {[%clk 0:19:42.4]} 21. e4 {[%clk 0:25:15.8]}
+        21... b5 {[%clk 0:14:17.6]} 22. Rac1 {[%clk 0:24:58.4]} 22... f5 {[%clk 0:13:38.9]}
+        23. exf5 {[%clk 0:25:02.4]} 23... Qxf5 {[%clk 0:13:48.1]} 24. Rfe1 {[%clk
+        0:24:45]} 24... b4 {[%clk 0:10:58.6]} 25. Qd4 {[%clk 0:23:18.9]} 25... Qf7
+        {[%clk 0:09:28]} 26. Ne6 {[%clk 0:22:17.2]} 26... Nxe6 {[%clk 0:09:28.8]}
+        27. dxe6 {[%clk 0:22:27.1]} 27... Rxe6 {[%clk 0:09:38]} 28. Rxe6 {[%clk 0:22:35.5]}
+        28... Qxe6 {[%clk 0:09:47.6]} 29. Rxc7 {[%clk 0:22:44.2]} 29... Qe5 {[%clk
+        0:08:30.9]} 30. Qxe5 {[%clk 0:22:27.1]} 30... dxe5 {[%clk 0:08:39.3]} 31.
+        Rc5 {[%clk 0:22:36.2]} 31... a4 {[%clk 0:08:36.5]} 32. Rxe5 {[%clk 0:22:37.9]}
+        32... axb3 {[%clk 0:07:44.5]} 33. axb3 {[%clk 0:22:45.2]} 33... Ra1+ {[%clk
+        0:07:38.3]} 34. Kg2 {[%clk 0:22:48.3]} 34... Rb1 {[%clk 0:07:30.4]} 35. Re3
+        {[%clk 0:22:55]} 35... Rb2+ {[%clk 0:07:39]} 36. Kh3 {[%clk 0:23:02.5]} 36...
+        h5 {[%clk 0:07:18.9]} 37. g4 {[%clk 0:22:16.7]} 37... hxg4+ {[%clk 0:04:59.6]}
+        38. fxg4 {[%clk 0:22:24]} 38... g5 {[%clk 0:03:36.3]} 39. Kg3 {[%clk 0:22:31.9]}
+        39... Rb1 {[%clk 0:01:01.3]} 40. h3 {[%clk 0:19:19.2]} 40... Kf7 {[%clk 0:00:43]}
+        41. Kf3 {[%clk 0:19:26.8]} 41... Rf1+ {[%clk 0:00:15.9]} 42. Ke4 {[%clk 0:19:20]}
+        42... Ke6 {[%clk 0:00:22.2]} 43. Kd4+ {[%clk 0:19:03.2]} 43... Kd6 {[%clk
+        0:00:31.1]} 44. Kc4 {[%clk 0:19:12.5]} 44... Rf4+ {[%clk 0:00:37]} 45. Kb5
+        {[%clk 0:19:21.5]} 45... Rd4 {[%clk 0:00:12]} 46. Re8 {[%clk 0:19:07.8]} 46...
+        Rf4 {[%clk 0:00:10.4]} 47. Rg8 {[%clk 0:19:10.4]} 47... Rf3 {[%clk 0:00:19.5]}
+        48. Kxb4 {[%clk 0:19:19.1]} 48... Rxh3 {[%clk 0:00:27.9]} 49. Rxg5 {[%clk
+        0:19:27.5]} 49... Rh1 {[%clk 0:00:35.8]} 50. Kb5 {[%clk 0:19:30.9]} 50...
+        Rg1 {[%clk 0:00:27.2]} 51. b4 {[%clk 0:19:38.5]} 51... Rb1 {[%clk 0:00:26.2]}
+        52. Rg8 {[%clk 0:19:42.5]} 52... Rb2 {[%clk 0:00:28.6]} 53. g5 {[%clk 0:19:50.1]}
+        53... Ke6 {[%clk 0:00:24.8]} 54. g6 {[%clk 0:19:55.5]} 54... Kf6 {[%clk 0:00:26]}
+        55. Kc5 {[%clk 0:20:03.9]} 55... Rc2+ {[%clk 0:00:35.2]} 56. Kb6 {[%clk 0:20:12.8]}
+        1-0\n","time_control":"1500+10","end_time":1588693785,"rated":false,"accuracies":{"white":99.32126426270969,"black":97.51912275916082},"tcn":"kA0Kow5Qfo2Ubs92gv!TlBKBvB8!eg98BkZRdlWGjr6LkuLCcjCouoTZsJ2jljQzoDzJAJ7TjlZInvTKmCXHac1LCLKLfeHzlBL1DSISJS8SeS1ScYSKBKRKYIGyIKyrir4agoabKubjox3NwENEvEUMxwjbpx!1wvbfvC1SCBSRBAfDAHDBu8BD8!DvHzvx!MxhzHhgrzgbM!bjEMRSMUSTHIjkIP","uuid":"4ffb5b49-8ee1-11ea-8133-eb3d40010001","initial_setup":"","fen":"6R1/8/1K3kP1/8/1P6/8/2r5/8
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2769,"result":"resigned","@id":"https://api.chess.com/pub/player/sibelephant","username":"Sibelephant","uuid":"8961cafa-071e-11e7-803c-000000000000"},"eco":"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line...7.Bg2-O-O-8.O-O-Re8"},{"url":"https://www.chess.com/game/live/4822900441","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.07\"]\n[Round \"-\"]\n[White
+        \"Crimson_84\"]\n[Black \"FabianoCaruana\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"1k6/1p4r1/8/p1p1pR2/PnPpPpq1/3P4/5K1Q/7R w - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"A07\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Indian-Attack-Keres-Variation...4.O-O-e6-5.d3-Bd6\"]\n[UTCDate
+        \"2020.05.07\"]\n[UTCTime \"13:01:08\"]\n[WhiteElo \"2750\"]\n[BlackElo \"2773\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"13:01:08\"]\n[EndDate \"2020.05.07\"]\n[EndTime \"13:48:57\"]\n[Link \"https://www.chess.com/game/live/4822900441\"]\n\n1.
+        Nf3 {[%clk 0:25:08.8]} 1... d5 {[%clk 0:24:59.7]} 2. g3 {[%clk 0:25:15.7]}
+        2... Bg4 {[%clk 0:25:00.1]} 3. Bg2 {[%clk 0:25:22]} 3... Nd7 {[%clk 0:25:09]}
+        4. O-O {[%clk 0:25:00.6]} 4... e6 {[%clk 0:25:09.7]} 5. d3 {[%clk 0:25:02.2]}
+        5... Bd6 {[%clk 0:25:05]} 6. Nbd2 {[%clk 0:25:00.3]} 6... Ne7 {[%clk 0:25:11.4]}
+        7. h3 {[%clk 0:24:52.6]} 7... Bh5 {[%clk 0:25:18.7]} 8. b3 {[%clk 0:24:50.3]}
+        8... O-O {[%clk 0:25:17.8]} 9. Bb2 {[%clk 0:24:57.4]} 9... a5 {[%clk 0:25:07.6]}
+        10. a4 {[%clk 0:24:42.6]} 10... c5 {[%clk 0:25:01.6]} 11. g4 {[%clk 0:24:27.5]}
+        11... Bg6 {[%clk 0:25:00]} 12. Nh4 {[%clk 0:24:35.1]} 12... Nc6 {[%clk 0:24:54.9]}
+        13. Nxg6 {[%clk 0:24:41.7]} 13... hxg6 {[%clk 0:25:04.8]} 14. e4 {[%clk 0:23:04.2]}
+        14... d4 {[%clk 0:24:03.8]} 15. f4 {[%clk 0:23:10.5]} 15... g5 {[%clk 0:24:12.9]}
+        16. f5 {[%clk 0:20:46.6]} 16... Bf4 {[%clk 0:23:37.9]} 17. Nc4 {[%clk 0:20:43]}
+        17... e5 {[%clk 0:22:42.1]} 18. Bc1 {[%clk 0:20:43.9]} 18... Ra6 {[%clk 0:22:43.6]}
+        19. Qe2 {[%clk 0:20:39.7]} 19... Qe7 {[%clk 0:22:09.7]} 20. Qf2 {[%clk 0:20:17.5]}
+        20... Nb4 {[%clk 0:20:02.2]} 21. Bxf4 {[%clk 0:19:52.7]} 21... gxf4 {[%clk
+        0:20:10.4]} 22. h4 {[%clk 0:19:34.6]} 22... g5 {[%clk 0:20:16.7]} 23. fxg6
+        {[%clk 0:17:41.6]} 23... fxg6 {[%clk 0:19:32.2]} 24. g5 {[%clk 0:17:48.8]}
+        24... Nb6 {[%clk 0:19:40.9]} 25. Bf3 {[%clk 0:17:42.2]} 25... Nxc4 {[%clk
+        0:19:47.8]} 26. bxc4 {[%clk 0:17:49.6]} 26... Rb6 {[%clk 0:19:32.6]} 27. Rfb1
+        {[%clk 0:16:48.8]} 27... Kg7 {[%clk 0:19:36.3]} 28. Kg2 {[%clk 0:16:48.6]}
+        28... Rh8 {[%clk 0:19:07.6]} 29. Bg4 {[%clk 0:16:53.1]} 29... Kf8 {[%clk 0:19:14.9]}
+        30. Rb3 {[%clk 0:16:28.8]} 30... Ke8 {[%clk 0:19:09.4]} 31. Kf3 {[%clk 0:16:00.1]}
+        31... Kd8 {[%clk 0:19:08.6]} 32. Rh1 {[%clk 0:13:19.8]} 32... Qe8 {[%clk 0:19:11.7]}
+        33. Ra1 {[%clk 0:13:26.4]} 33... Kc7 {[%clk 0:19:15.3]} 34. Kg2 {[%clk 0:13:13.4]}
+        34... Kb8 {[%clk 0:19:11.4]} 35. Kf3 {[%clk 0:13:20.5]} 35... Rc6 {[%clk 0:17:12.5]}
+        36. Rbb1 {[%clk 0:12:11.9]} 36... Rc7 {[%clk 0:17:12.7]} 37. Rh1 {[%clk 0:11:19.5]}
+        37... Rch7 {[%clk 0:17:12.4]} 38. Rh2 {[%clk 0:10:59.8]} 38... Qc6 {[%clk
+        0:17:08.7]} 39. h5 {[%clk 0:05:41.2]} 39... gxh5 {[%clk 0:16:20.4]} 40. Bf5
+        {[%clk 0:05:45.6]} 40... Rg7 {[%clk 0:16:29.3]} 41. g6 {[%clk 0:05:52.8]}
+        41... Rf8 {[%clk 0:14:12.6]} 42. Rxh5 {[%clk 0:04:14.1]} 42... Rxf5 {[%clk
+        0:14:19.5]} 43. Rxf5 {[%clk 0:04:21.8]} 43... Qxg6 {[%clk 0:14:28.4]} 44.
+        Qh2 {[%clk 0:04:30]} 44... Nxc2 {[%clk 0:14:16.1]} 45. Rh1 {[%clk 0:04:26.3]}
+        45... Qg4+ {[%clk 0:13:48]} 46. Kf2 {[%clk 0:04:33.8]} 46... Nb4 {[%clk 0:13:55.3]}
+        0-1\n","time_control":"1500+10","end_time":1588859337,"rated":false,"accuracies":{"white":88.9099436421266,"black":98.66099123286338},"tcn":"gvZJow6Efo5Zeg0Slt9Rbl!0pxENjr8!cjWGiyYIwENUvF0QFU3UmCJBnDUMDLRDlASKjc4Odm70mnQzcDMDxF2MLU1UEMZPovPArAOPfb!2go9?vE29br98ov87ah08ha7YvoY5ovPQrbQYbhY3hp8QFNUNEL32MU?9pN9LNLQUnpzkahUEvnkz","uuid":"d0090c19-9062-11ea-993b-eb3d40010001","initial_setup":"","fen":"1k6/1p4r1/8/p1p1pR2/PnPpPpq1/3P4/5K1Q/7R
+        w - -","time_class":"rapid","rules":"chess","white":{"rating":2750,"result":"resigned","@id":"https://api.chess.com/pub/player/crimson_84","username":"Crimson_84","uuid":"e6e77d86-ab42-11e8-802c-000000000000"},"black":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Kings-Indian-Attack-Keres-Variation...4.O-O-e6-5.d3-Bd6"},{"url":"https://www.chess.com/game/live/4823334699","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.07\"]\n[Round \"-\"]\n[White
+        \"viditchess\"]\n[Black \"FabianoCaruana\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition
+        \"8/8/8/1b6/2BK1k2/8/8/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"E62\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Kings-Indian-Defense-Fianchetto-Yugoslav-Kavalek-Bronstein-Larsen-Defense...9.Bb2-Nxc3-10.Bxc3-Be4-11.e3\"]\n[UTCDate
+        \"2020.05.07\"]\n[UTCTime \"15:02:04\"]\n[WhiteElo \"2636\"]\n[BlackElo \"2773\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"Game drawn by insufficient material\"]\n[StartTime
+        \"15:02:04\"]\n[EndDate \"2020.05.07\"]\n[EndTime \"15:53:49\"]\n[Link \"https://www.chess.com/game/live/4823334699\"]\n\n1.
+        d4 {[%clk 0:25:06.3]} 1... Nf6 {[%clk 0:25:09]} 2. c4 {[%clk 0:25:15.2]} 2...
+        g6 {[%clk 0:25:17.9]} 3. Nc3 {[%clk 0:25:23.4]} 3... Bg7 {[%clk 0:25:27.1]}
+        4. g3 {[%clk 0:25:26.4]} 4... O-O {[%clk 0:25:33]} 5. Bg2 {[%clk 0:25:35.6]}
+        5... d6 {[%clk 0:25:42.3]} 6. Nf3 {[%clk 0:25:43.7]} 6... c6 {[%clk 0:25:45.8]}
+        7. O-O {[%clk 0:25:52]} 7... Bf5 {[%clk 0:25:54.5]} 8. b3 {[%clk 0:24:48.2]}
+        8... Ne4 {[%clk 0:25:51.3]} 9. Bb2 {[%clk 0:24:57.2]} 9... Nxc3 {[%clk 0:25:49.1]}
+        10. Bxc3 {[%clk 0:25:07.1]} 10... Be4 {[%clk 0:25:57.2]} 11. e3 {[%clk 0:25:14.4]}
+        11... Nd7 {[%clk 0:25:47]} 12. Qe2 {[%clk 0:25:14.2]} 12... c5 {[%clk 0:25:38.2]}
+        13. Rac1 {[%clk 0:24:57]} 13... Qc7 {[%clk 0:25:14.6]} 14. Rfd1 {[%clk 0:24:54.3]}
+        14... a5 {[%clk 0:25:03.7]} 15. Bh3 {[%clk 0:24:08.9]} 15... b6 {[%clk 0:24:36.3]}
+        16. Ng5 {[%clk 0:22:16.7]} 16... Bb7 {[%clk 0:24:38.7]} 17. d5 {[%clk 0:22:23.7]}
+        17... Bxc3 {[%clk 0:23:55.7]} 18. Rxc3 {[%clk 0:22:33.6]} 18... a4 {[%clk
+        0:24:04]} 19. e4 {[%clk 0:22:28.7]} 19... axb3 {[%clk 0:24:11.2]} 20. axb3
+        {[%clk 0:22:38.6]} 20... Nf6 {[%clk 0:21:38]} 21. f4 {[%clk 0:22:29.1]} 21...
+        h6 {[%clk 0:21:37.1]} 22. Nf3 {[%clk 0:22:32]} 22... e5 {[%clk 0:20:41.4]}
+        23. dxe6 {[%clk 0:20:07.7]} 23... Nxe4 {[%clk 0:20:13]} 24. exf7+ {[%clk 0:18:01.5]}
+        24... Qxf7 {[%clk 0:20:22.9]} 25. Re3 {[%clk 0:17:56.9]} 25... Rfe8 {[%clk
+        0:20:27.1]} 26. Re1 {[%clk 0:17:37.4]} 26... Qg7 {[%clk 0:16:08.6]} 27. Qd3
+        {[%clk 0:15:06.3]} 27... Ra1 {[%clk 0:13:13.9]} 28. Rxa1 {[%clk 0:14:15.8]}
+        28... Qxa1+ {[%clk 0:13:23.8]} 29. Re1 {[%clk 0:14:23.2]} 29... Qg7 {[%clk
+        0:12:41.4]} 30. Nd2 {[%clk 0:14:05.5]} 30... Nf6 {[%clk 0:12:47.7]} 31. Re6
+        {[%clk 0:12:32.9]} 31... Rxe6 {[%clk 0:11:45.7]} 32. Bxe6+ {[%clk 0:12:42.8]}
+        32... Kh7 {[%clk 0:11:55.1]} 33. Qxd6 {[%clk 0:12:48.5]} 33... Ne4 {[%clk
+        0:12:01.4]} 34. Nxe4 {[%clk 0:12:50.5]} 34... Bxe4 {[%clk 0:12:11.3]} 35.
+        Qd2 {[%clk 0:08:22.5]} 35... Qf6 {[%clk 0:10:44.7]} 36. Qd7+ {[%clk 0:08:01.8]}
+        36... Qg7 {[%clk 0:10:52.3]} 37. Bg4 {[%clk 0:06:30.2]} 37... Bc2 {[%clk 0:10:16.5]}
+        38. Kf2 {[%clk 0:05:16.9]} 38... Bxb3 {[%clk 0:10:12.2]} 39. Qxg7+ {[%clk
+        0:04:46.9]} 39... Kxg7 {[%clk 0:10:19]} 40. Be2 {[%clk 0:04:56.5]} 40... Kf6
+        {[%clk 0:10:25.7]} 41. Ke3 {[%clk 0:05:05.4]} 41... Ba4 {[%clk 0:10:30]} 42.
+        h4 {[%clk 0:04:52.8]} 42... h5 {[%clk 0:10:08]} 43. g4 {[%clk 0:04:41.6]}
+        43... hxg4 {[%clk 0:10:15.3]} 44. Bxg4 {[%clk 0:04:51.5]} 44... Be8 {[%clk
+        0:10:18.4]} 45. Ke4 {[%clk 0:03:45]} 45... Bc6+ {[%clk 0:10:17.9]} 46. Ke3
+        {[%clk 0:03:53.1]} 46... b5 {[%clk 0:10:24.6]} 47. cxb5 {[%clk 0:04:01.7]}
+        47... Bxb5 {[%clk 0:10:34.5]} 48. h5 {[%clk 0:04:10.7]} 48... gxh5 {[%clk
+        0:10:42.6]} 49. Bxh5 {[%clk 0:04:20]} 49... c4 {[%clk 0:10:50.9]} 50. Kd4
+        {[%clk 0:04:28.7]} 50... Kf5 {[%clk 0:10:59.1]} 51. Be2 {[%clk 0:04:34.7]}
+        51... Kxf4 {[%clk 0:11:07.6]} 52. Bxc4 {[%clk 0:04:43.6]} 1/2-1/2\n","time_control":"1500+10","end_time":1588866829,"rated":false,"accuracies":{"white":99.32642634213335,"black":98.84571803523535},"tcn":"lB!TkA2Ubs92ow8!foZRgvYQeg6LjrTCcjCsjsLCmu5ZdmQIac7YfdWGoxXPvMCXBJ2scsGyuCyrirZTnD3VMv0KJSTCS1Y1su98de12mt4aea2auea2vlCTeS8SxS!3tRTClCXCRl2TlZT2SECkgnkrZ232Em2TnurypFVNwENEmEy8uC8QCuPHAHQHFNUNENIAuBTLNmLDmA","uuid":"b6132c65-9073-11ea-993b-eb3d40010001","initial_setup":"","fen":"8/8/8/1b6/2BK1k2/8/8/8
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2636,"result":"insufficient","@id":"https://api.chess.com/pub/player/viditchess","username":"viditchess","uuid":"6c531d88-d357-11e1-8000-000000000000"},"black":{"rating":2773,"result":"insufficient","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Kings-Indian-Defense-Fianchetto-Yugoslav-Kavalek-Bronstein-Larsen-Defense...9.Bb2-Nxc3-10.Bxc3-Be4-11.e3"},{"url":"https://www.chess.com/game/live/4827368408","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.08\"]\n[Round \"-\"]\n[White
+        \"Sibelephant\"]\n[Black \"FabianoCaruana\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition
+        \"1Q4k1/5p2/1pp1p1p1/7p/qPpP1P1P/6P1/2P2P2/6K1 b - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"D03\"]\n[ECOUrl \"https://www.chess.com/openings/Queens-Pawn-Opening-Torre-Gossip-Variation-4.Bf4\"]\n[UTCDate
+        \"2020.05.08\"]\n[UTCTime \"13:01:20\"]\n[WhiteElo \"2769\"]\n[BlackElo \"2773\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"13:01:20\"]\n[EndDate
+        \"2020.05.08\"]\n[EndTime \"13:47:09\"]\n[Link \"https://www.chess.com/game/live/4827368408\"]\n\n1.
+        d4 {[%clk 0:25:08.2]} 1... d5 {[%clk 0:25:06.3]} 2. Nf3 {[%clk 0:25:16.5]}
+        2... Nf6 {[%clk 0:25:12]} 3. Bg5 {[%clk 0:25:24.9]} 3... Ne4 {[%clk 0:25:17.3]}
+        4. Bf4 {[%clk 0:25:33]} 4... Bf5 {[%clk 0:24:30.6]} 5. e3 {[%clk 0:25:41.2]}
+        5... e6 {[%clk 0:24:38.9]} 6. Nbd2 {[%clk 0:25:48.6]} 6... Bd6 {[%clk 0:24:44.8]}
+        7. Nxe4 {[%clk 0:25:15.5]} 7... Bxe4 {[%clk 0:24:37.8]} 8. Bd3 {[%clk 0:25:04.8]}
+        8... Bxf4 {[%clk 0:24:37.1]} 9. exf4 {[%clk 0:25:10.6]} 9... Bxf3 {[%clk 0:24:44.6]}
+        10. Qxf3 {[%clk 0:25:19.7]} 10... g6 {[%clk 0:24:49.7]} 11. h4 {[%clk 0:23:46.1]}
+        11... h5 {[%clk 0:24:27]} 12. O-O-O {[%clk 0:23:24.4]} 12... Qd6 {[%clk 0:24:30.6]}
+        13. Rhe1 {[%clk 0:23:07.1]} 13... Nc6 {[%clk 0:24:37.4]} 14. Bb5 {[%clk 0:21:13.5]}
+        14... O-O-O {[%clk 0:24:44.3]} 15. Re3 {[%clk 0:21:13.7]} 15... Ne7 {[%clk
+        0:24:46.2]} 16. Ra3 {[%clk 0:19:36.8]} 16... Kb8 {[%clk 0:24:51.4]} 17. g3
+        {[%clk 0:18:57.7]} 17... Rc8 {[%clk 0:24:56.4]} 18. Qc3 {[%clk 0:17:35.1]}
+        18... c6 {[%clk 0:24:11.5]} 19. Bd3 {[%clk 0:16:24.8]} 19... Rc7 {[%clk 0:24:16]}
+        20. b4 {[%clk 0:16:11.3]} 20... Nc8 {[%clk 0:24:09.9]} 21. Kd2 {[%clk 0:14:45]}
+        21... Qd7 {[%clk 0:24:00.5]} 22. Re1 {[%clk 0:13:03.2]} 22... Nd6 {[%clk 0:24:07.8]}
+        23. Rb3 {[%clk 0:13:06.2]} 23... Kc8 {[%clk 0:22:27.3]} 24. a4 {[%clk 0:13:02.9]}
+        24... Kd8 {[%clk 0:22:14.1]} 25. a5 {[%clk 0:12:00.2]} 25... b6 {[%clk 0:21:29.1]}
+        26. axb6 {[%clk 0:11:48.6]} 26... axb6 {[%clk 0:21:39]} 27. Ra3 {[%clk 0:11:16]}
+        27... Ke7 {[%clk 0:21:42.7]} 28. Ra6 {[%clk 0:11:20.2]} 28... Rb8 {[%clk 0:21:36.6]}
+        29. Ke2 {[%clk 0:10:53.1]} 29... Nb5 {[%clk 0:20:37.9]} 30. Qa1 {[%clk 0:10:56]}
+        30... Kf6 {[%clk 0:19:36.7]} 31. Kf1 {[%clk 0:10:58.3]} 31... Kg7 {[%clk 0:19:44.6]}
+        32. Qb2 {[%clk 0:10:07.5]} 32... Ra7 {[%clk 0:19:36.9]} 33. Rxa7 {[%clk 0:09:09.4]}
+        33... Qxa7 {[%clk 0:19:38.2]} 34. Ra1 {[%clk 0:09:03.5]} 34... Qc7 {[%clk
+        0:17:55.8]} 35. Kg1 {[%clk 0:08:27.6]} 35... Nd6 {[%clk 0:17:48.3]} 36. Qc3
+        {[%clk 0:08:31.9]} 36... Rd8 {[%clk 0:15:44.9]} 37. Ra6 {[%clk 0:08:21.3]}
+        37... Qb7 {[%clk 0:15:07]} 38. Qe1 {[%clk 0:07:34.4]} 38... Kg8 {[%clk 0:14:29.1]}
+        39. Qe5 {[%clk 0:06:09.5]} 39... Nc4 {[%clk 0:14:34]} 40. Bxc4 {[%clk 0:06:18.2]}
+        40... dxc4 {[%clk 0:14:43.1]} 41. Ra1 {[%clk 0:06:15.2]} 41... Ra8 {[%clk
+        0:14:23.8]} 42. Rxa8+ {[%clk 0:06:17.6]} 42... Qxa8 {[%clk 0:14:31.6]} 43.
+        Qd6 {[%clk 0:05:42.8]} 43... Qa4 {[%clk 0:14:15.5]} 44. Qb8+ {[%clk 0:05:41.1]}
+        44... Kg7 {[%clk 0:14:22.5]} 45. Qe5+ {[%clk 0:05:47]} 45... Kg8 {[%clk 0:14:07]}
+        46. Qb8+ {[%clk 0:05:52.4]} 46... Kg7 {[%clk 0:14:15.2]} 47. Qe5+ {[%clk 0:06:00.8]}
+        47... Kg8 {[%clk 0:14:19.9]} 48. Qb8+ {[%clk 0:06:05.4]} 1/2-1/2\n","time_control":"1500+10","end_time":1588945629,"rated":false,"accuracies":{"white":98.09590035321351,"black":98.2666721501783},"tcn":"lBZJgv!TcMTCMD6Lmu0Sbl9RlCLCftRDuDCvdv2UpF3Nec7Rhe5QtH86euQ0uq65ow76vsYQHt6Yjz06clRZde6Rqr56iy67yGXPGPWPrq70qO?5lmRHsa0TmfT2ajYWOWZWeaWYfgHRjs57aOYXse2!eKRAtAJAOa74a4X4KR4yR5!25K2!K5!25K2!K5","uuid":"0466b604-912c-11ea-993b-eb3d40010001","initial_setup":"","fen":"1Q4k1/5p2/1pp1p1p1/7p/qPpP1P1P/6P1/2P2P2/6K1
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2769,"result":"repetition","@id":"https://api.chess.com/pub/player/sibelephant","username":"Sibelephant","uuid":"8961cafa-071e-11e7-803c-000000000000"},"black":{"rating":2773,"result":"repetition","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Queens-Pawn-Opening-Torre-Gossip-Variation-4.Bf4"},{"url":"https://www.chess.com/game/live/4827800646","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.08\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"Dr-Bassem\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"4r1k1/3b4/5PpQ/1ppPq3/4N3/pP5P/P7/3R2K1 b - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"E70\"]\n[ECOUrl \"https://www.chess.com/openings/Kings-Indian-Defense-Kramer-Variation-5...O-O\"]\n[UTCDate
+        \"2020.05.08\"]\n[UTCTime \"15:00:54\"]\n[WhiteElo \"2773\"]\n[BlackElo \"2608\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"15:00:54\"]\n[EndDate \"2020.05.08\"]\n[EndTime \"15:55:33\"]\n[Link \"https://www.chess.com/game/live/4827800646\"]\n\n1.
+        d4 {[%clk 0:25:09.9]} 1... Nf6 {[%clk 0:25:05.1]} 2. c4 {[%clk 0:25:18.2]}
+        2... g6 {[%clk 0:25:13.4]} 3. Nc3 {[%clk 0:25:27.3]} 3... Bg7 {[%clk 0:25:22.8]}
+        4. e4 {[%clk 0:25:36.6]} 4... d6 {[%clk 0:25:32.3]} 5. Nge2 {[%clk 0:25:45]}
+        5... O-O {[%clk 0:25:30.7]} 6. h3 {[%clk 0:25:52.9]} 6... c6 {[%clk 0:22:41.4]}
+        7. Ng3 {[%clk 0:25:55.1]} 7... e5 {[%clk 0:22:09.9]} 8. d5 {[%clk 0:24:59]}
+        8... a5 {[%clk 0:20:53.4]} 9. Be2 {[%clk 0:24:58.2]} 9... Na6 {[%clk 0:21:01.4]}
+        10. Be3 {[%clk 0:24:59.9]} 10... cxd5 {[%clk 0:20:06.6]} 11. cxd5 {[%clk 0:25:07.4]}
+        11... Nc5 {[%clk 0:19:31.3]} 12. Bxc5 {[%clk 0:24:41.4]} 12... dxc5 {[%clk
+        0:19:39.2]} 13. Nf1 {[%clk 0:24:22.7]} 13... a4 {[%clk 0:18:41]} 14. Nd2 {[%clk
+        0:24:20.4]} 14... Bd7 {[%clk 0:18:17.7]} 15. O-O {[%clk 0:24:21]} 15... Ne8
+        {[%clk 0:16:27]} 16. Qc2 {[%clk 0:24:09.8]} 16... Qc7 {[%clk 0:13:45.1]} 17.
+        Rad1 {[%clk 0:23:51.8]} 17... Nd6 {[%clk 0:11:44.2]} 18. Nc4 {[%clk 0:23:58.9]}
+        18... Ra5 {[%clk 0:09:52.1]} 19. Nxa5 {[%clk 0:23:24.5]} 19... Qxa5 {[%clk
+        0:10:02]} 20. b3 {[%clk 0:22:55.3]} 20... a3 {[%clk 0:09:44.9]} 21. Qd2 {[%clk
+        0:21:55.1]} 21... h5 {[%clk 0:07:10]} 22. Na4 {[%clk 0:19:17.6]} 22... Qa7
+        {[%clk 0:04:36]} 23. Qe3 {[%clk 0:17:08.7]} 23... b6 {[%clk 0:04:33.2]} 24.
+        Nc3 {[%clk 0:17:08.4]} 24... Kh7 {[%clk 0:04:29]} 25. g4 {[%clk 0:16:56.8]}
+        25... Bh6 {[%clk 0:04:15.9]} 26. g5 {[%clk 0:17:04.8]} 26... Bg7 {[%clk 0:04:24.5]}
+        27. f4 {[%clk 0:16:13.1]} 27... exf4 {[%clk 0:03:26]} 28. Qxf4 {[%clk 0:16:23]}
+        28... Qb8 {[%clk 0:03:16]} 29. Qg3 {[%clk 0:11:23.6]} 29... Re8 {[%clk 0:03:00.7]}
+        30. Rf6 {[%clk 0:11:29.3]} 30... Bxf6 {[%clk 0:02:41.7]} 31. gxf6 {[%clk 0:11:39.2]}
+        31... b5 {[%clk 0:02:34.1]} 32. Bxh5 {[%clk 0:10:05.5]} 32... Nxe4 {[%clk
+        0:01:40.5]} 33. Bxg6+ {[%clk 0:09:39.9]} 33... fxg6 {[%clk 0:01:36.3]} 34.
+        Qh4+ {[%clk 0:08:11.4]} 34... Kg8 {[%clk 0:01:44.5]} 35. Nxe4 {[%clk 0:08:20.2]}
+        35... Qe5 {[%clk 0:00:17.4]} 36. Qh6 {[%clk 0:07:25.6]} 1-0\n","time_control":"1500+10","end_time":1588953333,"rated":false,"accuracies":{"white":98.23837737938841,"black":94.53776016709563},"tcn":"lB!TkA2Ubs92mCZRgm8!pxYQmw0KBJWGfm5OcuQJAJOIuIRIwfGyfl6ZegT8dk7Yad8RlA4GAGYGjryqkl3NsyGWluXPys!3oE2VEMV2nDKDuDW5Dw98fT2TMTPHmNRCNU1UwF3!sC5KFV","uuid":"b682283f-913c-11ea-993b-eb3d40010001","initial_setup":"","fen":"4r1k1/3b4/5PpQ/1ppPq3/4N3/pP5P/P7/3R2K1
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2608,"result":"resigned","@id":"https://api.chess.com/pub/player/dr-bassem","username":"Dr-Bassem","uuid":"6820c84c-7e36-11e3-8044-000000000000"},"eco":"https://www.chess.com/openings/Kings-Indian-Defense-Kramer-Variation-5...O-O"},{"url":"https://www.chess.com/game/live/4831880071","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.09\"]\n[Round \"-\"]\n[White
+        \"LevonAronian\"]\n[Black \"FabianoCaruana\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition
+        \"8/8/8/5K1B/8/8/5k2/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"C78\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Ruy-Lopez-Opening-Morphy-Defense-Arkhangelsk-Variation-7.d3-Be7-8.Nc3-d6\"]\n[UTCDate
+        \"2020.05.09\"]\n[UTCTime \"13:01:00\"]\n[WhiteElo \"2778\"]\n[BlackElo \"2773\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"Game drawn by insufficient material\"]\n[StartTime
+        \"13:01:00\"]\n[EndDate \"2020.05.09\"]\n[EndTime \"14:11:46\"]\n[Link \"https://www.chess.com/game/live/4831880071\"]\n\n1.
+        e4 {[%clk 0:25:09.9]} 1... e5 {[%clk 0:25:08.1]} 2. Nf3 {[%clk 0:25:18]} 2...
+        Nc6 {[%clk 0:25:17.3]} 3. Bb5 {[%clk 0:25:23.2]} 3... a6 {[%clk 0:25:25.4]}
+        4. Ba4 {[%clk 0:25:31.2]} 4... Nf6 {[%clk 0:25:34.4]} 5. O-O {[%clk 0:25:36.4]}
+        5... b5 {[%clk 0:25:43.2]} 6. Bb3 {[%clk 0:25:44.1]} 6... Bb7 {[%clk 0:25:52.3]}
+        7. d3 {[%clk 0:25:27.6]} 7... Be7 {[%clk 0:25:59]} 8. Nc3 {[%clk 0:25:10.7]}
+        8... d6 {[%clk 0:25:52.8]} 9. a3 {[%clk 0:24:57.8]} 9... O-O {[%clk 0:25:59.4]}
+        10. Ne2 {[%clk 0:24:55.6]} 10... Qd7 {[%clk 0:26:02.7]} 11. Ng3 {[%clk 0:25:00.3]}
+        11... Nd8 {[%clk 0:26:07.1]} 12. Nf5 {[%clk 0:24:33.5]} 12... Ne6 {[%clk 0:25:18.2]}
+        13. Ng5 {[%clk 0:24:35.8]} 13... Bd8 {[%clk 0:24:39.7]} 14. f4 {[%clk 0:23:59.4]}
+        14... Nxf4 {[%clk 0:24:13]} 15. Bxf4 {[%clk 0:23:51.3]} 15... exf4 {[%clk
+        0:24:22.9]} 16. Rxf4 {[%clk 0:23:59.5]} 16... h6 {[%clk 0:22:30.9]} 17. Nh3
+        {[%clk 0:21:13.5]} 17... Kh8 {[%clk 0:22:19]} 18. Qf3 {[%clk 0:18:31.5]} 18...
+        d5 {[%clk 0:17:29.6]} 19. e5 {[%clk 0:18:01.4]} 19... Nh7 {[%clk 0:17:30.6]}
+        20. d4 {[%clk 0:17:34.3]} 20... Bg5 {[%clk 0:16:42.6]} 21. Qg4 {[%clk 0:15:02.6]}
+        21... g6 {[%clk 0:14:10.4]} 22. Nxh6 {[%clk 0:15:09]} 22... Qxg4 {[%clk 0:14:18.4]}
+        23. Nxg4 {[%clk 0:15:18.7]} 23... Bxf4 {[%clk 0:14:27.5]} 24. Nxf4 {[%clk
+        0:15:28.6]} 24... Bc8 {[%clk 0:13:06.3]} 25. Nf2 {[%clk 0:14:12.6]} 25...
+        c6 {[%clk 0:13:10.1]} 26. c3 {[%clk 0:13:43.8]} 26... Kg7 {[%clk 0:12:49.9]}
+        27. Bc2 {[%clk 0:13:28.8]} 27... Ng5 {[%clk 0:12:47.6]} 28. Re1 {[%clk 0:13:29]}
+        28... Bd7 {[%clk 0:12:23.7]} 29. Re3 {[%clk 0:13:23.1]} 29... Rh8 {[%clk 0:11:02.6]}
+        30. Rg3 {[%clk 0:12:32]} 30... Ne6 {[%clk 0:11:10.1]} 31. N4d3 {[%clk 0:12:40.1]}
+        31... Rh4 {[%clk 0:10:51.3]} 32. Bd1 {[%clk 0:12:45.7]} 32... c5 {[%clk 0:09:39.5]}
+        33. Nxc5 {[%clk 0:09:44.2]} 33... Nxc5 {[%clk 0:09:46.6]} 34. dxc5 {[%clk
+        0:09:54.1]} 34... Re8 {[%clk 0:09:54.1]} 35. Re3 {[%clk 0:05:40.1]} 35...
+        d4 {[%clk 0:09:20.4]} 36. cxd4 {[%clk 0:05:46.6]} 36... Rxd4 {[%clk 0:09:30.3]}
+        37. b4 {[%clk 0:05:08.5]} 37... a5 {[%clk 0:08:35.8]} 38. bxa5 {[%clk 0:04:39.1]}
+        38... Ra8 {[%clk 0:08:41.8]} 39. Bf3 {[%clk 0:04:29.5]} 39... Rxa5 {[%clk
+        0:08:47.3]} 40. c6 {[%clk 0:04:35.7]} 40... Be6 {[%clk 0:08:47.2]} 41. Ne4
+        {[%clk 0:04:42.6]} 41... b4 {[%clk 0:05:38.4]} 42. axb4 {[%clk 0:04:48.6]}
+        42... Rxe5 {[%clk 0:05:25]} 43. Rc3 {[%clk 0:04:18.6]} 43... Bc8 {[%clk 0:03:42.4]}
+        44. Ra3 {[%clk 0:03:35.9]} 44... Rxb4 {[%clk 0:02:14]} 45. Nd6 {[%clk 0:03:00.2]}
+        45... Be6 {[%clk 0:02:22.2]} 46. c7 {[%clk 0:01:25.2]} 46... Rb1+ {[%clk 0:02:29.5]}
+        47. Kf2 {[%clk 0:01:33.5]} 47... Rc1 {[%clk 0:02:36]} 48. Ra7 {[%clk 0:01:40.4]}
+        48... Rec5 {[%clk 0:00:46.3]} 49. h3 {[%clk 0:01:43.7]} 49... Kh6 {[%clk 0:00:20.8]}
+        50. Nxf7+ {[%clk 0:01:42.3]} 50... Bxf7 {[%clk 0:00:28.2]} 51. c8=Q {[%clk
+        0:01:51.5]} 51... Rxc8 {[%clk 0:00:35.3]} 52. Rxf7 {[%clk 0:02:00.9]} 52...
+        R8c4 {[%clk 0:00:34.7]} 53. Kg3 {[%clk 0:02:07.5]} 53... Rc7 {[%clk 0:00:31.6]}
+        54. Rxc7 {[%clk 0:02:15.4]} 54... Rxc7 {[%clk 0:00:41.5]} 55. h4 {[%clk 0:02:21.5]}
+        55... Kg7 {[%clk 0:00:48.1]} 56. Kh3 {[%clk 0:02:19.2]} 56... Kf6 {[%clk 0:00:55.9]}
+        57. g3 {[%clk 0:02:26.4]} 57... Rc3 {[%clk 0:01:00.7]} 58. Be4 {[%clk 0:02:32.7]}
+        58... Re3 {[%clk 0:01:07]} 59. Bc6 {[%clk 0:02:33]} 59... Kf5 {[%clk 0:01:12.2]}
+        60. Bd7+ {[%clk 0:02:38.7]} 60... Ke5 {[%clk 0:01:09.2]} 61. Kg4 {[%clk 0:02:43.4]}
+        61... Kf6 {[%clk 0:01:09]} 62. Bc6 {[%clk 0:02:48.8]} 62... Rc3 {[%clk 0:01:13.7]}
+        63. Bb7 {[%clk 0:02:57.3]} 63... Rc4+ {[%clk 0:01:20.2]} 64. Kh3 {[%clk 0:03:03.6]}
+        64... Ke5 {[%clk 0:01:27.4]} 65. Bf3 {[%clk 0:03:08.1]} 65... Kd4 {[%clk 0:01:28.4]}
+        66. Kg2 {[%clk 0:02:43.5]} 66... Ke3 {[%clk 0:01:34.5]} 67. Bb7 {[%clk 0:02:51]}
+        67... Rb4 {[%clk 0:01:34.8]} 68. Bc6 {[%clk 0:02:57.7]} 68... Rb2+ {[%clk
+        0:01:38.6]} 69. Kg1 {[%clk 0:03:05.8]} 69... Ke2 {[%clk 0:01:19.4]} 70. Be4
+        {[%clk 0:03:05.2]} 70... Rb4 {[%clk 0:01:20.2]} 71. Bxg6 {[%clk 0:02:59.8]}
+        71... Kf3 {[%clk 0:01:20.3]} 72. Kh2 {[%clk 0:03:05.6]} 72... Kf2 {[%clk 0:01:08.1]}
+        73. Kh3 {[%clk 0:03:13.5]} 73... Rb3 {[%clk 0:01:15.4]} 74. Kg4 {[%clk 0:03:22.2]}
+        74... Rxg3+ {[%clk 0:01:24.2]} 75. Kf5 {[%clk 0:03:31.2]} 75... Rh3 {[%clk
+        0:01:32.3]} 76. h5 {[%clk 0:03:34.7]} 76... Rxh5+ {[%clk 0:01:39.7]} 77. Bxh5
+        {[%clk 0:03:43.4]} 1/2-1/2\n","time_control":"1500+10","end_time":1589033506,"rated":false,"accuracies":{"white":97.32205081827895,"black":98.1582745907528},"tcn":"mC0Kgv5QfHWOHy!TegXHyr6Xlt90bsZRiq8!sm7ZmwQ7wL7SvM07nDSDcDKDfD3VMx!?dvRJCKT3tB7MvE2ULVZEVEMDxDX6EnYQks?2rk3Mae6Zeu9?uwMSDt?FkdQItISIBI48wuJBsBFBjzOGzG84dv4GIQZSnCHzqzGKusS6sqBzCR6SQYzbgnbcqWKIpx2VR1S1Y~I6W16AnwAY1YcYxFV2wx2TowYsvCsuCQTLQZLKxEKTZQusQXsAExTKXvKBxoBuvXAzXQzjogumQCjzCUmvgpvnpxzrxErwELwxFNxNUN","uuid":"253de61d-91f5-11ea-993b-eb3d40010001","initial_setup":"","fen":"8/8/8/5K1B/8/8/5k2/8
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2778,"result":"insufficient","@id":"https://api.chess.com/pub/player/levonaronian","username":"LevonAronian","uuid":"0f67dacc-daa2-11e5-8002-000000000000"},"black":{"rating":2773,"result":"insufficient","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Ruy-Lopez-Opening-Morphy-Defense-Arkhangelsk-Variation-7.d3-Be7-8.Nc3-d6"},{"url":"https://www.chess.com/game/live/4832325558","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.09\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"Crimson_84\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"r3rb2/pp1q1kp1/5nQ1/2p3PP/2Pp4/P4P2/1PPB4/2KRR3 b - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C42\"]\n[ECOUrl \"https://www.chess.com/openings/Petrovs-Defense-Classical-Nimzowitsch-Attack...7.Be3-O-O-8.Qd2-Nd7-9.O-O-O\"]\n[UTCDate
+        \"2020.05.09\"]\n[UTCTime \"15:01:15\"]\n[WhiteElo \"2773\"]\n[BlackElo \"2750\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"15:01:15\"]\n[EndDate \"2020.05.09\"]\n[EndTime \"15:24:56\"]\n[Link \"https://www.chess.com/game/live/4832325558\"]\n\n1.
+        e4 {[%clk 0:25:06.1]} 1... e5 {[%clk 0:25:07.4]} 2. Nf3 {[%clk 0:25:14.4]}
+        2... Nf6 {[%clk 0:25:16]} 3. Nxe5 {[%clk 0:25:23.3]} 3... d6 {[%clk 0:25:24.8]}
+        4. Nf3 {[%clk 0:25:32.9]} 4... Nxe4 {[%clk 0:25:33.6]} 5. Nc3 {[%clk 0:25:42.5]}
+        5... Nxc3 {[%clk 0:25:42]} 6. dxc3 {[%clk 0:25:52.4]} 6... Be7 {[%clk 0:25:50.8]}
+        7. Be3 {[%clk 0:26:01.6]} 7... O-O {[%clk 0:25:59.6]} 8. Qd2 {[%clk 0:26:11.3]}
+        8... Nd7 {[%clk 0:26:08.4]} 9. O-O-O {[%clk 0:26:20.9]} 9... Nf6 {[%clk 0:26:17.3]}
+        10. Bd3 {[%clk 0:26:29.6]} 10... c5 {[%clk 0:26:24.6]} 11. Rhe1 {[%clk 0:26:35.7]}
+        11... Be6 {[%clk 0:26:30.7]} 12. Bf4 {[%clk 0:26:42]} 12... d5 {[%clk 0:24:24.6]}
+        13. Ng5 {[%clk 0:26:47.3]} 13... Bg4 {[%clk 0:24:16.2]} 14. f3 {[%clk 0:26:44]}
+        14... Bd7 {[%clk 0:24:22.2]} 15. c4 {[%clk 0:22:46.9]} 15... d4 {[%clk 0:23:35.2]}
+        16. h4 {[%clk 0:21:54.4]} 16... Re8 {[%clk 0:22:56.2]} 17. g4 {[%clk 0:21:36.9]}
+        17... Bc6 {[%clk 0:22:48.6]} 18. Qh2 {[%clk 0:19:54.2]} 18... Qa5 {[%clk 0:22:06.8]}
+        19. a3 {[%clk 0:19:52.2]} 19... Bf8 {[%clk 0:22:13.4]} 20. Bd2 {[%clk 0:18:08]}
+        20... Qb6 {[%clk 0:22:03.7]} 21. Qf4 {[%clk 0:17:57.5]} 21... Bd7 {[%clk 0:21:06.4]}
+        22. Bxh7+ {[%clk 0:17:53.1]} 22... Kh8 {[%clk 0:20:26.9]} 23. Bf5 {[%clk 0:17:31.1]}
+        23... Bxf5 {[%clk 0:20:33.1]} 24. Qxf5 {[%clk 0:17:39]} 24... Kg8 {[%clk 0:20:41.6]}
+        25. h5 {[%clk 0:17:01]} 25... Qc6 {[%clk 0:20:48.2]} 26. Nxf7 {[%clk 0:16:05.9]}
+        26... Kxf7 {[%clk 0:20:53.8]} 27. g5 {[%clk 0:16:15]} 27... Qd7 {[%clk 0:21:00.9]}
+        28. Qg6+ {[%clk 0:16:16]} 1-0\n","time_control":"1500+10","end_time":1589037896,"rated":false,"accuracies":{"white":97.71164049886676,"black":93.91870711801177},"tcn":"mC0Kgv!TvKZRKvTCbsCsls90cu8!dl5ZecZTftYIhe6SuDRJvMSEnvEZsAJBpF98oEZQlp7Giq09DlGPpDQZt3!?3LZLDL?!FNPQM1!1EMQZLU","uuid":"e9f4aed4-9205-11ea-993b-eb3d40010001","initial_setup":"","fen":"r3rb2/pp1q1kp1/5nQ1/2p3PP/2Pp4/P4P2/1PPB4/2KRR3
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2750,"result":"resigned","@id":"https://api.chess.com/pub/player/crimson_84","username":"Crimson_84","uuid":"e6e77d86-ab42-11e8-802c-000000000000"},"eco":"https://www.chess.com/openings/Petrovs-Defense-Classical-Nimzowitsch-Attack...7.Be3-O-O-8.Qd2-Nd7-9.O-O-O"},{"url":"https://www.chess.com/game/live/4836703600","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.10\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"LOVEVAE\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"5k2/1R5p/1p2n2N/6P1/r6P/6K1/5P2/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"B01\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8-4.d4\"]\n[UTCDate
+        \"2020.05.10\"]\n[UTCTime \"14:01:48\"]\n[WhiteElo \"2773\"]\n[BlackElo \"2752\"]\n[TimeControl
+        \"1500+10\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"14:01:48\"]\n[EndDate \"2020.05.10\"]\n[EndTime \"15:02:02\"]\n[Link \"https://www.chess.com/game/live/4836703600\"]\n\n1.
+        e4 {[%clk 0:25:09.9]} 1... d5 {[%clk 0:25:07.8]} 2. exd5 {[%clk 0:25:17.9]}
+        2... Qxd5 {[%clk 0:25:17.1]} 3. Nc3 {[%clk 0:25:27.1]} 3... Qd8 {[%clk 0:25:26.1]}
+        4. d4 {[%clk 0:25:34.3]} 4... g6 {[%clk 0:25:35.2]} 5. Bc4 {[%clk 0:25:28.6]}
+        5... Bg7 {[%clk 0:25:40.7]} 6. Nf3 {[%clk 0:25:37.6]} 6... Nf6 {[%clk 0:25:43.7]}
+        7. O-O {[%clk 0:25:33.1]} 7... O-O {[%clk 0:25:51.3]} 8. h3 {[%clk 0:25:42]}
+        8... Nc6 {[%clk 0:25:54.8]} 9. Bf4 {[%clk 0:25:00]} 9... b6 {[%clk 0:25:32]}
+        10. d5 {[%clk 0:23:17.9]} 10... Na5 {[%clk 0:22:46.5]} 11. Be2 {[%clk 0:23:24.6]}
+        11... e6 {[%clk 0:18:31.8]} 12. dxe6 {[%clk 0:22:35.9]} 12... Bxe6 {[%clk
+        0:18:27.3]} 13. Qxd8 {[%clk 0:22:42.7]} 13... Raxd8 {[%clk 0:16:44.8]} 14.
+        Bxc7 {[%clk 0:22:49.2]} 14... Rc8 {[%clk 0:16:46.2]} 15. Be5 {[%clk 0:22:48.7]}
+        15... Nc6 {[%clk 0:14:32.6]} 16. Bh2 {[%clk 0:22:55]} 16... Bf5 {[%clk 0:11:27.4]}
+        17. g4 {[%clk 0:19:41.9]} 17... Be6 {[%clk 0:11:08.7]} 18. Rad1 {[%clk 0:19:25.6]}
+        18... Na5 {[%clk 0:10:14.8]} 19. Be5 {[%clk 0:16:41.7]} 19... Bc4 {[%clk 0:09:33.9]}
+        20. Rfe1 {[%clk 0:16:30.2]} 20... Rfe8 {[%clk 0:08:30.4]} 21. Nb5 {[%clk 0:15:31.6]}
+        21... Bxe2 {[%clk 0:06:51.9]} 22. Rxe2 {[%clk 0:15:38.9]} 22... Nc4 {[%clk
+        0:07:01]} 23. Nxa7 {[%clk 0:11:02.8]} 23... Nxe5 {[%clk 0:04:15.6]} 24. Rxe5
+        {[%clk 0:08:12]} 24... Rxc2 {[%clk 0:04:23.3]} 25. g5 {[%clk 0:07:42.7]} 25...
+        Rxe5 {[%clk 0:03:17.2]} 26. Nxe5 {[%clk 0:07:52.6]} 26... Ne8 {[%clk 0:03:26.4]}
+        27. Nac6 {[%clk 0:06:43.9]} 27... Bxe5 {[%clk 0:03:15]} 28. Nxe5 {[%clk 0:06:53.8]}
+        28... Rxb2 {[%clk 0:01:39.3]} 29. Rd8 {[%clk 0:06:59]} 29... Kf8 {[%clk 0:01:48.4]}
+        30. Rd7 {[%clk 0:07:08.2]} 30... Re2 {[%clk 0:01:36.2]} 31. Rxf7+ {[%clk 0:06:07.7]}
+        31... Kg8 {[%clk 0:01:44.6]} 32. Re7 {[%clk 0:06:17]} 32... Re1+ {[%clk 0:00:56.8]}
+        33. Kh2 {[%clk 0:05:24.6]} 33... Ng7 {[%clk 0:00:50.1]} 34. Nxg6 {[%clk 0:05:09.8]}
+        34... Ra1 {[%clk 0:00:47.1]} 35. Ne5 {[%clk 0:04:55]} 35... Rxa2 {[%clk 0:00:55.7]}
+        36. Ng4 {[%clk 0:04:56.7]} 36... Kf8 {[%clk 0:00:41.7]} 37. Rb7 {[%clk 0:04:55.9]}
+        37... Ne6 {[%clk 0:00:49.7]} 38. h4 {[%clk 0:04:44.1]} 38... Ra4 {[%clk 0:00:55.1]}
+        39. Kg3 {[%clk 0:04:51.2]} 39... Nd4 {[%clk 0:01:00.7]} 40. Nh6 {[%clk 0:04:18.6]}
+        40... Ne2+ {[%clk 0:01:04.4]} 41. Kf3 {[%clk 0:04:11.9]} 41... Nd4+ {[%clk
+        0:01:13.4]} 42. Kg4 {[%clk 0:03:28.7]} 42... Ne6+ {[%clk 0:01:10]} 43. Kg3
+        {[%clk 0:03:29.2]} 1-0\n","time_control":"1500+10","end_time":1589122922,"rated":false,"accuracies":{"white":98.15112187796854,"black":93.7805647987139},"tcn":"mCZJCJ7JbsJ7lB2UfA92gv!Teg8!px5QcDXPBJQGAm0SJS6Sd747DY76YKGQKpSLoELSadQGpKSAfe98sHAmemGAHWAKmK6kEM8KvKT8WQ2KQKkjd7!97ZjmZ19!10megp82KUeaUKaiKE!90X2SxFiypwSBEVBmwvmBvEBSEw","uuid":"ca15d6c5-92c6-11ea-993b-eb3d40010001","initial_setup":"","fen":"5k2/1R5p/1p2n2N/6P1/r6P/6K1/5P2/8
+        b - -","time_class":"rapid","rules":"chess","white":{"rating":2773,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2752,"result":"resigned","@id":"https://api.chess.com/pub/player/lovevae","username":"LOVEVAE","uuid":"9e725456-ed1f-11e5-8062-000000000000"},"eco":"https://www.chess.com/openings/Scandinavian-Defense-Mieses-Kotrc-Variation-3.Nc3-Qd8-4.d4"},{"url":"https://www.chess.com/game/live/4860634174","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"lachesisQ\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"8/2R5/8/8/3nk3/1p4P1/2p5/4K3 w - -\"]\n[Timezone \"UTC\"]\n[ECO \"A29\"]\n[ECOUrl
+        \"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line-4...d5-5.cxd5-Nxd5-6.Bg2\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"18:29:57\"]\n[WhiteElo \"3047\"]\n[BlackElo \"3084\"]\n[TimeControl
+        \"180+2\"]\n[Termination \"lachesisQ won by resignation\"]\n[StartTime \"18:29:57\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"18:39:44\"]\n[Link \"https://www.chess.com/game/live/4860634174\"]\n\n1.
+        c4 {[%clk 0:02:59.2]} 1... e5 {[%clk 0:03:00.5]} 2. Nc3 {[%clk 0:03:00.8]}
+        2... Nf6 {[%clk 0:03:01.4]} 3. Nf3 {[%clk 0:03:00.4]} 3... Nc6 {[%clk 0:03:02.4]}
+        4. g3 {[%clk 0:03:02.1]} 4... d5 {[%clk 0:03:01.7]} 5. cxd5 {[%clk 0:03:03.4]}
+        5... Nxd5 {[%clk 0:03:03.6]} 6. Bg2 {[%clk 0:03:05]} 6... Bc5 {[%clk 0:03:05.3]}
+        7. O-O {[%clk 0:03:04.1]} 7... O-O {[%clk 0:03:05.4]} 8. d3 {[%clk 0:03:05.6]}
+        8... Re8 {[%clk 0:02:57.1]} 9. Bg5 {[%clk 0:03:06.1]} 9... Qd7 {[%clk 0:02:49.5]}
+        10. Rc1 {[%clk 0:03:02.2]} 10... Bf8 {[%clk 0:02:49.2]} 11. Ne4 {[%clk 0:02:57.1]}
+        11... h6 {[%clk 0:02:29.2]} 12. Bd2 {[%clk 0:02:57]} 12... Qd8 {[%clk 0:02:30.5]}
+        13. a3 {[%clk 0:02:56.4]} 13... a5 {[%clk 0:02:30.4]} 14. Qc2 {[%clk 0:02:42.5]}
+        14... Bg4 {[%clk 0:02:24.5]} 15. e3 {[%clk 0:02:42]} 15... Qd7 {[%clk 0:02:21.9]}
+        16. Nc5 {[%clk 0:02:40]} 16... Bxc5 {[%clk 0:02:22.6]} 17. Qxc5 {[%clk 0:02:41.9]}
+        17... Rad8 {[%clk 0:02:23.4]} 18. b4 {[%clk 0:02:32.9]} 18... axb4 {[%clk
+        0:02:22.6]} 19. axb4 {[%clk 0:02:34.8]} 19... Bh3 {[%clk 0:02:13.1]} 20. b5
+        {[%clk 0:02:34.5]} 20... Bxg2 {[%clk 0:02:14]} 21. Kxg2 {[%clk 0:02:36.4]}
+        21... Nb8 {[%clk 0:01:55.7]} 22. e4 {[%clk 0:02:33.7]} 22... Nf4+ {[%clk 0:01:56.7]}
+        23. Bxf4 {[%clk 0:02:33.5]} 23... exf4 {[%clk 0:01:58]} 24. Rfd1 {[%clk 0:02:32.1]}
+        24... fxg3 {[%clk 0:01:56.4]} 25. hxg3 {[%clk 0:02:34]} 25... c6 {[%clk 0:01:55.8]}
+        26. Rb1 {[%clk 0:02:28.9]} 26... Qe7 {[%clk 0:01:51.4]} 27. Qc4 {[%clk 0:02:26.7]}
+        27... c5 {[%clk 0:01:50.5]} 28. Rh1 {[%clk 0:02:12.1]} 28... b6 {[%clk 0:01:49.7]}
+        29. Rh5 {[%clk 0:02:12.4]} 29... Nd7 {[%clk 0:01:50.7]} 30. Ra1 {[%clk 0:02:10]}
+        30... Nf6 {[%clk 0:01:46.2]} 31. Rf5 {[%clk 0:02:10]} 31... Qe6 {[%clk 0:01:43.4]}
+        32. Qc3 {[%clk 0:02:03.4]} 32... Qd6 {[%clk 0:01:35.4]} 33. Ra7 {[%clk 0:01:42.6]}
+        33... Qxd3 {[%clk 0:01:18]} 34. Qxd3 {[%clk 0:01:42.8]} 34... Rxd3 {[%clk
+        0:01:19.9]} 35. e5 {[%clk 0:01:43.6]} 35... Rd7 {[%clk 0:01:20.2]} 36. Ra4
+        {[%clk 0:00:59.2]} 36... Nd5 {[%clk 0:01:19.5]} 37. Rh5 {[%clk 0:00:59.9]}
+        37... Rc8 {[%clk 0:01:11.9]} 38. Rhh4 {[%clk 0:00:54.9]} 38... Rb7 {[%clk
+        0:00:48.2]} 39. Nd2 {[%clk 0:00:52.8]} 39... Nc3 {[%clk 0:00:47.8]} 40. Rag4
+        {[%clk 0:00:53.8]} 40... Kf8 {[%clk 0:00:39.4]} 41. f4 {[%clk 0:00:52.2]}
+        41... Rd7 {[%clk 0:00:32.7]} 42. Nc4 {[%clk 0:00:52.8]} 42... Nxb5 {[%clk
+        0:00:33.5]} 43. f5 {[%clk 0:00:51.3]} 43... Rd4 {[%clk 0:00:32]} 44. f6 {[%clk
+        0:00:43.5]} 44... gxf6 {[%clk 0:00:32.2]} 45. exf6 {[%clk 0:00:42.1]} 45...
+        Rxg4 {[%clk 0:00:28.9]} 46. Rxg4 {[%clk 0:00:44]} 46... Rc6 {[%clk 0:00:30.1]}
+        47. Rf4 {[%clk 0:00:35.6]} 47... Nd4 {[%clk 0:00:30.9]} 48. Kh3 {[%clk 0:00:30.8]}
+        48... b5 {[%clk 0:00:31.4]} 49. Ne5 {[%clk 0:00:32.1]} 49... Rd6 {[%clk 0:00:33]}
+        50. Rh4 {[%clk 0:00:29.1]} 50... Rxf6 {[%clk 0:00:21.9]} 51. Nd7+ {[%clk 0:00:29.7]}
+        51... Ke7 {[%clk 0:00:23.6]} 52. Nxf6 {[%clk 0:00:31.2]} 52... Kxf6 {[%clk
+        0:00:25.5]} 53. Rxh6+ {[%clk 0:00:32.6]} 53... Ke5 {[%clk 0:00:27.2]} 54.
+        Kg2 {[%clk 0:00:29.7]} 54... c4 {[%clk 0:00:23.8]} 55. Kf2 {[%clk 0:00:30.9]}
+        55... Ke4 {[%clk 0:00:24.8]} 56. Rf6 {[%clk 0:00:27.3]} 56... c3 {[%clk 0:00:25.9]}
+        57. Rxf7 {[%clk 0:00:24.7]} 57... b4 {[%clk 0:00:26.5]} 58. Rc7 {[%clk 0:00:19.6]}
+        58... c2 {[%clk 0:00:24.2]} 59. Ke1 {[%clk 0:00:18.2]} 59... b3 {[%clk 0:00:24.3]}
+        0-1\n","time_control":"180+2","end_time":1589567984,"rated":true,"accuracies":{"white":85.33810267423974,"black":93.50976055974657},"tcn":"kA0Kbs!Tgv5QowZJAJTJfo9Ieg8!lt98cM7ZacI9sC3VMlZ7iqWGdk6Emu7ZCI9IkI47jzGzqzExzHxogoQ5uCJDlDKDfdDwpwYQcbZ0IAQIdhXPhN5ZbaZTNL0SAsSRaWRtst7tCKtZWyTJLN86NFZXvlJsyE!9nDXZlAsHDLZBLT2TKTBEFE6QEDHBoxPHAKQRDFRTKZ90ZT0TFVTKxoIAonKCVTAsT1Hz1Ysknezr","uuid":"172f8b71-96da-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"8/2R5/8/8/3nk3/1p4P1/2p5/4K3
+        w - -","time_class":"blitz","rules":"chess","white":{"rating":3047,"result":"resigned","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":3084,"result":"win","@id":"https://api.chess.com/pub/player/lachesisq","username":"lachesisQ","uuid":"ea103016-2647-11e6-8040-000000000000"},"eco":"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line-4...d5-5.cxd5-Nxd5-6.Bg2"},{"url":"https://www.chess.com/game/live/4860674282","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"lachesisQ\"]\n[Black \"FabianoCaruana\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"8/p4P2/1p6/1k3K2/1P6/5R2/P7/6r1 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"C45\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Scotch-Game-Classical-Intermezzo-Variation-6.Qf3-dxc6-7.Nc3\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"18:39:43\"]\n[WhiteElo \"3091\"]\n[BlackElo \"3030\"]\n[TimeControl
+        \"180+2\"]\n[Termination \"lachesisQ won by resignation\"]\n[StartTime \"18:39:43\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"18:49:33\"]\n[Link \"https://www.chess.com/game/live/4860674282\"]\n\n1.
+        e4 {[%clk 0:03:01.9]} 1... e5 {[%clk 0:03:01.9]} 2. Nf3 {[%clk 0:03:02.5]}
+        2... Nc6 {[%clk 0:03:03.6]} 3. d4 {[%clk 0:03:03.9]} 3... exd4 {[%clk 0:03:04.4]}
+        4. Nxd4 {[%clk 0:03:05.8]} 4... Bc5 {[%clk 0:03:05.7]} 5. Nxc6 {[%clk 0:03:06.8]}
+        5... Qf6 {[%clk 0:03:05.6]} 6. Qf3 {[%clk 0:03:07.7]} 6... dxc6 {[%clk 0:03:06.7]}
+        7. Nc3 {[%clk 0:03:08.5]} 7... Be6 {[%clk 0:03:07.3]} 8. Qg3 {[%clk 0:03:09.5]}
+        8... Bd6 {[%clk 0:02:57.6]} 9. f4 {[%clk 0:03:06.7]} 9... Qg6 {[%clk 0:02:57.4]}
+        10. Qf2 {[%clk 0:02:58.9]} 10... f5 {[%clk 0:02:56.3]} 11. Bd3 {[%clk 0:02:51.7]}
+        11... Nf6 {[%clk 0:02:48.9]} 12. e5 {[%clk 0:02:28.8]} 12... Ng4 {[%clk 0:02:49.1]}
+        13. Qg3 {[%clk 0:02:25.2]} 13... Bc5 {[%clk 0:02:49.8]} 14. Rf1 {[%clk 0:02:23.2]}
+        14... O-O-O {[%clk 0:02:48.1]} 15. Bd2 {[%clk 0:02:20.3]} 15... h5 {[%clk
+        0:02:37.2]} 16. h3 {[%clk 0:02:09.5]} 16... Nxe5 {[%clk 0:02:28.8]} 17. Qxg6
+        {[%clk 0:02:05]} 17... Nxg6 {[%clk 0:02:30.7]} 18. O-O-O {[%clk 0:02:03.7]}
+        18... Bd6 {[%clk 0:02:12.6]} 19. Rde1 {[%clk 0:02:03.4]} 19... Bd7 {[%clk
+        0:02:13.3]} 20. g4 {[%clk 0:02:00]} 20... Nh4 {[%clk 0:02:09.5]} 21. gxf5
+        {[%clk 0:01:59.4]} 21... Bxf5 {[%clk 0:02:04.7]} 22. Bxf5+ {[%clk 0:01:54]}
+        22... Nxf5 {[%clk 0:02:06.6]} 23. Ne4 {[%clk 0:01:55.9]} 23... Rhf8 {[%clk
+        0:02:03.8]} 24. Rg1 {[%clk 0:01:48.5]} 24... Rde8 {[%clk 0:01:50.7]} 25. c3
+        {[%clk 0:01:47.9]} 25... h4 {[%clk 0:01:49.3]} 26. Rg5 {[%clk 0:01:26.6]}
+        26... Kd7 {[%clk 0:01:43.4]} 27. Kc2 {[%clk 0:01:18.6]} 27... Re7 {[%clk 0:01:34.1]}
+        28. Kd3 {[%clk 0:01:19]} 28... Ref7 {[%clk 0:01:28.4]} 29. Reg1 {[%clk 0:01:18.9]}
+        29... Be7 {[%clk 0:01:29.5]} 30. Rh5 {[%clk 0:01:18.9]} 30... Rd8 {[%clk 0:01:25.9]}
+        31. Ke2 {[%clk 0:01:17.4]} 31... b6 {[%clk 0:01:23.5]} 32. Kf3 {[%clk 0:01:16]}
+        32... c5 {[%clk 0:01:20.2]} 33. Rg6 {[%clk 0:01:11.9]} 33... Kc8 {[%clk 0:01:17.9]}
+        34. Ke2 {[%clk 0:01:04.7]} 34... Kb7 {[%clk 0:01:13.5]} 35. Be1 {[%clk 0:01:05.1]}
+        35... Bd6 {[%clk 0:01:06.5]} 36. Nxd6+ {[%clk 0:00:50.6]} 36... cxd6 {[%clk
+        0:01:08.4]} 37. Bxh4 {[%clk 0:00:51.4]} 37... Re8+ {[%clk 0:01:09.7]} 38.
+        Kf2 {[%clk 0:00:39.2]} 38... Re4 {[%clk 0:00:55.9]} 39. Bg5 {[%clk 0:00:39.2]}
+        39... d5 {[%clk 0:00:53]} 40. Rh8 {[%clk 0:00:39.7]} 40... d4 {[%clk 0:00:51.5]}
+        41. cxd4 {[%clk 0:00:39.9]} 41... cxd4 {[%clk 0:00:53.4]} 42. Rd8 {[%clk 0:00:40.5]}
+        42... Rc7 {[%clk 0:00:39.9]} 43. Kf3 {[%clk 0:00:41.1]} 43... Re3+ {[%clk
+        0:00:41.2]} 44. Kg4 {[%clk 0:00:42.5]} 44... Rc5 {[%clk 0:00:42.7]} 45. h4
+        {[%clk 0:00:36.6]} 45... d3 {[%clk 0:00:40.5]} 46. b4 {[%clk 0:00:36.3]} 46...
+        Rg3+ {[%clk 0:00:39.8]} 47. Kh5 {[%clk 0:00:37.4]} 47... Rc8 {[%clk 0:00:34.1]}
+        48. Rd7+ {[%clk 0:00:21.9]} 48... Ka6 {[%clk 0:00:35.1]} 49. Re6 {[%clk 0:00:21.8]}
+        49... Rc4 {[%clk 0:00:28.4]} 50. Kg6 {[%clk 0:00:22.1]} 50... Nd4 {[%clk 0:00:27.5]}
+        51. Red6 {[%clk 0:00:22.1]} 51... Ne2 {[%clk 0:00:20.3]} 52. f5 {[%clk 0:00:22.7]}
+        52... Kb5 {[%clk 0:00:20.8]} 53. Kxg7 {[%clk 0:00:23.5]} 53... Rf3 {[%clk
+        0:00:17.9]} 54. f6 {[%clk 0:00:24.3]} 54... Ng3 {[%clk 0:00:14.1]} 55. Rxd3
+        {[%clk 0:00:25.2]} 55... Nf5+ {[%clk 0:00:14.9]} 56. Kg6 {[%clk 0:00:26.4]}
+        56... Rxd3 {[%clk 0:00:08]} 57. Rxd3 {[%clk 0:00:28.3]} 57... Nxh4+ {[%clk
+        0:00:09.3]} 58. Bxh4 {[%clk 0:00:29.7]} 58... Rxh4 {[%clk 0:00:11.2]} 59.
+        f7 {[%clk 0:00:30.2]} 59... Rg4+ {[%clk 0:00:11.4]} 60. Kf5 {[%clk 0:00:30.8]}
+        60... Rg1 {[%clk 0:00:12.3]} 61. Rf3 {[%clk 0:00:32.1]} 1-0\n","time_control":"180+2","end_time":1589568573,"rated":true,"accuracies":{"white":91.79528622601809,"black":89.84044802729494},"tcn":"mC0Kgv5QlBKBvB9IBQ7TdvZQbs6SvwIRnDTUwn1Lft!TCKTEnwRIhf86cl3NpxEKwUKUecIRdeSZoEUFELZLtLFLsC?9fg78ksNFgM6Zck80kt01egR0MN97tmXPmvQIgUZ6vm6Xle0RCRYReF78mn8CFMRJN?JBsBIB?71YnvCuvEYIxFBtjzuwENI67ZXOUS6ANULBSRBmDLOHU2wvLTmwRtwL2UvtZtLFMFAFT1FEULEgtv","uuid":"75173241-96db-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"8/p4P2/1p6/1k3K2/1P6/5R2/P7/6r1
+        b - -","time_class":"blitz","rules":"chess","white":{"rating":3091,"result":"win","@id":"https://api.chess.com/pub/player/lachesisq","username":"lachesisQ","uuid":"ea103016-2647-11e6-8040-000000000000"},"black":{"rating":3030,"result":"resigned","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Scotch-Game-Classical-Intermezzo-Variation-6.Qf3-dxc6-7.Nc3"},{"url":"https://www.chess.com/game/live/4860714926","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"lachesisQ\"]\n[Result \"1/2-1/2\"]\n[CurrentPosition
+        \"3Q4/8/2q3k1/5p1p/8/6P1/5K2/8 b - -\"]\n[Timezone \"UTC\"]\n[ECO \"A29\"]\n[ECOUrl
+        \"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line-4...d5-5.cxd5-Nxd5-6.Bg2\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"18:49:30\"]\n[WhiteElo \"3033\"]\n[BlackElo \"3090\"]\n[TimeControl
+        \"180+2\"]\n[Termination \"Game drawn by agreement\"]\n[StartTime \"18:49:30\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"18:57:16\"]\n[Link \"https://www.chess.com/game/live/4860714926\"]\n\n1.
+        c4 {[%clk 0:03:01.9]} 1... e5 {[%clk 0:03:01.9]} 2. Nc3 {[%clk 0:03:03.1]}
+        2... Nf6 {[%clk 0:03:02.1]} 3. Nf3 {[%clk 0:03:04.6]} 3... Nc6 {[%clk 0:03:03.5]}
+        4. g3 {[%clk 0:03:06.3]} 4... d5 {[%clk 0:03:04.8]} 5. cxd5 {[%clk 0:03:08.2]}
+        5... Nxd5 {[%clk 0:03:06.7]} 6. Bg2 {[%clk 0:03:09.7]} 6... Bc5 {[%clk 0:03:08.3]}
+        7. O-O {[%clk 0:03:11.2]} 7... O-O {[%clk 0:03:09.7]} 8. d3 {[%clk 0:03:12.8]}
+        8... Re8 {[%clk 0:03:11]} 9. Bg5 {[%clk 0:03:14.2]} 9... Qd7 {[%clk 0:03:11.2]}
+        10. Rc1 {[%clk 0:03:15.1]} 10... Bf8 {[%clk 0:03:12]} 11. a3 {[%clk 0:03:13.8]}
+        11... h6 {[%clk 0:03:12.7]} 12. Bd2 {[%clk 0:03:12.2]} 12... Nxc3 {[%clk 0:03:12.8]}
+        13. Bxc3 {[%clk 0:03:13]} 13... Nd4 {[%clk 0:03:13.9]} 14. Bxd4 {[%clk 0:03:11.3]}
+        14... exd4 {[%clk 0:03:14.9]} 15. Nd2 {[%clk 0:03:11.4]} 15... a5 {[%clk 0:03:11.5]}
+        16. Nc4 {[%clk 0:02:58.2]} 16... Ra6 {[%clk 0:03:08.6]} 17. Nd2 {[%clk 0:02:41.7]}
+        17... a4 {[%clk 0:03:00.6]} 18. Qc2 {[%clk 0:02:41.3]} 18... c5 {[%clk 0:03:00.7]}
+        19. Ne4 {[%clk 0:02:40.3]} 19... b6 {[%clk 0:03:01.8]} 20. Rb1 {[%clk 0:02:36]}
+        20... Qa7 {[%clk 0:03:01.4]} 21. Rfe1 {[%clk 0:02:34.7]} 21... Be6 {[%clk
+        0:03:01.9]} 22. Nd2 {[%clk 0:02:34.6]} 22... Rc8 {[%clk 0:03:02.5]} 23. e3
+        {[%clk 0:02:33.9]} 23... dxe3 {[%clk 0:03:03.6]} 24. Rxe3 {[%clk 0:02:35.8]}
+        24... b5 {[%clk 0:03:04.8]} 25. Rbe1 {[%clk 0:02:36.8]} 25... Qd7 {[%clk 0:03:03.7]}
+        26. Nf3 {[%clk 0:02:36.2]} 26... c4 {[%clk 0:02:55.3]} 27. Ne5 {[%clk 0:02:32.6]}
+        27... cxd3 {[%clk 0:02:53.2]} 28. Qd2 {[%clk 0:02:31.3]} 28... Qc7 {[%clk
+        0:02:49.2]} 29. Rxd3 {[%clk 0:02:30]} 29... Rd6 {[%clk 0:02:50.2]} 30. Bd5
+        {[%clk 0:02:25.7]} 30... Bxd5 {[%clk 0:02:36.6]} 31. Rxd5 {[%clk 0:02:27.6]}
+        31... Re8 {[%clk 0:02:37.8]} 32. Rxd6 {[%clk 0:02:19.8]} 32... Qxd6 {[%clk
+        0:02:35.2]} 33. Qc3 {[%clk 0:01:58.4]} 33... b4 {[%clk 0:02:34.2]} 34. axb4
+        {[%clk 0:02:00.3]} 34... Qxb4 {[%clk 0:02:35.1]} 35. Qc1 {[%clk 0:02:01.8]}
+        35... Qc5 {[%clk 0:02:27.2]} 36. Qf4 {[%clk 0:01:56.5]} 36... Qd5 {[%clk 0:02:21.9]}
+        37. Nf3 {[%clk 0:01:23.8]} 37... Rxe1+ {[%clk 0:02:21.4]} 38. Nxe1 {[%clk
+        0:01:25.7]} 38... a3 {[%clk 0:02:22.8]} 39. bxa3 {[%clk 0:01:26.1]} 39...
+        Bxa3 {[%clk 0:02:24.7]} 40. Nf3 {[%clk 0:01:25.5]} 40... Bd6 {[%clk 0:02:24.4]}
+        41. Qe3 {[%clk 0:01:26.8]} 41... g6 {[%clk 0:02:22.2]} 42. h4 {[%clk 0:01:27.3]}
+        42... Bc5 {[%clk 0:02:21.7]} 43. Qe2 {[%clk 0:01:28.2]} 43... Kg7 {[%clk 0:02:20.7]}
+        44. Ne5 {[%clk 0:01:26.5]} 44... Bd4 {[%clk 0:02:18]} 45. Nd3 {[%clk 0:01:26.1]}
+        45... h5 {[%clk 0:02:17.7]} 46. Nf4 {[%clk 0:01:26.7]} 46... Qe5 {[%clk 0:02:18.7]}
+        47. Qd2 {[%clk 0:01:25.6]} 47... Bc3 {[%clk 0:02:19.1]} 48. Qd3 {[%clk 0:01:24.9]}
+        48... Bd4 {[%clk 0:02:19.7]} 49. Kg2 {[%clk 0:01:25.1]} 49... Bc5 {[%clk 0:02:17.8]}
+        50. Qf3 {[%clk 0:01:25.2]} 50... Bd4 {[%clk 0:02:18]} 51. Nh3 {[%clk 0:01:25.4]}
+        51... Qf6 {[%clk 0:02:17.4]} 52. Qe2 {[%clk 0:01:24.7]} 52... Qe5 {[%clk 0:02:18.4]}
+        53. Qf3 {[%clk 0:01:21.8]} 53... Qf6 {[%clk 0:02:19.5]} 54. Nf4 {[%clk 0:01:23.4]}
+        54... Qe5 {[%clk 0:02:20.8]} 55. Qb7 {[%clk 0:01:24.2]} 55... Bc5 {[%clk 0:02:17.6]}
+        56. Nd3 {[%clk 0:01:22.6]} 56... Qd4 {[%clk 0:02:17.9]} 57. Qf3 {[%clk 0:01:23.6]}
+        57... Bd6 {[%clk 0:02:18.6]} 58. Nc1 {[%clk 0:01:23]} 58... Qf6 {[%clk 0:02:18.6]}
+        59. Qd3 {[%clk 0:01:22.5]} 59... Bc5 {[%clk 0:02:17.6]} 60. Qc2 {[%clk 0:01:23.6]}
+        60... Bxf2 {[%clk 0:02:17.8]} 61. Qxf2 {[%clk 0:01:22.8]} 61... Qc6+ {[%clk
+        0:02:18.8]} 62. Kh2 {[%clk 0:01:23.2]} 62... Qxc1 {[%clk 0:02:20]} 63. Kg2
+        {[%clk 0:01:24.7]} 63... Qc6+ {[%clk 0:02:20.6]} 64. Kh2 {[%clk 0:01:26]}
+        64... Qd5 {[%clk 0:02:22]} 65. Kg1 {[%clk 0:01:26.5]} 65... f6 {[%clk 0:02:23.2]}
+        66. Kh2 {[%clk 0:01:27.4]} 66... g5 {[%clk 0:02:24.5]} 67. hxg5 {[%clk 0:01:28.5]}
+        67... Qxg5 {[%clk 0:02:25.5]} 68. Qf3 {[%clk 0:01:29.2]} 68... Qg4 {[%clk
+        0:02:25.7]} 69. Qd3 {[%clk 0:01:29]} 69... Qe6 {[%clk 0:02:26]} 70. Qf3 {[%clk
+        0:01:29.5]} 70... Qe5 {[%clk 0:02:26.8]} 71. Kg2 {[%clk 0:01:29.2]} 71...
+        Kg6 {[%clk 0:02:27.9]} 72. Qd3+ {[%clk 0:01:30.2]} 72... f5 {[%clk 0:02:29.3]}
+        73. Qd8 {[%clk 0:01:29.3]} 73... Qe4+ {[%clk 0:02:26.5]} 74. Kf2 {[%clk 0:01:29.6]}
+        74... Qc2+ {[%clk 0:02:26.5]} 75. Kf3 {[%clk 0:01:30.6]} 75... Qc6+ {[%clk
+        0:02:27.5]} 76. Kf2 {[%clk 0:01:31.5]} 1/2-1/2\n","time_control":"180+2","end_time":1589569036,"rated":true,"accuracies":{"white":98.00350150091693,"black":97.40800326895948},"tcn":"kA0Kbs!Tgv5QowZJAJTJfo9Ieg8!lt98cM7ZacI9iq3VMlJslsQBsBKBvlWGlA4OAlGydkYIlCXPcbZWfe6SCl86muBueuPHbeWZlvIAvKAtklZYutORoJSJtJ68JRYRlsHzqzRzsczIcDIJKv8eveyqjq9qevqRDu2UpFRIum!2vKIBKtVNtDJKmlBsltsBgoBItvIBDxKTvmTKmvKTxDTKvXBIDtKBXvIRtcBTvtRItkInknTQopQcpocQopQJpg1TgpUMFMJMnvMEvtEStvSKpo2UvtTLt7KConCknvkQvn","uuid":"d3c732a5-96dc-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"3Q4/8/2q3k1/5p1p/8/6P1/5K2/8
+        b - -","time_class":"blitz","rules":"chess","white":{"rating":3033,"result":"agreed","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":3090,"result":"agreed","@id":"https://api.chess.com/pub/player/lachesisq","username":"lachesisQ","uuid":"ea103016-2647-11e6-8040-000000000000"},"eco":"https://www.chess.com/openings/English-Opening-Four-Knights-Kingside-Fianchetto-Line-4...d5-5.cxd5-Nxd5-6.Bg2"},{"url":"https://www.chess.com/game/live/4860746361","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"lachesisQ\"]\n[Black \"FabianoCaruana\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"8/4B1kp/5p1r/5P2/p3N3/Pn1p4/1P4K1/8 w - -\"]\n[Timezone \"UTC\"]\n[ECO \"C44\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Ponziani-Opening-Jaenisch-Counterattack-4.d4-exd4-5.e5-Ne4\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"18:57:15\"]\n[WhiteElo \"3081\"]\n[BlackElo \"3052\"]\n[TimeControl
+        \"180+2\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"18:57:15\"]\n[EndDate \"2020.05.15\"]\n[EndTime \"19:06:35\"]\n[Link \"https://www.chess.com/game/live/4860746361\"]\n\n1.
+        e4 {[%clk 0:03:01.9]} 1... e5 {[%clk 0:03:01.9]} 2. Nf3 {[%clk 0:03:03.1]}
+        2... Nc6 {[%clk 0:03:03.5]} 3. c3 {[%clk 0:03:03.9]} 3... Nf6 {[%clk 0:03:04.2]}
+        4. d4 {[%clk 0:03:05]} 4... exd4 {[%clk 0:03:03.9]} 5. e5 {[%clk 0:03:06.2]}
+        5... Ne4 {[%clk 0:03:05.2]} 6. cxd4 {[%clk 0:03:03]} 6... Bb4+ {[%clk 0:03:05.8]}
+        7. Nbd2 {[%clk 0:03:03.8]} 7... d5 {[%clk 0:03:05.7]} 8. a3 {[%clk 0:03:01.3]}
+        8... Bxd2+ {[%clk 0:03:06.6]} 9. Bxd2 {[%clk 0:03:02.5]} 9... O-O {[%clk 0:03:08.3]}
+        10. Bb5 {[%clk 0:03:00.4]} 10... Bg4 {[%clk 0:03:08.3]} 11. Bxc6 {[%clk 0:03:00]}
+        11... bxc6 {[%clk 0:03:10.2]} 12. h3 {[%clk 0:03:01.5]} 12... Bh5 {[%clk 0:03:08.5]}
+        13. Rc1 {[%clk 0:02:55]} 13... c5 {[%clk 0:03:05.1]} 14. dxc5 {[%clk 0:02:52.3]}
+        14... f6 {[%clk 0:03:04.6]} 15. e6 {[%clk 0:02:51.5]} 15... Qe7 {[%clk 0:02:54.4]}
+        16. g4 {[%clk 0:02:44.7]} 16... Qxe6 {[%clk 0:02:47.6]} 17. Nd4 {[%clk 0:02:45.8]}
+        17... Qe5 {[%clk 0:02:43.5]} 18. Be3 {[%clk 0:02:47]} 18... Bg6 {[%clk 0:02:40.7]}
+        19. O-O {[%clk 0:02:38.8]} 19... Kh8 {[%clk 0:02:37.1]} 20. f4 {[%clk 0:02:35.3]}
+        20... Qe7 {[%clk 0:02:35.4]} 21. f5 {[%clk 0:02:33.7]} 21... Bf7 {[%clk 0:02:35.7]}
+        22. Bf4 {[%clk 0:02:25.9]} 22... a5 {[%clk 0:02:29.5]} 23. Re1 {[%clk 0:02:25]}
+        23... a4 {[%clk 0:02:29.1]} 24. Nc6 {[%clk 0:02:21.1]} 24... Qe8 {[%clk 0:02:26.3]}
+        25. Nb4 {[%clk 0:02:22.2]} 25... c6 {[%clk 0:02:23.4]} 26. Qd4 {[%clk 0:02:23.1]}
+        26... Qc8 {[%clk 0:02:19.7]} 27. Re3 {[%clk 0:02:18]} 27... Qb7 {[%clk 0:02:17.7]}
+        28. Kh2 {[%clk 0:02:17.1]} 28... Rfe8 {[%clk 0:02:13.1]} 29. Rg1 {[%clk 0:02:17.7]}
+        29... Qb5 {[%clk 0:02:11.1]} 30. h4 {[%clk 0:02:18.2]} 30... Nxc5 {[%clk 0:02:07.9]}
+        31. g5 {[%clk 0:02:14.5]} 31... Nb3 {[%clk 0:02:01.2]} 32. Qd3 {[%clk 0:01:34.7]}
+        32... Qxd3 {[%clk 0:01:50.1]} 33. Nxd3 {[%clk 0:01:34.6]} 33... d4 {[%clk
+        0:01:42.9]} 34. Rxe8+ {[%clk 0:01:34.5]} 34... Rxe8 {[%clk 0:01:44.8]} 35.
+        gxf6 {[%clk 0:01:36.1]} 35... gxf6 {[%clk 0:01:37.7]} 36. Bh6 {[%clk 0:01:35.7]}
+        36... Rg8 {[%clk 0:01:22.5]} 37. Re1 {[%clk 0:01:36.8]} 37... Bc4 {[%clk 0:01:07.7]}
+        38. Nf2 {[%clk 0:01:07.4]} 38... d3 {[%clk 0:01:03.4]} 39. Re7 {[%clk 0:01:07.6]}
+        39... d2 {[%clk 0:01:00.5]} 40. Rd7 {[%clk 0:00:42.8]} 40... Bd5 {[%clk 0:01:00.6]}
+        41. Kh3 {[%clk 0:00:44.2]} 41... Nc5 {[%clk 0:00:51]} 42. Rxd5 {[%clk 0:00:39.2]}
+        42... cxd5 {[%clk 0:00:50.7]} 43. Bxd2 {[%clk 0:00:40.9]} 43... d4 {[%clk
+        0:00:39.9]} 44. Bb4 {[%clk 0:00:41.9]} 44... Rc8 {[%clk 0:00:37.2]} 45. Kg4
+        {[%clk 0:00:41.1]} 45... Kg7 {[%clk 0:00:37.2]} 46. Kf3 {[%clk 0:00:40.3]}
+        46... Kf7 {[%clk 0:00:28.2]} 47. h5 {[%clk 0:00:41.3]} 47... Nb3 {[%clk 0:00:27.5]}
+        48. h6 {[%clk 0:00:39.2]} 48... Rc2 {[%clk 0:00:27]} 49. Ne4 {[%clk 0:00:40.5]}
+        49... Rh2 {[%clk 0:00:21.6]} 50. Nd6+ {[%clk 0:00:41.3]} 50... Kg8 {[%clk
+        0:00:22.3]} 51. Ne4 {[%clk 0:00:25]} 51... Rxh6 {[%clk 0:00:23]} 52. Kg2 {[%clk
+        0:00:26.5]} 52... Kg7 {[%clk 0:00:20.9]} 53. Be7 {[%clk 0:00:23.8]} 53...
+        d3 {[%clk 0:00:21]} 0-1\n","time_control":"180+2","end_time":1589569595,"rated":true,"accuracies":{"white":85.11747414283882,"black":97.92587982516014},"tcn":"mC0Kgv5Qks!TlBKBCKTCsB9zblZJiqzlcl8!fH6EHQXQpxENacQIBI1TKS70oE0SvBSKluNUeg!?nDK0DLU1uDWGfeGyBQ08QzYQdB86eu6Xgp98cgXHxFCIEMIrBtHtztJBu848MT2TDV8!ge1AtnBte0tl0ZAJpxrIZJQJVlJBlz!6xE?2Ev21FNIrNV6knCkpCR1!RCpVvo!2z0Bt","uuid":"e6408c0c-96dd-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"8/4B1kp/5p1r/5P2/p3N3/Pn1p4/1P4K1/8
+        w - -","time_class":"blitz","rules":"chess","white":{"rating":3081,"result":"resigned","@id":"https://api.chess.com/pub/player/lachesisq","username":"lachesisQ","uuid":"ea103016-2647-11e6-8040-000000000000"},"black":{"rating":3052,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/Ponziani-Opening-Jaenisch-Counterattack-4.d4-exd4-5.e5-Ne4"},{"url":"https://www.chess.com/game/live/4861120901","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"LyonBeast\"]\n[Black \"FabianoCaruana\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"3r2k1/bpp1qppp/2n3b1/p1r1p3/8/PPQPPN2/1B1RBPPP/4R1K1 w - -\"]\n[Timezone
+        \"UTC\"]\n[ECO \"A28\"]\n[ECOUrl \"https://www.chess.com/openings/English-Opening-Four-Knights-Quiet-Line-4...Bb4-5.Qc2\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"20:30:04\"]\n[WhiteElo \"2905\"]\n[BlackElo \"3062\"]\n[TimeControl
+        \"180\"]\n[Termination \"FabianoCaruana won by resignation\"]\n[StartTime
+        \"20:30:04\"]\n[EndDate \"2020.05.15\"]\n[EndTime \"20:31:35\"]\n[Link \"https://www.chess.com/game/live/4861120901\"]\n\n1.
+        c4 {[%clk 0:02:59.5]} 1... e5 {[%clk 0:02:59]} 2. Nc3 {[%clk 0:02:58.6]} 2...
+        Nf6 {[%clk 0:02:58.4]} 3. Nf3 {[%clk 0:02:58]} 3... Nc6 {[%clk 0:02:57.7]}
+        4. e3 {[%clk 0:02:57.5]} 4... Bb4 {[%clk 0:02:54.2]} 5. Qc2 {[%clk 0:02:56.6]}
+        5... a5 {[%clk 0:02:52.2]} 6. Nd5 {[%clk 0:02:54]} 6... d6 {[%clk 0:02:51.7]}
+        7. a3 {[%clk 0:02:52.4]} 7... Bc5 {[%clk 0:02:51]} 8. Be2 {[%clk 0:02:49.7]}
+        8... Be6 {[%clk 0:02:48.8]} 9. Nxf6+ {[%clk 0:02:47.9]} 9... Qxf6 {[%clk 0:02:48.7]}
+        10. b3 {[%clk 0:02:44.6]} 10... O-O {[%clk 0:02:47.2]} 11. Bb2 {[%clk 0:02:43.5]}
+        11... Ba7 {[%clk 0:02:45.1]} 12. Rd1 {[%clk 0:02:40.5]} 12... Bf5 {[%clk 0:02:39.3]}
+        13. d3 {[%clk 0:02:36.4]} 13... Qe7 {[%clk 0:02:38.3]} 14. O-O {[%clk 0:02:35.1]}
+        14... Bg6 {[%clk 0:02:37.5]} 15. Qd2 {[%clk 0:02:32.9]} 15... Rad8 {[%clk
+        0:02:30.7]} 16. Rfe1 {[%clk 0:02:31.1]} 16... d5 {[%clk 0:02:28.9]} 17. cxd5
+        {[%clk 0:02:29.4]} 17... Rxd5 {[%clk 0:02:28.8]} 18. Qc3 {[%clk 0:02:28.1]}
+        18... Rfd8 {[%clk 0:02:25.5]} 19. Rd2 {[%clk 0:02:21.9]} 19... Rc5 {[%clk
+        0:02:23.3]} 0-1\n","time_control":"180","end_time":1589574695,"rated":true,"accuracies":{"white":85.16453042379537,"black":89.3367519583493},"tcn":"kA0Kbs!Tgv5Qmu9zdkWGsJZRiqzIfm6SJT7Tjr8!cjIWadSLltT0egLUkl47feRJAJ7Jls97dlJI","uuid":"dc3b7822-96ea-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"3r2k1/bpp1qppp/2n3b1/p1r1p3/8/PPQPPN2/1B1RBPPP/4R1K1
+        w - -","time_class":"blitz","rules":"chess","white":{"rating":2905,"result":"resigned","@id":"https://api.chess.com/pub/player/lyonbeast","username":"LyonBeast","uuid":"50ef5ad0-dc0f-11e3-8008-000000000000"},"black":{"rating":3062,"result":"win","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/English-Opening-Four-Knights-Quiet-Line-4...Bb4-5.Qc2"},{"url":"https://www.chess.com/game/live/4861126831","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"LyonBeast\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"8/8/8/5b1p/P2Qp3/3p1k2/1P5P/K7 w - -\"]\n[Timezone \"UTC\"]\n[ECO \"A45\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Trompowsky-Attack-Classical-Big-Center-Variation-3...c5-4.d5\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"20:31:30\"]\n[WhiteElo \"3040\"]\n[BlackElo \"2918\"]\n[TimeControl
+        \"180\"]\n[Termination \"LyonBeast won on time\"]\n[StartTime \"20:31:30\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"20:37:03\"]\n[Link \"https://www.chess.com/game/live/4861126831\"]\n\n1.
+        d4 {[%clk 0:02:59.9]} 1... Nf6 {[%clk 0:02:59.9]} 2. Bg5 {[%clk 0:02:58.3]}
+        2... e6 {[%clk 0:02:56.4]} 3. e4 {[%clk 0:02:56.8]} 3... c5 {[%clk 0:02:52.5]}
+        4. d5 {[%clk 0:02:51.4]} 4... exd5 {[%clk 0:02:48.4]} 5. e5 {[%clk 0:02:47.2]}
+        5... Qe7 {[%clk 0:02:43.9]} 6. Nf3 {[%clk 0:02:44.3]} 6... h6 {[%clk 0:02:43.1]}
+        7. Bxf6 {[%clk 0:02:42.5]} 7... gxf6 {[%clk 0:02:43]} 8. Nc3 {[%clk 0:02:41.6]}
+        8... fxe5 {[%clk 0:02:35.7]} 9. Nxd5 {[%clk 0:02:40.3]} 9... Qd6 {[%clk 0:02:35.3]}
+        10. Qd2 {[%clk 0:02:30.8]} 10... Nc6 {[%clk 0:02:32.1]} 11. O-O-O {[%clk 0:02:26.1]}
+        11... Bg7 {[%clk 0:02:27.4]} 12. Bc4 {[%clk 0:02:22.4]} 12... O-O {[%clk 0:02:24.2]}
+        13. Rhe1 {[%clk 0:02:17.6]} 13... Nd4 {[%clk 0:02:20.4]} 14. c3 {[%clk 0:02:15.6]}
+        14... b5 {[%clk 0:02:19.1]} 15. cxd4 {[%clk 0:02:14.1]} 15... cxd4 {[%clk
+        0:02:17.4]} 16. Bb3 {[%clk 0:02:07.8]} 16... Bb7 {[%clk 0:02:16.8]} 17. Qb4
+        {[%clk 0:01:41.4]} 17... Rac8+ {[%clk 0:02:15.7]} 18. Kb1 {[%clk 0:01:40.3]}
+        18... Rc5 {[%clk 0:02:15.3]} 19. Nc3 {[%clk 0:01:26]} 19... Qg6+ {[%clk 0:01:50.3]}
+        20. Bc2 {[%clk 0:01:23.6]} 20... Qb6 {[%clk 0:01:48.7]} 21. Ne4 {[%clk 0:01:06.9]}
+        21... Rxc2 {[%clk 0:01:47.7]} 22. Kxc2 {[%clk 0:01:06.8]} 22... Qg6 {[%clk
+        0:01:46.9]} 23. Nd2 {[%clk 0:01:01.7]} 23... d5 {[%clk 0:01:46]} 24. f3 {[%clk
+        0:00:57.6]} 24... dxe4 {[%clk 0:01:45.1]} 25. fxe4 {[%clk 0:00:56.8]} 25...
+        a6 {[%clk 0:01:32.4]} 26. Kb1 {[%clk 0:00:54.2]} 26... f5 {[%clk 0:01:30.5]}
+        27. exf5 {[%clk 0:00:46.4]} 27... Qxf5+ {[%clk 0:01:30.4]} 28. Ka1 {[%clk
+        0:00:45.8]} 28... Bxg2 {[%clk 0:01:30.1]} 29. Rg1 {[%clk 0:00:43.9]} 29...
+        Qf2 {[%clk 0:01:28.8]} 30. Qe7 {[%clk 0:00:36.6]} 30... Kh7 {[%clk 0:01:15.5]}
+        31. Rdf1 {[%clk 0:00:26.7]} 31... Qxf1+ {[%clk 0:01:14.7]} 32. Nxf1 {[%clk
+        0:00:25.1]} 32... Rxf1+ {[%clk 0:01:14.6]} 33. Rxf1 {[%clk 0:00:24.3]} 33...
+        Bxf1 {[%clk 0:01:14.5]} 34. Qe6 {[%clk 0:00:22.2]} 34... Bd3 {[%clk 0:01:12.7]}
+        35. Qxa6 {[%clk 0:00:19.4]} 35... Bg6 {[%clk 0:01:12]} 36. Qxb5 {[%clk 0:00:17.2]}
+        36... e4 {[%clk 0:01:10.3]} 37. Qe2 {[%clk 0:00:14.7]} 37... d3 {[%clk 0:01:06.6]}
+        38. Qe3 {[%clk 0:00:14]} 38... h5 {[%clk 0:01:03]} 39. a4 {[%clk 0:00:12.1]}
+        39... Bh6 {[%clk 0:01:01.5]} 40. Qa7+ {[%clk 0:00:11.1]} 40... Kg8 {[%clk
+        0:01:01]} 41. Qb8+ {[%clk 0:00:10]} 41... Kg7 {[%clk 0:01:00.4]} 42. Qe5+
+        {[%clk 0:00:09]} 42... Kf7 {[%clk 0:00:59.9]} 43. Qd5+ {[%clk 0:00:08.3]}
+        43... Kf6 {[%clk 0:00:59.4]} 44. Qd6+ {[%clk 0:00:07.5]} 44... Kf5 {[%clk
+        0:00:58.9]} 45. Qd5+ {[%clk 0:00:06.5]} 45... Kg4 {[%clk 0:00:56.7]} 46. Qe6+
+        {[%clk 0:00:05.9]} 46... Bf5 {[%clk 0:00:56.1]} 47. Qxh6 {[%clk 0:00:04.4]}
+        47... Kf3 {[%clk 0:00:54.7]} 48. Qf6 {[%clk 0:00:01]} 48... Kf4 {[%clk 0:00:53.4]}
+        49. Qd4 {[%clk 0:00:00.3]} 49... Kf3 {[%clk 0:00:52.4]} 0-1\n","time_control":"180","end_time":1589575023,"rated":true,"accuracies":{"white":90.85394065944215,"black":91.23410608081761},"tcn":"lB!TcM0SmCYIBJSJCK70gv3VMT2TbsTKsJ0Rdl5Qec92fA8!heQBksXHsBIBAr6Xlz46cb6IJsRUrkUPsCIkbkPUvlZJnvJCvCWOkb1LCLULbaXoegLnz0!3dfnflf9fgfof0SftSOtUOHKCHmBtmuVNiy2VuW3!W5!25K21KJ1TJRTLRJLEJSULSVEvVTvDTBDv","uuid":"1331e79a-96eb-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"8/8/8/5b1p/P2Qp3/3p1k2/1P5P/K7
+        w - -","time_class":"blitz","rules":"chess","white":{"rating":3040,"result":"timeout","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":2918,"result":"win","@id":"https://api.chess.com/pub/player/lyonbeast","username":"LyonBeast","uuid":"50ef5ad0-dc0f-11e3-8008-000000000000"},"eco":"https://www.chess.com/openings/Trompowsky-Attack-Classical-Big-Center-Variation-3...c5-4.d5"},{"url":"https://www.chess.com/game/live/4861217579","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"FabianoCaruana\"]\n[Black \"Grischuk\"]\n[Result \"0-1\"]\n[CurrentPosition
+        \"1k6/1pp3R1/p1p5/2P2K2/1P6/2P5/5q2/8 w - -\"]\n[Timezone \"UTC\"]\n[ECO \"C65\"]\n[ECOUrl
+        \"https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense...5.Bxc6-dxc6-6.Nbd2-Be6\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"20:55:08\"]\n[WhiteElo \"3027\"]\n[BlackElo \"3098\"]\n[TimeControl
+        \"180\"]\n[Termination \"Grischuk won by resignation\"]\n[StartTime \"20:55:08\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"21:00:57\"]\n[Link \"https://www.chess.com/game/live/4861217579\"]\n\n1.
+        e4 {[%clk 0:02:59.9]} 1... e5 {[%clk 0:02:59.9]} 2. Nf3 {[%clk 0:02:58.7]}
+        2... Nc6 {[%clk 0:02:59.5]} 3. Bb5 {[%clk 0:02:58.4]} 3... Nf6 {[%clk 0:02:58.2]}
+        4. d3 {[%clk 0:02:58]} 4... Bc5 {[%clk 0:02:55.6]} 5. Bxc6 {[%clk 0:02:57.3]}
+        5... dxc6 {[%clk 0:02:55.1]} 6. Nbd2 {[%clk 0:02:57]} 6... Be6 {[%clk 0:02:51.5]}
+        7. Qe2 {[%clk 0:02:56.6]} 7... Nd7 {[%clk 0:02:41.2]} 8. Nb3 {[%clk 0:02:55.9]}
+        8... Bb6 {[%clk 0:02:40.1]} 9. Ng5 {[%clk 0:02:54.5]} 9... Bxb3 {[%clk 0:02:39.1]}
+        10. axb3 {[%clk 0:02:54.4]} 10... f6 {[%clk 0:02:36.4]} 11. Nf3 {[%clk 0:02:53.1]}
+        11... Nf8 {[%clk 0:02:32]} 12. O-O {[%clk 0:02:52.4]} 12... Ne6 {[%clk 0:02:31.2]}
+        13. Be3 {[%clk 0:02:51.6]} 13... Qd7 {[%clk 0:02:26.9]} 14. b4 {[%clk 0:02:50.7]}
+        14... a6 {[%clk 0:02:25]} 15. Nd2 {[%clk 0:02:49.9]} 15... O-O-O {[%clk 0:02:17.3]}
+        16. Nc4 {[%clk 0:02:48.9]} 16... Bd4 {[%clk 0:02:15.2]} 17. Rfd1 {[%clk 0:02:45.9]}
+        17... Kb8 {[%clk 0:02:11.2]} 18. c3 {[%clk 0:02:44.9]} 18... Bxe3 {[%clk 0:02:10.6]}
+        19. Qxe3 {[%clk 0:02:44.5]} 19... h5 {[%clk 0:02:07.9]} 20. Na5 {[%clk 0:02:40.7]}
+        20... h4 {[%clk 0:02:03.3]} 21. Nb3 {[%clk 0:02:35.1]} 21... g5 {[%clk 0:01:58.2]}
+        22. Nc5 {[%clk 0:02:31.3]} 22... Nxc5 {[%clk 0:01:57.6]} 23. bxc5 {[%clk 0:02:31.2]}
+        23... g4 {[%clk 0:01:54.7]} 24. d4 {[%clk 0:02:30.1]} 24... Qe6 {[%clk 0:01:54.3]}
+        25. b4 {[%clk 0:02:26.5]} 25... Rhe8 {[%clk 0:01:46.9]} 26. dxe5 {[%clk 0:02:22.1]}
+        26... Qxe5 {[%clk 0:01:44.4]} 27. Re1 {[%clk 0:02:17]} 27... Re7 {[%clk 0:01:36.3]}
+        28. Qh6 {[%clk 0:01:52.6]} 28... h3 {[%clk 0:01:27.6]} 29. gxh3 {[%clk 0:01:46.2]}
+        29... gxh3 {[%clk 0:01:27.5]} 30. Qxh3 {[%clk 0:01:45.6]} 30... Red7 {[%clk
+        0:01:14.6]} 31. Re3 {[%clk 0:01:38.4]} 31... Rd2 {[%clk 0:01:11.4]} 32. Qg3
+        {[%clk 0:01:35.9]} 32... Qe6 {[%clk 0:01:10.1]} 33. Kh1 {[%clk 0:01:29.5]}
+        33... Rc2 {[%clk 0:01:07.5]} 34. Rae1 {[%clk 0:01:24.4]} 34... Rdd2 {[%clk
+        0:01:05.8]} 35. Rf3 {[%clk 0:01:23]} 35... Rd8 {[%clk 0:00:55.6]} 36. Qf4
+        {[%clk 0:01:18]} 36... Rg8 {[%clk 0:00:52.6]} 37. Rg3 {[%clk 0:01:01.6]} 37...
+        Rd8 {[%clk 0:00:49]} 38. h4 {[%clk 0:00:57.3]} 38... Qe7 {[%clk 0:00:40.3]}
+        39. e5 {[%clk 0:00:54.6]} 39... fxe5 {[%clk 0:00:39]} 40. Rxe5 {[%clk 0:00:54.5]}
+        40... Qd7 {[%clk 0:00:38]} 41. Kg2 {[%clk 0:00:51.4]} 41... Qd1 {[%clk 0:00:35.3]}
+        42. Re7 {[%clk 0:00:47.7]} 42... Rc8 {[%clk 0:00:33.4]} 43. Rgg7 {[%clk 0:00:37.8]}
+        43... Rc1 {[%clk 0:00:31.5]} 44. Kh3 {[%clk 0:00:25.7]} 44... Qh1+ {[%clk
+        0:00:30.1]} 45. Kg4 {[%clk 0:00:24.8]} 45... Rg1+ {[%clk 0:00:27.3]} 46. Kf5
+        {[%clk 0:00:20.3]} 46... Rxg7 {[%clk 0:00:25.8]} 47. Rxg7 {[%clk 0:00:19.2]}
+        47... Rf8+ {[%clk 0:00:25.4]} 48. Kg5 {[%clk 0:00:17.5]} 48... Rxf4 {[%clk
+        0:00:25.3]} 49. Kxf4 {[%clk 0:00:17.4]} 49... Qxh4+ {[%clk 0:00:24.4]} 50.
+        Kf5 {[%clk 0:00:15.5]} 50... Qxf2+ {[%clk 0:00:23.1]} 0-1\n","time_control":"180","end_time":1589576457,"rated":true,"accuracies":{"white":76.6009021447356,"black":78.63568671323944},"tcn":"mC0Kgv5QfH!Tlt9IHQZQbl6SdmTZlrIPvMSrir1TMvZ9eg9Scu7ZrzWOvl86lAPBfd65ksBumu3NAGNFGr2MrISIzIMEtBZSjz?8BKSKde80uVFxoxExVx0ZeuZlxwKSghlkae7luvl7wD7!vw!7pFS0CKTKeK0ZhoZdK076w2kcoxdhxEcgELg20269LM9DMDhFDLFn","uuid":"5fecaad2-96ee-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"1k6/1pp3R1/p1p5/2P2K2/1P6/2P5/5q2/8
+        w - -","time_class":"blitz","rules":"chess","white":{"rating":3027,"result":"resigned","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"black":{"rating":3098,"result":"win","@id":"https://api.chess.com/pub/player/grischuk","username":"Grischuk","uuid":"b5ffabc2-daa1-11e5-803a-000000000000"},"eco":"https://www.chess.com/openings/Ruy-Lopez-Opening-Berlin-Defense...5.Bxc6-dxc6-6.Nbd2-Be6"},{"url":"https://www.chess.com/game/live/4861239226","pgn":"[Event
+        \"Live Chess\"]\n[Site \"Chess.com\"]\n[Date \"2020.05.15\"]\n[Round \"-\"]\n[White
+        \"Grischuk\"]\n[Black \"FabianoCaruana\"]\n[Result \"1-0\"]\n[CurrentPosition
+        \"4q1k1/pp4r1/3p1Qb1/2pP1N2/2P1pP2/2P4P/P6K/6R1 b - -\"]\n[Timezone \"UTC\"]\n[ECO
+        \"A16\"]\n[ECOUrl \"https://www.chess.com/openings/English-Opening-Anglo-Indian-Queens-Knight-Variation...5.Nh4-Bd7-6.e4-e5-7.Nf3\"]\n[UTCDate
+        \"2020.05.15\"]\n[UTCTime \"21:00:58\"]\n[WhiteElo \"3104\"]\n[BlackElo \"3016\"]\n[TimeControl
+        \"180\"]\n[Termination \"Grischuk won by resignation\"]\n[StartTime \"21:00:58\"]\n[EndDate
+        \"2020.05.15\"]\n[EndTime \"21:05:14\"]\n[Link \"https://www.chess.com/game/live/4861239226\"]\n\n1.
+        d4 {[%clk 0:02:59.9]} 1... Nf6 {[%clk 0:02:59.9]} 2. Nf3 {[%clk 0:02:58.4]}
+        2... d6 {[%clk 0:02:59.4]} 3. c4 {[%clk 0:02:53.6]} 3... g6 {[%clk 0:02:58.9]}
+        4. Nc3 {[%clk 0:02:52.9]} 4... Bf5 {[%clk 0:02:58.5]} 5. Nh4 {[%clk 0:02:49.2]}
+        5... Bd7 {[%clk 0:02:57.3]} 6. e4 {[%clk 0:02:48.9]} 6... e5 {[%clk 0:02:56.7]}
+        7. Nf3 {[%clk 0:02:47.5]} 7... Nc6 {[%clk 0:02:55.3]} 8. d5 {[%clk 0:02:34]}
+        8... Ne7 {[%clk 0:02:54.3]} 9. Be2 {[%clk 0:02:33.3]} 9... Bg7 {[%clk 0:02:53.4]}
+        10. Bg5 {[%clk 0:02:31.1]} 10... h6 {[%clk 0:02:52]} 11. Be3 {[%clk 0:02:30]}
+        11... Ng4 {[%clk 0:02:50.6]} 12. Bd2 {[%clk 0:02:29.1]} 12... f5 {[%clk 0:02:49.4]}
+        13. exf5 {[%clk 0:02:26.5]} 13... gxf5 {[%clk 0:02:48.4]} 14. Nh4 {[%clk 0:02:24.7]}
+        14... Nf6 {[%clk 0:02:38.9]} 15. Bh5+ {[%clk 0:02:23.5]} 15... Kf8 {[%clk
+        0:02:38.4]} 16. f4 {[%clk 0:02:19.9]} 16... e4 {[%clk 0:02:36.8]} 17. O-O
+        {[%clk 0:02:14.7]} 17... Nxh5 {[%clk 0:02:32.9]} 18. Qxh5 {[%clk 0:02:13.1]}
+        18... Be8 {[%clk 0:02:32.3]} 19. Qe2 {[%clk 0:02:12]} 19... Bf6 {[%clk 0:02:29.8]}
+        20. Be1 {[%clk 0:02:06.9]} 20... Rg8 {[%clk 0:02:29.1]} 21. h3 {[%clk 0:02:04.1]}
+        21... Kg7 {[%clk 0:02:24.3]} 22. Nd1 {[%clk 0:02:01.3]} 22... Kh7 {[%clk 0:02:20.2]}
+        23. Ne3 {[%clk 0:02:00.5]} 23... Qd7 {[%clk 0:02:16]} 24. Kh2 {[%clk 0:01:58.7]}
+        24... Bf7 {[%clk 0:02:13.7]} 25. Qf2 {[%clk 0:01:54.8]} 25... c5 {[%clk 0:02:09.3]}
+        26. Bc3 {[%clk 0:01:53.4]} 26... Bxc3 {[%clk 0:02:05.8]} 27. bxc3 {[%clk 0:01:53.3]}
+        27... Rg7 {[%clk 0:02:04.5]} 28. Rg1 {[%clk 0:01:50.5]} 28... Rag8 {[%clk
+        0:02:03.6]} 29. g4 {[%clk 0:01:48.5]} 29... Bg6 {[%clk 0:01:56.5]} 30. g5
+        {[%clk 0:01:44.4]} 30... Bh5 {[%clk 0:01:53.3]} 31. gxh6 {[%clk 0:01:40.8]}
+        31... Kxh6 {[%clk 0:01:47.1]} 32. Rxg7 {[%clk 0:01:40.4]} 32... Rxg7 {[%clk
+        0:01:46]} 33. Rg1 {[%clk 0:01:40.3]} 33... Bg6 {[%clk 0:01:21.5]} 34. Qg3
+        {[%clk 0:01:35.8]} 34... Kh7 {[%clk 0:01:17.1]} 35. Qg5 {[%clk 0:01:34.4]}
+        35... Kg8 {[%clk 0:00:55.1]} 36. Qf6 {[%clk 0:01:28.6]} 36... Qe8 {[%clk 0:00:44.8]}
+        37. Nhxf5 {[%clk 0:01:22.5]} 37... Nxf5 {[%clk 0:00:42.9]} 38. Nxf5 {[%clk
+        0:01:21.6]} 1-0\n","time_control":"180","end_time":1589576714,"rated":true,"accuracies":{"white":93.87634967429678,"black":76.01482927304839},"tcn":"lB!TgvZRkA2Ubs6LvFLZmC0KFv5QBJQ0fm92cM3VMuTEul1LCLULvFETmN89nDKCegTNdNZ8Nm2Tle?!px92sd23du7Zgp81mnYIesTsjs!2fg4!oE1UEMUNMV3Vg2!2agNUnwV3wM3!MTZ8FL0LuL","uuid":"2f6c05fb-96ef-11ea-b6ee-eb3d40010001","initial_setup":"","fen":"4q1k1/pp4r1/3p1Qb1/2pP1N2/2P1pP2/2P4P/P6K/6R1
+        b - -","time_class":"blitz","rules":"chess","white":{"rating":3104,"result":"win","@id":"https://api.chess.com/pub/player/grischuk","username":"Grischuk","uuid":"b5ffabc2-daa1-11e5-803a-000000000000"},"black":{"rating":3016,"result":"resigned","@id":"https://api.chess.com/pub/player/fabianocaruana","username":"FabianoCaruana","uuid":"5ebdca54-8f15-11e2-800a-000000000000"},"eco":"https://www.chess.com/openings/English-Opening-Anglo-Indian-Queens-Knight-Variation...5.Nh4-Bd7-6.e4-e5-7.Nf3"}]}'
     headers:
       CF-Cache-Status:
       - REVALIDATED
       CF-RAY:
-      - 8d1328701cb98fc4-BOS
+      - 8d44ba41fd298fe4-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '20673'
+      - '78580'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 01:01:18 GMT
+      - Fri, 18 Oct 2024 01:24:13 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=yZQps%2FYiN%2BuEgfbo7NlDPtdv%2B8HC5Q2B0Ou2yNJ58HTsG49GGWy%2FOc03WDJStpYJEej4PVtgWCuGfigpibmbMZpQ6%2BH2Sg2Mw3tnv1LhDPeqJjVH6QWcx2V4%2BEjv9ao%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qJiCXDlByOU%2BxEtOrghFBBFVvvse53bN3XIGsxOPuy%2FLiHEu53iK4D0YlcY9ou%2B4DFJCcjm4bZeFQs327lixDkYERchR4TVAFg7ydb1xADB3LdNUcI5zbBRuuJ%2F4qQE%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=VKenGf3eC_W75qCkhJdx2SWaRBg7vRSAlAJqbB04bXo-1728694878-1.0.1.1-JjjxSTXvGzA6dFDA6SNQB5RmlxoHbskgcZ76DpHkk0159PJ.oxwh2RJAhHOlQn.xiFLJjqzP2RnJ4ANFjcGePS98ParCuG74vxidYTnXx.0;
-        path=/; expires=Sat, 12-Oct-24 01:31:18 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=TYG35WNK4DQlowx.uPWHZU3GGurwbTtERldNRJoFRXk-1729214653-1.0.1.1-71qGJjxYgG8IVeFzX5sgFIllxMxJ.IssozdehwknY3z19mMiCs6nhbO9yqtFcI377fEztYJAcOylHswjMbMkkL7A3l02sSu9x1Qdbf3Mz.s;
+        path=/; expires=Fri, 18-Oct-24 01:54:13 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
       - W/"59035ea262f2b14549892c7ed8166109"
       expires:
-      - Sat, 12 Oct 2024 01:01:23 GMT
+      - Fri, 18 Oct 2024 01:24:18 GMT
       last-modified:
-      - Saturday, 05-Oct-2024 16:37:10 GMT+0000
+      - Thursday, 17-Oct-2024 22:34:57 GMT+0000
       link:
       - <https://api.chess.com/context/Games.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -425,11 +835,11 @@ interactions:
       x-chesscom-meta:
       - lean=published
       x-chesscom-request-id-cdn:
-      - 8cded5b2785410fd-IAD
+      - 8d43c24dda9c05fb-IAD
       x-chesscom-request-id-lb:
-      - 6c7ab21800187720bcd5d7d06ac84ba9
+      - 66ae65bb9cd88348c5cf5c3d0bb6c831
       x-chesscom-servedby:
-      - '152'
+      - '144'
     status:
       code: 200
       message: OK

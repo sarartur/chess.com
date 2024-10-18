@@ -4,122 +4,54 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600
   response:
     body:
-      string: !!binary |
-        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
-        f/ERr3/xEW/2f/v7/wBXgPTxFU8AAA==
+      string: '{"name":"33rd Chess.com Quick Knockouts (1401-1600)","url":"https://www.chess.com/tournament/-33rd-chesscom-quick-knockouts-1401-1600","description":"<p><span
+        style=\"color: #222222; font-family: ''trebuchet ms'', arial, sans-serif;
+        font-size: 14px; line-height: 14.9333px;\">This is the 33rd RAPID Chess.com
+        Tournament! Only players who play their games QUICKLY (who have a low Avg.
+        Time per Move) and who have completed 5 games already can register. Games
+        have a 1 day time control and the games in the round start immediately! (That
+        is 10 games starting right away and going fast!!)</span></p>","creator":"Patzer24","status":"finished","finish_time":1483511043,"settings":{"type":"round_robin","rules":"chess","is_rated":true,"is_official":true,"is_invite_only":false,"min_rating":1401,"max_rating":1600,"initial_group_size":6,"user_advance_count":1,"use_tiebreak":true,"allow_vacation":true,"winner_places":3,"registered_user_count":399,"games_per_opponent":2,"total_rounds":4,"concurrent_games_per_opponent":2,"time_class":"daily","time_control":"1/86400"},"players":[{"username":"egoigwe","status":"removed"},{"username":"spice","status":"eliminated"},{"username":"kilgore","status":"eliminated"},{"username":"terry-holliday","status":"eliminated"},{"username":"akhlakur","status":"eliminated"},{"username":"jdunphy","status":"eliminated"},{"username":"mancroft","status":"eliminated"},{"username":"pblack","status":"eliminated"},{"username":"bullrot-be","status":"eliminated"},{"username":"wolfshien","status":"eliminated"},{"username":"sheldon_collier","status":"eliminated"},{"username":"unclewoody","status":"eliminated"},{"username":"kun10","status":"eliminated"},{"username":"vinpaysdoc","status":"eliminated"},{"username":"logsy","status":"eliminated"},{"username":"p0lishmybish0p","status":"eliminated"},{"username":"espanarules","status":"withdrew"},{"username":"the_stickie","status":"eliminated"},{"username":"justin_3483","status":"eliminated"},{"username":"horsechessnut","status":"eliminated"},{"username":"mrtn","status":"eliminated"},{"username":"pcarrjr","status":"eliminated"},{"username":"shafeeq882005","status":"eliminated"},{"username":"tinus11","status":"eliminated"},{"username":"romankl","status":"eliminated"},{"username":"mattaranka","status":"eliminated"},{"username":"ksbreed123","status":"eliminated"},{"username":"mcrill","status":"eliminated"},{"username":"4doors","status":"eliminated"},{"username":"droitaubut","status":"eliminated"},{"username":"linedriven","status":"eliminated"},{"username":"terrychandler","status":"eliminated"},{"username":"wernm_f","status":"eliminated"},{"username":"realantdog","status":"eliminated"},{"username":"dzuljazz2001","status":"eliminated"},{"username":"kariati","status":"eliminated"},{"username":"yustyn","status":"eliminated"},{"username":"chisk","status":"eliminated"},{"username":"geoffreyw","status":"eliminated"},{"username":"scarbaci","status":"eliminated"},{"username":"milatin","status":"eliminated"},{"username":"elbarim","status":"eliminated"},{"username":"dirtycalvin","status":"eliminated"},{"username":"prslmt88","status":"eliminated"},{"username":"smilesbyliles","status":"eliminated"},{"username":"lucasf09u","status":"eliminated"},{"username":"nickers1","status":"eliminated"},{"username":"vogar1","status":"eliminated"},{"username":"abut","status":"eliminated"},{"username":"wolfpup08","status":"eliminated"},{"username":"f2xy","status":"eliminated"},{"username":"arceus03","status":"eliminated"},{"username":"colinstrong","status":"eliminated"},{"username":"swfuhrman","status":"eliminated"},{"username":"klevisgjoni","status":"eliminated"},{"username":"stefansokolov","status":"removed"},{"username":"paologhirardi","status":"eliminated"},{"username":"proffesorquad","status":"eliminated"},{"username":"jhatelero","status":"eliminated"},{"username":"gobuckybadger","status":"eliminated"},{"username":"pedege","status":"eliminated"},{"username":"bishopknightrider","status":"eliminated"},{"username":"joelle40","status":"eliminated"},{"username":"horstsandldofer","status":"eliminated"},{"username":"sureshmaruthamkuzhy","status":"eliminated"},{"username":"brunocappello","status":"eliminated"},{"username":"maxgruja","status":"eliminated"},{"username":"arytmi","status":"eliminated"},{"username":"pakistani007","status":"eliminated"},{"username":"snuglife","status":"eliminated"},{"username":"graklar","status":"eliminated"},{"username":"yamantunaoglu","status":"eliminated"},{"username":"kjetteren","status":"eliminated"},{"username":"nadiaonavillus","status":"eliminated"},{"username":"bthim","status":"eliminated"},{"username":"subr_m","status":"eliminated"},{"username":"mickeyyangmai","status":"eliminated"},{"username":"dongsaeng","status":"eliminated"},{"username":"cougtl","status":"eliminated"},{"username":"ll2003","status":"eliminated"},{"username":"molondon","status":"removed"},{"username":"seia1983","status":"eliminated"},{"username":"rakesh_pancholi83","status":"removed"},{"username":"bashment2k1","status":"eliminated"},{"username":"chessman1717","status":"eliminated"},{"username":"rescinded","status":"eliminated"},{"username":"d4start","status":"eliminated"},{"username":"rednihom1","status":"eliminated"},{"username":"blackknight73","status":"eliminated"},{"username":"revmod","status":"eliminated"},{"username":"0uistiti","status":"eliminated"},{"username":"dickieskillz","status":"eliminated"},{"username":"antfox","status":"eliminated"},{"username":"makholm","status":"eliminated"},{"username":"checkinu","status":"eliminated"},{"username":"sailordoug","status":"eliminated"},{"username":"finn0013","status":"eliminated"},{"username":"babayu_s","status":"eliminated"},{"username":"attychris","status":"eliminated"},{"username":"ahmad00145","status":"eliminated"},{"username":"watkinsd","status":"eliminated"},{"username":"grosz","status":"eliminated"},{"username":"takada1","status":"eliminated"},{"username":"orangepickle409","status":"eliminated"},{"username":"rogsch","status":"eliminated"},{"username":"fantesticals","status":"eliminated"},{"username":"smajk1","status":"eliminated"},{"username":"apavicic","status":"eliminated"},{"username":"kinglizard","status":"eliminated"},{"username":"wingchun_matt","status":"eliminated"},{"username":"benny4906","status":"eliminated"},{"username":"miniman2804","status":"eliminated"},{"username":"the-cookinator","status":"eliminated"},{"username":"wolframesq","status":"eliminated"},{"username":"tkc74","status":"eliminated"},{"username":"mosaddek123","status":"eliminated"},{"username":"snowsong","status":"removed"},{"username":"alexstoma","status":"eliminated"},{"username":"gimpolympian","status":"eliminated"},{"username":"wandorian","status":"eliminated"},{"username":"psychiatrie1","status":"eliminated"},{"username":"andrewmleroux","status":"eliminated"},{"username":"piston9","status":"eliminated"},{"username":"emperor-max","status":"eliminated"},{"username":"simonlennard","status":"eliminated"},{"username":"erikxiv","status":"eliminated"},{"username":"w0dgie","status":"eliminated"},{"username":"csailus17","status":"eliminated"},{"username":"vomitcom","status":"eliminated"},{"username":"nobody0wens","status":"eliminated"},{"username":"aaaandyyyy","status":"eliminated"},{"username":"beachstud","status":"eliminated"},{"username":"derel","status":"eliminated"},{"username":"riazudeenmm","status":"eliminated"},{"username":"hugo_garcia","status":"eliminated"},{"username":"ricoschutte","status":"eliminated"},{"username":"alireza_einabadi","status":"eliminated"},{"username":"lamhot_siahaan","status":"eliminated"},{"username":"steve_147","status":"eliminated"},{"username":"mallesh21","status":"eliminated"},{"username":"kyrnix","status":"eliminated"},{"username":"yavuz_sevinc45","status":"eliminated"},{"username":"tuscontornado","status":"eliminated"},{"username":"edemava","status":"eliminated"},{"username":"brakeheart786","status":"eliminated"},{"username":"fjuanh","status":"eliminated"},{"username":"ragley","status":"eliminated"},{"username":"tau1212","status":"eliminated"},{"username":"mosch1990","status":"eliminated"},{"username":"garibov-suleyman","status":"eliminated"},{"username":"gecselajos","status":"eliminated"},{"username":"guadamux","status":"eliminated"},{"username":"drooo82","status":"eliminated"},{"username":"stef_borg","status":"eliminated"},{"username":"denidillo","status":"eliminated"},{"username":"mr_trevan","status":"eliminated"},{"username":"president0806","status":"eliminated"},{"username":"michelegalante","status":"eliminated"},{"username":"minhtdvn","status":"eliminated"},{"username":"mfmsas","status":"eliminated"},{"username":"stanyves","status":"eliminated"},{"username":"malmorris7","status":"eliminated"},{"username":"wurzel78","status":"eliminated"},{"username":"saturn7777777","status":"eliminated"},{"username":"mladja93","status":"eliminated"},{"username":"brunozzo","status":"eliminated"},{"username":"audryslabas","status":"eliminated"},{"username":"mrussell23","status":"eliminated"},{"username":"vivekrv59","status":"eliminated"},{"username":"rnoniem","status":"eliminated"},{"username":"gantois","status":"eliminated"},{"username":"tubeharmonica","status":"eliminated"},{"username":"gonzalo1979","status":"eliminated"},{"username":"telo21","status":"eliminated"},{"username":"gilliere","status":"eliminated"},{"username":"kamtang","status":"eliminated"},{"username":"titchess","status":"eliminated"},{"username":"daughters","status":"eliminated"},{"username":"notanymore","status":"eliminated"},{"username":"hattifnattn","status":"eliminated"},{"username":"usmntfan","status":"eliminated"},{"username":"jolonimp2013","status":"eliminated"},{"username":"cashoo112","status":"eliminated"},{"username":"feuer-78","status":"eliminated"},{"username":"patzerjoe","status":"eliminated"},{"username":"richard6711","status":"eliminated"},{"username":"blitzcrige","status":"eliminated"},{"username":"mikurmel","status":"eliminated"},{"username":"jjmoralesg","status":"eliminated"},{"username":"danieltmyers","status":"eliminated"},{"username":"vickrockerpuma","status":"eliminated"},{"username":"koikotosan","status":"eliminated"},{"username":"volitale","status":"eliminated"},{"username":"fordorion","status":"eliminated"},{"username":"pe2wastaken","status":"eliminated"},{"username":"jangela","status":"eliminated"},{"username":"vers811","status":"eliminated"},{"username":"edinardoalmeida","status":"eliminated"},{"username":"brodrig","status":"eliminated"},{"username":"afp77","status":"eliminated"},{"username":"leventmollamustafa","status":"eliminated"},{"username":"leo_terra","status":"eliminated"},{"username":"castillo32","status":"eliminated"},{"username":"arijit51","status":"eliminated"},{"username":"candyy9","status":"eliminated"},{"username":"lurne","status":"eliminated"},{"username":"iggymcfly","status":"eliminated"},{"username":"sd_1976","status":"eliminated"},{"username":"madcheckmate","status":"eliminated"},{"username":"mad-mahogany","status":"eliminated"},{"username":"davince2020","status":"eliminated"},{"username":"dragoljubb","status":"eliminated"},{"username":"martin_no","status":"eliminated"},{"username":"robertrange","status":"eliminated"},{"username":"michael199725","status":"eliminated"},{"username":"gooofie","status":"eliminated"},{"username":"narwhal666","status":"eliminated"},{"username":"byllo","status":"eliminated"},{"username":"evergreen_soul","status":"eliminated"},{"username":"xosanchezxo","status":"eliminated"},{"username":"dale00007","status":"eliminated"},{"username":"terminator70","status":"eliminated"},{"username":"turasel","status":"eliminated"},{"username":"baton105","status":"eliminated"},{"username":"spins5me","status":"eliminated"},{"username":"lucaol67","status":"eliminated"},{"username":"gusgasv","status":"eliminated"},{"username":"jovijanu","status":"eliminated"},{"username":"lezuzius","status":"eliminated"},{"username":"sai","status":"eliminated"},{"username":"petrefax66","status":"eliminated"},{"username":"tigerman73","status":"eliminated"},{"username":"strongmanthos","status":"eliminated"},{"username":"wrik99","status":"eliminated"},{"username":"tandibra","status":"eliminated"},{"username":"lantenak","status":"eliminated"},{"username":"hammergad","status":"eliminated"},{"username":"gtated","status":"eliminated"},{"username":"ljubomir1947","status":"eliminated"},{"username":"themeepone","status":"eliminated"},{"username":"rougerinho","status":"eliminated"},{"username":"3seepio","status":"eliminated"},{"username":"alex_jura","status":"eliminated"},{"username":"vladosegi","status":"eliminated"},{"username":"thisgunforhire","status":"eliminated"},{"username":"ciocabeck","status":"eliminated"},{"username":"argo25","status":"removed"},{"username":"promozab","status":"eliminated"},{"username":"gogo615","status":"eliminated"},{"username":"bagmanus","status":"eliminated"},{"username":"baranesirgen","status":"eliminated"},{"username":"miroslavlavm","status":"eliminated"},{"username":"nikko23m","status":"eliminated"},{"username":"mrsaallen","status":"eliminated"},{"username":"roman_82","status":"eliminated"},{"username":"eugenneagoe","status":"eliminated"},{"username":"lassigue","status":"eliminated"},{"username":"elhitchhiker","status":"eliminated"},{"username":"dand2015","status":"eliminated"},{"username":"nerdburglar","status":"eliminated"},{"username":"drtrikinsky","status":"eliminated"},{"username":"yaketakeya","status":"eliminated"},{"username":"urup75","status":"eliminated"},{"username":"catjadp78","status":"eliminated"},{"username":"newmanator332","status":"eliminated"},{"username":"yuralpk","status":"eliminated"},{"username":"vorixxx","status":"eliminated"},{"username":"tapassardar","status":"eliminated"},{"username":"bardales7510","status":"eliminated"},{"username":"xpontus","status":"eliminated"},{"username":"bfarag","status":"eliminated"},{"username":"arnanus","status":"eliminated"},{"username":"miick7","status":"eliminated"},{"username":"robe178","status":"eliminated"},{"username":"pnedved","status":"eliminated"},{"username":"psiylar","status":"withdrew"},{"username":"serg123456123456","status":"eliminated"},{"username":"waamalejandro","status":"eliminated"},{"username":"besedin","status":"eliminated"},{"username":"nishchithbhat","status":"eliminated"},{"username":"novickrizal","status":"eliminated"},{"username":"thejimtom","status":"withdrew"},{"username":"cedric_d","status":"eliminated"},{"username":"odd623","status":"eliminated"},{"username":"hannes1403","status":"eliminated"},{"username":"baskibaker","status":"eliminated"},{"username":"fredericgenet","status":"eliminated"},{"username":"rajeshkumarsah","status":"eliminated"},{"username":"justthepawns","status":"eliminated"},{"username":"kudr","status":"eliminated"},{"username":"haugerod","status":"eliminated"},{"username":"arniee4","status":"eliminated"},{"username":"ninogurgone","status":"eliminated"},{"username":"michealn","status":"eliminated"},{"username":"tspaper","status":"eliminated"},{"username":"krug55","status":"eliminated"},{"username":"duccione","status":"eliminated"},{"username":"loboka","status":"eliminated"},{"username":"ludisposed","status":"eliminated"},{"username":"ven1955","status":"eliminated"},{"username":"xaviersa","status":"eliminated"},{"username":"kuprabhu","status":"eliminated"},{"username":"trickymonkey","status":"eliminated"},{"username":"zhyrtqysh","status":"eliminated"},{"username":"strayknight","status":"eliminated"},{"username":"andreasffm","status":"eliminated"},{"username":"ivanlerouge","status":"eliminated"},{"username":"sateeshmr","status":"eliminated"},{"username":"sum1rand0m","status":"eliminated"},{"username":"sveta55","status":"eliminated"},{"username":"borabara53","status":"eliminated"},{"username":"harry-green","status":"eliminated"},{"username":"annalisa34567","status":"eliminated"},{"username":"turadoras","status":"eliminated"},{"username":"kudrpapa","status":"eliminated"},{"username":"ephantel","status":"eliminated"},{"username":"rejma","status":"eliminated"},{"username":"eyeronic","status":"eliminated"},{"username":"rocky111724","status":"eliminated"},{"username":"agentbond007","status":"eliminated"},{"username":"t_brady_12","status":"eliminated"},{"username":"mara1204","status":"eliminated"},{"username":"fsmu","status":"eliminated"},{"username":"sergey-kr","status":"eliminated"},{"username":"geolinmay","status":"eliminated"},{"username":"carocanno","status":"withdrew"},{"username":"robmcguire","status":"eliminated"},{"username":"desbaxter","status":"eliminated"},{"username":"vikgol","status":"eliminated"},{"username":"prinzesschen","status":"eliminated"},{"username":"alihamoud","status":"eliminated"},{"username":"radnorth","status":"eliminated"},{"username":"mnahinkhan","status":"eliminated"},{"username":"d2le","status":"eliminated"},{"username":"fidel1965","status":"eliminated"},{"username":"sirboby","status":"eliminated"},{"username":"bacrinovitch","status":"eliminated"},{"username":"abe231","status":"eliminated"},{"username":"andreamorandini","status":"eliminated"},{"username":"olegstepanov30","status":"eliminated"},{"username":"zakuza","status":"eliminated"},{"username":"figofan","status":"eliminated"},{"username":"the_brw","status":"eliminated"},{"username":"yjiao63","status":"eliminated"},{"username":"gmarini","status":"eliminated"},{"username":"kingkongsbro","status":"eliminated"},{"username":"soulwinnerbeats","status":"eliminated"},{"username":"cabletv","status":"eliminated"},{"username":"messiah1980","status":"eliminated"},{"username":"gabi077","status":"eliminated"},{"username":"lako_cemo","status":"eliminated"},{"username":"f_in_0098","status":"removed"},{"username":"nik70141","status":"eliminated"},{"username":"minenhleuwc","status":"removed"},{"username":"lechartiste","status":"eliminated"},{"username":"78rob","status":"eliminated"},{"username":"petoh01","status":"removed"},{"username":"troyo0209","status":"eliminated"},{"username":"erikhelsingborg","status":"eliminated"},{"username":"guirodrigues","status":"eliminated"},{"username":"chepl","status":"eliminated"},{"username":"ciryandil","status":"eliminated"},{"username":"awsomemoves","status":"eliminated"},{"username":"dchoba","status":"eliminated"},{"username":"rockaround","status":"eliminated"},{"username":"hcbienne","status":"eliminated"},{"username":"nobody_wwg","status":"withdrew"},{"username":"mtrix80","status":"eliminated"},{"username":"el_tallarin","status":"eliminated"},{"username":"paolovian","status":"eliminated"},{"username":"sh376","status":"removed"},{"username":"rebecca321","status":"eliminated"},{"username":"vanumoti","status":"eliminated"},{"username":"herbertpaulo","status":"eliminated"},{"username":"boomtukituki","status":"removed"},{"username":"patelashish275","status":"eliminated"},{"username":"chicken_forever","status":"active"},{"username":"thakurbhooshan","status":"eliminated"},{"username":"zuzawin","status":"eliminated"},{"username":"nkwebu","status":"eliminated"},{"username":"sewfast","status":"eliminated"},{"username":"tortakower","status":"eliminated"},{"username":"limanov898","status":"eliminated"},{"username":"vkrug","status":"eliminated"},{"username":"zachary_acute_accent","status":"eliminated"},{"username":"altafganatra","status":"eliminated"},{"username":"vkudr1955","status":"eliminated"},{"username":"jorgejalastre","status":"eliminated"},{"username":"kudrag7","status":"eliminated"},{"username":"algonquin54","status":"eliminated"},{"username":"terminator1001","status":"eliminated"},{"username":"wvoorhees","status":"eliminated"},{"username":"mozart9","status":"eliminated"},{"username":"vencana","status":"eliminated"},{"username":"myselfsuraj","status":"eliminated"},{"username":"passedpawnpromotion","status":"removed"},{"username":"xafdrez","status":"removed"},{"username":"1955krug","status":"eliminated"},{"username":"miroslav_co","status":"eliminated"}],"rounds":["https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/1","https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/2","https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/3","https://api.chess.com/pub/tournament/-33rd-chesscom-quick-knockouts-1401-1600/4"]}'
     headers:
-      Age:
-      - '578'
       CF-Cache-Status:
       - HIT
       CF-RAY:
-      - 8d1383adfe089011-BOS
+      - 8d44ba57fcbf4cf2-BOS
       Cache-Control:
       - public, max-age=3600
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '3841'
+      - '20245'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 02:03:36 GMT
+      - Fri, 18 Oct 2024 01:24:17 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=oyAzMd5dX8HHZO3bVAopAe5oy76uAbdqfmu27RwlR60sJRnuA4rBC33DkFH8ij4h1bscP98kEawdB3o4DCRJchvnbp7%2FMMqXiOPnRXTB61i3%2BTntDm5xQxaj2zJH8Ek%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=sPunxQQCmgqyvIJC17%2FN71EZ8i57wtcu9%2F6y4Rm5YCsTg%2F4CITfgCHqLU69iAgAf27Y0iJ3WJsTQvsRFrCVUG33N6i2VZY%2F5RaGgf49Vi%2BPsYYRe4HMgR3EqN1EUj3g%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=Fwl0OeHdEdOOSuA2vsPXyS3GnlSn4UmJHMhc3kLi8qs-1728698616-1.0.1.1-yJQX7owPn2q2TFLs4z3RrQ7_4pLw_SLWHzKeLw7E4VHHFNtVyF4je2DxGB.4iBNMxaI6WizM2PDWtz3bZSpb3pv0GIZWLqF9jURdjAvnwtk;
-        path=/; expires=Sat, 12-Oct-24 02:33:36 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=w44skk.e0xkiTv3B1i87N76XrbNqB9ILW53zZSqQUFQ-1729214657-1.0.1.1-wVBGxfgFRrDujxYk6W7ybma8reVLZBtdiagVE_mMS7Wd5lMPYejxWmoESBDtax_o7IIrliE6eziS_0AIPcsboFXq.Qf4.mlg4EpGIHDMZOA;
+        path=/; expires=Fri, 18-Oct-24 01:54:17 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
       - W/"f70a23c61220d14c5decd896d7a94015"
       expires:
-      - Sat, 12 Oct 2024 02:53:58 GMT
+      - Fri, 18 Oct 2024 01:37:30 GMT
       last-modified:
-      - Wednesday, 09-Oct-2024 07:18:26 GMT+0000
+      - Wednesday, 16-Oct-2024 09:15:08 GMT+0000
       link:
       - <https://api.chess.com/context/Tournament.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -132,11 +64,11 @@ interactions:
       x-chesscom-meta:
       - lean=cached
       x-chesscom-request-id-cdn:
-      - 8d029b2baa440aa7-IAD
+      - 8d37f7a8eaf2b19c-IAD
       x-chesscom-request-id-lb:
-      - 5231053e54c8850a27d8287b8597f965
+      - c0cf3dacaff5215a2d95b261c5f2dbb9
       x-chesscom-servedby:
-      - '158'
+      - '147'
     status:
       code: 200
       message: OK

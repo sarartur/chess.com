@@ -1,3 +1,5 @@
+import pytest
+
 from tests.vcr import vcr
 
 
@@ -10,6 +12,14 @@ def test_with_endpoints(endpoints):
 @vcr.use_cassette("get_leaderboards.yaml")
 def test_with_client(client):
     response = client.get_leaderboards()
+    validate_response(response)
+
+
+@pytest.mark.asyncio
+async def test_with_async_client(async_client):
+    with vcr.use_cassette("get_leaderboards.yaml"):
+        response = await async_client.get_leaderboards()
+
     validate_response(response)
 
 

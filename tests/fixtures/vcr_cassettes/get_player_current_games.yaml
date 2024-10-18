@@ -4,65 +4,59 @@ interactions:
     headers:
       Accept:
       - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
-      user-agent:
+      User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/player/afgano29/games
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA61Uy27aQBT9lelIVaUoeDwPGzO7QFg1DW6aqAuI0NgMxsKMHT+CaJR/7x0bDItE
-        6qLLe8+cO+c+33CidrrCcv6GmzLDEm/quqgkIfv93ok3uqqcON8R+4qsVJodiD9ijAdCePga7/JX
-        vYwOWNIhGwnB+TC4xkViIM58+qpNjRb4TtffKhRm6vBlgZ8XZv4rrTX4J6fgnfdWtV7mMuG4gUOD
-        zv2QN2YFftqZvzcdWa0TZXI26rzjTMVb8P5IS50qpZh3JOuqyayGq86eNGUJosK8Sus0NwCUhr5s
-        I1qSIuJFURBasMIwwopCEBZ6hIb8PqQkZGEYjkPycD/+SR++U7RH2xcU+8hFwy70Y7rTf3JjtT09
-        TjrfdDID84by3nwqM/B8XOK80CY1SUWmJsnSajOYdY7BTZKaOG/KenCr19pU2nEc7iR8EPkD4YwT
-        NhhHRxXw9Sd1BMRKtAiTlEvvsqDTLLclhg5e1PPodAN2znCSm7rMbQ6UUOaOfNc99rRWZf3hB3ep
-        2X6a80dj1dIWhjooFuht/jXOtohzT3oj6bHnd0QhfaT9HmJcMiFpABBz0P2anxAmAilAiGgRIK28
-        M4lJ15eMA8QdlPQcyrnkQvJRCwAnOn9EA+nBX0OAhIOg7j3J5dIVknktAiToRy/Cp1K4klnlnoNm
-        g9llTm4g3Q5xrHT/zIKIQyl8wHwQ0esLPCmY5LT1AyfuU6IM6kO7bK8WBpazhnYs465jsJB9xwDK
-        VFUvVVynr2ndbW/AYHnt9pYwPyss1yqrNMRoSrvMezslwIPxA+s/LA3EquzILK3IVoBw6YhxepIN
-        CuEq4XY24HHZZPZK4XZ0wO4Ena+VKtKLsSqaiBRwcHRJTocCOJGd6n/h7Pozgt+f3/8ClNCZBCMF
-        AAA=
+      string: '{"games":[{"url":"https://www.chess.com/game/daily/692238445","move_by":1729443378,"pgn":"[Event
+        \"Let''s Play!\"]\n[Site \"Chess.com\"]\n[Date \"2024.08.18\"]\n[Round \"1\"]\n[White
+        \"afgano29\"]\n[Black \"Mireiaaa25\"]\n[Result \"*\"]\n[CurrentPosition \"rn1qkb1r/pb3ppp/1p2pn2/2pp4/2P5/1P3NP1/P2PPPBP/RNBQ1RK1
+        w kq c6 0 7\"]\n[Timezone \"UTC\"]\n[ECO \"A13\"]\n[ECOUrl \"https://www.chess.com/openings/English-Opening-Agincourt-Defense...3.g3-b6-4.Bg2-Bb7\"]\n[UTCDate
+        \"2024.08.18\"]\n[UTCTime \"22:13:51\"]\n[WhiteElo \"1944\"]\n[BlackElo \"1082\"]\n[TimeControl
+        \"1/1209600\"]\n[StartTime \"22:13:51\"]\n[Link \"https://www.chess.com/game/daily/692238445\"]\n\n1.
+        c4 {[%clk 335:59:52]} 1... e6 {[%clk 323:24:18]} 2. Nf3 {[%clk 248:43:54]}
+        2... d5 {[%clk 322:06:23]} 3. g3 {[%clk 133:34:39]} 3... b6 {[%clk 318:53:27]}
+        4. Bg2 {[%clk 103:04:25]} 4... Bb7 {[%clk 261:40:22]} 5. O-O {[%clk 335:08:02]}
+        5... Nf6 {[%clk 263:07:46]} 6. b3 {[%clk 85:42:31]} 6... c5 {[%clk 129:51:54]}
+        *\n","time_control":"1/1209600","last_activity":1728233778,"rated":false,"turn":"white","fen":"rn1qkb1r/pb3ppp/1p2pn2/2pp4/2P5/1P3NP1/P2PPPBP/RNBQ1RK1
+        w kq c6 0 7","start_time":1724019231,"time_class":"daily","rules":"chess","white":"https://api.chess.com/pub/player/afgano29","black":"https://api.chess.com/pub/player/mireiaaa25"}]}'
     headers:
       CF-Cache-Status:
-      - REVALIDATED
+      - MISS
       CF-RAY:
-      - 8d12f198ac749008-BOS
+      - 8d44ba27d81d3b81-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
       Content-Length:
-      - '686'
+      - '1315'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 00:23:52 GMT
+      - Fri, 18 Oct 2024 01:24:09 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=pTyf92crZC%2Fev0aAurtQzopZ7go7%2BK7TpM8Z83X3KJiztvGamOQIJZXy3tRiPThKsM4tLa7XQ8K6p%2B15%2FJd9qOS%2FiLE1s4TxMX5Udaj2DIUUAaD3Euz9z3Vfaz8Vxg4%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=wouQQ7gvrqbddUP2PIkEBFGaFVMRE2QkbqcfVf2pK1cFt7YcTl2IArUobXLohMd04SXYbfF7asEPiU5mzW0ii0aE0HcHoOFq3tRM7hb7ihdITrOLzv7tNAEIDzrsLFI%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=QnMrCNPfj_orx64mlOxxBmIL9FAc31.O7FNewHJN08g-1728692632-1.0.1.1-JoTrkS2QPibj4qB.SEKFBx7ihEYGR4GXkL3bxl.EtQj0UfkF1kUsutlv9jpcq4DA13dkUk_bHc2b3optEpoyGzLxKIL8RsFQAfMPnweiPuQ;
-        path=/; expires=Sat, 12-Oct-24 00:53:52 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=scsNlpgIewclsjJ_QHvDKVMMA.tHo3SJ2xnFicfHFhg-1729214649-1.0.1.1-ykY3iLXXPpjvCtOAUkzhGI9YrZcQEvYZzwiIoFOm4urinJCynxCao8GP6FuFFzU3sqTXqar3rKIytWv9Z19Kr05URGxiagpNegkZGxFb338;
+        path=/; expires=Fri, 18-Oct-24 01:54:09 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
       - W/"dcb579cd5a6dda8070d6c14c289117d5"
       expires:
-      - Sat, 12 Oct 2024 00:23:57 GMT
+      - Fri, 18 Oct 2024 01:24:14
       last-modified:
-      - Saturday, 12-Oct-2024 00:23:27 GMT+0000
+      - Friday, 18-Oct-2024 01:24:09 GMT+0000
       link:
       - <https://api.chess.com/context/Games.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
@@ -75,11 +69,11 @@ interactions:
       x-chesscom-meta:
       - lean=published
       x-chesscom-request-id-cdn:
-      - 8d12f0fe4c488f9f-IAD
+      - 8d44ba27d81d3b81-IAD
       x-chesscom-request-id-lb:
-      - cbfa018c7b01efc729ec0204f675c69b
+      - 3bc1d84a210954155bb5abfa4b945ea6
       x-chesscom-servedby:
-      - '95'
+      - '87'
     status:
       code: 200
       message: OK
