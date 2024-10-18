@@ -132,7 +132,7 @@ def test_client_includes_default_config():
     except Exception:
         raise "Error creating client"
     else:
-        assert client.aio is False  # this is always overriden
+        assert client.aio is False  # this is always overridden
         assert client.request_config == {"some": "config"}
         assert client.rate_limit_handler == "Some handler"
     finally:
