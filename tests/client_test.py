@@ -1,6 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from chessdotcom.client import ChessDotComClient, RateLimitHandler
+from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler
 from chessdotcom.types import Resource
 
 
@@ -114,3 +114,40 @@ def test_do_get_request_includes_user_agent_header(mock_requests):
         headers={"headers": {"User-Agent": "My Python Application. Contact me at..."}},
         timeout=30,
     )
+
+
+def test_client_includes_default_config():
+    old_config = {
+        "aio": Client.aio,
+        "request_config": Client.request_config,
+        "rate_limit_handler": Client.rate_limit_handler,
+    }
+
+    Client.aio = True
+    Client.request_config = {"some": "config"}
+    Client.rate_limit_handler = "Some handler"
+
+    try:
+        client = ChessDotComClient()
+    except Exception:
+        raise "Error creating client"
+    else:
+        assert client.aio is False  # this is always overriden
+        assert client.request_config == {"some": "config"}
+        assert client.rate_limit_handler == "Some handler"
+    finally:
+        Client.aio = old_config["aio"]
+        Client.request_config = old_config["request_config"]
+        Client.rate_limit_handler = old_config["rate_limit_handler"]
+
+
+def test_client_overrides_defaults():
+    client = ChessDotComClient(
+        aio=True,
+        request_config={"some": "config"},
+        rate_limit_handler="Some handler",
+    )
+
+    assert client.aio is True
+    assert client.request_config == {"some": "config"}
+    assert client.rate_limit_handler == "Some handler"
