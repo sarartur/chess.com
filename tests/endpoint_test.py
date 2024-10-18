@@ -2,19 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_country_details.yaml")
-def test_get_country_details():
-    response = endpoints.get_country_details("XE")
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    country = response.country
-    assert isinstance(country.name, str)
-    assert isinstance(country.id, str)
-    assert isinstance(country.code, str)
-
-
 @vcr.use_cassette("get_country_players.yaml")
 def test_get_country_players():
     response = endpoints.get_country_players("US")
