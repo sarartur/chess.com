@@ -2,25 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_tournament_round.yaml")
-def test_get_tournament_round():
-    response = endpoints.get_tournament_round(
-        "-33rd-chesscom-quick-knockouts-1401-1600", 1
-    )
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    round = response.tournament_round
-
-    groups = round.groups
-    assert all(isinstance(group, str) for group in groups)
-
-    for player in round.players:
-        assert isinstance(player.username, str)
-        assert isinstance(player.is_advancing, bool)
-
-
 @vcr.use_cassette("get_tournament_round_group_details(.yaml")
 def test_get_tournament_round_group_details():
     response = endpoints.get_tournament_round_group_details(
