@@ -35,6 +35,21 @@ All the functions return a `ChessDotComResponse` object. The data can be accesse
 
 The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API. 
 
+Using client instance
+^^^^^^^^^^^
+.. code-block:: python
+
+   from chessdotcom import ChessDotComClient
+      
+   client = ChessDotComClient(user_agent = "My Python Application...")
+
+   response = client.get_player_profile("fabianocaruana")
+
+   player_name = response.json['player']['name']
+   #or
+   player_name = response.player.name
+
+
 Using functions
 ^^^^^^^^^^^
 .. code-block:: python
@@ -46,21 +61,7 @@ Using functions
       "Contact me at email@example.com"
    )
    response = get_player_profile("fabianocaruana")
-
-   player_name = response.json['player']['name']
-   #or
-   player_name = response.player.name
-   
-Using client instance
-^^^^^^^^^^^
-.. code-block:: python
-
-   from chessdotcom import ChessDotComClient
-      
-   client = ChessDotComClient(user_agent = "My Python Application...")
-
-   response = client.get_player_profile("fabianocaruana")
-
+  
 
 Asynchronous
 ^^^^^^^^^^^^
