@@ -1,53 +1,19 @@
-from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_random_daily_puzzle.yaml")
-def test_get_random_daily_puzzle():
-    response = endpoints.get_current_daily_puzzle()
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    puzzle = response.puzzle
-
-    assert isinstance(puzzle.title, str)
-    assert isinstance(puzzle.url, str)
-    assert isinstance(puzzle.publish_time, int)
-    assert isinstance(puzzle.fen, str)
-    assert isinstance(puzzle.pgn, str)
-    assert isinstance(puzzle.image, str)
-
-
-@vcr.use_cassette("get_streamers.yaml")
-def test_get_streamers():
-    response = endpoints.get_streamers()
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    streamers = response.streamers
-
-    for streamer in streamers:
-        assert isinstance(streamer.username, str)
-        assert isinstance(streamer.avatar, str)
-        # assert isinstance(streamer.twitch_url, str)
-        assert isinstance(streamer.url, str)
-        assert isinstance(streamer.is_live, bool)
-        assert isinstance(streamer.is_community_streamer, bool)
-
-        for platform in streamer.platforms:
-            assert isinstance(platform.type, str)
-            # assert isinstance(platform.stream_url, str)
-            assert isinstance(platform.channel_url, str)
-            assert isinstance(platform.is_live, bool)
-            # assert isinstance(platform.is_main_live_platform, bool)
+@vcr.use_cassette("get_leaderboards.yaml")
+def test_with_endpoints(endpoints):
+    response = endpoints.get_leaderboards()
+    validate_response(response)
 
 
 @vcr.use_cassette("get_leaderboards.yaml")
-def test_get_leaderboards():
-    response = endpoints.get_leaderboards()
+def test_with_client(client):
+    response = client.get_leaderboards()
+    validate_response(response)
 
+
+def validate_response(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
 

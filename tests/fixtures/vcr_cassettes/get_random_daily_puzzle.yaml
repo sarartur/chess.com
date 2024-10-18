@@ -11,20 +11,21 @@ interactions:
       user-agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
-    uri: https://api.chess.com/pub/puzzle
+    uri: https://api.chess.com/pub/puzzle/random
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAA4VPTW+DMAz9K1am7dAV8gEDVKnaaTsMCU27lmniI4WoIUEkiMG0/77Q9lrN1js8
-        +/nZ/kFWWMnRDr3p6sRnoRo46gHetRFWaIW2aByka7fW9maH8TRNftVyY/xKd7guhJy9M/f6cVkk
-        x4yw0KPEo9TN9mMphWm/rOjcDhqzJAqIiy06cuVc6UmlIVYxDrIQs+wJJ5eECTyXBM4mzSo9fHAz
-        Sgs52uToMx9ydXh9yRz93+OqX0F9yOr4EdIiAeZDWsWQVREErvxdJZDxGMJVUkZ3sHG7RVc0/Pb7
-        syp1MdTP7pv9rTvuGZkcvCuIA30wYuF7hn7/ANVh7tGAAQAA
+        H4sIAAAAAAAAA51QUWvCMBD+KyGwPTjT5GI7nSCCbHuRleqrHaOt0RbTmDUpdY79913FPe5hy+WD
+        +y5fvjvuk/rKa0WndKGz4pC3jVEsjsmQvGSmKJXzqiEwGUd0SItjXSvjHYqRtY3GpPTeuinnXdcF
+        vdwFqOLbrNIf7MKZbc9nrbgUEDEAJgH/2jbXlSvffFVjawjDiXiQEyGGdKcMukKTywM0fGTBWsst
+        mES+A4+M5CtYRHwRxpInYZIkPFzDEkhHGIYgF/N9b7F5zLwiKZ3jCS43pa9pk5rNWrlWe3wa/FSe
+        n2Kk/2969ekBAVmdinsSb0MiMS/GJD7tRndkFJBlCb1kgDNWdbZXv6/vw+THrNnOcRuzv451I0WH
+        YFcIBNy66qxmkn59AyTTdijvAQAA
     headers:
       CF-Cache-Status:
-      - REVALIDATED
+      - EXPIRED
       CF-RAY:
-      - 8d13d99b3b6a4d0d-BOS
+      - 8d4470936d608f84-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
@@ -32,46 +33,46 @@ interactions:
       Content-Encoding:
       - gzip
       Content-Length:
-      - '264'
+      - '306'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sat, 12 Oct 2024 03:02:15 GMT
+      - Fri, 18 Oct 2024 00:33:55 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=ZhAvRxGeqUyrHR2ERFnFx529fJtZGnt1Ehx4tncBHv%2FLLmDNjEmWudp%2F6ciJlyo2GM8SNJYT7r6wVcgaJ%2BNz7YRdbJUzW6f1CHk7YWQ3qmKlBGCIR7AC7IQIsTARiVk%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=IZGKhE5TMI5AtsfDiEvYiU55H6bjX%2FoYuDxz6JvMgSPQvQJ4qa3bBFVCmM562QRImaqolRt%2F54qOHIvaf5NljuO3tNsqViZhS9nW%2F8OP8OEvffrVuD9qQXY1VF0e2XY%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=ArFHo8rsYAskiZ8xBDsbseSUAJSP53Prn4WKsqHuMNM-1728702135-1.0.1.1-.uvgZs0CIHvthJDHlQ_6orWQ6jglwIuvk17T4OUcOB8JxhjFdcl4vOg2hK1mpLMeCntgfyURI4i.aWMYii5ygeP1L1ywfzFxyAIznapzIl0;
-        path=/; expires=Sat, 12-Oct-24 03:32:15 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=R6NXFnMmX3Z1avKkciPTw_caIZEfv8awn9jBFJBxm7k-1729211635-1.0.1.1-Wtm9g1qHHH0G_VEDO49kPRsbB_N2n0fKK4tgmYP9V3HmAZmpZtMV5tZ_wKQ70_y6094GYi8orO9aMmW4FpqTf7bCDiOE5S8MBVHHA1om6ws;
+        path=/; expires=Fri, 18-Oct-24 01:03:55 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       Vary:
       - Accept-Encoding
       access-control-allow-origin:
       - '*'
       etag:
-      - W/"5758801c60b14be24b6b00759d4fcd79"
+      - W/"e8fc25143b9aaaf82abfbf54a78fcd74"
       expires:
-      - Sat, 12 Oct 2024 03:02:20 GMT
+      - Fri, 18 Oct 2024 00:34:00
       last-modified:
-      - Friday, 11-Oct-2024 08:44:00 GMT+0000
+      - Friday, 18-Oct-2024 00:33:55 GMT+0000
       link:
-      - <https://api.chess.com/context/DailyPuzzle.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+      - <https://api.chess.com/context/DailyPuzzleRandom.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
         type="application/ld+json"
       strict-transport-security:
       - max-age=63072000; includeSubDomains; preload
       x-chesscom-matched:
-      - pubapi_daily_puzzle
+      - pubapi_daily_puzzle_random
       x-chesscom-meta:
-      - lean=cached
+      - lean=published
       x-chesscom-request-id-cdn:
-      - 8d0dcefdf83d0aaf-IAD
+      - 8d4470936d608f84-IAD
       x-chesscom-request-id-lb:
-      - 6473d1f81006b90ffa0f527f6dee843a
+      - a9d94ad902e9c7e55af5b6f352a774a1
       x-chesscom-servedby:
-      - '150'
+      - '153'
     status:
       code: 200
       message: OK
