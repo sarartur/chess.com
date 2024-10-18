@@ -94,3 +94,23 @@ def test_do_get_request_sync_top_level_attr(mock_requests):
         timeout=30,
     )
     assert response.top_level_attr.key == "value"
+
+
+@patch("chessdotcom.client.requests")
+def test_do_get_request_includes_user_agent_header(mock_requests):
+    client = ChessDotComClient(user_agent="My Python Application. Contact me at...")
+
+    mock_requests.get.return_value = MagicMock(status_code=200, text='{"key": "value"}')
+
+    client.do_get_request(
+        Resource(
+            uri="/player/fabianocaruana",
+            request_config={"headers": {"header": "override_value"}},
+        )
+    )
+
+    assert mock_requests.get.called_once_with(
+        url="https://api.chess.com/player/fabianocaruana",
+        headers={"headers": {"User-Agent": "My Python Application. Contact me at..."}},
+        timeout=30,
+    )
