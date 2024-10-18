@@ -1,5 +1,5 @@
-from typing import Tuple
 from datetime import datetime
+from typing import Tuple
 
 
 def resolve_date(year: str, month: str, date: datetime) -> Tuple[str, str]:

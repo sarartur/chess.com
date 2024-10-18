@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/fabianocaruana
+  response:
+    body:
+      string: '{"avatar":"https://images.chesscomfiles.com/uploads/v1/user/11177810.9dfc8d31.200x200o.9a9eccebc07c.png","player_id":11177810,"@id":"https://api.chess.com/pub/player/fabianocaruana","url":"https://www.chess.com/member/FabianoCaruana","name":"Fabiano
+        Caruana","username":"fabianocaruana","title":"GM","followers":19189,"country":"https://api.chess.com/pub/country/US","last_online":1729210949,"joined":1363533272,"status":"premium","is_streamer":false,"verified":false,"league":"Champion","streaming_platforms":[]}'
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44ba4368394d13-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:14 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=i1X8%2FwgZdzJXq8Z%2BAxNAtx8k8BEYO1n%2FiDtZk4k%2FLYQI9uwhZD0marWWXcn8mj90syuCZzUOyUIag8Ac79A1UvGKgLRRrw7kr8x%2FiB3raMpEO57Wh3WgiwgXjL1JSuI%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=4tQIqffXWiJugdzYSNH5eVPqjkFfX2CvogjpBaWMbv8-1729214654-1.0.1.1-.o5thVGZ2MgdqBQaFeCb6UPmZu9AMMDMOUQkkW93hu1Y0Mjh.NeC7SmQikyHba9fnp4.6sjA1AjCViGZqIB3P6GCFXf65LfG.ru9boKB8w0;
+        path=/; expires=Fri, 18-Oct-24 01:54:14 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"45e8916cbd40991ebe5d32d06b3322f1"
+      expires:
+      - Fri, 18 Oct 2024 01:24:19 GMT
+      last-modified:
+      - Friday, 18-Oct-2024 00:35:07 GMT+0000
+      link:
+      - <https://api.chess.com/context/Player.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - None
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d4475c239523ae0-IAD
+      x-chesscom-request-id-lb:
+      - fca21776c37c1f366c22e9e110f540fb
+      x-chesscom-servedby:
+      - '156'
+    status:
+      code: 200
+      message: OK
+version: 1

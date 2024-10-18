@@ -1,0 +1,80 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/afgano29/games
+  response:
+    body:
+      string: '{"games":[{"url":"https://www.chess.com/game/daily/692238445","move_by":1729443378,"pgn":"[Event
+        \"Let''s Play!\"]\n[Site \"Chess.com\"]\n[Date \"2024.08.18\"]\n[Round \"1\"]\n[White
+        \"afgano29\"]\n[Black \"Mireiaaa25\"]\n[Result \"*\"]\n[CurrentPosition \"rn1qkb1r/pb3ppp/1p2pn2/2pp4/2P5/1P3NP1/P2PPPBP/RNBQ1RK1
+        w kq c6 0 7\"]\n[Timezone \"UTC\"]\n[ECO \"A13\"]\n[ECOUrl \"https://www.chess.com/openings/English-Opening-Agincourt-Defense...3.g3-b6-4.Bg2-Bb7\"]\n[UTCDate
+        \"2024.08.18\"]\n[UTCTime \"22:13:51\"]\n[WhiteElo \"1944\"]\n[BlackElo \"1082\"]\n[TimeControl
+        \"1/1209600\"]\n[StartTime \"22:13:51\"]\n[Link \"https://www.chess.com/game/daily/692238445\"]\n\n1.
+        c4 {[%clk 335:59:52]} 1... e6 {[%clk 323:24:18]} 2. Nf3 {[%clk 248:43:54]}
+        2... d5 {[%clk 322:06:23]} 3. g3 {[%clk 133:34:39]} 3... b6 {[%clk 318:53:27]}
+        4. Bg2 {[%clk 103:04:25]} 4... Bb7 {[%clk 261:40:22]} 5. O-O {[%clk 335:08:02]}
+        5... Nf6 {[%clk 263:07:46]} 6. b3 {[%clk 85:42:31]} 6... c5 {[%clk 129:51:54]}
+        *\n","time_control":"1/1209600","last_activity":1728233778,"rated":false,"turn":"white","fen":"rn1qkb1r/pb3ppp/1p2pn2/2pp4/2P5/1P3NP1/P2PPPBP/RNBQ1RK1
+        w kq c6 0 7","start_time":1724019231,"time_class":"daily","rules":"chess","white":"https://api.chess.com/pub/player/afgano29","black":"https://api.chess.com/pub/player/mireiaaa25"}]}'
+    headers:
+      CF-Cache-Status:
+      - MISS
+      CF-RAY:
+      - 8d44ba27d81d3b81-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1315'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:09 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=wouQQ7gvrqbddUP2PIkEBFGaFVMRE2QkbqcfVf2pK1cFt7YcTl2IArUobXLohMd04SXYbfF7asEPiU5mzW0ii0aE0HcHoOFq3tRM7hb7ihdITrOLzv7tNAEIDzrsLFI%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=scsNlpgIewclsjJ_QHvDKVMMA.tHo3SJ2xnFicfHFhg-1729214649-1.0.1.1-ykY3iLXXPpjvCtOAUkzhGI9YrZcQEvYZzwiIoFOm4urinJCynxCao8GP6FuFFzU3sqTXqar3rKIytWv9Z19Kr05URGxiagpNegkZGxFb338;
+        path=/; expires=Fri, 18-Oct-24 01:54:09 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"dcb579cd5a6dda8070d6c14c289117d5"
+      expires:
+      - Fri, 18 Oct 2024 01:24:14
+      last-modified:
+      - Friday, 18-Oct-2024 01:24:09 GMT+0000
+      link:
+      - <https://api.chess.com/context/Games.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_player_games
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d44ba27d81d3b81-IAD
+      x-chesscom-request-id-lb:
+      - 3bc1d84a210954155bb5abfa4b945ea6
+      x-chesscom-servedby:
+      - '87'
+    status:
+      code: 200
+      message: OK
+version: 1

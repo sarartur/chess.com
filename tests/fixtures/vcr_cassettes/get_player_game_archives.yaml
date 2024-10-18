@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/afgano29/games/archives
+  response:
+    body:
+      string: '{"archives":["https://api.chess.com/pub/player/afgano29/games/2016/08","https://api.chess.com/pub/player/afgano29/games/2016/09","https://api.chess.com/pub/player/afgano29/games/2016/10","https://api.chess.com/pub/player/afgano29/games/2016/11","https://api.chess.com/pub/player/afgano29/games/2016/12","https://api.chess.com/pub/player/afgano29/games/2017/01","https://api.chess.com/pub/player/afgano29/games/2017/02","https://api.chess.com/pub/player/afgano29/games/2017/03","https://api.chess.com/pub/player/afgano29/games/2017/04","https://api.chess.com/pub/player/afgano29/games/2017/06","https://api.chess.com/pub/player/afgano29/games/2017/07","https://api.chess.com/pub/player/afgano29/games/2017/08","https://api.chess.com/pub/player/afgano29/games/2017/10","https://api.chess.com/pub/player/afgano29/games/2017/11","https://api.chess.com/pub/player/afgano29/games/2017/12","https://api.chess.com/pub/player/afgano29/games/2018/01","https://api.chess.com/pub/player/afgano29/games/2018/02","https://api.chess.com/pub/player/afgano29/games/2018/03","https://api.chess.com/pub/player/afgano29/games/2018/04","https://api.chess.com/pub/player/afgano29/games/2018/06","https://api.chess.com/pub/player/afgano29/games/2018/07","https://api.chess.com/pub/player/afgano29/games/2018/08","https://api.chess.com/pub/player/afgano29/games/2018/09","https://api.chess.com/pub/player/afgano29/games/2018/10","https://api.chess.com/pub/player/afgano29/games/2018/11","https://api.chess.com/pub/player/afgano29/games/2018/12","https://api.chess.com/pub/player/afgano29/games/2019/01","https://api.chess.com/pub/player/afgano29/games/2019/02","https://api.chess.com/pub/player/afgano29/games/2019/03","https://api.chess.com/pub/player/afgano29/games/2019/04","https://api.chess.com/pub/player/afgano29/games/2019/05","https://api.chess.com/pub/player/afgano29/games/2019/06","https://api.chess.com/pub/player/afgano29/games/2019/07","https://api.chess.com/pub/player/afgano29/games/2019/08","https://api.chess.com/pub/player/afgano29/games/2019/09","https://api.chess.com/pub/player/afgano29/games/2019/10","https://api.chess.com/pub/player/afgano29/games/2019/12","https://api.chess.com/pub/player/afgano29/games/2020/01","https://api.chess.com/pub/player/afgano29/games/2020/02","https://api.chess.com/pub/player/afgano29/games/2020/03","https://api.chess.com/pub/player/afgano29/games/2020/04","https://api.chess.com/pub/player/afgano29/games/2020/05","https://api.chess.com/pub/player/afgano29/games/2020/06","https://api.chess.com/pub/player/afgano29/games/2020/07","https://api.chess.com/pub/player/afgano29/games/2020/08","https://api.chess.com/pub/player/afgano29/games/2020/09","https://api.chess.com/pub/player/afgano29/games/2020/10","https://api.chess.com/pub/player/afgano29/games/2020/11","https://api.chess.com/pub/player/afgano29/games/2021/08","https://api.chess.com/pub/player/afgano29/games/2021/09","https://api.chess.com/pub/player/afgano29/games/2021/10","https://api.chess.com/pub/player/afgano29/games/2021/11","https://api.chess.com/pub/player/afgano29/games/2021/12","https://api.chess.com/pub/player/afgano29/games/2022/01","https://api.chess.com/pub/player/afgano29/games/2022/02","https://api.chess.com/pub/player/afgano29/games/2022/03","https://api.chess.com/pub/player/afgano29/games/2022/04","https://api.chess.com/pub/player/afgano29/games/2022/05","https://api.chess.com/pub/player/afgano29/games/2022/06","https://api.chess.com/pub/player/afgano29/games/2022/07","https://api.chess.com/pub/player/afgano29/games/2022/08","https://api.chess.com/pub/player/afgano29/games/2022/09","https://api.chess.com/pub/player/afgano29/games/2023/02","https://api.chess.com/pub/player/afgano29/games/2023/03","https://api.chess.com/pub/player/afgano29/games/2023/05","https://api.chess.com/pub/player/afgano29/games/2023/06","https://api.chess.com/pub/player/afgano29/games/2023/08","https://api.chess.com/pub/player/afgano29/games/2024/01"]}'
+    headers:
+      CF-Cache-Status:
+      - MISS
+      CF-RAY:
+      - 8d44ba2958488fd3-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3958'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:10 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=IwFlEjNB8l7jWozzQtuA8uoT6lXm%2FcbOsxWnNIvjmXhIxoYd%2B%2BOJUEIxrNgdWLSNmn31kQcBRK%2B9jj9G2GsFXEIGjgPOJRIfiBm2jQi10edghnAxw%2F0NNmn3p7zs1u4%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=9VMmG.fexvlKYh6aKRLUB8P7zsxxK8m7t7aJue8Qg78-1729214650-1.0.1.1-1QjouBp7DsRS7JLcqej_ZcEUp0syhXkSIJ407BM9XxgweJ01VsceP5SApTS49nTdG87Vh26v_F8OtI1fkQJZHECAC2TqPsZF1w2BKk6x95c;
+        path=/; expires=Fri, 18-Oct-24 01:54:10 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"c79ffc4beff3e613b800b24858a9cf61"
+      expires:
+      - Fri, 18 Oct 2024 01:24:14
+      last-modified:
+      - Friday, 18-Oct-2024 01:24:09 GMT+0000
+      link:
+      - <https://api.chess.com/context/GameArchives.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_player_games_archives
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d44ba2958488fd3-IAD
+      x-chesscom-request-id-lb:
+      - efd90361b8f33751642f111fa28afa42
+      x-chesscom-servedby:
+      - '141'
+    status:
+      code: 200
+      message: OK
+version: 1
