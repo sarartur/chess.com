@@ -1,4 +1,5 @@
 import asyncio
+import copy
 import time
 import warnings
 from functools import wraps
@@ -148,13 +149,19 @@ class ChessDotComClient(Client):
         user_agent: str = None,
         request_config: dict = None,
         rate_limit_handler: RateLimitHandler = None,
+        verify_ssl: bool = True,
     ) -> None:
         self.aio = aio
-        self.request_config = request_config or self.request_config
-        if user_agent:
-            self.request_config["headers"]["User-Agent"] = user_agent
+
+        self._set_request_options(
+            request_config,
+            default_request_config=self.request_config,
+            verify_ssl=verify_ssl,
+            user_agent=user_agent,
+        )
 
         self.rate_limit_handler = rate_limit_handler or self.rate_limit_handler
+
         # Load endpoints to register
         from . import endpoints
 
@@ -162,3 +169,15 @@ class ChessDotComClient(Client):
 
         for endpoint in self.endpoints:
             self.activate_endpoint(endpoint)
+
+    def _set_request_options(
+        self, request_config, default_request_config, verify_ssl, user_agent
+    ):
+        request_config = request_config or {}
+
+        request_config = {**copy.deepcopy(default_request_config), **request_config}
+        request_config["verify_ssl" if self.aio else "verify"] = verify_ssl
+        if user_agent:
+            request_config["headers"]["User-Agent"] = user_agent
+
+        self.request_config = request_config

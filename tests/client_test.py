@@ -133,7 +133,7 @@ def test_client_includes_default_config():
         raise "Error creating client"
     else:
         assert client.aio is False  # this is always overridden
-        assert client.request_config == {"some": "config"}
+        assert client.request_config == {"some": "config", "verify": True}
         assert client.rate_limit_handler == "Some handler"
     finally:
         Client.aio = old_config["aio"]
@@ -141,7 +141,9 @@ def test_client_includes_default_config():
         Client.rate_limit_handler = old_config["rate_limit_handler"]
 
 
-def test_client_overrides_defaults():
+def test_client_combines_with_defaults():
+    default_config = Client.request_config
+
     client = ChessDotComClient(
         aio=True,
         request_config={"some": "config"},
@@ -149,5 +151,19 @@ def test_client_overrides_defaults():
     )
 
     assert client.aio is True
-    assert client.request_config == {"some": "config"}
+    assert client.request_config == {
+        **default_config,
+        **{"some": "config"},
+        "verify_ssl": True,
+    }
     assert client.rate_limit_handler == "Some handler"
+
+
+def test_verify_ssl_option():
+    client = ChessDotComClient(verify_ssl=True)
+
+    assert client.request_config["verify"] is True
+
+    client = ChessDotComClient(verify_ssl=False)
+
+    assert client.request_config["verify"] is False
