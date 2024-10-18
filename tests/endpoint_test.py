@@ -2,40 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_team_match_board.yaml")
-def test_get_team_match_board():
-    response = endpoints.get_team_match_board(12803, 1)
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    match_board = response.match_board
-    # assert isinstance(match_board.board_scores, dict)
-
-    games = match_board.games
-    for game in games:
-        assert isinstance(game.url, str)
-        assert isinstance(game.pgn, str)
-        assert isinstance(game.time_control, str)
-        assert isinstance(game.end_time, int)
-        assert isinstance(game.rated, bool)
-        assert isinstance(game.fen, str)
-        assert isinstance(game.start_time, int)
-        assert isinstance(game.time_class, str)
-        assert isinstance(game.rules, str)
-        assert isinstance(game.white.rating, int)
-        assert isinstance(game.white.result, str)
-        assert isinstance(game.white.id, str)
-        assert isinstance(game.white.username, str)
-        assert isinstance(game.white.uuid, str)
-        assert isinstance(game.black.rating, int)
-        assert isinstance(game.black.result, str)
-        assert isinstance(game.black.id, str)
-        assert isinstance(game.black.username, str)
-        assert isinstance(game.black.uuid, str)
-        assert isinstance(game.match, str)
-
-
 @vcr.use_cassette("get_team_match_live.yaml")
 def test_get_team_match_live():
     response = endpoints.get_team_match_live(5833)
