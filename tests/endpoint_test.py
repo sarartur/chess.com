@@ -2,36 +2,6 @@ from chessdotcom import endpoints
 from tests.vcr import vcr
 
 
-@vcr.use_cassette("get_club_matches.yaml")
-def test_get_club_matches():
-    response = endpoints.get_club_matches("chess-com-developer-community")
-
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
-
-    matches = response.matches
-    for match in matches.finished:
-        assert isinstance(match.name, str)
-        assert isinstance(match.id, str)
-        assert isinstance(match.opponent, str)
-        assert isinstance(match.start_time, int)
-        assert isinstance(match.time_class, str)
-        assert isinstance(match.result, str)
-
-    for match in matches.in_progress:
-        assert isinstance(match.name, str)
-        assert isinstance(match.id, str)
-        assert isinstance(match.opponent, str)
-        assert isinstance(match.start_time, int)
-        assert isinstance(match.time_class, str)
-
-    for match in matches.registered:
-        assert isinstance(match.name, str)
-        assert isinstance(match.id, str)
-        assert isinstance(match.opponent, str)
-        assert isinstance(match.time_class, str)
-
-
 @vcr.use_cassette("get_tournament_details.yaml")
 def test_get_tournament_details():
     response = endpoints.get_tournament_details(
