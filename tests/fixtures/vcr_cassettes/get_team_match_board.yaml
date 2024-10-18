@@ -1,0 +1,101 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/match/12803/1
+  response:
+    body:
+      string: '{"board_scores":{"sorinel":1,"kllr":1},"games":[{"url":"https://www.chess.com/game/daily/23794338","pgn":"[Event
+        \"WORLD LEAGUE Round 5: Romania vs USA Southwest - Board 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2009.07.14\"]\n[Round \"-\"]\n[White \"sorinel\"]\n[Black \"Kllr\"]\n[Result
+        \"1/2-1/2\"]\n[Match \"https://www.chess.com/club/matches/12803\"]\n[CurrentPosition
+        \"r3r1k1/4p2p/1pn2bp1/6N1/2p3P1/P6P/1P3P2/R1BR2K1 w - - 3 23\"]\n[Timezone
+        \"UTC\"]\n[ECO \"B02\"]\n[ECOUrl \"https://www.chess.com/openings/Alekhines-Defense-Two-Pawns-Attack-3...Nb6\"]\n[UTCDate
+        \"2009.07.14\"]\n[UTCTime \"01:02:04\"]\n[WhiteElo \"2699\"]\n[BlackElo \"2671\"]\n[TimeControl
+        \"1/259200\"]\n[Termination \"Game drawn by agreement\"]\n[StartTime \"01:02:04\"]\n[EndDate
+        \"2009.08.10\"]\n[EndTime \"12:16:05\"]\n[Link \"https://www.chess.com/game/daily/23794338\"]\n\n1.
+        e4 Nf6 2. e5 Nd5 3. c4 Nb6 4. Nf3 d6 5. d4 g6 6. exd6 cxd6 7. Be2 Bg7 8. h3
+        Nc6 9. Nc3 O-O 10. O-O Bf5 11. a3 Re8 12. Be3 d5 13. g4 Be6 14. c5 Nc4 15.
+        Bc1 b6 16. Bxc4 dxc4 17. d5 Bxc3 18. dxe6 Qxd1 19. Rxd1 Bf6 20. cxb6 axb6
+        21. exf7+ Kxf7 22. Ng5+ Kg8 1/2-1/2\n","time_control":"1/259200","end_time":1249906565,"rated":true,"fen":"r3r1k1/4p2p/1pn2bp1/6N1/2p3P1/P6P/1P3P2/R1BR2K1
+        w - - 3 23","start_time":1247533324,"time_class":"daily","rules":"chess","white":{"rating":2699,"result":"agreed","@id":"https://api.chess.com/pub/player/sorinel","username":"sorinel","uuid":"e6759e94-7b4d-11dd-8062-000000000000"},"black":{"rating":2671,"result":"agreed","@id":"https://api.chess.com/pub/player/kllr","username":"Kllr","uuid":"bfe85970-f61c-11dd-800c-000000000000"},"match":"https://api.chess.com/pub/match/12803"},{"url":"https://www.chess.com/game/daily/23794339","pgn":"[Event
+        \"WORLD LEAGUE Round 5: Romania vs USA Southwest - Board 1\"]\n[Site \"Chess.com\"]\n[Date
+        \"2009.07.14\"]\n[Round \"-\"]\n[White \"Kllr\"]\n[Black \"sorinel\"]\n[Result
+        \"1/2-1/2\"]\n[Match \"https://www.chess.com/club/matches/12803\"]\n[CurrentPosition
+        \"8/5p2/3r1kp1/R6p/5P1P/5PK1/8/8 w - - 20 59\"]\n[Timezone \"UTC\"]\n[ECO
+        \"C53\"]\n[ECOUrl \"https://www.chess.com/openings/Giuoco-Piano-Game-Main-Line-Birds-Attack\"]\n[UTCDate
+        \"2009.07.14\"]\n[UTCTime \"01:02:04\"]\n[WhiteElo \"2344\"]\n[BlackElo \"2816\"]\n[TimeControl
+        \"1/259200\"]\n[Termination \"Game drawn by repetition\"]\n[StartTime \"01:02:04\"]\n[EndDate
+        \"2009.12.05\"]\n[EndTime \"16:48:44\"]\n[Link \"https://www.chess.com/game/daily/23794339\"]\n\n1.
+        e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. b4 Be7 6. d3 d5 7. exd5 Nxd5 8. O-O
+        O-O 9. Re1 Bf6 10. Bb2 a6 11. a4 Bf5 12. Nbd2 Nb6 13. Qe2 Nxc4 14. dxc4 Bd3
+        15. Qe3 Re8 16. Ne4 Bxc4 17. Rad1 Qe7 18. Nc5 Be6 19. Nxb7 Bb3 20. Ra1 e4
+        21. Nc5 exf3 22. Qxe7 Rxe7 23. Rxe7 Nxe7 24. Nxb3 Nd5 25. gxf3 Nxc3 26. Bxc3
+        Bxc3 27. Rc1 Bxb4 28. Rxc7 Kf8 29. Rb7 Bc3 30. Kg2 g6 31. Nc5 Bd4 32. Nd7+
+        Kg7 33. Nb8 Bc5 34. Nd7 Bd6 35. Rb6 Bc7 36. Rc6 Bf4 37. Nc5 a5 38. Nd3 Bd2
+        39. Rc2 Bb4 40. Rc6 Rd8 41. Nxb4 axb4 42. Rb6 Rd4 43. a5 Rd5 44. Rxb4 Rxa5
+        45. f4 Ra6 46. f3 Kf6 47. Rb5 h5 48. Kg3 Rd6 49. h4 Rd4 50. Ra5 Rd6 51. Rb5
+        Rc6 52. Ra5 Rd6 53. Rb5 Ra6 54. Rc5 Rd6 55. Ra5 Rc6 56. Rb5 Ra6 57. Rc5 Rb6
+        58. Ra5 Rd6 1/2-1/2\n","time_control":"1/259200","end_time":1260031724,"rated":true,"fen":"8/5p2/3r1kp1/R6p/5P1P/5PK1/8/8
+        w - - 20 59","start_time":1247533324,"time_class":"daily","rules":"chess","white":{"rating":2344,"result":"repetition","@id":"https://api.chess.com/pub/player/kllr","username":"Kllr","uuid":"bfe85970-f61c-11dd-800c-000000000000"},"black":{"rating":2816,"result":"repetition","@id":"https://api.chess.com/pub/player/sorinel","username":"sorinel","uuid":"e6759e94-7b4d-11dd-8062-000000000000"},"match":"https://api.chess.com/pub/match/12803"}]}'
+    headers:
+      CF-Cache-Status:
+      - HIT
+      CF-RAY:
+      - 8d44ba510de68fb7-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3700'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:16 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=GsYHccfW2biNDufX1Pu4BCNgFr4jFMaxk762FLxXsNlOZCQJmQ8m%2BEXsiGbYE4SPfcQ14rhJu34begnwSYc7F4GkxtGCUoI0VQaAlsIXk7Ivw%2FxfXWw93duIAUnIXc0%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=0xhGjTiFuZPyAeriOX17Wtk.Y6YI8Op6lM4ukBZwi0M-1729214656-1.0.1.1-T5cw2txShPQKD00CdYigj.kxzOueryrdA4CBfBPThB0VXRdoGYdhbkA0vFO8Zu1agR8nFULMpySKZ9rlzSrm86LPVeL7MM.yvI.MuEQOMD8;
+        path=/; expires=Fri, 18-Oct-24 01:54:16 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"e6843c73b0670aa79f8684fe972cce8d"
+      expires:
+      - Fri, 18 Oct 2024 01:37:31 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 02:22:55 GMT+0000
+      link:
+      - <https://api.chess.com/context/MatchBoard.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_match_board
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d43c2636c3020b1-IAD
+      x-chesscom-request-id-lb:
+      - bd1334c4ba9b9eceb32968029688e684
+      x-chesscom-servedby:
+      - '80'
+    status:
+      code: 200
+      message: OK
+version: 1

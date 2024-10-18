@@ -1,23 +1,18 @@
-import sys
 import asyncio
 
-is_main = __name__ == "__main__"
-if is_main:
-    sys.path.append("../")
+import pytest
 
-from chessdotcom import client
 from chessdotcom import ChessDotComResponse
+from chessdotcom.client import ChessDotComClient, RateLimitHandler
 
-if sys.platform.startswith("win"):
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
-client.Client.request_config["headers"][
-    "user-agent"
-] = "chess.com wrapper testing scripts. Contact me at sarartur.ruk@gmail.com"
+@pytest.fixture(autouse=True)
+def set_headers_for_smoke_test():
+    ChessDotComClient.request_config["headers"].pop("Accept-Encoding")
 
 
 def test_endpoints():
-    client.Client.aio = False
+    client = ChessDotComClient(aio=False, verify_ssl=False)
 
     data = client.get_player_profile("fabianocaruana")
     assert isinstance(data, ChessDotComResponse)
@@ -111,11 +106,11 @@ def test_endpoints():
 
 
 def test_endpoints_async():
-
-    client.Client.aio = True
-
-    client.Client.rate_limit_handler.retries = 2
-    client.Client.rate_limit_handler.tts = 4
+    client = ChessDotComClient(
+        aio=True,
+        rate_limit_handler=RateLimitHandler(tts=4, retries=2),
+        verify_ssl=False,
+    )
 
     usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
 
@@ -131,8 +126,3 @@ def test_endpoints_async():
 
     assert all(isinstance(r, ChessDotComResponse) for r in responses)
     assert len(responses) == len(usernames_multiplied)
-
-
-if is_main:
-    test_endpoints()
-    data = test_endpoints_async()
