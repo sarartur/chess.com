@@ -45,11 +45,11 @@ class Client:
     """
     Client for Chess.com Public API. The client is only responsible for making calls.
 
-    :cvar request_config: Dictionary containing extra keyword arguments for requests to the API
-                    (headers, proxy, etc).
+    :cvar request_config: Dictionary containing extra keyword arguments for
+        requests to the API (headers, proxy, etc).
     :cvar aio: Determines if the functions behave asynchronously.
     :cvar :rate_limit_handler: A RateLimitHandler object.
-                    See :obj:`chessdotcom.client.RateLimitHandler`.
+        See :obj:`chessdotcom.client.RateLimitHandler`.
     :loop_callback: Function that returns the current loop for aiohttp.ClientSession.
     """
 
@@ -133,13 +133,13 @@ class ChessDotComClient(Client):
     Client for Chess.com Public API. The client can be initialized withe following options.
 
     :ivar request_config: Dictionary containing extra keyword arguments
-                    for requests to the API (headers, proxy, etc).
-                    This value will be set from Client if nothing is provided
+        for requests to the API (headers, proxy, etc).
+        This value will be set from Client if nothing is provided
     :ivar aio: Determines if the functions behave asynchronously. Defaults to False
     :ivar rate_limit_handler: A RateLimitHandler object.
-                    See :obj:`chessdotcom.client.RateLimitHandler`.
+        See :obj:`chessdotcom.client.RateLimitHandler`.
     :ivar user_agent: A string that will be used as the User-Agent header in requests to the API.
-                    This value will override the value in request_config if provided.
+        This value will override the value in request_config if provided.
     """
 
     def __init__(
