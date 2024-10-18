@@ -142,5 +142,10 @@ class ChessDotComClient(Client):
         self.rate_limit_handler = rate_limit_handler or RateLimitHandler(
             tts=0, retries=1
         )
+        # Load endpoints to register
+        from . import endpoints
+
+        endpoints
+
         for endpoint in self.endpoints:
             self.activate_endpoint(endpoint)
