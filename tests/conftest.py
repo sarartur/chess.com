@@ -6,11 +6,11 @@ from chessdotcom import endpoints as _endpoints
 
 @pytest.fixture(scope="session", autouse=True)
 def set_headers():
-    Client.default_request_options["headers"][
+    Client.request_config["headers"][
         "User-Agent"
     ] = "chess.com wrapper testing scripts. https://github.com/sarartur/chess.com"
 
-    Client.default_request_options["headers"]["Accept-Encoding"] = None
+    Client.request_config["headers"]["Accept-Encoding"] = None
 
 
 @pytest.fixture

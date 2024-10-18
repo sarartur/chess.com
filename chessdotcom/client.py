@@ -45,7 +45,7 @@ class Client:
     """
     Client for Chess.com Public API. The client is only responsible for making calls.
 
-    :ivar default_request_options: Dictionary containing extra keyword arguments for
+    :ivar request_config: Dictionary containing extra keyword arguments for
         requests to the API (headers, proxy, etc).
     :ivar aio: Determines if the functions behave asynchronously.
     :ivar rate_limit_handler: A RateLimitHandler object.
@@ -54,9 +54,7 @@ class Client:
     """
 
     aio = False
-    default_request_options = {"headers": {}}
-    request_config = default_request_options  # to maintain backwards compadibility
-
+    request_config = {"headers": {}}
     rate_limit_handler = RateLimitHandler(tts=0, retries=1)
     endpoints = []
 
@@ -89,7 +87,7 @@ class Client:
         return wrapper
 
     def _build_request_options(self, resource):
-        options = {**resource.request_config, **self.default_request_options}
+        options = {**resource.request_config, **self.request_config}
 
         if "user-agent" not in [header.lower() for header in options["headers"].keys()]:
             warnings.warn(
@@ -134,14 +132,12 @@ class ChessDotComClient(Client):
     def __init__(
         self,
         aio: bool = False,
-        request_options: dict = None,
+        request_config: dict = None,
         rate_limit_handler: RateLimitHandler = None,
     ) -> None:
         self.aio = aio
-        self.request_config = request_options or self.request_config
-        self.rate_limit_handler = rate_limit_handler or RateLimitHandler(
-            tts=0, retries=1
-        )
+        self.request_config = request_config or self.request_config
+        self.rate_limit_handler = rate_limit_handler or self.rate_limit_handler
         # Load endpoints to register
         from . import endpoints
 

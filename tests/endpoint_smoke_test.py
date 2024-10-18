@@ -1,20 +1,7 @@
 import asyncio
 
-import pytest
-
-from chessdotcom import ChessDotComResponse, Client, endpoints
+from chessdotcom import ChessDotComResponse, endpoints
 from chessdotcom.client import ChessDotComClient, RateLimitHandler
-
-
-@pytest.fixture(autouse=True)
-def set_headers():
-    Client.default_request_options["headers"][
-        "user-agent"
-    ] = "chess.com wrapper testing scripts. https://github.com/sarartur/chess.com"
-
-    yield
-
-    Client.default_request_options["headers"] = {}
 
 
 def test_endpoints():

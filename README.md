@@ -16,7 +16,9 @@ Install latest version from [PyPI](https://pypi.org/project/chess.com/): ```pip 
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
 The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) for asynchronous requests and [requests](https://requests.readthedocs.io/en/latest/) for synchronous requests to interact with the API. 
-#### Synchronous
+
+#### Using functions
+
 ``` python
 from chessdotcom import get_player_profile, Client
    
@@ -30,6 +32,22 @@ player_name = response.json['player']['name']
 #or
 player_name = response.player.name
 ```
+#### Using client instance
+
+``` python
+from chessdotcom import ChessDotComClient
+   
+Client.request_config["headers"]["User-Agent"] = (
+    "My Python Application. "
+    "Contact me at email@example.com"
+)
+response = get_player_profile("fabianocaruana")
+
+player_name = response.json['player']['name']
+#or
+player_name = response.player.name
+```
+
 #### Asynchronous 
 ``` python 
 import asyncio
@@ -65,7 +83,7 @@ Headers and and other request parameters can be set through the `Client` object.
 ``` python
 from chessdotcom import Client
 
-Client.default_request_options["headers"]["User-Agent"] = (
+Client.request_config["headers"]["User-Agent"] = (
     "My Python Application. "
     "Contact me at email@example.com"
 )

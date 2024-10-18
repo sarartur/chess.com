@@ -56,7 +56,7 @@ def test_do_get_request_sync(mock_requests):
 
 @patch("chessdotcom.client.requests")
 def test_do_get_request_sync_combined_headers(mock_requests):
-    client = ChessDotComClient(request_options={"headers": {"header": "value"}})
+    client = ChessDotComClient(request_config={"headers": {"header": "value"}})
 
     mock_requests.get.return_value = MagicMock(status_code=200, text="{}")
 
