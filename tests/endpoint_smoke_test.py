@@ -6,7 +6,7 @@ from chessdotcom import ChessDotComResponse
 from chessdotcom.client import ChessDotComClient, RateLimitHandler
 
 
-@pytest.fixture(autouse=True)
+@pytest.fixture(autouse=True, scope="module")
 def set_headers_for_smoke_test():
     ChessDotComClient.request_config["headers"].pop("Accept-Encoding")
 
