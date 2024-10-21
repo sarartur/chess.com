@@ -1,0 +1,73 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/puzzle
+  response:
+    body:
+      string: '{"title":"Tactical Stars Align","url":"https://www.chess.com/daily-chess-puzzle/2024-10-17","publish_time":1729148400,"fen":"r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1
+        w - - 0 1","pgn":"[Result \"*\"]\r\n[FEN \"r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1
+        w - - 0 1\"]\r\n\r\n1. Rh5 gxh5 2. Qxb6 *","image":"https://www.chess.com/dynboard?fen=r4rk1/3bpp1p/1q4pQ/ppR5/3nPN2/P2B4/5PPP/2R3K1%20w%20-%20-%200%201&size=2"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44ba5bd98b8fb4-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '421'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:17 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=3lWRpA2F1E3Ae6tzn5xa8UsaJuCJ8%2BFi3Wrj3aAQtzZmvYMhOq%2FFwu294hOs9nvvVI2h7TqN%2BLPbjZF20DI4eA9O%2FNXy1gNU%2BJwNNBwZxpwI37pG8ZblQvczzyQfVTQ%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=ujfTU2wl0lxxv6b2JMnUziLO1PaYWwuKAAIOkyz_opg-1729214657-1.0.1.1-Ka8DbYdgZKvDhgOoJMZhrYQIcTjCG_e4016uK.G6M0aUVjTWzJDoOFrfVDYl63GDDsKbTHl0XsX_r6xpbbzvvl07dKg1xh.v6Och1Zwm7uc;
+        path=/; expires=Fri, 18-Oct-24 01:54:17 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"4e245de86bc04c32450e0cc81e298653"
+      expires:
+      - Fri, 18 Oct 2024 01:24:22 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 07:54:59 GMT+0000
+      link:
+      - <https://api.chess.com/context/DailyPuzzle.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_daily_puzzle
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d3ec0c429fe22df-IAD
+      x-chesscom-request-id-lb:
+      - b64d1583c46796d46d5c0a5dee6bb70e
+      x-chesscom-servedby:
+      - '86'
+    status:
+      code: 200
+      message: OK
+version: 1

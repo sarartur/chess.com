@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/country/XE
+  response:
+    body:
+      string: '{"@id":"https://api.chess.com/pub/country/XE","code":"XE","name":"England"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - HIT
+      CF-RAY:
+      - 8d44ba047885901a-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '75'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:03 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=V6iE8q90lV14KS54qgDis245bnjlwurKuQwqlQuhZ6Onk0iV7EAzIlDgaiDS%2FkqArzKGILYTDeLf20VKLGLxXbhNTVxj9CloWiCzjUqhHCkqg1JDgJMhOWTtSrJeO7c%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=ryudyiPA0P7jwq6YJFkmeDHSvfUjiMLAjQ2Ydpqc12Q-1729214643-1.0.1.1-Kd2WaMbaXhrUcIV8aDI2y5tgBKIjTG79.UKoq8VGnx5eKPykKsv4Gtyz02HsiO71V022mqmaDcHPmobEsT_GYxsZTZsr_ZeMOx4CF_hvALc;
+        path=/; expires=Fri, 18-Oct-24 01:54:03 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"ef86003ee59d397fd8d1affd5c70c975"
+      expires:
+      - Fri, 18 Oct 2024 01:37:31 GMT
+      last-modified:
+      - Sunday, 15-Sep-2024 00:53:11 GMT+0000
+      link:
+      - <https://api.chess.com/context/Country.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_country
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d029b32ee8f42bb-IAD
+      x-chesscom-request-id-lb:
+      - 469b358c1f59017770a2f40b87243326
+      x-chesscom-servedby:
+      - '144'
+    status:
+      code: 200
+      message: OK
+version: 1

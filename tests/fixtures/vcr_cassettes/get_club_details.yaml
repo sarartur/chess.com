@@ -1,0 +1,82 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/club/chess-com-developer-community
+  response:
+    body:
+      string: '{"@id":"https://api.chess.com/pub/club/chess-com-developer-community","name":"Chess.com
+        Developer Community","club_id":57796,"country":"https://api.chess.com/pub/country/XX","average_daily_rating":928,"members_count":14905,"created":1500301978,"last_activity":1721915779,"admin":["https://api.chess.com/pub/player/bcurtis","https://api.chess.com/pub/player/erik","https://api.chess.com/pub/player/andreamorandini","https://api.chess.com/pub/player/martin_stahl","https://api.chess.com/pub/player/jdcannon"],"visibility":"public","join_request":"https://www.chess.com/club/join/57796","icon":"https://images.chesscomfiles.com/uploads/v1/group/57796.67ee0038.50x50o.585842f67281.png","description":"<p>Chess.com''s
+        official club for APIs, data, and code for developers. Get involved!</p>\r\n<p>&nbsp;</p>\r\n<p>Apply
+        for OAuth access / Chess.com login here: <a href=\"https://forms.gle/RwGLuZkwDysCj2GV7\"
+        target=\"_blank\" rel=\"noreferrer noopener\">https://forms.gle/RwGLuZkwDysCj2GV7</a></p>\r\n<p>&nbsp;</p>\r\n<p>More
+        resources:</p>\r\n<ul>\r\n<li><a href=\"https://chesscom.notion.site/Getting-started-with-Chess-com-OAuth-2-0-Server-5958e57c8c934a3aa7abda2d670969e8\">https://chesscom.notion.site/Getting-started-with-Chess-com-OAuth-2-0-Server-5958e57c8c934a3aa7abda2d670969e8</a></li>\r\n<li><a
+        href=\"https://www.chess.com/news/view/published-data-api\">https://www.chess.com/news/view/published-data-api</a></li>\r\n<li><a
+        href=\"https://www.npmjs.com/package/chess-web-api\" target=\"_blank\" rel=\"noreferrer
+        noopener\">https://www.npmjs.com/package/chess-web-api</a></li>\r\n<li><a
+        href=\"https://github.com/ChessCom/ios-chessclock\" target=\"_blank\" rel=\"noreferrer
+        noopener\">https://github.com/ChessCom/ios-chessclock</a></li>\r\n<li><a href=\"https://github.com/ChessCom/android-chessclock\"
+        target=\"_blank\" rel=\"noreferrer noopener\">https://github.com/ChessCom/android-chessclock</a></li>\r\n</ul>\r\n<p>&nbsp;</p>\r\n<p>Our
+        <a href=\"https://www.chess.com/news/view/chess-com-bug-bounty-policy\">Bug
+        Bounty Policy</a> is available <a href=\"https://www.chess.com/news/view/chess-com-bug-bounty-policy\">here</a>.&nbsp;</p>","url":"https://www.chess.com/club/chess-com-developer-community"}'
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44b9fa3c058feb-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2213'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:02 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=foSfxYbJz4FvkBOQPIxb9ak%2F%2FxX%2FSrUVSjZDW9dck9V6KvCWC9cIr4MNQjv0%2FzRey%2BSHQqkJEcfoSk7JDm9ZdDpUm2PPWPTxyH3%2BAfcbJSZNSLRjw%2B9%2Fzo4eQyuJMbs%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=pGP.XfeG7TcsimN4x7sM0x57GOtu.F.L8Uz4OfKlmc0-1729214642-1.0.1.1-oTp1TMjlb1FosXSXWtkXitnTQMRD5WHbhypz_SDyhmuaPZFqdOH83kqa80iwaqb1XY5Rc_z_Sh9i_Gwr8aprNYVTxZpgFHbzLsFTouflthQ;
+        path=/; expires=Fri, 18-Oct-24 01:54:02 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"40a7b4b729abeeba9ae7920325cb0714"
+      expires:
+      - Fri, 18 Oct 2024 01:24:07 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 22:34:58 GMT+0000
+      link:
+      - <https://api.chess.com/context/Club.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_club
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d43c25389c4c59e-IAD
+      x-chesscom-request-id-lb:
+      - e1ee2d949196a694098dac8cbde49cfb
+      x-chesscom-servedby:
+      - '155'
+    status:
+      code: 200
+      message: OK
+version: 1

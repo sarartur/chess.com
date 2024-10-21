@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/fabianocaruana/clubs
+  response:
+    body:
+      string: '{"clubs":[{"@id":"https://www.chess.com/club/chess-comtv","name":"Chess.comTV","last_activity":1533261072,"icon":"https://images.chesscomfiles.com/uploads/v1/group/10182.ce48ce37.50x50o.643fa8f292b8.png","url":"https://www.chess.com/club/chess-comtv","joined":1533261072},{"@id":"https://www.chess.com/club/club-admins","name":"Club
+        Admins","last_activity":1724357345,"icon":"https://images.chesscomfiles.com/uploads/v1/group/77144.b37f1a94.50x50o.916fe9df6e33.png","url":"https://www.chess.com/club/club-admins","joined":1724357345},{"@id":"https://www.chess.com/club/saint-louis-archbishops","name":"Saint
+        Louis Archbishops","last_activity":1679669153,"icon":"https://images.chesscomfiles.com/uploads/v1/group/307407.e15639e7.50x50o.e53186f27f18.png","url":"https://www.chess.com/club/saint-louis-archbishops","joined":1679258225},{"@id":"https://www.chess.com/club/rapid-chess-championship-participants","name":"Rapid
+        Chess Championship Participants","last_activity":1650123767,"icon":"https://images.chesscomfiles.com/uploads/v1/group/341449.dc1ab9bb.50x50o.ea70c5787f82.png","url":"https://www.chess.com/club/rapid-chess-championship-participants","joined":1642808432},{"@id":"https://www.chess.com/club/csqpod","name":"CSQPod","last_activity":1719863992,"icon":"https://images.chesscomfiles.com/uploads/v1/group/415957.829b2cd7.50x50o.4252d08c9f97.jpeg","url":"https://www.chess.com/club/csqpod","joined":1668785652},{"@id":"https://www.chess.com/club/champions-chess-tour-2023-play-in","name":"Champions
+        Chess Tour 2023 - Play-In","last_activity":1715184829,"icon":"https://images.chesscomfiles.com/uploads/v1/group/450699.d5553306.50x50o.61a07f9d1529.png","url":"https://www.chess.com/club/champions-chess-tour-2023-play-in","joined":1675355296},{"@id":"https://www.chess.com/club/olympic-esports-series-trials","name":"Olympic
+        Esports Series - Trials","last_activity":1680292159,"icon":"https://images.chesscomfiles.com/uploads/v1/group/492129.75b48d57.50x50o.48b6fb298dc1.png","url":"https://www.chess.com/club/olympic-esports-series-trials","joined":1680292159},{"@id":"https://www.chess.com/club/chess-com-community","name":"Chess.com
+        Community","last_activity":1721221586,"icon":"https://images.chesscomfiles.com/uploads/v1/group/518065.94962872.50x50o.9e0388c578b7.png","url":"https://www.chess.com/club/chess-com-community","joined":1718635800},{"@id":"https://www.chess.com/club/champions-chess-tour-2024-play-in","name":"Champions
+        Chess Tour 2024 - Play-In","last_activity":1727274868,"icon":"https://images.chesscomfiles.com/uploads/v1/group/575325.d9b15561.50x50o.686bb2578bd2.png","url":"https://www.chess.com/club/champions-chess-tour-2024-play-in","joined":1705682703},{"@id":"https://www.chess.com/club/chess-com-verified-titled-players","name":"Chess.com
+        Verified Titled Players","last_activity":1718812671,"icon":"https://images.chesscomfiles.com/uploads/v1/group/628521.4ea6b2eb.50x50o.7ef74993fc3e.png","url":"https://www.chess.com/club/chess-com-verified-titled-players","joined":1718812671}]}'
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44ba1adff93b93-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3021'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:07 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=p34SsMHFZei5EHp1SeKuMEatlKv3Ma6H3vgnjGVAF4xHWE%2FtZvQZzCtmJVQClpIgBrGqh6NIibci2XDWBUX%2BO0kUL9n6KXKGoa2NpvXyjlj4GJFKnFoEBlkLM5%2B89Oc%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=uPsq6wpmENbZyl6A6mKDh.pP344l4oBJBcpu_Gru5W0-1729214647-1.0.1.1-4Q70HoUaZzbkj.UsJaR2UHG6drrEc3j5G4ktlPTNCKEQC23koXgjUjCQYBd.We5qgj72MJW6NItEbPICJhNS6bG4TEvsohVzf1cJcydjNvU;
+        path=/; expires=Fri, 18-Oct-24 01:54:07 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"81a8d733e8d5d93b6da695f27d8cf590"
+      expires:
+      - Fri, 18 Oct 2024 01:24:12 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 22:34:58 GMT+0000
+      link:
+      - <https://api.chess.com/context/PlayerClubs.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_player_clubs
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d43c2508a2ec988-IAD
+      x-chesscom-request-id-lb:
+      - 65c78df3a05d90b45f55e5bafc2cb888
+      x-chesscom-servedby:
+      - '88'
+    status:
+      code: 200
+      message: OK
+version: 1

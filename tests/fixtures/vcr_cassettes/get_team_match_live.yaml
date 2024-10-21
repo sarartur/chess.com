@@ -1,0 +1,72 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/match/live/5833
+  response:
+    body:
+      string: '{"@id":"https://api.chess.com/pub/match/live/5833","name":"Friendly
+        5+2","url":"https://www.chess.com/club/matches/live/5833","start_time":1579471260,"end_time":1579472487,"status":"finished","boards":6,"settings":{"rules":"chess","time_class":"blitz","time_control":300,"time_increment":2,"min_team_players":2,"min_required_games":0,"autostart":false},"teams":{"team1":{"@id":"https://api.chess.com/pub/club/the-leopards","name":"The
+        Leopards","url":"https://www.chess.com/club/the-leopards","score":7,"result":"win","players":[{"username":"fabian_leo","stats":"https://api.chess.com/pub/player/fabian_leo/stats","status":"basic","played_as_white":"win","played_as_black":"win","board":"https://api.chess.com/pub/match/live/5833/2"},{"username":"guilhermekk","stats":"https://api.chess.com/pub/player/guilhermekk/stats","status":"premium","played_as_white":"win","played_as_black":"resigned","board":"https://api.chess.com/pub/match/live/5833/4"},{"username":"insan3_7","stats":"https://api.chess.com/pub/player/insan3_7/stats","status":"basic","played_as_black":"checkmated","played_as_white":"win","board":"https://api.chess.com/pub/match/live/5833/1"},{"username":"jydra21","stats":"https://api.chess.com/pub/player/jydra21/stats","status":"basic","played_as_black":"checkmated","played_as_white":"insufficient","board":"https://api.chess.com/pub/match/live/5833/5"},{"username":"my_chemica1_cha0s","stats":"https://api.chess.com/pub/player/my_chemica1_cha0s/stats","status":"basic","played_as_white":"win","played_as_black":"win","board":"https://api.chess.com/pub/match/live/5833/6"},{"username":"rahara1988","stats":"https://api.chess.com/pub/player/rahara1988/stats","status":"basic","played_as_black":"checkmated","played_as_white":"agreed","board":"https://api.chess.com/pub/match/live/5833/3"}],"fair_play_removals":[]},"team2":{"@id":"https://api.chess.com/pub/club/not-so-pro-chess-league","name":"Not-So
+        PRO Chess League","url":"https://www.chess.com/club/not-so-pro-chess-league","score":5,"result":"lose","players":[{"username":"25elevin","stats":"https://api.chess.com/pub/player/25elevin/stats","status":"premium","played_as_black":"timeout","played_as_white":"timeout","board":"https://api.chess.com/pub/match/live/5833/2"},{"username":"alexkotow","stats":"https://api.chess.com/pub/player/alexkotow/stats","status":"basic","played_as_black":"resigned","played_as_white":"resigned","board":"https://api.chess.com/pub/match/live/5833/6"},{"username":"checkmatemark04","stats":"https://api.chess.com/pub/player/checkmatemark04/stats","status":"closed","played_as_white":"win","played_as_black":"agreed","board":"https://api.chess.com/pub/match/live/5833/3"},{"username":"edr0nt","stats":"https://api.chess.com/pub/player/edr0nt/stats","status":"closed","played_as_white":"win","played_as_black":"checkmated","board":"https://api.chess.com/pub/match/live/5833/1"},{"username":"justoneuser","stats":"https://api.chess.com/pub/player/justoneuser/stats","status":"closed","played_as_black":"checkmated","played_as_white":"win","board":"https://api.chess.com/pub/match/live/5833/4"},{"username":"stompall","stats":"https://api.chess.com/pub/player/stompall/stats","status":"basic","played_as_white":"win","played_as_black":"insufficient","board":"https://api.chess.com/pub/match/live/5833/5"}],"fair_play_removals":[]}}}'
+    headers:
+      CF-Cache-Status:
+      - HIT
+      CF-RAY:
+      - 8d44ba538fc04d1d-BOS
+      Cache-Control:
+      - public, max-age=3600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3332'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:16 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=tXMZC8JSdGtvwi%2FTjYZRN2%2Fm0zgyJF0OTxe8Pj7RCeZADHVs0raZCplNZ2zW4POit58vkQgADPmRVFdSs4OZGZn58qtKzpdylCd6HTd%2BfG45rr7BH30i2FviNTTJj7A%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=.VjY.qleAB7SSvXLqEfgykTEtOk_jTJiU4saMjCQoIg-1729214656-1.0.1.1-8v7iIHvUnTMQ1aXNBLMDZr86MeKf6Vq1s6lDEJh4mEyYR5YpsViyCu9Pvn_LIzMQVnL459sVZMVORS4tg.wZmHMKwbAXbn4GHS.B6ZycEMg;
+        path=/; expires=Fri, 18-Oct-24 01:54:16 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"caa242e2a3a67d51f10d2703cde047b7"
+      expires:
+      - Fri, 18 Oct 2024 01:37:31 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 05:14:16 GMT+0000
+      link:
+      - <https://api.chess.com/context/Match.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_match_live
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 8d43c264391a593d-IAD
+      x-chesscom-request-id-lb:
+      - 5fb1be5540f95f13e3d1559ef844736e
+      x-chesscom-servedby:
+      - '158'
+    status:
+      code: 200
+      message: OK
+version: 1

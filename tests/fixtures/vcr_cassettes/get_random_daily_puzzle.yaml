@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/puzzle/random
+  response:
+    body:
+      string: '{"title":"Battering Ram","url":"https://www.chess.com/daily-chess-puzzle/2022-03-10","publish_time":1646899200,"fen":"6rk/2R2Qp1/4pP1p/6r1/6P1/P7/1q5P/3R3K
+        w - - 0 1","pgn":"[Result \"*\"]\r\n[FEN \"6rk/2R2Qp1/4pP1p/6r1/6P1/P7/1q5P/3R3K
+        w - - 0 1\"]\r\n\r\n1.Qxg8+ Kxg8 2.f7+ Kh7 3.f8=Q *","image":"https://www.chess.com/dynboard?fen=6rk/2R2Qp1/4pP1p/6r1/6P1/P7/1q5P/3R3K%20w%20-%20-%200%201&size=2"}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - EXPIRED
+      CF-RAY:
+      - 8d44ba4a09358f7f-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '400'
+      Content-Security-Policy-Report-Only:
+      - script-src 'none'; report-uri https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report?m=FRQaOuC73EPsDRzg2gl1j7CeFvJu.ZoPpsQZCB1StdY-1729214655-1.0.1.1-MjjS4egs3.V.C_lQHInyYvG3_C4qh.I7x0gcfiyYFa0_J7rUtEh1gMePKhP59UFUGeLXUFcnY1D7fhc3Xb9czXyVXXHdPMSqlNr8viokfHYmon76fWfvV4lWikHh9AEmMXbUZAfcwauGlRjjP49esg;
+        report-to cf-csp-endpoint
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:15 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=XlgqxeiTikq%2FiZ5VK4zX9PhlY0z5WtaxxnzdVuMUJFiJUWq%2FdgSTpUonf%2Fp6zsyYWj50tL2EslpG4Fnm4%2BjZpTmAiurUoLJFTjEzjLF%2FiyUb%2Fl2yNxdNxwDhUz4Yt2E%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/csp-reporting.cloudflare.com\/cdn-cgi\/script_monitor\/report?m=FRQaOuC73EPsDRzg2gl1j7CeFvJu.ZoPpsQZCB1StdY-1729214655-1.0.1.1-MjjS4egs3.V.C_lQHInyYvG3_C4qh.I7x0gcfiyYFa0_J7rUtEh1gMePKhP59UFUGeLXUFcnY1D7fhc3Xb9czXyVXXHdPMSqlNr8viokfHYmon76fWfvV4lWikHh9AEmMXbUZAfcwauGlRjjP49esg"}],"group":"cf-csp-endpoint","max_age":86400}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=nvadM0j93KJFjLqb9U1sJy14GAJu7Cox73RZgcKObRU-1729214655-1.0.1.1-_brGgGRPB3pnzcSA4nTBz5UVuQRlkJVpKipKrjCLk2b_SpU4z5CyAVqG59apcvyfoVtayPCdUhEnXh3tlkfr18ahESqEWiP9LfF6wmQrmNg;
+        path=/; expires=Fri, 18-Oct-24 01:54:15 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"41e61c5da07139415ecec6f8fd58cbe2"
+      expires:
+      - Fri, 18 Oct 2024 01:24:20
+      last-modified:
+      - Friday, 18-Oct-2024 01:24:15 GMT+0000
+      link:
+      - <https://api.chess.com/context/DailyPuzzleRandom.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_daily_puzzle_random
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d44ba4a09358f7f-IAD
+      x-chesscom-request-id-lb:
+      - c265f29a34851a04b78e659b212eb456
+      x-chesscom-servedby:
+      - '158'
+    status:
+      code: 200
+      message: OK
+version: 1

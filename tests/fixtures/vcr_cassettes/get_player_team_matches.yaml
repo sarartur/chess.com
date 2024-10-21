@@ -1,0 +1,68 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/akshayraj_kore/matches
+  response:
+    body:
+      string: '{"finished":[{"name":"1 day time control vs Grandmasters only","url":"https://www.chess.com/club/matches/848676","@id":"https://api.chess.com/pub/match/848676","club":"https://api.chess.com/pub/club/grandmasters-only","results":{"played_as_white":"resigned","played_as_black":"resigned"},"board":"https://api.chess.com/pub/match/848676/1"}],"in_progress":[],"registered":[]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - MISS
+      CF-RAY:
+      - 8d44ba46fadb8fc3-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '374'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:14 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=5GiIHQ46NY471Oi9PWzbKv9QFblUmuGh0YVMyW4l%2FtAO%2FQR%2FMHb8Ec%2F2YShTvm%2BAN9B3yll6vY9dKdc6dLJ6M0SGyMM%2Bxai2T2Cl%2FjlVoi9ABA1K%2Fhc6aCQde8d8xH0%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=IMR.6gM6goX34sk_hBqSXl8CMcTa7EMsDLqINd58sUw-1729214654-1.0.1.1-tkZ4Ag1_fgDLDM6Dmnee_Kx9b41aNa9LsLm5k1_azXBL0vH.u737PR_9RdSjy9HMiB4i3Aru68XcTsB7IkqibUkRbcw7vGEWZF4In4Zxv.4;
+        path=/; expires=Fri, 18-Oct-24 01:54:14 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"a4ca61ea3f4c1d3679be7ff42e739528"
+      expires:
+      - Fri, 18 Oct 2024 01:24:19
+      last-modified:
+      - Friday, 18-Oct-2024 01:24:14 GMT+0000
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_player_matches
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d44ba46fadb8fc3-IAD
+      x-chesscom-request-id-lb:
+      - 8e5ae52125de115eff7590ade44a960e
+      x-chesscom-servedby:
+      - '143'
+    status:
+      code: 200
+      message: OK
+version: 1

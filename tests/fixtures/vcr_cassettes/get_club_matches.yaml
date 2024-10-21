@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/club/chess-com-developer-community/matches
+  response:
+    body:
+      string: '{"finished":[{"name":"1000-1500","@id":"https://api.chess.com/pub/match/1524143","opponent":"https://api.chess.com/pub/club/chess-com-beta","start_time":1692624006,"time_class":"daily","result":"lose"}],"in_progress":[],"registered":[]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44b9fb2f793049-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '236'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:02 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=R9%2BgcAeRaD90t6pP6KkPgE0iKdGGLCLSAkTpqatY76MSklmg1xfwIGhX%2BSoUHflne2RF75pgqyQF5xyOXG%2BytdKDuAGN6T%2Burs2TBCcWMaxOUGUg2LuCc%2B4OZAg58sg%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=jxeJtcNEbimLB0gv_r5NORiZU0dM4oWxsQZHw.OuLC8-1729214642-1.0.1.1-SVgja4clo.q7i4knoeQJXBwTrdmisUq8ovijwpNRDbRGP_.wcQO0M1CJXg5Oxpdts9JGZdemFWp14c3bUrWoBxkHXDcxF_E0PheI1dKVoHk;
+        path=/; expires=Fri, 18-Oct-24 01:54:02 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"a7a40f89bb9ce16ee919f6370e7ea856"
+      expires:
+      - Fri, 18 Oct 2024 01:24:07 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 22:35:00 GMT+0000
+      link:
+      - <https://api.chess.com/context/ClubMatches.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_club_matches
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d43c25eec18c988-IAD
+      x-chesscom-request-id-lb:
+      - a5ce82ff7aa7836e6340a2bde3a01c30
+      x-chesscom-servedby:
+      - '160'
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -35,7 +35,22 @@ All the functions return a `ChessDotComResponse` object. The data can be accesse
 
 The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API. 
 
-Synchronous
+Using client instance
+^^^^^^^^^^^
+.. code-block:: python
+
+   from chessdotcom import ChessDotComClient
+      
+   client = ChessDotComClient(user_agent = "My Python Application...")
+
+   response = client.get_player_profile("fabianocaruana")
+
+   player_name = response.json['player']['name']
+   #or
+   player_name = response.player.name
+
+
+Using functions
 ^^^^^^^^^^^
 .. code-block:: python
    
@@ -46,36 +61,28 @@ Synchronous
       "Contact me at email@example.com"
    )
    response = get_player_profile("fabianocaruana")
-
-   player_name = response.json['player']['name']
-   #or
-   player_name = response.player.name
+  
 
 Asynchronous
 ^^^^^^^^^^^^
 .. code-block:: python
    
-   import asyncio
+   from chessdotcom import ChessDotComClient
 
-   from chessdotcom.aio import get_player_profile, Client
-   #or
-   from chessdotcom import Client
-   Client.aio = True
+   client = ChessDotComClient(user_agent = "My Python Application...", aio = True)
 
    usernames = ["fabianocaruana", "GMHikaruOnTwitch", "MagnusCarlsen", "GarryKasparov"]
 
-   cors = [get_player_profile(name) for name in usernames]
+   cors = [client.get_player_profile(name) for name in usernames]
 
    async def gather_cors(cors):
-      responses = await asyncio.gather(*cors)
-      return responses
+      return await asyncio.gather(*cors)
 
    responses = asyncio.run(gather_cors(cors))
 
 Managing Rate Limit
 ^^^^^^^^^^^^^^^^^^^
 
-The package offers several ways to deal with the rate limit. 
 Every function accepts a `tts` parameter which controls the number of seconds the `Client` will wait before making the request. 
 This is useful if running a lot of coroutines at once.
 
@@ -87,29 +94,13 @@ The second method is to adjust the `rate_limit_handler` attribute of the `Client
 
 .. code-block:: python
 
-   Client.rate_limit_handler.tries = 2
-   Client.rate_limit_handler.tts = 4
+   from chessdotcom import RateLimitHandler
 
-If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
-
-Configuring Headers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-The project uses `requests` package to interact with the API. 
-Headers and proxies can be set through the `Client` object. 
-Official Chess.com documentation requires adding a `User-Agent` header. 
-
-.. code-block:: python
-
-   from chessdotcom import Client
-
-   Client.request_config["headers"]["User-Agent"] = (
-    "My Python Application. "
-    "Contact me at email@example.com"
+   client = ChessDotComClient(
+      rate_limit_handler = RateLimitHandler(tts = 4,retries = 2)
    )
 
-All the methods from the package will now include the header when making a request to the API.
+If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
 API Reference
 ==============
@@ -120,6 +111,11 @@ chessdotcom.types
    :members:
 
 chessdotcom.client
-------------------
+---------------------
 .. automodule:: chessdotcom.client
+   :members:
+
+chessdotcom.endpoints
+------------------
+.. automodule:: chessdotcom.endpoints
    :members: 
