@@ -44,7 +44,7 @@ Pygments==2.18.0
 pytest==8.3.3
 PyYAML==6.0.2
 readme_renderer==44.0
-requests==2.28.1
+requests==2.32.2
 requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.9.2
