@@ -20,12 +20,11 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_tournament_round.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_tournament_round.yaml"):
-        response = await async_client.get_tournament_round(
-            url_id="-33rd-chesscom-quick-knockouts-1401-1600", round_num=1
-        )
-
+    response = await async_client.get_tournament_round(
+        url_id="-33rd-chesscom-quick-knockouts-1401-1600", round_num=1
+    )
     validate_response(response)
 
 

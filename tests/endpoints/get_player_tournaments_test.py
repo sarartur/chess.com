@@ -16,10 +16,9 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_player_tournaments.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_player_tournaments.yaml"):
-        response = await async_client.get_player_tournaments(username="fabianocaruana")
-
+    response = await async_client.get_player_tournaments(username="fabianocaruana")
     validate_response(response)
 
 

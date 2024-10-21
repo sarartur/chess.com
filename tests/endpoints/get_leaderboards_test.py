@@ -16,10 +16,9 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_leaderboards.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_leaderboards.yaml"):
-        response = await async_client.get_leaderboards()
-
+    response = await async_client.get_leaderboards()
     validate_response(response)
 
 

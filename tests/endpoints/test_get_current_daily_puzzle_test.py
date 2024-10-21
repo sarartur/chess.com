@@ -16,10 +16,9 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_current_daily_puzzle.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_current_daily_puzzle.yaml"):
-        response = await async_client.get_current_daily_puzzle()
-
+    response = await async_client.get_current_daily_puzzle()
     validate_response(response)
 
 

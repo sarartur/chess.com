@@ -16,12 +16,9 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_team_match_live_board.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_team_match_live_board.yaml"):
-        response = await async_client.get_team_match_live_board(
-            match_id=5833, board_num=1
-        )
-
+    response = await async_client.get_team_match_live_board(match_id=5833, board_num=1)
     validate_response(response)
 
 

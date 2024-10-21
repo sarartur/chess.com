@@ -16,10 +16,9 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_country_players.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_country_players.yaml"):
-        response = await async_client.get_country_players(iso="US")
-
+    response = await async_client.get_country_players(iso="US")
     validate_response(response)
 
 

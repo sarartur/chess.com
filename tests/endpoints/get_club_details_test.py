@@ -16,12 +16,11 @@ def test_with_client(client):
 
 
 @pytest.mark.asyncio
+@vcr.use_cassette("get_club_details.yaml")
 async def test_with_async_client(async_client):
-    with vcr.use_cassette("get_club_details.yaml"):
-        response = await async_client.get_club_details(
-            url_id="chess-com-developer-community"
-        )
-
+    response = await async_client.get_club_details(
+        url_id="chess-com-developer-community"
+    )
     validate_response(response)
 
 
