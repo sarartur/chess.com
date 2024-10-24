@@ -9,7 +9,7 @@ class ChessDotComError(Exception):
     pass
 
 
-class ChessDotComClientError(Exception):
+class ChessDotComClientError(ChessDotComError):
     """
     Error raised by Client.
 
@@ -33,3 +33,13 @@ class ChessDotComClientError(Exception):
             self.json = json.loads(response_text)
         except json.JSONDecodeError:
             self.json = {}
+
+
+class ChessDotComDecodingError(ChessDotComError):
+    """
+    Error raised when the response cannot be decoded.
+    """
+
+    def __init__(self, text, *args: object) -> None:
+        self.text = text
+        super().__init__(*args)

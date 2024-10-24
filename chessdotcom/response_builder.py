@@ -2,7 +2,7 @@ import json
 import re
 from types import SimpleNamespace
 
-from .errors import ChessDotComClientError
+from .errors import ChessDotComDecodingError
 
 
 class ResponseBuilder(object):
@@ -34,37 +34,29 @@ class ChessDotComResponse(object):
     def __init__(
         self, text: str, top_level_attribute: str = None, no_json=False
     ) -> None:
-        self._parse_response(text, top_level_attribute, no_json)
         self.text = text
+        self._parse_text(top_level_attribute, no_json)
 
-    def _parse_response(
-        self, response_text: str, top_level_attribute: str, no_json
-    ) -> None:
+    def _parse_text(self, top_level_attribute: str, no_json) -> None:
         if no_json:
-            response_text = json.dumps({top_level_attribute: response_text})
+            self.text = json.dumps({top_level_attribute: self.text})
         try:
-            self._create_json_attr(response_text, top_level_attribute)
-            self._create_object_attrs(response_text, top_level_attribute)
+            self._create_json_attr(top_level_attribute)
+            self._create_object_attrs(top_level_attribute)
         except Exception as err:
-            raise ChessDotComClientError(
-                status_code=200,
-                response_text=json.dumps(
-                    {
-                        "message": "The server did not return a json response",
-                    }
-                ),
+            raise ChessDotComDecodingError(
+                "Response could not be decoded",
+                text=self.text,
             ) from err
 
-    def _create_json_attr(self, response_text: str, top_level_attribute: str) -> None:
-        dict_ = json.loads(response_text)
+    def _create_json_attr(self, top_level_attribute: str) -> None:
+        dict_ = json.loads(self.text)
         if top_level_attribute:
             dict_ = {top_level_attribute: dict_}
         self.json = dict_
 
-    def _create_object_attrs(
-        self, response_text: str, top_level_attribute: str
-    ) -> None:
-        attrs = json.loads(response_text, object_hook=lambda d: Entity(**d))
+    def _create_object_attrs(self, top_level_attribute: str) -> None:
+        attrs = json.loads(self.text, object_hook=lambda d: Entity(**d))
         if top_level_attribute:
             setattr(self, top_level_attribute, Entity(**attrs.__dict__))
         else:
