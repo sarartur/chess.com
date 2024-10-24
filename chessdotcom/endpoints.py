@@ -17,7 +17,7 @@ def get_player_profile(username: str, tts=0, **request_options) -> ChessDotComRe
     return Resource(
         uri=f"/player/{username}",
         tts=tts,
-        top_level_attr="player",
+        top_level_attribute="player",
         request_options=request_options,
     )
 
@@ -47,7 +47,7 @@ def get_player_stats(username: str, tts=0, **request_options) -> ChessDotComResp
     return Resource(
         uri=f"/player/{username}/stats",
         tts=tts,
-        top_level_attr="stats",
+        top_level_attribute="stats",
         request_options=request_options,
     )
 
@@ -163,7 +163,7 @@ def get_player_games_by_month_pgn(
     return Resource(
         uri=f"/player/{username}/games/{yyyy}/{mm}/pgn",
         tts=tts,
-        top_level_attr="pgn",
+        top_level_attribute="pgn",
         no_json=True,
         request_options=request_options,
     )
@@ -196,7 +196,7 @@ def get_player_team_matches(
     return Resource(
         uri=f"/player/{username}/matches",
         tts=tts,
-        top_level_attr="matches",
+        top_level_attribute="matches",
         request_options=request_options,
     )
 
@@ -215,7 +215,7 @@ def get_player_tournaments(
     return Resource(
         uri=f"/player/{username}/tournaments",
         tts=tts,
-        top_level_attr="tournaments",
+        top_level_attribute="tournaments",
         request_options=request_options,
     )
 
@@ -230,7 +230,7 @@ def get_club_details(url_id: str, tts=0, **request_options) -> ChessDotComRespon
     return Resource(
         uri=f"/club/{url_id}",
         tts=tts,
-        top_level_attr="club",
+        top_level_attribute="club",
         request_options=request_options,
     )
 
@@ -245,7 +245,7 @@ def get_club_members(url_id: str, tts=0, **request_options) -> ChessDotComRespon
     return Resource(
         uri=f"/club/{url_id}/members",
         tts=tts,
-        top_level_attr="members",
+        top_level_attribute="members",
         request_options=request_options,
     )
 
@@ -260,7 +260,7 @@ def get_club_matches(url_id: str, tts=0, **request_options) -> ChessDotComRespon
     return Resource(
         uri=f"/club/{url_id}/matches",
         tts=tts,
-        top_level_attr="matches",
+        top_level_attribute="matches",
         request_options=request_options,
     )
 
@@ -278,7 +278,7 @@ def get_tournament_details(
     return Resource(
         uri=f"/tournament/{url_id}",
         tts=tts,
-        top_level_attr="tournament",
+        top_level_attribute="tournament",
         request_options=request_options,
     )
 
@@ -297,7 +297,7 @@ def get_tournament_round(
     return Resource(
         uri=f"/tournament/{url_id}/{round_num}",
         tts=tts,
-        top_level_attr="tournament_round",
+        top_level_attribute="tournament_round",
         request_options=request_options,
     )
 
@@ -317,7 +317,7 @@ def get_tournament_round_group_details(
     return Resource(
         uri=f"/tournament/{url_id}/{round_num}/{group_num}",
         tts=tts,
-        top_level_attr="tournament_round_group",
+        top_level_attribute="tournament_round_group",
         request_options=request_options,
     )
 
@@ -333,7 +333,7 @@ def get_team_match(match_id: int, tts=0, **request_options) -> ChessDotComRespon
     return Resource(
         uri=f"/match/{match_id}",
         tts=tts,
-        top_level_attr="match",
+        top_level_attribute="match",
         request_options=request_options,
     )
 
@@ -352,7 +352,7 @@ def get_team_match_board(
     return Resource(
         uri=f"/match/{match_id}/{board_num}",
         tts=tts,
-        top_level_attr="match_board",
+        top_level_attribute="match_board",
         request_options=request_options,
     )
 
@@ -368,7 +368,7 @@ def get_team_match_live(match_id: int, tts=0, **request_options) -> ChessDotComR
     return Resource(
         uri=f"/match/live/{match_id}",
         tts=tts,
-        top_level_attr="match",
+        top_level_attribute="match",
         request_options=request_options,
     )
 
@@ -387,7 +387,7 @@ def get_team_match_live_board(
     return Resource(
         uri=f"/match/live/{match_id}/{board_num}",
         tts=tts,
-        top_level_attr="match_board",
+        top_level_attribute="match_board",
         request_options=request_options,
     )
 
@@ -403,7 +403,7 @@ def get_country_details(iso: str, tts=0, **request_options) -> ChessDotComRespon
     return Resource(
         uri=f"/country/{iso}",
         tts=tts,
-        top_level_attr="country",
+        top_level_attribute="country",
         request_options=request_options,
     )
 
@@ -442,7 +442,10 @@ def get_current_daily_puzzle(tts=0, **request_options) -> ChessDotComResponse:
                 information about the daily puzzle found in www.chess.com.
     """
     return Resource(
-        uri="/puzzle", top_level_attr="puzzle", tts=tts, request_options=request_options
+        uri="/puzzle",
+        top_level_attribute="puzzle",
+        tts=tts,
+        request_options=request_options,
     )
 
 
@@ -456,7 +459,7 @@ def get_random_daily_puzzle(tts=0, **request_options) -> ChessDotComResponse:
     return Resource(
         uri="/puzzle/random",
         tts=tts,
-        top_level_attr="puzzle",
+        top_level_attribute="puzzle",
         request_options=request_options,
     )
 
@@ -481,6 +484,6 @@ def get_leaderboards(tts=0, **request_options) -> ChessDotComResponse:
     return Resource(
         uri="/leaderboards",
         tts=tts,
-        top_level_attr="leaderboards",
+        top_level_attribute="leaderboards",
         request_options=request_options,
     )

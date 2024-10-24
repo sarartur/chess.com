@@ -110,7 +110,9 @@ class Client:
             raise ChessDotComError(
                 status_code=r.status_code, response_text=r.text, headers=r.headers
             )
-        return ChessDotComResponse(r.text, resource.top_level_attr, resource.no_json)
+        return ChessDotComResponse(
+            r.text, resource.top_level_attribute, resource.no_json
+        )
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
@@ -125,7 +127,7 @@ class Client:
                         status_code=r.status, response_text=text, headers=r.headers
                     )
                 return ChessDotComResponse(
-                    text, resource.top_level_attr, resource.no_json
+                    text, resource.top_level_attribute, resource.no_json
                 )
 
 
@@ -189,14 +191,14 @@ class Resource(object):
     def __init__(
         self,
         uri="",
-        top_level_attr=None,
+        top_level_attribute=None,
         no_json=False,
         tts=0,
         request_options=None,
         times_requested=0,
     ):
         self.url = self.HOST + uri
-        self.top_level_attr = top_level_attr
+        self.top_level_attribute = top_level_attribute
         self.no_json = no_json
         self.tts = tts
         self.times_requested = times_requested
