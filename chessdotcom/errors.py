@@ -31,5 +31,5 @@ class ChessDotComClientError(Exception):
     def _create_json_attr(self, response_text: str) -> None:
         try:
             self.json = json.loads(response_text)
-        except ValueError:
+        except json.JSONDecodeError:
             self.json = {}
