@@ -1,4 +1,4 @@
-from .client import ChessDotComClient, Client, RateLimitHandler
+from .client import ChessDotComClient, Client, RateLimitHandler, Resource
 from .endpoints import (
     get_club_details,
     get_club_matches,

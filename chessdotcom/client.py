@@ -184,7 +184,7 @@ class ChessDotComClient(Client):
 
 
 class Resource(object):
-    _base_url = "https://api.chess.com/pub"
+    HOST = "https://api.chess.com/pub"
 
     def __init__(
         self,
@@ -195,13 +195,11 @@ class Resource(object):
         request_config=None,
         times_requested=0,
     ):
-        self.uri = uri
+        self.url = self.HOST + uri
         self.top_level_attr = top_level_attr
         self.no_json = no_json
-        self._request_config = request_config or dict()
         self.tts = tts
         self.times_requested = times_requested
 
-    @property
-    def request_config(self):
-        return dict(url=self._base_url + self.uri, **self._request_config)
+        self.request_config = request_config or {}
+        self.request_config["url"] = self.url
