@@ -101,7 +101,9 @@ class Client:
         return options
 
     def _do_sync_get_request(self, resource):
-        r = requests.get(**self._build_request_options(resource), timeout=30)
+        r = requests.get(
+            url=resource.url, **self._build_request_options(resource), timeout=30
+        )
         resource.times_requested += 1
 
         if r.status_code != 200:
@@ -116,7 +118,9 @@ class Client:
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
-            async with session.get(**self._build_request_options(resource)) as r:
+            async with session.get(
+                url=resource.url, **self._build_request_options(resource)
+            ) as r:
                 text = await r.text()
                 resource.times_requested += 1
 
@@ -204,4 +208,3 @@ class Resource(object):
         self.times_requested = times_requested
 
         self.request_options = request_options or {}
-        self.request_options["url"] = self.url
