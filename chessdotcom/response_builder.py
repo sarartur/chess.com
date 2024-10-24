@@ -5,17 +5,6 @@ from types import SimpleNamespace
 from .errors import ChessDotComClientError
 
 
-class Collection(SimpleNamespace):
-    def __init__(self, **kwargs) -> None:
-        clean_kwargs = {Collection.clean(key): value for key, value in kwargs.items()}
-        SimpleNamespace.__init__(self, **clean_kwargs)
-
-    @staticmethod
-    def clean(string: str) -> str:
-        string = re.sub("[^0-9a-zA-Z_]", "", re.sub("^[^a-zA-Z_]+", "", string))
-        return string
-
-
 class BaseType(object):
     def __init__(self) -> None:
         pass
@@ -35,9 +24,9 @@ class BaseType(object):
         return "{}({})".format(type(self).__name__, ", ".join(items))
 
 
-class ChessDotComResponse(BaseType):
+class ChessDotComResponse(object):
     """
-    Custom object for holding the API's response.
+    Object for holding the API's response.
 
     :ivar json: Dictionary representation of the API's response.
     :ivar {nested_object}: Object representation of the API's response.
@@ -82,3 +71,14 @@ class ChessDotComResponse(BaseType):
             setattr(self, top_level_attribute, Collection(**attrs.__dict__))
         else:
             self.__dict__.update(**attrs.__dict__)
+
+
+class Collection(SimpleNamespace):
+    def __init__(self, **kwargs) -> None:
+        clean_kwargs = {Collection.clean(key): value for key, value in kwargs.items()}
+        SimpleNamespace.__init__(self, **clean_kwargs)
+
+    @staticmethod
+    def clean(string: str) -> str:
+        string = re.sub("[^0-9a-zA-Z_]", "", re.sub("^[^a-zA-Z_]+", "", string))
+        return string

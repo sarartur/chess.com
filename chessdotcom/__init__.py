@@ -30,4 +30,4 @@ from .endpoints import (
     get_tournament_round_group_details,
 )
 from .errors import ChessDotComClientError, ChessDotComError
-from .types import ChessDotComResponse
+from .response_builder import ChessDotComResponse

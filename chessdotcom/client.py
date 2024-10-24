@@ -7,7 +7,8 @@ from functools import wraps
 import requests
 from aiohttp import ClientSession
 
-from .types import ChessDotComClientError, ChessDotComResponse
+from .errors import ChessDotComClientError
+from .response_builder import ChessDotComResponse
 
 
 class RateLimitHandler(object):
