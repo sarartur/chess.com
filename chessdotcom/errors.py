@@ -3,7 +3,15 @@ import json
 
 class ChessDotComError(Exception):
     """
-    Custom Exception object.
+    Base Exception object.
+    """
+
+    pass
+
+
+class ChessDotComClientError(Exception):
+    """
+    Error raised by Client.
 
     :ivar status_code: Contains the status code of the API's response.
     :ivar json: Dictionary representation of the API's response.

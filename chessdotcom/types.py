@@ -2,7 +2,7 @@ import json
 import re
 from types import SimpleNamespace
 
-from .errors import ChessDotComError
+from .errors import ChessDotComClientError
 
 
 class Collection(SimpleNamespace):
@@ -59,7 +59,7 @@ class ChessDotComResponse(BaseType):
             self._create_json_attr(response_text, top_level_attribute)
             self._create_object_attrs(response_text, top_level_attribute)
         except Exception as err:
-            raise ChessDotComError(
+            raise ChessDotComClientError(
                 status_code=200,
                 response_text=json.dumps(
                     {

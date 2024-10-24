@@ -7,7 +7,7 @@ from functools import wraps
 import requests
 from aiohttp import ClientSession
 
-from .types import ChessDotComError, ChessDotComResponse
+from .types import ChessDotComClientError, ChessDotComResponse
 
 
 class RateLimitHandler(object):
@@ -109,7 +109,7 @@ class Client:
         if r.status_code != 200:
             if self.rate_limit_handler.should_try_again(r.status_code, resource):
                 return self._do_sync_get_request(resource)
-            raise ChessDotComError(
+            raise ChessDotComClientError(
                 status_code=r.status_code, response_text=r.text, headers=r.headers
             )
         return ChessDotComResponse(
@@ -127,7 +127,7 @@ class Client:
                 if r.status != 200:
                     if self.rate_limit_handler.should_try_again(r.status, resource):
                         return await self._do_async_get_request(resource)
-                    raise ChessDotComError(
+                    raise ChessDotComClientError(
                         status_code=r.status, response_text=text, headers=r.headers
                     )
                 return ChessDotComResponse(
