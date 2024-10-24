@@ -1,7 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler
-from chessdotcom.types import Resource
+from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler, Resource
 
 
 @patch("chessdotcom.client.time.sleep")
@@ -63,7 +62,7 @@ def test_do_get_request_sync_combined_headers(mock_requests):
     client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
+            request_options={"headers": {"header": "override_value"}},
         )
     )
 
@@ -75,7 +74,7 @@ def test_do_get_request_sync_combined_headers(mock_requests):
 
 
 @patch("chessdotcom.client.requests")
-def test_do_get_request_sync_top_level_attr(mock_requests):
+def test_do_get_request_sync_top_level_attribute(mock_requests):
     client = ChessDotComClient()
 
     mock_requests.get.return_value = MagicMock(status_code=200, text='{"key": "value"}')
@@ -83,8 +82,8 @@ def test_do_get_request_sync_top_level_attr(mock_requests):
     response = client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
-            top_level_attr="top_level_attr",
+            request_options={"headers": {"header": "override_value"}},
+            top_level_attribute="top_level_attribute",
         )
     )
 
@@ -93,7 +92,7 @@ def test_do_get_request_sync_top_level_attr(mock_requests):
         headers={"headers": {"header": "override_value"}},
         timeout=30,
     )
-    assert response.top_level_attr.key == "value"
+    assert response.top_level_attribute.key == "value"
 
 
 @patch("chessdotcom.client.requests")
@@ -105,7 +104,7 @@ def test_do_get_request_includes_user_agent_header(mock_requests):
     client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
+            request_options={"headers": {"header": "override_value"}},
         )
     )
 

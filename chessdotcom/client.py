@@ -88,7 +88,7 @@ class Client:
         return wrapper
 
     def _build_request_options(self, resource):
-        options = {**resource.request_config, **self.request_config}
+        options = {**resource.request_options, **self.request_config}
 
         if "user-agent" not in [header.lower() for header in options["headers"].keys()]:
             warnings.warn(
@@ -101,7 +101,9 @@ class Client:
         return options
 
     def _do_sync_get_request(self, resource):
-        r = requests.get(**self._build_request_options(resource), timeout=30)
+        r = requests.get(
+            url=resource.url, **self._build_request_options(resource), timeout=30
+        )
         resource.times_requested += 1
 
         if r.status_code != 200:
@@ -110,11 +112,15 @@ class Client:
             raise ChessDotComError(
                 status_code=r.status_code, response_text=r.text, headers=r.headers
             )
-        return ChessDotComResponse(r.text, resource.top_level_attr, resource.no_json)
+        return ChessDotComResponse(
+            r.text, resource.top_level_attribute, resource.no_json
+        )
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
-            async with session.get(**self._build_request_options(resource)) as r:
+            async with session.get(
+                url=resource.url, **self._build_request_options(resource)
+            ) as r:
                 text = await r.text()
                 resource.times_requested += 1
 
@@ -125,7 +131,7 @@ class Client:
                         status_code=r.status, response_text=text, headers=r.headers
                     )
                 return ChessDotComResponse(
-                    text, resource.top_level_attr, resource.no_json
+                    text, resource.top_level_attribute, resource.no_json
                 )
 
 
@@ -181,3 +187,24 @@ class ChessDotComClient(Client):
             request_config["headers"]["User-Agent"] = user_agent
 
         self.request_config = request_config
+
+
+class Resource(object):
+    HOST = "https://api.chess.com/pub"
+
+    def __init__(
+        self,
+        uri="",
+        top_level_attribute=None,
+        no_json=False,
+        tts=0,
+        request_options=None,
+        times_requested=0,
+    ):
+        self.url = self.HOST + uri
+        self.top_level_attribute = top_level_attribute
+        self.no_json = no_json
+        self.tts = tts
+        self.times_requested = times_requested
+
+        self.request_options = request_options or {}

@@ -35,30 +35,6 @@ class BaseType(object):
         return "{}({})".format(type(self).__name__, ", ".join(items))
 
 
-class Resource(object):
-    _base_url = "https://api.chess.com/pub"
-
-    def __init__(
-        self,
-        uri="",
-        top_level_attr=None,
-        no_json=False,
-        tts=0,
-        request_config=None,
-        times_requested=0,
-    ):
-        self.uri = uri
-        self.top_level_attr = top_level_attr
-        self.no_json = no_json
-        self._request_config = request_config or dict()
-        self.tts = tts
-        self.times_requested = times_requested
-
-    @property
-    def request_config(self):
-        return dict(url=self._base_url + self.uri, **self._request_config)
-
-
 class ChessDotComResponse(BaseType):
     """
     Custom object for holding the API's response.
@@ -69,17 +45,19 @@ class ChessDotComResponse(BaseType):
     """
 
     def __init__(
-        self, response_text: str, top_level_attr: str = None, no_json=False
+        self, response_text: str, top_level_attribute: str = None, no_json=False
     ) -> None:
-        self._parse_response(response_text, top_level_attr, no_json)
+        self._parse_response(response_text, top_level_attribute, no_json)
         self.text = response_text
 
-    def _parse_response(self, response_text: str, top_level_attr: str, no_json) -> None:
+    def _parse_response(
+        self, response_text: str, top_level_attribute: str, no_json
+    ) -> None:
         if no_json:
-            response_text = json.dumps({top_level_attr: response_text})
+            response_text = json.dumps({top_level_attribute: response_text})
         try:
-            self._create_json_attr(response_text, top_level_attr)
-            self._create_object_attrs(response_text, top_level_attr)
+            self._create_json_attr(response_text, top_level_attribute)
+            self._create_object_attrs(response_text, top_level_attribute)
         except Exception as err:
             raise ChessDotComError(
                 status_code=200,
@@ -90,16 +68,18 @@ class ChessDotComResponse(BaseType):
                 ),
             ) from err
 
-    def _create_json_attr(self, response_text: str, top_level_attr: str) -> None:
+    def _create_json_attr(self, response_text: str, top_level_attribute: str) -> None:
         dict_ = json.loads(response_text)
-        if top_level_attr:
-            dict_ = {top_level_attr: dict_}
+        if top_level_attribute:
+            dict_ = {top_level_attribute: dict_}
         self.json = dict_
 
-    def _create_object_attrs(self, response_text: str, top_level_attr: str) -> None:
+    def _create_object_attrs(
+        self, response_text: str, top_level_attribute: str
+    ) -> None:
         attrs = json.loads(response_text, object_hook=lambda d: Collection(**d))
-        if top_level_attr:
-            setattr(self, top_level_attr, Collection(**attrs.__dict__))
+        if top_level_attribute:
+            setattr(self, top_level_attribute, Collection(**attrs.__dict__))
         else:
             self.__dict__.update(**attrs.__dict__)
 
