@@ -47,9 +47,9 @@ class ChessDotComResponse(object):
     def _create_object_attrs(
         self, response_text: str, top_level_attribute: str
     ) -> None:
-        attrs = json.loads(response_text, object_hook=lambda d: Collection(**d))
+        attrs = json.loads(response_text, object_hook=lambda d: Entity(**d))
         if top_level_attribute:
-            setattr(self, top_level_attribute, Collection(**attrs.__dict__))
+            setattr(self, top_level_attribute, Entity(**attrs.__dict__))
         else:
             self.__dict__.update(**attrs.__dict__)
 
@@ -60,12 +60,11 @@ class ChessDotComResponse(object):
         return "{}({})".format(type(self).__name__, ", ".join(items))
 
 
-class Collection(SimpleNamespace):
+class Entity(SimpleNamespace):
     def __init__(self, **kwargs) -> None:
-        clean_kwargs = {Collection.clean(key): value for key, value in kwargs.items()}
+        clean_kwargs = {self._clean_key(key): value for key, value in kwargs.items()}
         SimpleNamespace.__init__(self, **clean_kwargs)
 
-    @staticmethod
-    def clean(string: str) -> str:
+    def _clean_key(self, string: str) -> str:
         string = re.sub("[^0-9a-zA-Z_]", "", re.sub("^[^a-zA-Z_]+", "", string))
         return string
