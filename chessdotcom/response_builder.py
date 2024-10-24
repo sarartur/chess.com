@@ -5,6 +5,17 @@ from types import SimpleNamespace
 from .errors import ChessDotComClientError
 
 
+class ResponseBuilder(object):
+    def __init__(self, text, resource) -> None:
+        self.text = text
+        self.resource = resource
+
+    def build(self):
+        return ChessDotComResponse(
+            self.text, self.resource.top_level_attribute, self.resource.no_json
+        )
+
+
 class ChessDotComResponse(object):
     """
     Object for holding the API's response.
