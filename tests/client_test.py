@@ -1,6 +1,11 @@
+import json
 from unittest.mock import MagicMock, patch
 
+import pytest
+
 from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler, Resource
+from chessdotcom.errors import ChessDotComClientError
+from tests.support.aio_mock_response import AioMockResponse
 
 
 @patch("chessdotcom.client.time.sleep")
@@ -32,12 +37,12 @@ def test_rate_limit_handler(sleep_mock):
 
 @patch("chessdotcom.client.requests")
 def test_do_get_request_sync(mock_requests):
-    client = ChessDotComClient()
-
+    mock_data = {"name": "fabianocaruana"}
     mock_requests.get.return_value = MagicMock(
-        status_code=200, text='{"name": "fabianocaruana"}'
+        status_code=200, text=json.dumps(mock_data)
     )
 
+    client = ChessDotComClient()
     response = client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
@@ -48,6 +53,56 @@ def test_do_get_request_sync(mock_requests):
         url="https://api.chess.com/player/fabianocaruana",
         headers={},
         timeout=30,
+    )
+    assert response.name == "fabianocaruana"
+    assert response.json == mock_data
+
+
+@patch("chessdotcom.client.requests")
+def test_do_get_request_sync_error(mock_requests):
+    mock_data = {"message": "does not exist"}
+    mock_requests.get.return_value = MagicMock(
+        status_code=404, text=json.dumps(mock_data)
+    )
+
+    client = ChessDotComClient()
+
+    with pytest.raises(ChessDotComClientError) as err:
+        client.do_get_request(
+            Resource(
+                uri="/player/fabianocaruana",
+            )
+        )
+
+    assert mock_requests.get.called_once_with(
+        url="https://api.chess.com/player/fabianocaruana",
+        headers={},
+        timeout=30,
+    )
+
+    assert err.value.status_code == 404
+    assert err.value.text == json.dumps(mock_data)
+    assert err.value.json == mock_data
+
+
+@pytest.mark.asyncio
+@patch("chessdotcom.client.ClientSession.get")
+async def test_do_get_request_async(mock_session_get):
+    mock_data = {"name": "fabianocaruana"}
+    mock_session_get.return_value = AioMockResponse(
+        text=json.dumps(mock_data), status=200
+    )
+
+    client = ChessDotComClient(aio=True)
+    response = await client.do_get_request(
+        Resource(
+            uri="/player/fabianocaruana",
+        )
+    )
+
+    assert mock_session_get.get.called_once_with(
+        url="https://api.chess.com/player/fabianocaruana",
+        headers={},
     )
     assert response.name == "fabianocaruana"
     assert response.json == {"name": "fabianocaruana"}
