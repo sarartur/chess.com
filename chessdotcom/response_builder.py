@@ -5,25 +5,6 @@ from types import SimpleNamespace
 from .errors import ChessDotComClientError
 
 
-class BaseType(object):
-    def __init__(self) -> None:
-        pass
-
-    _exclude_from_str = ["json", "text"]
-
-    def __str__(self) -> str:
-        items = (
-            f"{k}={v!r}"
-            for k, v in self.__dict__.items()
-            if k not in self.__class__._exclude_from_str
-        )
-        return "{}({})".format(type(self).__name__, ", ".join(items))
-
-    def __repr__(self) -> str:
-        items = (f"{k}={v!r}" for k, v in self.__dict__.items())
-        return "{}({})".format(type(self).__name__, ", ".join(items))
-
-
 class ChessDotComResponse(object):
     """
     Object for holding the API's response.
@@ -71,6 +52,12 @@ class ChessDotComResponse(object):
             setattr(self, top_level_attribute, Collection(**attrs.__dict__))
         else:
             self.__dict__.update(**attrs.__dict__)
+
+    def __repr__(self) -> str:
+        items = (
+            f"{k}={v!r}" for k, v in self.__dict__.items() if k not in ["json", "text"]
+        )
+        return "{}({})".format(type(self).__name__, ", ".join(items))
 
 
 class Collection(SimpleNamespace):
