@@ -1,7 +1,11 @@
 class AioMockResponse:
-    def __init__(self, text, status):
+    def __init__(self, text, status, headers=None):
         self._text = text
         self.status = status
+        self.headers = headers or {}
+
+    def headers(self):
+        return {}
 
     async def text(self):
         return self._text

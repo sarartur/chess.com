@@ -62,7 +62,9 @@ def test_do_get_request_sync(mock_requests):
 def test_do_get_request_sync_error(mock_requests):
     mock_data = {"message": "does not exist"}
     mock_requests.get.return_value = MagicMock(
-        status_code=404, text=json.dumps(mock_data)
+        status_code=404,
+        text=json.dumps(mock_data),
+        headers={"Content-Type": "application/json"},
     )
 
     client = ChessDotComClient()
@@ -83,6 +85,7 @@ def test_do_get_request_sync_error(mock_requests):
     assert err.value.status_code == 404
     assert err.value.text == json.dumps(mock_data)
     assert err.value.json == mock_data
+    assert err.value.headers == {"Content-Type": "application/json"}
 
 
 @pytest.mark.asyncio
@@ -106,6 +109,31 @@ async def test_do_get_request_async(mock_session_get):
     )
     assert response.name == "fabianocaruana"
     assert response.json == {"name": "fabianocaruana"}
+
+
+@pytest.mark.asyncio
+@patch("chessdotcom.client.ClientSession.get")
+async def test_do_get_request_async_error(mock_session_get):
+    mock_data = {"message": "does not exist"}
+    mock_session_get.return_value = AioMockResponse(
+        text=json.dumps(mock_data),
+        status=404,
+        headers={"Content-Type": "application/json"},
+    )
+
+    client = ChessDotComClient(aio=True)
+
+    with pytest.raises(ChessDotComClientError) as err:
+        await client.do_get_request(
+            Resource(
+                uri="/player/fabianocaruana",
+            )
+        )
+
+    assert err.value.status_code == 404
+    assert err.value.text == json.dumps(mock_data)
+    assert err.value.json == mock_data
+    assert err.value.headers == {"Content-Type": "application/json"}
 
 
 @patch("chessdotcom.client.requests")

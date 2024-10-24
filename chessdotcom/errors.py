@@ -23,7 +23,7 @@ class ChessDotComClientError(Exception):
         self._create_json_attr(response_text)
         self.status_code = status_code
         self.text = response_text
-        self.header = headers
+        self.headers = headers
 
     def __str__(self):
         return f"{type(self)}(status_code={self.status_code}, text={self.text})"
