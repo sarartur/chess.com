@@ -1,7 +1,6 @@
 from unittest.mock import MagicMock, patch
 
-from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler
-from chessdotcom.types import Resource
+from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler, Resource
 
 
 @patch("chessdotcom.client.time.sleep")

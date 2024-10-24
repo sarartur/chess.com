@@ -1,8 +1,8 @@
 from datetime import datetime
 from typing import Optional, Union
 
-from .client import Client
-from .types import ChessDotComResponse, Resource
+from .client import Client, Resource
+from .types import ChessDotComResponse
 from .utils import resolve_date
 
 
