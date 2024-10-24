@@ -62,7 +62,7 @@ def test_do_get_request_sync_combined_headers(mock_requests):
     client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
+            request_options={"headers": {"header": "override_value"}},
         )
     )
 
@@ -82,7 +82,7 @@ def test_do_get_request_sync_top_level_attr(mock_requests):
     response = client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
+            request_options={"headers": {"header": "override_value"}},
             top_level_attr="top_level_attr",
         )
     )
@@ -104,7 +104,7 @@ def test_do_get_request_includes_user_agent_header(mock_requests):
     client.do_get_request(
         Resource(
             uri="/player/fabianocaruana",
-            request_config={"headers": {"header": "override_value"}},
+            request_options={"headers": {"header": "override_value"}},
         )
     )
 

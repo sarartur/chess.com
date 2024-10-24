@@ -88,7 +88,7 @@ class Client:
         return wrapper
 
     def _build_request_options(self, resource):
-        options = {**resource.request_config, **self.request_config}
+        options = {**resource.request_options, **self.request_config}
 
         if "user-agent" not in [header.lower() for header in options["headers"].keys()]:
             warnings.warn(
@@ -192,7 +192,7 @@ class Resource(object):
         top_level_attr=None,
         no_json=False,
         tts=0,
-        request_config=None,
+        request_options=None,
         times_requested=0,
     ):
         self.url = self.HOST + uri
@@ -201,5 +201,5 @@ class Resource(object):
         self.tts = tts
         self.times_requested = times_requested
 
-        self.request_config = request_config or {}
-        self.request_config["url"] = self.url
+        self.request_options = request_options or {}
+        self.request_options["url"] = self.url
