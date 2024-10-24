@@ -6,13 +6,19 @@ from .errors import ChessDotComClientError
 
 
 class ResponseBuilder(object):
-    def __init__(self, text, resource) -> None:
-        self.text = text
+    def build(self, text):
+        raise NotImplementedError("Method must be defined by the child class")
+
+
+class DefaultResponseBuilder(ResponseBuilder):
+    def __init__(self, resource) -> None:
         self.resource = resource
 
-    def build(self):
+    def build(self, text):
         return ChessDotComResponse(
-            self.text, self.resource.top_level_attribute, self.resource.no_json
+            text=text,
+            top_level_attribute=self.resource.top_level_attribute,
+            no_json=self.resource.no_json,
         )
 
 
@@ -26,10 +32,10 @@ class ChessDotComResponse(object):
     """
 
     def __init__(
-        self, response_text: str, top_level_attribute: str = None, no_json=False
+        self, text: str, top_level_attribute: str = None, no_json=False
     ) -> None:
-        self._parse_response(response_text, top_level_attribute, no_json)
-        self.text = response_text
+        self._parse_response(text, top_level_attribute, no_json)
+        self.text = text
 
     def _parse_response(
         self, response_text: str, top_level_attribute: str, no_json

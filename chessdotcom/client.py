@@ -8,7 +8,7 @@ import requests
 from aiohttp import ClientSession
 
 from .errors import ChessDotComClientError
-from .response_builder import ChessDotComResponse
+from .response_builder import DefaultResponseBuilder
 
 
 class RateLimitHandler(object):
@@ -113,9 +113,7 @@ class Client:
             raise ChessDotComClientError(
                 status_code=r.status_code, response_text=r.text, headers=r.headers
             )
-        return ChessDotComResponse(
-            r.text, resource.top_level_attribute, resource.no_json
-        )
+        return resource.response_builder.build(r.text)
 
     async def _do_async_get_request(self, resource):
         async with ClientSession(loop=self.loop_callback()) as session:
@@ -131,9 +129,7 @@ class Client:
                     raise ChessDotComClientError(
                         status_code=r.status, response_text=text, headers=r.headers
                     )
-                return ChessDotComResponse(
-                    text, resource.top_level_attribute, resource.no_json
-                )
+                return resource.response_builder.build(text)
 
 
 class ChessDotComClient(Client):
@@ -201,6 +197,7 @@ class Resource(object):
         tts=0,
         request_options=None,
         times_requested=0,
+        response_builder=None,
     ):
         self.url = self.HOST + uri
         self.top_level_attribute = top_level_attribute
@@ -209,3 +206,4 @@ class Resource(object):
         self.times_requested = times_requested
 
         self.request_options = request_options or {}
+        self.response_builder = response_builder or DefaultResponseBuilder(self)
