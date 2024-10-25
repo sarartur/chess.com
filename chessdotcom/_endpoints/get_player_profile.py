@@ -9,7 +9,9 @@ from ..utils import from_timestamp
 
 
 @Client.endpoint
-def get_player_profile(username: str, tts=0, **request_options) -> ChessDotComResponse:
+def get_player_profile(
+    username: str, tts=0, **request_options
+) -> "GetPlayerProfileResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
@@ -68,7 +70,14 @@ class ResponseBuilder(ResponseBuilder):
 
 
 class GetPlayerProfileResponse(ChessDotComResponse):
-    def __init__(self, json, text, player):
+    """
+    A response object for the ``get_player_profile`` endpoint.
+    :ivar player: The player for whom the profile is retrieved.
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    """
+
+    def __init__(self, json: dict, text: str, player: "PlayerProfile"):
         self.player = player
         self.json = json
         self.text = text
