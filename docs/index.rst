@@ -25,9 +25,9 @@ Getting Started
 
 Installation
 ------------
-**The package requires Python 3.7 or higher**.
+**The package requires Python 3.8 or higher**.
 
-Install from `PyPI <https://pypi.org/project/chess.com/>`_: ``pip install chess.com``
+Install from `PyPI <https://pypi.org/project/chess.com/>`_ ``pip install chess.com``
 
 Retrieving Data
 ---------------
