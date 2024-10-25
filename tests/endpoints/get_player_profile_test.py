@@ -42,4 +42,10 @@ def validate_response(response):
     assert isinstance(player.is_streamer, bool)
     assert isinstance(player.verified, bool)
     assert isinstance(player.league, str)
-    assert isinstance(player.streaming_platforms, list)
+
+    def validate_streaming_platform(platform):
+        assert isinstance(platform.type, str)
+        assert isinstance(platform.channel_url, str)
+
+    for platform in player.streaming_platforms:
+        validate_streaming_platform(platform)
