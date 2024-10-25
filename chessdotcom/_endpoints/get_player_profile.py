@@ -72,7 +72,7 @@ class ResponseBuilder(ResponseBuilder):
 class GetPlayerProfileResponse(ChessDotComResponse):
     """
     A response object for the ``get_player_profile`` endpoint.
-    :ivar player: The player for whom the profile is retrieved.
+    :ivar player: Holds the ''PlayerProfile'' object.
     :ivar json: The JSON response from the API.
     :ivar text: The raw text response from the API.
     """
@@ -85,6 +85,29 @@ class GetPlayerProfileResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class PlayerProfile:
+    """
+    Object contains the details about a player's profile
+    :ivar avatar: The URL of the player's avatar.
+    :ivar player_id: The unique ID of the player.
+    :ivar id: The unique identifier for the player.
+    :ivar url: The URL to the player's profile.
+    :ivar name: The real name of the player.
+    :ivar username: The username of the player.
+    :ivar title: The title of the player (e.g., GM, IM).
+    :ivar followers: The number of followers the player has.
+    :ivar country: The country code of the player.
+    :ivar last_online: The timestamp of the player's last online activity.
+    :ivar joined: The timestamp of when the player joined.
+    :ivar status: The current status of the player.
+    :ivar is_streamer: Whether the player is a streamer.
+    :ivar verified: Whether the player's account is verified.
+    :ivar league: The league in which the player is participating.
+    :ivar location: The location of the player.
+    :ivar streaming_platforms: A list of ``StreamingPlatform`` the player uses.
+    :ivar last_online_datetime: The datetime representation of the player's last online activity.
+    :ivar joined_datetime: The datetime representation of when the player joined.
+    """
+
     avatar: Optional[str]
     player_id: Optional[int]
     id: Optional[str]
@@ -112,5 +135,11 @@ class PlayerProfile:
 
 @dataclass
 class StreamingPlatform:
+    """
+    Object contains details of player's streaming platform.
+    :ivar type: The type of the streaming platform (e.g., Twitch, YouTube).
+    :ivar channel_url: The URL of the streaming platform's channel.
+    """
+
     type: Optional[str]
     channel_url: Optional[str]
