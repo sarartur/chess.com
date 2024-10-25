@@ -1,10 +1,10 @@
 from datetime import datetime
 from typing import Optional, Union
 
-from ._endpoints import get_player_profile
-from .client import Client, Resource
-from .response_builder import ChessDotComResponse
-from .utils import resolve_date
+from ..client import Client, Resource
+from ..response_builder import ChessDotComResponse
+from ..utils import resolve_date
+from .get_player_profile import get_player_profile
 
 
 @Client.endpoint
