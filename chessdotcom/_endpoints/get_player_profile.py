@@ -11,7 +11,7 @@ def get_player_profile(username: str, tts=0, **request_options) -> ChessDotComRe
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing information about
+    :returns: ``GetPlayerProfileResponse`` object containing information about
                 the player's profile.
     """
     return Resource(
