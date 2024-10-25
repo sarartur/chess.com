@@ -1,25 +1,10 @@
 from datetime import datetime
 from typing import Optional, Union
 
-from .client import Client, Resource
-from .response_builder import ChessDotComResponse
-from .utils import resolve_date
-
-
-@Client.endpoint
-def get_player_profile(username: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing information about
-                the player's profile.
-    """
-    return Resource(
-        uri=f"/player/{username}",
-        tts=tts,
-        top_level_attribute="player",
-        request_options=request_options,
-    )
+from ..client import Client, Resource
+from ..response_builder import ChessDotComResponse
+from ..utils import resolve_date
+from .player_profile import get_player_profile
 
 
 @Client.endpoint

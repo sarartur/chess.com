@@ -7,21 +7,13 @@ website. All endpoints provided by Chess.com's API are available in the
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
 repetitive code and testing."
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
 
 Indices and tables
 ------------------
 
-* :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
 
-Getting Started
-=============================================
 
 Installation
 ------------
@@ -34,22 +26,27 @@ Retrieving Data
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
 Using client instance
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
    from chessdotcom import ChessDotComClient
-      
+   
    client = ChessDotComClient(user_agent = "My Python Application...")
 
    response = client.get_player_profile("fabianocaruana")
 
-   player_name = response.json['player']['name']
-   #or
-   player_name = response.player.name
+   response.player.name # 'Fabiano Caruana'
+   response.player.title # 'GM'
+   response.player.last_online_datetime # datetime.datetime(2024, 10, 25, 20, 8, 28)
+   response.player.joined_datetime # datetime.datetime(2013, 3, 17, 15, 14, 32)
+   # See readthedocs for full documentation of responses
+
+   # or access the source
+   response.json['player']['name'] # 'Fabiano Caruana'
 
 
 Using functions
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 .. code-block:: python
    
    from chessdotcom import get_player_profile, Client
@@ -100,15 +97,17 @@ The second method is to adjust the `rate_limit_handler` attribute of the `Client
 
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
+
 API Reference
-==============
+^^^^^^^^^^^^^^
 
-chessdotcom.client
----------------------
-.. automodule:: chessdotcom.client
-   :members:
+.. toctree::
+   :maxdepth: 2
 
-chessdotcom.endpoints
-------------------
-.. automodule:: chessdotcom.endpoints
-   :members: 
+   members/chessdotcom.client.rst
+   members/chessdotcom.endpoints.rst
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.player_profile.rst

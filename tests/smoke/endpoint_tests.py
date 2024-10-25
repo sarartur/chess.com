@@ -14,7 +14,7 @@ def set_headers_for_smoke_test():
 def test_endpoints():
     client = ChessDotComClient(aio=False, verify_ssl=False)
 
-    data = client.get_player_profile("fabianocaruana")
+    data = client.get_player_profile("farzyplayschess")
     assert isinstance(data, ChessDotComResponse)
 
     data = client.get_titled_players("GM")

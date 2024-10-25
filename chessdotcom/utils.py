@@ -28,3 +28,7 @@ def resolve_date(year: str, month: str, date: datetime) -> Tuple[str, str]:
         raise ValueError(
             "You must provide both the year and the month, or a datetime.datetime object"
         )
+
+
+def from_timestamp(timestamp):
+    return datetime.utcfromtimestamp(timestamp) if timestamp else None
