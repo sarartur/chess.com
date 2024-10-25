@@ -4,7 +4,7 @@ from typing import Optional, Union
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
-from .get_player_profile import get_player_profile
+from .player_profile import get_player_profile
 
 
 @Client.endpoint

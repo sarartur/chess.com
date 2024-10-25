@@ -7,21 +7,13 @@ website. All endpoints provided by Chess.com's API are available in the
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
 repetitive code and testing."
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-
 
 Indices and tables
 ------------------
 
-* :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
 
-Getting Started
-=============================================
 
 Installation
 ------------
@@ -34,7 +26,7 @@ Retrieving Data
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
 Using client instance
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
    from chessdotcom import ChessDotComClient
@@ -49,7 +41,7 @@ Using client instance
 
 
 Using functions
-^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 .. code-block:: python
    
    from chessdotcom import get_player_profile, Client
@@ -100,15 +92,17 @@ The second method is to adjust the `rate_limit_handler` attribute of the `Client
 
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
+
 API Reference
-==============
+^^^^^^^^^^^^^^
 
-chessdotcom.client
----------------------
-.. automodule:: chessdotcom.client
-   :members:
+.. toctree::
+   :maxdepth: 2
 
-chessdotcom.endpoints
-------------------
-.. automodule:: chessdotcom.endpoints
-   :members: 
+   members/chessdotcom.client.rst
+   members/chessdotcom.endpoints.rst
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.player_profile.rst

@@ -15,8 +15,8 @@ def get_player_profile(
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``GetPlayerProfileResponse`` object containing information about
-                the player's profile.
+    :returns: :obj:`GetPlayerProfileResponse`
+              object containing information about the player's profile.
     """
     return Resource(
         uri=f"/player/{username}",
@@ -71,8 +71,7 @@ class ResponseBuilder(ResponseBuilder):
 
 class GetPlayerProfileResponse(ChessDotComResponse):
     """
-    A response object for the ``get_player_profile`` endpoint.
-    :ivar player: Holds the ''PlayerProfile'' object.
+    :ivar player: Holds the :obj:`PlayerProfile` object.
     :ivar json: The JSON response from the API.
     :ivar text: The raw text response from the API.
     """
@@ -86,7 +85,6 @@ class GetPlayerProfileResponse(ChessDotComResponse):
 @dataclass(repr=True)
 class PlayerProfile:
     """
-    Object contains the details about a player's profile
     :ivar avatar: The URL of the player's avatar.
     :ivar player_id: The unique ID of the player.
     :ivar id: The unique identifier for the player.
@@ -103,7 +101,7 @@ class PlayerProfile:
     :ivar verified: Whether the player's account is verified.
     :ivar league: The league in which the player is participating.
     :ivar location: The location of the player.
-    :ivar streaming_platforms: A list of ``StreamingPlatform`` the player uses.
+    :ivar streaming_platforms: A list of :obj:`StreamingPlatform` the player uses.
     :ivar last_online_datetime: The datetime representation of the player's last online activity.
     :ivar joined_datetime: The datetime representation of when the player joined.
     """
@@ -136,7 +134,6 @@ class PlayerProfile:
 @dataclass
 class StreamingPlatform:
     """
-    Object contains details of player's streaming platform.
     :ivar type: The type of the streaming platform (e.g., Twitch, YouTube).
     :ivar channel_url: The URL of the streaming platform's channel.
     """
