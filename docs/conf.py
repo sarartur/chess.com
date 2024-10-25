@@ -23,7 +23,7 @@ copyright = "2024, Artur Saradzhyan"
 author = "Artur Saradzhyan"
 
 # The full version, including alpha/beta/rc tags
-release = "2.0.2"
+release = "3.0.2"
 
 
 # -- General configuration ---------------------------------------------------
