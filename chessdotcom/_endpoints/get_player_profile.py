@@ -75,23 +75,23 @@ class GetPlayerProfileResponse(ChessDotComResponse):
 class PlayerProfile(object):
     def __init__(
         self,
-        avatar=None,
-        player_id=None,
-        id=None,
-        url=None,
-        name=None,
-        username=None,
-        title=None,
-        followers=None,
-        country=None,
-        last_online=None,
-        joined=None,
-        status=None,
-        is_streamer=None,
-        verified=None,
-        league=None,
-        location=None,
-        streaming_platforms=None,
+        avatar,
+        player_id,
+        id,
+        url,
+        name,
+        username,
+        title,
+        followers,
+        country,
+        last_online,
+        joined,
+        status,
+        is_streamer,
+        verified,
+        league,
+        location,
+        streaming_platforms,
     ) -> None:
         self.avatar = avatar
         self.player_id = player_id
@@ -109,7 +109,7 @@ class PlayerProfile(object):
         self.verified = verified
         self.league = league
         self.location = location
-        self.streaming_platforms = streaming_platforms or []
+        self.streaming_platforms = streaming_platforms
 
         self.last_online_datetime = from_timestamp(last_online)
         self.joined_datetime = from_timestamp(joined)
