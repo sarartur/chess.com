@@ -29,4 +29,5 @@ from .endpoints import (
     get_tournament_round,
     get_tournament_round_group_details,
 )
-from .types import ChessDotComError, ChessDotComResponse
+from .errors import ChessDotComClientError, ChessDotComError
+from .response_builder import ChessDotComResponse
