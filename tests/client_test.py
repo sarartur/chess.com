@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler, Resource
-from chessdotcom.errors import ChessDotComClientError
+from chessdotcom.errors import ChessDotComClientError, ChessDotComDecodingError
 from tests.support.aio_mock_response import AioMockResponse
 
 
@@ -134,6 +134,21 @@ async def test_do_get_request_async_error(mock_session_get):
     assert err.value.text == json.dumps(mock_data)
     assert err.value.json == mock_data
     assert err.value.headers == {"Content-Type": "application/json"}
+
+
+@patch("chessdotcom.client.requests")
+def test_do_get_request_sync_decoding_error(mock_requests):
+    mock_requests.get.return_value = MagicMock(
+        status_code=200,
+        text='{"key": ',
+    )
+
+    client = ChessDotComClient()
+
+    with pytest.raises(ChessDotComDecodingError) as err:
+        client.do_get_request(Resource(uri="/player/fabianocaruana"))
+
+    assert err.value.text == '{"key": '
 
 
 @patch("chessdotcom.client.requests")

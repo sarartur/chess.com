@@ -45,8 +45,7 @@ class ChessDotComResponse(object):
             self._create_object_attrs(top_level_attribute)
         except Exception as err:
             raise ChessDotComDecodingError(
-                "Response could not be decoded",
-                text=self.text,
+                self.text, "Response could not be converted to JSON"
             ) from err
 
     def _create_json_attr(self, top_level_attribute: str) -> None:
