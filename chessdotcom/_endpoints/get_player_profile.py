@@ -1,4 +1,6 @@
 import json
+from dataclasses import dataclass, field
+from typing import List, Optional
 
 from ..client import Client, Resource
 from ..errors import ChessDotComDecodingError
@@ -72,50 +74,34 @@ class GetPlayerProfileResponse(ChessDotComResponse):
         self.text = text
 
 
-class PlayerProfile(object):
-    def __init__(
-        self,
-        avatar,
-        player_id,
-        id,
-        url,
-        name,
-        username,
-        title,
-        followers,
-        country,
-        last_online,
-        joined,
-        status,
-        is_streamer,
-        verified,
-        league,
-        location,
-        streaming_platforms,
-    ) -> None:
-        self.avatar = avatar
-        self.player_id = player_id
-        self.id = id
-        self.url = url
-        self.name = name
-        self.username = username
-        self.title = title
-        self.followers = followers
-        self.country = country
-        self.last_online = last_online
-        self.joined = joined
-        self.status = status
-        self.is_streamer = is_streamer
-        self.verified = verified
-        self.league = league
-        self.location = location
-        self.streaming_platforms = streaming_platforms
+@dataclass(repr=True)
+class PlayerProfile:
+    avatar: Optional[str]
+    player_id: Optional[int]
+    id: Optional[str]
+    url: Optional[str]
+    name: Optional[str]
+    username: Optional[str]
+    title: Optional[str]
+    followers: Optional[int]
+    country: Optional[str]
+    last_online: Optional[int]
+    joined: Optional[int]
+    status: Optional[str]
+    is_streamer: Optional[bool]
+    verified: Optional[bool]
+    league: Optional[str]
+    location: Optional[str]
+    streaming_platforms: List["StreamingPlatform"]
+    last_online_datetime: Optional[str] = field(init=False)
+    joined_datetime: Optional[str] = field(init=False)
 
-        self.last_online_datetime = from_timestamp(last_online)
-        self.joined_datetime = from_timestamp(joined)
+    def __post_init__(self):
+        self.last_online_datetime = from_timestamp(self.last_online)
+        self.joined_datetime = from_timestamp(self.joined)
 
 
-class StreamingPlatform(object):
-    def __init__(self, type, channel_url) -> None:
-        self.type = type
-        self.channel_url = channel_url
+@dataclass
+class StreamingPlatform:
+    type: Optional[str]
+    channel_url: Optional[str]
