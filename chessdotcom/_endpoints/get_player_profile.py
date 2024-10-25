@@ -50,9 +50,18 @@ class ResponseBuilder(ResponseBuilder):
                 is_streamer=data.get("is_streamer"),
                 verified=data.get("verified"),
                 league=data.get("league"),
-                streaming_platforms=data.get("streaming_platforms"),
+                location=data.get("location"),
+                streaming_platforms=self._build_steaming_platforms(
+                    data.get("streaming_platforms", [])
+                ),
             ),
         )
+
+    def _build_steaming_platforms(self, data):
+        return [
+            StreamingPlatform(type=d.get("type"), channel_url=d.get("channel_url"))
+            for d in data
+        ]
 
 
 class GetPlayerProfileResponse(ChessDotComResponse):
@@ -80,6 +89,7 @@ class Player(object):
         is_streamer=None,
         verified=None,
         league=None,
+        location=None,
         streaming_platforms=None,
     ) -> None:
         self.avatar = avatar
@@ -97,4 +107,11 @@ class Player(object):
         self.is_streamer = is_streamer
         self.verified = verified
         self.league = league
+        self.location = location
         self.streaming_platforms = streaming_platforms or []
+
+
+class StreamingPlatform(object):
+    def __init__(self, type, channel_url) -> None:
+        self.type = type
+        self.channel_url = channel_url
