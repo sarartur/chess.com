@@ -33,8 +33,6 @@ Retrieving Data
 ---------------
 All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
-The package uses `aiohttp <https://docs.aiohttp.org/en/stable/>` for asynchronous requests and `requests <https://requests.readthedocs.io/en/latest/>` for synchronous requests to interact with the API. 
-
 Using client instance
 ^^^^^^^^^^^
 .. code-block:: python
@@ -104,11 +102,6 @@ If the initial request gets rate limited the client will automatically retry the
 
 API Reference
 ==============
-
-chessdotcom.types
----------------------
-.. automodule:: chessdotcom.types
-   :members:
 
 chessdotcom.client
 ---------------------
