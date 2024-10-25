@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional, Union
 
 from .client import Client, Resource
-from .types import ChessDotComResponse
+from .response_builder import ChessDotComResponse
 from .utils import resolve_date
 
 
