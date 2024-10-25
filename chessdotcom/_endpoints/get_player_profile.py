@@ -3,6 +3,7 @@ import json
 from ..client import Client, Resource
 from ..errors import ChessDotComDecodingError
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -109,6 +110,9 @@ class Player(object):
         self.league = league
         self.location = location
         self.streaming_platforms = streaming_platforms or []
+
+        self.last_online_datetime = from_timestamp(last_online)
+        self.joined_datetime = from_timestamp(joined)
 
 
 class StreamingPlatform(object):

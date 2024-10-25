@@ -1,3 +1,5 @@
+import datetime
+
 import pytest
 
 from tests.vcr import vcr
@@ -42,6 +44,9 @@ def validate_response(response):
     assert isinstance(player.is_streamer, bool)
     assert isinstance(player.verified, bool)
     assert isinstance(player.league, str)
+
+    assert isinstance(player.last_online_datetime, datetime.datetime)
+    assert isinstance(player.joined_datetime, datetime.datetime)
 
     def validate_streaming_platform(platform):
         assert isinstance(platform.type, str)
