@@ -26,9 +26,14 @@ client = ChessDotComClient(user_agent = "My Python Application...")
 
 response = client.get_player_profile("fabianocaruana")
 
-player_name = response.json['player']['name']
-#or
-player_name = response.player.name
+response.player.name # 'Fabiano Caruana'
+response.player.title # 'GM'
+response.player.last_online_datetime # datetime.datetime(2024, 10, 25, 20, 8, 28)
+response.player.joined_datetime # datetime.datetime(2013, 3, 17, 15, 14, 32)
+# See readthedocs for full documentation of responses
+
+# or access the source
+response.json['player']['name'] # 'Fabiano Caruana'
 ```
 
 #### Using functions
