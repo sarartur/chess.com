@@ -35,7 +35,7 @@ class ResponseBuilder(ResponseBuilder):
         return GetPlayerProfileResponse(
             json=data,
             text=text,
-            player=Player(
+            player=PlayerProfile(
                 avatar=data.get("avatar"),
                 player_id=data.get("player_id"),
                 id=data.get("@id"),
@@ -72,7 +72,7 @@ class GetPlayerProfileResponse(ChessDotComResponse):
         self.text = text
 
 
-class Player(object):
+class PlayerProfile(object):
     def __init__(
         self,
         avatar=None,
