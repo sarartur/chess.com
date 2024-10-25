@@ -51,7 +51,7 @@ pytest==8.3.3
 pytest-asyncio==0.24.0
 PyYAML==6.0.2
 readme_renderer==44.0
-requests==2.32.3
+requests==2.32.2
 requests-toolbelt==1.0.0
 rfc3986==2.0.0
 rich==13.9.2
