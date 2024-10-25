@@ -3,7 +3,7 @@
 ---
 Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 ## Installation 
-**The package requires Python 3.7 or higher**.
+**The package requires Python 3.8 or higher**.
 
 Install latest version from [PyPI](https://pypi.org/project/chess.com/): ```pip install chess.com``` 
 
