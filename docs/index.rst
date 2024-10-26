@@ -2,10 +2,10 @@ Welcome to Chess.com Wrapper's Documentation!
 =============================================
 Description
 ------------
-"A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
+A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
 website. All endpoints provided by Chess.com's API are available in the 
 respectively named methods. The package allows for simple interaction with the API, eliminating the need for
-repetitive code and testing."
+repetitive code and testing.
 
 
 Indices and tables
