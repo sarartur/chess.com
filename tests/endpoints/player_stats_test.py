@@ -43,6 +43,8 @@ def validate_response_structure(response):
 def validate_response(response):
     validate_response_structure(response)
 
+    assert response.json.get("stats") is not None
+
     stats = response.stats
     assert isinstance(stats.chess_rapid.last.rating, int)
     assert isinstance(stats.chess_rapid.last.date, int)
