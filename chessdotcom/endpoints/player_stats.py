@@ -3,7 +3,7 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
-from ..utils import dig
+from ..utils import dig, from_timestamp
 
 
 @Client.endpoint
@@ -141,11 +141,15 @@ class LastGameStats(object):
     :ivar rating: The rating of the last game.
     :ivar date: The date of the last game.
     :ivar rd: The rating deviation of the last game.
+    :ivar datetime: The datetime representation of the date.
     """
 
     rating: Optional[int]
     date: Optional[int]
     rd: Optional[int]
+
+    def __post_init__(self):
+        self.datetime = from_timestamp(self.date)
 
 
 @dataclass(repr=True)
@@ -154,11 +158,15 @@ class BestGameStats(object):
     :ivar rating: The rating of the best game.
     :ivar date: The date of the best game.
     :ivar game: The URL or identifier of the best game.
+    :ivar datetime: The datetime representation of the date.
     """
 
     rating: Optional[int]
     date: Optional[int]
     game: Optional[str]
+
+    def __post_init__(self):
+        self.datetime = from_timestamp(self.date)
 
 
 @dataclass(repr=True)
@@ -190,10 +198,14 @@ class TacticStatsRecord(object):
     """
     :ivar rating: The rating of the tactic stats record.
     :ivar date: The date of the tactic stats record.
+    :ivar datetime: The datetime representation of the the date.
     """
 
     rating: Optional[int]
     date: Optional[int]
+
+    def __post_init__(self):
+        self.datetime = from_timestamp(self.date)
 
 
 @dataclass(repr=True)
