@@ -111,3 +111,4 @@ API Reference
    :maxdepth: 1
 
    members/chessdotcom.endpoints.player_profile.rst
+   members/chessdotcom.endpoints.player_stats.rst

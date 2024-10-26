@@ -7,11 +7,13 @@ from ..utils import dig
 
 
 @Client.endpoint
-def get_player_stats(username: str, tts=0, **request_options) -> ChessDotComResponse:
+def get_player_stats(
+    username: str, tts=0, **request_options
+) -> "GetPlayerStatsResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing information about the
+    :returns: :obj:`GetPlayerStatsResponse`: information about the
                 plyers's ratings, win/loss, and other stats.
     """
     return Resource(
@@ -103,6 +105,15 @@ class GetPlayerStatsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class PlayerStats(object):
+    """
+    :ivar fide: The FIDE rating of the player.
+    :ivar chess_rapid: :obj:`GameStats`: the player's statistics in rapid chess games.
+    :ivar chess_bullet: :obj:`GameStats`: the player's statistics in bullet chess games.
+    :ivar chess_blitz: :obj:`GameStats`: the player's statistics in blitz chess games.
+    :ivar tactics: :obj:`TacticStats`: the player's statistics in chess tactics.
+    :ivar puzzle_rush: :obj: `PuzzleRushStats`: the player's statistics in puzzle rush challenges.
+    """
+
     fide: Optional[int]
     chess_rapid: Optional["GameStats"]
     chess_bullet: Optional["GameStats"]
@@ -113,6 +124,12 @@ class PlayerStats(object):
 
 @dataclass(repr=True)
 class GameStats(object):
+    """
+    :ivar last: :obj:`LastGameStats`: the player's last game statistics.
+    :ivar best: :obj:`BestGameStats`: the player's best game statistics.
+    :ivar record: :obj:`RecordGameStats`: the player's record game statistics.
+    """
+
     last: "LastGameStats"
     best: "BestGameStats"
     record: "RecordGameStats"
@@ -120,6 +137,12 @@ class GameStats(object):
 
 @dataclass(repr=True)
 class LastGameStats(object):
+    """
+    :ivar rating: The rating of the last game.
+    :ivar date: The date of the last game.
+    :ivar rd: The rating deviation of the last game.
+    """
+
     rating: Optional[int]
     date: Optional[int]
     rd: Optional[int]
@@ -127,6 +150,12 @@ class LastGameStats(object):
 
 @dataclass(repr=True)
 class BestGameStats(object):
+    """
+    :ivar rating: The rating of the best game.
+    :ivar date: The date of the best game.
+    :ivar game: The URL or identifier of the best game.
+    """
+
     rating: Optional[int]
     date: Optional[int]
     game: Optional[str]
@@ -134,6 +163,12 @@ class BestGameStats(object):
 
 @dataclass(repr=True)
 class RecordGameStats(object):
+    """
+    :ivar win: Number of wins.
+    :ivar loss: Number of losses.
+    :ivar draw: Number of draws.
+    """
+
     win: Optional[int]
     loss: Optional[int]
     draw: Optional[int]
@@ -141,22 +176,41 @@ class RecordGameStats(object):
 
 @dataclass(repr=True)
 class TacticStats(object):
+    """
+    :ivar highest: :obj:`TacticStatsRecord`: the highest tactic stats record.
+    :ivar lowest: :obj:`TacticStatsRecord`: the lowest tactic stats record.
+    """
+
     highest: "TacticStatsRecord"
     lowest: "TacticStatsRecord"
 
 
 @dataclass(repr=True)
 class TacticStatsRecord(object):
+    """
+    :ivar rating: The rating of the tactic stats record.
+    :ivar date: The date of the tactic stats record.
+    """
+
     rating: Optional[int]
     date: Optional[int]
 
 
 @dataclass(repr=True)
 class PuzzleRushStats(object):
+    """
+    :ivar best: :obj:`PuzzleRushRecord`: the best puzzle rush stats.
+    """
+
     best: "PuzzleRushRecord"
 
 
 @dataclass(repr=True)
 class PuzzleRushRecord(object):
+    """
+    :ivar total_attempts: The total number of attempts made in the puzzle rush.
+    :ivar score: The score achieved in the puzzle rush.
+    """
+
     total_attempts: Optional[int]
     score: Optional[int]
