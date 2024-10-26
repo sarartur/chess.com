@@ -3,7 +3,8 @@ name: 'Smoke tests'
 on:
   schedule:
     - cron: "0 8 * * *"
-    
+  workflow_call:
+
 jobs:
   test:
     runs-on: ubuntu-24.04
