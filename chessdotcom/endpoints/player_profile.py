@@ -21,7 +21,6 @@ def get_player_profile(
     return Resource(
         uri=f"/player/{username}",
         tts=tts,
-        top_level_attribute="player",
         request_options=request_options,
         response_builder=ResponseBuilder(),
     )
@@ -37,7 +36,7 @@ class ResponseBuilder(ResponseBuilder):
             ) from err
 
         return GetPlayerProfileResponse(
-            json=data,
+            json={"player": data},
             text=text,
             player=PlayerProfile(
                 avatar=data.get("avatar"),

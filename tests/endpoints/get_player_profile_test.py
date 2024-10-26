@@ -27,6 +27,7 @@ async def test_with_async_client(async_client):
 def validate_response(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert response.json.get("player") is not None
 
     player = response.player
     assert isinstance(player.avatar, str)
