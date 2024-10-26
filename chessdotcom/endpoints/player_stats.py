@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
@@ -35,4 +36,60 @@ class GetPlayerStatsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class PlayerStats(object):
-    pass
+    fide: Optional[int]
+    chess_rapid: "GameStats"
+    chess_bullet: "GameStats"
+    chess_blitz: "GameStats"
+    tactics: "TacticStats"
+    puzzle_rush: "PuzzleRushStats"
+
+
+@dataclass(repr=True)
+class GameStats(object):
+    last: "LastGameStats"
+    best: "BestGameStats"
+    record: "RecordGameStats"
+
+
+@dataclass(repr=True)
+class LastGameStats(object):
+    rating: Optional[int]
+    date: Optional[int]
+    rd: Optional[int]
+
+
+@dataclass(repr=True)
+class BestGameStats(object):
+    rating: Optional[int]
+    date: Optional[int]
+    game: Optional[str]
+
+
+@dataclass(repr=True)
+class RecordGameStats(object):
+    win: Optional[int]
+    loss: Optional[int]
+    draw: Optional[int]
+
+
+@dataclass(repr=True)
+class TacticStats(object):
+    highest: "TacticStatsRecord"
+    lowest: "TacticStatsRecord"
+
+
+@dataclass(repr=True)
+class TacticStatsRecord(object):
+    rating: Optional[int]
+    date: Optional[int]
+
+
+@dataclass(repr=True)
+class PuzzleRushStats(object):
+    best: "PuzzleRushRecord"
+
+
+@dataclass(repr=True)
+class PuzzleRushRecord(object):
+    total_attempts: Optional[int]
+    score: Optional[int]
