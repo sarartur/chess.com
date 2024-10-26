@@ -1,0 +1,22 @@
+name: 'Smoke tests'
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+    
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+            python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python3 -m pip install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          pytest tests/smoke/endpoint_tests.py
