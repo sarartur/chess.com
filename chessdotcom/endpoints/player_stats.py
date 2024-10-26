@@ -1,8 +1,11 @@
+import json
 from dataclasses import dataclass
 from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse
+from ..errors import ChessDotComDecodingError
+from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import dig
 
 
 @Client.endpoint
@@ -16,9 +19,80 @@ def get_player_stats(username: str, tts=0, **request_options) -> ChessDotComResp
     return Resource(
         uri=f"/player/{username}/stats",
         tts=tts,
-        top_level_attribute="stats",
         request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
+
+
+class ResponseBuilder(ResponseBuilder):
+    def build(self, text):
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError as err:
+            raise ChessDotComDecodingError(
+                text, "Response could not be converted to JSON"
+            ) from err
+
+        return GetPlayerStatsResponse(
+            json={"stats": data},
+            text=text,
+            stats=PlayerStats(
+                fide=data.get("fide"),
+                chess_rapid=self._build_game_stats(data.get("chess_rapid")),
+                chess_bullet=self._build_game_stats(data.get("chess_bullet")),
+                chess_blitz=self._build_game_stats(data.get("chess_blitz")),
+                tactics=self._build_tactics_stats(data.get("tactics")),
+                puzzle_rush=self._build_puzzle_rush_stats(data.get("puzzle_rush")),
+            ),
+        )
+
+    def _build_game_stats(self, data):
+        if not data:
+            return
+
+        return GameStats(
+            last=LastGameStats(
+                rating=dig(data, ("last", "rating")),
+                date=dig(data, ("last", "date")),
+                rd=dig(data, ("last", "rd")),
+            ),
+            best=BestGameStats(
+                rating=dig(data, ("best", "rating")),
+                date=dig(data, ("best", "date")),
+                game=dig(data, ("best", "game")),
+            ),
+            record=RecordGameStats(
+                win=dig(data, ("record", "win")),
+                loss=dig(data, ("record", "loss")),
+                draw=dig(data, ("record", "draw")),
+            ),
+        )
+
+    def _build_tactics_stats(self, data):
+        if not data:
+            return
+
+        return TacticStats(
+            highest=TacticStatsRecord(
+                rating=dig(data, ("highest", "rating")),
+                date=dig(data, ("highest", "date")),
+            ),
+            lowest=TacticStatsRecord(
+                rating=dig(data, ("lowest", "rating")),
+                date=dig(data, ("lowest", "date")),
+            ),
+        )
+
+    def _build_puzzle_rush_stats(self, data):
+        if not data:
+            return
+
+        return PuzzleRushStats(
+            best=PuzzleRushRecord(
+                total_attempts=dig(data, ("best", "total_attempts")),
+                score=dig(data, ("best", "score")),
+            )
+        )
 
 
 class GetPlayerStatsResponse(ChessDotComResponse):
@@ -37,11 +111,11 @@ class GetPlayerStatsResponse(ChessDotComResponse):
 @dataclass(repr=True)
 class PlayerStats(object):
     fide: Optional[int]
-    chess_rapid: "GameStats"
-    chess_bullet: "GameStats"
-    chess_blitz: "GameStats"
-    tactics: "TacticStats"
-    puzzle_rush: "PuzzleRushStats"
+    chess_rapid: Optional["GameStats"]
+    chess_bullet: Optional["GameStats"]
+    chess_blitz: Optional["GameStats"]
+    tactics: Optional["TacticStats"]
+    puzzle_rush: Optional["PuzzleRushStats"]
 
 
 @dataclass(repr=True)
