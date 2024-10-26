@@ -1,5 +1,8 @@
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.player_stats import PlayerStats
 from tests.vcr import vcr
 
 
@@ -22,9 +25,23 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_player_stats.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_player_stats(username="fabianocaruana")
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.stats, PlayerStats)
+
+
+def validate_response(response):
+    validate_response_structure(response)
 
     stats = response.stats
     assert isinstance(stats.chess_rapid.last.rating, int)
