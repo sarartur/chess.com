@@ -81,5 +81,10 @@ client = ChessDotComClient(
 ```
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
-## Contact
-* Open a new [Issue](https://github.com/sarartur/chess.com/issues) on Github.
+## Reporting Issues
+
+Chess.com API is subject to change. Smoke tests are ran daily to make sure the package is working correctly.
+
+<img src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/smoke_tests.yml?branch=master&label=smoke%20tests">
+
+Please open an [Issue](https://github.com/sarartur/chess.com/issues) if you spot any bugs.
