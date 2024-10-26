@@ -1,5 +1,5 @@
 # Python wrapper for Chess.com Public API
-<img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/build_and_publish.yml?event=push"> <img src="https://img.shields.io/readthedocs/chessdotcom"> <img src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/smoke_tests.yml?branch=master&label=smoke%20tests"> <img src="https://img.shields.io/github/license/sarartur/chess.com">  <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6"> <img src="https://img.shields.io/github/forks/sarartur/chess.com"> <img src="https://img.shields.io/github/stars/sarartur/chess.com">
+<img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/build_and_publish.yml?event=push"> <img src="https://img.shields.io/readthedocs/chessdotcom"> <img src="https://img.shields.io/github/license/sarartur/chess.com">  <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6"> <img src="https://img.shields.io/github/forks/sarartur/chess.com"> <img src="https://img.shields.io/github/stars/sarartur/chess.com">
 ---
 Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
 ## Installation 
@@ -81,5 +81,16 @@ client = ChessDotComClient(
 ```
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
+## Reporting Issues
+
+Chess.com API is subject to change. Smoke tests are ran daily to make sure the package is working correctly.
+
+Status: <img src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/smoke_tests.yml?branch=master&label=smoke%20tests">
+
+Please open an [Issue](https://github.com/sarartur/chess.com/issues) if you spot an issue.
+
 ## Contact
 * Open a new [Issue](https://github.com/sarartur/chess.com/issues) on Github.
+
+
+<img src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/smoke_tests.yml?branch=master&label=smoke%20tests">
