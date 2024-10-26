@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from chessdotcom.utils import resolve_date
+from chessdotcom.utils import dig, resolve_date
 
 
 def test_resolve_date():
@@ -27,3 +27,15 @@ def test_resolve_date():
         assert False
     except ValueError:
         pass
+
+
+def test_dig():
+    assert dig({"a": {"b": {"c": 1}}}, ("a", "b", "c")) == 1
+
+    assert (
+        dig(
+            {"a": {"b": {"c": 1}}},
+            ("a", "c"),
+        )
+        is None
+    )

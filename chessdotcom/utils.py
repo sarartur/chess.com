@@ -1,4 +1,5 @@
 from datetime import datetime
+from functools import reduce
 from typing import Tuple
 
 
@@ -32,3 +33,11 @@ def resolve_date(year: str, month: str, date: datetime) -> Tuple[str, str]:
 
 def from_timestamp(timestamp):
     return datetime.utcfromtimestamp(timestamp) if timestamp else None
+
+
+def dig(data, keys, default=None):
+    return reduce(
+        lambda d, key: d.get(key, default) if isinstance(d, dict) else default,
+        keys,
+        data,
+    )
