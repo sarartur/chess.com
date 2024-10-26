@@ -1,9 +1,7 @@
-import json
 from dataclasses import dataclass, field
 from typing import List, Optional
 
 from ..client import Client, Resource
-from ..errors import ChessDotComDecodingError
 from ..response_builder import ChessDotComResponse, ResponseBuilder
 from ..utils import from_timestamp
 
@@ -28,12 +26,7 @@ def get_player_profile(
 
 class ResponseBuilder(ResponseBuilder):
     def build(self, text):
-        try:
-            data = json.loads(text)
-        except json.JSONDecodeError as err:
-            raise ChessDotComDecodingError(
-                text, "Response could not be converted to JSON"
-            ) from err
+        data = self.serializer.deserialize(text)
 
         return GetPlayerProfileResponse(
             json={"player": data},

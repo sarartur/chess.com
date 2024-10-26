@@ -6,6 +6,9 @@ from .errors import ChessDotComDecodingError
 
 
 class ResponseBuilder(object):
+    def __init__(self, serializer=None) -> None:
+        self.serializer = serializer or Serializer()
+
     def build(self, text):
         raise NotImplementedError("Method must be defined by the child class")
 
@@ -20,6 +23,18 @@ class DefaultResponseBuilder(ResponseBuilder):
             top_level_attribute=self.resource.top_level_attribute,
             no_json=self.resource.no_json,
         )
+
+
+class Serializer(object):
+    def deserialize(self, text):
+        try:
+            data = json.loads(text)
+        except json.JSONDecodeError as err:
+            raise ChessDotComDecodingError(
+                text, "Response could not be converted to JSON"
+            ) from err
+
+        return data
 
 
 class ChessDotComResponse(object):
