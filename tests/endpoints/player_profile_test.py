@@ -6,20 +6,20 @@ from tests.vcr import vcr
 
 
 @vcr.use_cassette("get_player_profile.yaml")
-def test_with_endpoints(endpoints):
+def test_get_with_endpoints(endpoints):
     response = endpoints.get_player_profile(username="farzyplayschess")
     validate_response(response)
 
 
 @vcr.use_cassette("get_player_profile.yaml")
-def test_with_client(client):
+def test_get_with_client(client):
     response = client.get_player_profile(username="farzyplayschess")
     validate_response(response)
 
 
 @pytest.mark.asyncio
 @vcr.use_cassette("get_player_profile.yaml")
-async def test_with_async_client(async_client):
+async def test_get_with_async_client(async_client):
     response = await async_client.get_player_profile(username="farzyplayschess")
     validate_response(response)
 
