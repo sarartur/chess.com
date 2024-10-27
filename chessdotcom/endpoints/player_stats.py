@@ -63,6 +63,14 @@ class ResponseBuilder(ResponseBuilder):
                 loss=dig(data, ("record", "loss")),
                 draw=dig(data, ("record", "draw")),
             ),
+            tournament=TournamentGameStats(
+                count=dig(data, ("tournament", "count")),
+                withdraw=dig(data, ("tournament", "withdraw")),
+                points=dig(data, ("tournament", "points")),
+                highest_finish=dig(data, ("tournament", "highest_finish")),
+            )
+            if data.get("tournament")
+            else None,
         )
 
     def _build_tactics_stats(self, data):
@@ -137,6 +145,7 @@ class GameStats(object):
     last: "LastGameStats"
     best: "BestGameStats"
     record: "RecordGameStats"
+    tournament: Optional["TournamentGameStats"]
 
 
 @dataclass(repr=True)
@@ -184,6 +193,14 @@ class RecordGameStats(object):
     win: Optional[int]
     loss: Optional[int]
     draw: Optional[int]
+
+
+@dataclass(repr=True)
+class TournamentGameStats(object):
+    count: Optional[int]
+    withdraw: Optional[int]
+    points: Optional[float]
+    highest_finish: Optional[int]
 
 
 @dataclass(repr=True)

@@ -61,6 +61,12 @@ def validate_response(response):
         assert isinstance(game_stats.record.loss, int)
         assert isinstance(game_stats.record.draw, int)
 
+        if game_stats.tournament:
+            assert isinstance(game_stats.tournament.count, int)
+            assert isinstance(game_stats.tournament.withdraw, int)
+            assert isinstance(game_stats.tournament.points, int)
+            assert isinstance(game_stats.tournament.highest_finish, int)
+
     validate_game_stats(stats.chess_rapid)
     validate_game_stats(stats.chess_bullet)
     validate_game_stats(stats.chess_blitz)
