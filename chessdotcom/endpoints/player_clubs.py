@@ -13,7 +13,7 @@ def get_player_clubs(
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
+    :returns: :ob:`GetPlayerClubsResponse` object containing
             a list of clubs the player is a member of.
     """
     return Resource(
@@ -46,6 +46,12 @@ class ResponseBuilder(ResponseBuilder):
 
 
 class GetPlayerClubsResponse(ChessDotComResponse):
+    """
+    :ivar clubs: Holds an array of :obj:`Club` objects.
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    """
+
     def __init__(self, json, text, clubs):
         self.json = json
         self.text = text
@@ -54,6 +60,17 @@ class GetPlayerClubsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Club:
+    """
+    :ivar id: The unique identifier of the club.
+    :ivar name: The name of the club.
+    :ivar last_activity: The timestamp of the last activity in the club.
+    :ivar icon: The URL of the club's icon.
+    :ivar url: The URL of the club's page.
+    :ivar joined: The timestamp when the user joined the club.
+    :ivar last_activity_datetime: The last activity as a datetime object.
+    :ivar joined_datetime: The joined timestamp as a datetime object.
+    """
+
     id: Optional[str]
     name: Optional[str]
     last_activity: Optional[int]
