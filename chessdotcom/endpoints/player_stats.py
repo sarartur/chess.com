@@ -36,6 +36,8 @@ class ResponseBuilder(ResponseBuilder):
                 chess_rapid=self._build_game_stats(data.get("chess_rapid")),
                 chess_bullet=self._build_game_stats(data.get("chess_bullet")),
                 chess_blitz=self._build_game_stats(data.get("chess_blitz")),
+                chess_daily=self._build_game_stats(data.get("chess_daily")),
+                chess960_daily=self._build_game_stats(data.get("chess960_daily")),
                 tactics=self._build_tactics_stats(data.get("tactics")),
                 puzzle_rush=self._build_puzzle_rush_stats(data.get("puzzle_rush")),
             ),
@@ -115,6 +117,8 @@ class PlayerStats(object):
     """
 
     fide: Optional[int]
+    chess_daily: Optional["GameStats"]
+    chess960_daily: Optional["GameStats"]
     chess_rapid: Optional["GameStats"]
     chess_bullet: Optional["GameStats"]
     chess_blitz: Optional["GameStats"]
