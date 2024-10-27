@@ -23,8 +23,15 @@ async def test_with_async_client(async_client):
 
 
 def validate_response(response):
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
+    validate_response_structure(response)
+
+    assert response.json.get("archives") is not None
 
     archives = response.archives
     assert all(isinstance(url, str) for url in archives)
+
+
+def validate_response_structure(response):
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+    assert isinstance(response.archives, list)
