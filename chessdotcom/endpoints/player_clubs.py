@@ -3,13 +3,10 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
-from ..utils import from_timestamp
 
 
 @Client.endpoint
-def get_player_clubs(
-    username: str, tts=0, **request_options
-) -> "GetPlayerClubsResponse":
+def get_player_clubs(username: str, tts=0, **request_options) -> ChessDotComResponse:
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
@@ -23,26 +20,7 @@ def get_player_clubs(
 
 class ResponseBuilder(ResponseBuilder):
     def build(self, text):
-        data = self.serializer.deserialize(text)
-
-        return GetPlayerClubsResponse(
-            json={"clubs": data},
-            text=text,
-            clubs=self._build_clubs(data),
-        )
-
-    def _build_clubs(self, data):
-        [
-            Club(
-                id=club.get("id"),
-                name=club.get("name"),
-                last_activity=club.get("last_activity"),
-                icon=club.get("icon"),
-                url=club.get("url"),
-                joined=club.get("joined"),
-            )
-            for club in data.get("clubs", [])
-        ]
+        pass
 
 
 class GetPlayerClubsResponse(ChessDotComResponse):
@@ -52,15 +30,12 @@ class GetPlayerClubsResponse(ChessDotComResponse):
         self.clubs = clubs
 
 
-@dataclass(repr=True)
+@dataclass
+@dataclass
 class Club:
-    id: Optional[str]
-    name: Optional[str]
-    last_activity: Optional[int]
-    icon: Optional[str]
-    url: Optional[str]
-    joined: Optional[int]
-
-    def __post_init__(self):
-        self.last_activity_datetime = from_timestamp(self.last_activity)
-        self.joined_datetime = from_timestamp(self.joined)
+    id: Optional[str] = None
+    name: Optional[str] = None
+    last_activity: Optional[int] = None
+    icon: Optional[str] = None
+    url: Optional[str] = None
+    joined: Optional[int] = None

@@ -33,6 +33,7 @@ def validate_response(response):
 
     assert response.json.get("clubs") is not None
 
+    assert len(response.clubs) > 1
     for club in response.clubs:
         assert isinstance(club.id, str)
         assert isinstance(club.name, str)
