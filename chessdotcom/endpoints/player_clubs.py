@@ -1,3 +1,10 @@
+"""
+List of clubs the player is a member of, with joined date and last activity date.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player-clubs
+"""
+
+
 from dataclasses import dataclass
 from typing import Optional
 
