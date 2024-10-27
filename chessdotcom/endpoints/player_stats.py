@@ -1,3 +1,10 @@
+"""
+Ratings, win/loss, and other stats about a player's game play,
+tactics, lessons and Puzzle Rush score.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player-stats
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
