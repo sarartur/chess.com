@@ -1,3 +1,10 @@
+"""
+Ratings, win/loss, and other stats about a player's game play,
+tactics, lessons and Puzzle Rush score.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player-stats
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -36,6 +43,8 @@ class ResponseBuilder(ResponseBuilder):
                 chess_rapid=self._build_game_stats(data.get("chess_rapid")),
                 chess_bullet=self._build_game_stats(data.get("chess_bullet")),
                 chess_blitz=self._build_game_stats(data.get("chess_blitz")),
+                chess_daily=self._build_game_stats(data.get("chess_daily")),
+                chess960_daily=self._build_game_stats(data.get("chess960_daily")),
                 tactics=self._build_tactics_stats(data.get("tactics")),
                 puzzle_rush=self._build_puzzle_rush_stats(data.get("puzzle_rush")),
             ),
@@ -61,6 +70,14 @@ class ResponseBuilder(ResponseBuilder):
                 loss=dig(data, ("record", "loss")),
                 draw=dig(data, ("record", "draw")),
             ),
+            tournament=TournamentGameStats(
+                count=dig(data, ("tournament", "count")),
+                withdraw=dig(data, ("tournament", "withdraw")),
+                points=dig(data, ("tournament", "points")),
+                highest_finish=dig(data, ("tournament", "highest_finish")),
+            )
+            if data.get("tournament")
+            else None,
         )
 
     def _build_tactics_stats(self, data):
@@ -115,6 +132,8 @@ class PlayerStats(object):
     """
 
     fide: Optional[int]
+    chess_daily: Optional["GameStats"]
+    chess960_daily: Optional["GameStats"]
     chess_rapid: Optional["GameStats"]
     chess_bullet: Optional["GameStats"]
     chess_blitz: Optional["GameStats"]
@@ -128,11 +147,13 @@ class GameStats(object):
     :ivar last: :obj:`LastGameStats`: the player's last game statistics.
     :ivar best: :obj:`BestGameStats`: the player's best game statistics.
     :ivar record: :obj:`RecordGameStats`: the player's record game statistics.
+    :ivar tournament: :obj:`TournamentGameStats`: the player's tournament game statistics
     """
 
     last: "LastGameStats"
     best: "BestGameStats"
     record: "RecordGameStats"
+    tournament: Optional["TournamentGameStats"]
 
 
 @dataclass(repr=True)
@@ -180,6 +201,21 @@ class RecordGameStats(object):
     win: Optional[int]
     loss: Optional[int]
     draw: Optional[int]
+
+
+@dataclass(repr=True)
+class TournamentGameStats(object):
+    """
+    :ivar count: The number of tournament games played.
+    :ivar withdraw: The number of tournaments withdrawn from.
+    :ivar points: The total points accumulated in tournaments.
+    :ivar highest_finish: The highest finish position in a tournament.
+    """
+
+    count: Optional[int]
+    withdraw: Optional[int]
+    points: Optional[float]
+    highest_finish: Optional[int]
 
 
 @dataclass(repr=True)

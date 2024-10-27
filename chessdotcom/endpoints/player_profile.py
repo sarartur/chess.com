@@ -1,3 +1,9 @@
+"""
+Details about a player's profile, including their avatar, name, username, and more.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player
+"""
+
 from dataclasses import dataclass, field
 from typing import List, Optional
 

@@ -9,43 +9,43 @@ interactions:
       User-Agent:
       - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
     method: GET
-    uri: https://api.chess.com/pub/player/fabianocaruana/stats
+    uri: https://api.chess.com/pub/player/erik/stats
   response:
     body:
-      string: '{"chess_rapid":{"last":{"rating":2823,"date":1727799848,"rd":42},"best":{"rating":3045,"date":1567282891,"game":"https://www.chess.com/game/live/87247703041"},"record":{"win":186,"loss":74,"draw":139}},"chess_bullet":{"last":{"rating":3152,"date":1722977255,"rd":34},"best":{"rating":3152,"date":1722977255,"game":"https://www.chess.com/game/live/88461616105"},"record":{"win":954,"loss":321,"draw":100}},"chess_blitz":{"last":{"rating":3064,"date":1729031436,"rd":41},"best":{"rating":3207,"date":1716676009,"game":"https://www.chess.com/game/live/78621077395"},"record":{"win":1906,"loss":571,"draw":359}},"fide":2835,"tactics":{"highest":{"rating":3519,"date":1686676974},"lowest":{"rating":1354,"date":1363907400}},"puzzle_rush":{"best":{"total_attempts":67,"score":64}}}'
+      string: '{"chess_daily":{"last":{"rating":1403,"date":1730047005,"rd":45},"best":{"rating":2065,"date":1256228875,"game":"https://www.chess.com/game/daily/26087202"},"record":{"win":2978,"loss":1915,"draw":354,"time_per_move":13036,"timeout_percent":0},"tournament":{"points":33,"withdraw":1,"count":1,"highest_finish":1}},"chess960_daily":{"last":{"rating":1339,"date":1728409412,"rd":90},"best":{"rating":1779,"date":1466772304,"game":"https://www.chess.com/game/daily/155362414"},"record":{"win":315,"loss":194,"draw":26,"time_per_move":13036,"timeout_percent":0},"tournament":{"points":33,"withdraw":1,"count":1,"highest_finish":1}},"chess_rapid":{"last":{"rating":1904,"date":1678009742,"rd":80},"best":{"rating":1904,"date":1647475349,"game":"https://www.chess.com/game/live/41213397731"},"record":{"win":27,"loss":11,"draw":1}},"chess_bullet":{"last":{"rating":1592,"date":1729977498,"rd":46},"best":{"rating":2071,"date":1298134178,"game":"https://www.chess.com/game/live/85305696"},"record":{"win":3990,"loss":3540,"draw":206}},"chess_blitz":{"last":{"rating":1853,"date":1715431205,"rd":119},"best":{"rating":1917,"date":1685654255,"game":"https://www.chess.com/game/live/36029338373"},"record":{"win":439,"loss":339,"draw":33}},"fide":1707,"tactics":{"highest":{"rating":2883,"date":1685980712},"lowest":{"rating":1073,"date":1201209658}},"puzzle_rush":{"best":{"total_attempts":43,"score":40}}}'
     headers:
       CF-Cache-Status:
-      - REVALIDATED
+      - EXPIRED
       CF-RAY:
-      - 8d44ba445e9f8ffd-BOS
+      - 8d945eafdb404cff-BOS
       Cache-Control:
       - public, max-age=5
       Connection:
       - keep-alive
       Content-Length:
-      - '775'
+      - '1397'
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Fri, 18 Oct 2024 01:24:14 GMT
+      - Sun, 27 Oct 2024 17:22:43 GMT
       NEL:
       - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=51Nn6b8my0RSbAgbnjt4kkpz1221n73XuVabM9YwwsGICpH7aGB4TI2GeiAHsT%2F6huLYM2EJZ6n%2BrsMRfCItIYUfSOxYXCG9D5rJHCxXqi3PNSWuMlyBTBKAJveAGb4%3D"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=NHc4TY8PUrqjeox%2Fvb12yd9Cytf%2FG2CYVshJOhBbxbjaxYU5PEFo8JhzVuxMjBXh%2Fule59bfnHjXz51JO9nCskc8XYS82U4F8T5KK9g6A8DViiTYR02KAcW%2FS7oh49g%3D"}],"group":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Set-Cookie:
-      - __cf_bm=mFcbrDu9sjZMZ1RMW9z2OFEEoIZkJ9gxEbcxeZCV8xk-1729214654-1.0.1.1-NBB2O2H8SQ8_yKIB3fb5DpO6OTvMGyyzkjIxlMaMz_PnIMA5lyVbOMJc9rMouMEP5sL8inCl7xHtELIwUBuwXpym1coDh3aY.NPTcRGX75c;
-        path=/; expires=Fri, 18-Oct-24 01:54:14 GMT; domain=.chess.com; HttpOnly;
+      - __cf_bm=87uJpXny4WRh8OXYZW3Y4kjs1IGaS4L_kLO4akF.5lQ-1730049763-1.0.1.1-D5OV4jPB1QWRjnhFLJc5hdV449ne42DKzOix.uuoh7D6Gowb3DnOje3AqgEF7SHVJcEvdDVopX7iNoqpHwxOSs_BwKdrlJuChlNuv8MR9ck;
+        path=/; expires=Sun, 27-Oct-24 17:52:43 GMT; domain=.chess.com; HttpOnly;
         Secure; SameSite=None
       access-control-allow-origin:
       - '*'
       etag:
-      - W/"a1aa35b2a82c853415466029954fbd0d"
+      - W/"5142d60100dc504f821eebfe1924a0ba"
       expires:
-      - Fri, 18 Oct 2024 01:24:19 GMT
+      - Sun, 27 Oct 2024 17:22:48
       last-modified:
-      - Thursday, 17-Oct-2024 09:47:10 GMT+0000
+      - Sunday, 27-Oct-2024 17:13:35 GMT+0000
       strict-transport-security:
       - max-age=63072000; includeSubDomains; preload
       vary:
@@ -53,13 +53,13 @@ interactions:
       x-chesscom-matched:
       - pubapi_player_stats
       x-chesscom-meta:
-      - lean=published
+      - lean=cached
       x-chesscom-request-id-cdn:
-      - 8d3f5d9f9e2503f3-IAD
+      - 8d945eafdb404cff-IAD
       x-chesscom-request-id-lb:
-      - 45bb33b43e6018bbab4719f27dca6fdc
+      - 186a3adc2dfb16b11d263762f76f86dc
       x-chesscom-servedby:
-      - '147'
+      - '86'
     status:
       code: 200
       message: OK
