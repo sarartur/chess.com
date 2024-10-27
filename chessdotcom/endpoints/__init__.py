@@ -4,6 +4,7 @@ from typing import Optional, Union
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
+from .player_clubs import get_player_clubs
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 
@@ -136,19 +137,6 @@ def get_player_games_by_month_pgn(
         top_level_attribute="pgn",
         no_json=True,
         request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_player_clubs(username: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-            a list of clubs the player is a member of.
-    """
-    return Resource(
-        uri=f"/player/{username}/clubs", tts=tts, request_options=request_options
     )
 
 

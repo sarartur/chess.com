@@ -22,9 +22,16 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.clubs, list)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("clubs") is not None
 
     for club in response.clubs:
         assert isinstance(club.id, str)
