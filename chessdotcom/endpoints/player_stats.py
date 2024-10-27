@@ -140,6 +140,7 @@ class GameStats(object):
     :ivar last: :obj:`LastGameStats`: the player's last game statistics.
     :ivar best: :obj:`BestGameStats`: the player's best game statistics.
     :ivar record: :obj:`RecordGameStats`: the player's record game statistics.
+    :ivar tournament: :obj:`TournamentGameStats`: the player's tournament game statistics
     """
 
     last: "LastGameStats"
@@ -197,6 +198,13 @@ class RecordGameStats(object):
 
 @dataclass(repr=True)
 class TournamentGameStats(object):
+    """
+    :ivar count: The number of tournament games played.
+    :ivar withdraw: The number of tournaments withdrawn from.
+    :ivar points: The total points accumulated in tournaments.
+    :ivar highest_finish: The highest finish position in a tournament.
+    """
+
     count: Optional[int]
     withdraw: Optional[int]
     points: Optional[float]
