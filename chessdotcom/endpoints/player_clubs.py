@@ -13,7 +13,7 @@ def get_player_clubs(
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: :ob:`GetPlayerClubsResponse` object containing
+    :returns: :obj:`GetPlayerClubsResponse` object containing
             a list of clubs the player is a member of.
     """
     return Resource(
