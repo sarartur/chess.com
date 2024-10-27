@@ -24,7 +24,10 @@ def get_player_clubs(
             a list of clubs the player is a member of.
     """
     return Resource(
-        uri=f"/player/{username}/clubs", tts=tts, request_options=request_options
+        uri=f"/player/{username}/clubs",
+        tts=tts,
+        request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
 
 
@@ -39,9 +42,9 @@ class ResponseBuilder(ResponseBuilder):
         )
 
     def _build_clubs(self, data):
-        [
+        return [
             Club(
-                id=club.get("id"),
+                id=club.get("@id"),
                 name=club.get("name"),
                 last_activity=club.get("last_activity"),
                 icon=club.get("icon"),
