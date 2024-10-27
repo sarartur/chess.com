@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 from tests.vcr import vcr
@@ -20,6 +22,15 @@ def test_with_client(client):
 async def test_with_async_client(async_client):
     response = await async_client.get_player_clubs(username="fabianocaruana")
     validate_response(response)
+
+
+@vcr.use_cassette("get_player_clubs.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_player_clubs(username="fabianocaruana")
+
+    validate_response_structure(response)
 
 
 def validate_response_structure(response):
