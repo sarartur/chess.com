@@ -130,7 +130,7 @@ class PlayerStats(object):
     :ivar chess_bullet: :obj:`GameStats`: the player's statistics in bullet chess games.
     :ivar chess_blitz: :obj:`GameStats`: the player's statistics in blitz chess games.
     :ivar tactics: :obj:`TacticStats`: the player's statistics in chess tactics.
-    :ivar puzzle_rush: :obj: `PuzzleRushStats`: the player's statistics in puzzle rush challenges.
+    :ivar puzzle_rush: :obj:`PuzzleRushStats`: the player's statistics in puzzle rush challenges.
     """
 
     fide: Optional[int]
