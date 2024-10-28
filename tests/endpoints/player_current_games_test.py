@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import pytest
 
 from tests.vcr import vcr
@@ -27,6 +29,7 @@ def validate_response(response):
     assert isinstance(response.text, str)
 
     games = response.games
+    assert len(games) > 0
     for game in games:
         assert isinstance(game.url, str)
         assert isinstance(game.move_by, int)
@@ -41,3 +44,5 @@ def validate_response(response):
         assert isinstance(game.rules, str)
         assert isinstance(game.white, str)
         assert isinstance(game.black, str)
+        assert isinstance(game.start_datetime, datetime)
+        assert isinstance(game.last_activity_datetime, datetime)

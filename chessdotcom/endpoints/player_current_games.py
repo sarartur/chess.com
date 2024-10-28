@@ -3,6 +3,7 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -82,3 +83,7 @@ class Game(object):
     rules: Optional[str]
     white: Optional[str]
     black: Optional[str]
+
+    def __post_init__(self):
+        self.start_datetime = from_timestamp(self.start_time)
+        self.last_activity_datetime = from_timestamp(self.last_activity)
