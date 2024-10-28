@@ -27,7 +27,7 @@ class ResponseBuilder(ResponseBuilder):
         return GetPlayerGameArchivesResponse(
             json=data,
             text=text,
-            archives=data.get("archives"),
+            archives=data.get("archives", []),
         )
 
 
