@@ -5,6 +5,7 @@ from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
 from .player_clubs import get_player_clubs
+from .player_current_games import get_player_current_games
 from .player_game_archives import get_player_game_archives
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
@@ -34,21 +35,6 @@ def is_player_online(username: str, tts=0, **request_options) -> ChessDotComResp
     """
     return Resource(
         uri=f"/player/{username}/is-online", tts=tts, request_options=request_options
-    )
-
-
-@Client.endpoint
-def get_player_current_games(
-    username: str, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
-                that a player is currently playing.
-    """
-    return Resource(
-        uri=f"/player/{username}/games", tts=tts, request_options=request_options
     )
 
 
