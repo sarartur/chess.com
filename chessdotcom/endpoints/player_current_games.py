@@ -57,6 +57,7 @@ class ResponseBuilder(ResponseBuilder):
                 rules=game.get("rules"),
                 white=game.get("white"),
                 black=game.get("black"),
+                draw_offer=game.get("draw_offer"),
             )
             for game in data
         ]
@@ -91,6 +92,7 @@ class Game(object):
     :ivar rules: The ruleset being used for the game.
     :ivar white: The username of the player with the white pieces.
     :ivar black: The username of the player with the black pieces.
+    :draw_offer: Player who has made a draw offer
     """
 
     url: Optional[str]
@@ -106,6 +108,7 @@ class Game(object):
     rules: Optional[str]
     white: Optional[str]
     black: Optional[str]
+    draw_offer: Optional[str]
 
     def __post_init__(self):
         self.start_datetime = from_timestamp(self.start_time)

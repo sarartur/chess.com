@@ -63,3 +63,4 @@ def validate_response(response):
         assert isinstance(game.black, str)
         assert isinstance(game.start_datetime, datetime)
         assert isinstance(game.last_activity_datetime, datetime)
+        assert isinstance(game.draw_offer, (str, type(None)))
