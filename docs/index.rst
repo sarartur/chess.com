@@ -114,3 +114,4 @@ API Reference
    members/chessdotcom.endpoints.player_stats.rst
    members/chessdotcom.endpoints.player_clubs.rst
    members/chessdotcom.endpoints.player_game_archives.rst
+   members/chessdotcom.endpoints.player_current_games.rst

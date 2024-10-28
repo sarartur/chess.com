@@ -1,3 +1,10 @@
+"""
+Array of Daily Chess games that a player is currently playing.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-games-current
+"""
+
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -9,11 +16,11 @@ from ..utils import from_timestamp
 @Client.endpoint
 def get_player_current_games(
     username: str, tts=0, **request_options
-) -> ChessDotComResponse:
+) -> "GetPlayerCurrentGamesResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
+    :returns: :obj:`GetPlayerCurrentGamesResponse` object containing a list of Daily Chess games
                 that a player is currently playing.
     """
     return Resource(
@@ -57,7 +64,7 @@ class ResponseBuilder(ResponseBuilder):
 
 class GetPlayerCurrentGamesResponse(ChessDotComResponse):
     """
-    :ivar games: array of URLs for monthly archives in ascending chronological order.
+    :ivar games: Array of :obj:`Game`` objects.
     :ivar json: The JSON response from the API.
     :ivar text: The raw text response from the API.
     """
@@ -70,6 +77,22 @@ class GetPlayerCurrentGamesResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Game(object):
+    """
+    :ivar url: The URL of the game.
+    :ivar move_by: The timestamp by which the next move must be made.
+    :ivar pgn: The PGN (Portable Game Notation) of the game.
+    :ivar time_control: The time control setting of the game.
+    :ivar start_time: The start time of the game as a timestamp.
+    :ivar last_activity: The timestamp of the last activity in the game.
+    :ivar rated: Indicates if the game is rated.
+    :ivar turn: The player whose turn it is to move.
+    :ivar fen: The FEN (Forsyth-Edwards Notation) of the current game state.
+    :ivar time_class: The time class of the game (e.g., blitz, bullet).
+    :ivar rules: The ruleset being used for the game.
+    :ivar white: The username of the player with the white pieces.
+    :ivar black: The username of the player with the black pieces.
+    """
+
     url: Optional[str]
     move_by: Optional[int]
     pgn: Optional[str]
