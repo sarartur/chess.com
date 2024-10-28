@@ -92,7 +92,7 @@ class Game(object):
     :ivar rules: The ruleset being used for the game.
     :ivar white: The username of the player with the white pieces.
     :ivar black: The username of the player with the black pieces.
-    :draw_offer: Player who has made a draw offer
+    :ivar draw_offer: Player who has made a draw offer
     """
 
     url: Optional[str]
