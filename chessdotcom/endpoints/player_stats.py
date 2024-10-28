@@ -124,6 +124,8 @@ class GetPlayerStatsResponse(ChessDotComResponse):
 class PlayerStats(object):
     """
     :ivar fide: The FIDE rating of the player.
+    :ivar chess_daily: :obj:`GameStats`: the player's statistics in daily chess games.
+    :ivar chess960_daily: :obj:`GameStats`: the player's statistics in daily chess960 games.
     :ivar chess_rapid: :obj:`GameStats`: the player's statistics in rapid chess games.
     :ivar chess_bullet: :obj:`GameStats`: the player's statistics in bullet chess games.
     :ivar chess_blitz: :obj:`GameStats`: the player's statistics in blitz chess games.
