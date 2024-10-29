@@ -21,7 +21,7 @@ def get_player_games_by_month(
     datetime_obj: Optional[Union[datetime, None]] = None,
     tts=0,
     **request_options,
-) -> ChessDotComResponse:
+) -> "GetPlayerGamesByMonthResponse":
     """
     :param username: username of the player.
     :param year: the year (yyyy).
@@ -29,7 +29,7 @@ def get_player_games_by_month(
     :param date: datetime.datetime of the month. Can be passed in instead of month
                     and year parameters.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of live and daily
+    :returns: :obj:`GetPlayerGamesByMonthResponse` object containing a list of live and daily
                 Chess games that a player has finished.
     """
     yyyy, mm = resolve_date(year, month, datetime_obj)
@@ -93,6 +93,12 @@ class ResponseBuilder(ResponseBuilder):
 
 
 class GetPlayerGamesByMonthResponse(ChessDotComResponse):
+    """
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    :ivar games: A list of :obj:`Game` objects.
+    """
+
     def __init__(self, json, text, games):
         self.text = text
         self.json = json
@@ -101,6 +107,24 @@ class GetPlayerGamesByMonthResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Game(object):
+    """
+    :ivar url: URL of the game.
+    :ivar pgn: PGN (Portable Game Notation) of the game.
+    :ivar time_control: Time control of the game.
+    :ivar start_time: Start time of the game in epoch format.
+    :ivar end_time: End time of the game in epoch format.
+    :ivar accuracies: :obj:`Accuracies`: accuracies of the players in the game.
+    :ivar tcn: TCN (Tournament Chess Notation) of the game.
+    :ivar uuid: UUID of the game.
+    :ivar initial_setup: Initial setup of the game in FEN format.
+    :ivar fen: FEN (Forsyth-Edwards Notation) of the game.
+    :ivar time_class: Time class of the game.
+    :ivar rules: Rules of the game.
+    :ivar eco: ECO (Encyclopaedia of Chess Openings) code of the game.
+    :ivar white: :obj:`PlayerStats`: stats of the white player.
+    :ivar black: :obj:`PlayerStats`: stats of the black player.
+    """
+
     url: Optional[str]
     pgn: Optional[str]
     time_control: Optional[str]
@@ -120,12 +144,25 @@ class Game(object):
 
 @dataclass(repr=True)
 class Accuracies(object):
+    """
+    :ivar white: Accuracy score for the white player.
+    :ivar black: Accuracy score for the black player.
+    """
+
     white: Optional[str]
     black: Optional[str]
 
 
 @dataclass(repr=True)
 class PlayerStats(object):
+    """
+    :ivar rating: The player's rating.
+    :ivar result: The result of the game for the player.
+    :ivar username: The username of the player.
+    :ivar id: The ID of the player.
+    :ivar uuid: The UUID of the player.
+    """
+
     rating: Optional[int]
     result: Optional[str]
     username: Optional[str]
