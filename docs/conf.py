@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, os.path.abspath(".."))
 
+import chessdotcom  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
@@ -22,9 +23,7 @@ project = "Chess.com Wrapper"
 copyright = "2024, Artur Saradzhyan"
 author = "Artur Saradzhyan"
 
-# The full version, including alpha/beta/rc tags
-release = "3.5.0"
-
+release = chessdotcom.__version__
 
 # -- General configuration ---------------------------------------------------
 

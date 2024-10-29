@@ -19,11 +19,10 @@ dependencies = [
   "aiohttp>=3",
   "requests>=2",
 ]
+dynamic = ["version"]
 
 [project.urls]
-Homepage = "https://github.com/pypa/sampleproject"
-Issues = "https://github.com/pypa/sampleproject/issues"
-
+Homepage = "https://github.com/sarartur/chess.com"
 
 [tool.setuptools.dynamic]
 version = {attr = "chessdotcom.__version__"}
