@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 from tests.vcr import vcr
@@ -28,9 +30,27 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_player_games_by_month.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_player_games_by_month(
+        username="fabianocaruana", year="2020", month="05"
+    )
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.games, list)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("games") is not None
 
     games = response.games
     for game in games:
