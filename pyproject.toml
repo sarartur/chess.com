@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chess.com"
+authors = [
+  { name="Artur Saradzhyan", email="sarartur.ruk@gmail.com" },
+]
+description = "Python Wrapper for Chess.com API"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "aiohttp>=3",
+  "requests>=2",
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+
+[tool.setuptools.dynamic]
+version = {attr = "chessdotcom.__version__"}
