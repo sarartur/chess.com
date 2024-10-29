@@ -10,7 +10,7 @@ from typing import Optional, Union
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
-from ..utils import resolve_date
+from ..utils import from_timestamp, resolve_date
 
 
 @Client.endpoint
@@ -140,6 +140,10 @@ class Game(object):
     eco: Optional[str]
     white: Optional["PlayerStats"]
     black: Optional["PlayerStats"]
+
+    def __post_init__(self):
+        self.start_datetime = from_timestamp(self.start_time)
+        self.end_datetime = from_timestamp(self.end_time)
 
 
 @dataclass(repr=True)

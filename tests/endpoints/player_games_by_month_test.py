@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -69,6 +70,8 @@ def validate_response(response):
         assert isinstance(game.time_class, str)
         assert isinstance(game.rules, str)
         assert isinstance(game.eco, str)
+        assert isinstance(game.end_datetime, datetime)
+        assert isinstance(game.start_datetime, (datetime, type(None)))
 
         assert isinstance(game.white.rating, int)
         assert isinstance(game.white.result, str)
