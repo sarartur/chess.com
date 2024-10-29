@@ -10,7 +10,7 @@ requires = [
 
 setuptools.setup(
     name="chess.com",
-    version="3.4.0",
+    version="3.5.0",
     author="Artur Saradzhyan",
     author_email="sarartur.ruk@gmail.com",
     description="Python Wrapper for Chess.com API",
