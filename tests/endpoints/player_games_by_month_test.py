@@ -53,11 +53,13 @@ def validate_response(response):
     assert response.json.get("games") is not None
 
     games = response.games
+    assert len(games) > 0
     for game in games:
         assert isinstance(game.url, str)
         assert isinstance(game.pgn, str)
         assert isinstance(game.time_control, str)
         assert isinstance(game.end_time, int)
+        assert isinstance(game.start_time, (int, type(None)))
         assert isinstance(game.accuracies.white, float)
         assert isinstance(game.accuracies.black, float)
         assert isinstance(game.tcn, str)
