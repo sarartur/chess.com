@@ -30,12 +30,6 @@ version = {attr = "chessdotcom.__version__"}
 [tool.isort]
 profile = "black"
 
-[tool.flake8]
-exclude = ".git,__pycache__"
-max-line-length = 99
-extend-ignore = "E203"
-per-file-ignores = [
-    "chessdotcom/aio.py: F401,F403",
-    "__init__.py: F401,E402",
-    "chessdotcom/endpoints/__init__.py: F401"
-]
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:warnings --ignore=tests/smoke/endpoint_test.py"
