@@ -22,10 +22,11 @@ jobs:
           python-version: 3.11
       - name: Install publishing dependencies
         run: |
-          pip install setuptools wheel twine
+          python3 -m pip install --upgrade build
+          python3 -m pip install --upgrade twine
       - name: Build and Upload to PyPi
         run: |
-          python3 setup.py sdist bdist_wheel
+          python3 -m build
           python3 -m twine upload dist/*
         env:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}

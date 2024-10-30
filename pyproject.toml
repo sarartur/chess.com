@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chess.com"
+authors = [
+  { name="Artur Saradzhyan", email="sarartur.ruk@gmail.com" },
+]
+description = "Python Wrapper for Chess.com API"
+keywords = ['chess', 'chess.com']
+readme = "README.md"
+license = {text = "MIT License"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "aiohttp>=3",
+  "requests>=2",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/sarartur/chess.com"
+Documentation = "https://chesscom.readthedocs.io"
+
+[tool.setuptools.dynamic]
+version = {attr = "chessdotcom.__version__"}
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:warnings --ignore=tests/smoke/endpoint_test.py"
+
+[tool.bandit]
+exclude_dirs = ["tests/*"]
