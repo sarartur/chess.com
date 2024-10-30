@@ -8,6 +8,7 @@ authors = [
   { name="Artur Saradzhyan", email="sarartur.ruk@gmail.com" },
 ]
 description = "Python Wrapper for Chess.com API"
+keywords = ['chess', 'chess.com']
 readme = "README.md"
 license = {file = "LICENSE.txt"}
 requires-python = ">=3.8"
