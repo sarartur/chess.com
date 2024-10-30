@@ -23,6 +23,7 @@ dynamic = ["version"]
 
 [project.urls]
 Homepage = "https://github.com/sarartur/chess.com"
+Documentation = "https://chesscom.readthedocs.io"
 
 [tool.setuptools.dynamic]
 version = {attr = "chessdotcom.__version__"}
