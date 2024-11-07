@@ -1,3 +1,4 @@
+import warnings
 from dataclasses import dataclass
 from datetime import datetime
 from typing import Optional, Union
@@ -39,7 +40,7 @@ class ResponseBuilder(ResponseBuilder):
         return GetPlayerGamesByMonthResponsePgn(
             json={"pgn": {"pgn": text, "data": text}},
             text=text,
-            pgn=Pgn(pgn=text, data=text),
+            pgn=Pgn(data=text),
         )
 
 
@@ -63,5 +64,12 @@ class Pgn(object):
     :ivar pgn: Same as `data`, keeps backwards compatibility.
     """
 
-    pgn: Optional[str]
     data: Optional[str]
+
+    @property
+    def pgn(self):
+        warnings.warn(
+            "Pgn.pgn is deprecated, use Pgn.data instead.", DeprecationWarning
+        )
+
+        return self.data
