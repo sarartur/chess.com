@@ -88,6 +88,12 @@ class GetPlayerTournamentsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Tournaments(object):
+    """
+    :ivar finished: List of :obj:`FinishedTournament` objects.
+    :ivar in_progress: List of :obj:`InProgressTournament` objects.
+    :ivar registered: List of :obj:`RegisteredTournament` objects.
+    """
+
     finished: list
     in_progress: list
     registered: list
@@ -95,6 +101,20 @@ class Tournaments(object):
 
 @dataclass(repr=True)
 class FinishedTournament(object):
+    """
+    Represents a finished tournament.
+    :ivar url: The URL of the tournament.
+    :ivar id: The unique identifier of the tournament.
+    :ivar wins: The number of wins by the player in the tournament.
+    :ivar losses: The number of losses by the player in the tournament.
+    :ivar draws: The number of draws by the player in the tournament.
+    :ivar placement: The final placement of the player in the tournament.
+    :ivar status: The status of the tournament.
+    :ivar total_players: The total number of players in the tournament.
+    :ivar time_class: The time control class of the tournament (e.g., blitz, bullet, rapid).
+    :ivar type: The type of the tournament.
+    """
+
     url: str
     id: str
     wins: int
@@ -109,6 +129,13 @@ class FinishedTournament(object):
 
 @dataclass(repr=True)
 class InProgressTournament(object):
+    """
+    Represents an in-progress tournament.
+    :ivar url: The URL of the tournament.
+    :ivar id: The unique identifier of the tournament.
+    :ivar status: The current status of the tournament.
+    """
+
     url: str
     id: str
     status: str
@@ -116,6 +143,13 @@ class InProgressTournament(object):
 
 @dataclass(repr=True)
 class RegisteredTournament(object):
+    """
+    Represents a registered tournament.
+    :ivar url: The URL of the tournament.
+    :ivar id: The unique identifier of the tournament.
+    :ivar status: The current status of the tournament.
+    """
+
     url: str
     id: str
     status: str
