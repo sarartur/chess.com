@@ -55,7 +55,7 @@ class ResponseBuilder(ResponseBuilder):
                 in_progress=[
                     InProgressTournament(
                         url=tournament.get("url"),
-                        id=tournament.get("id"),
+                        id=tournament.get("@id"),
                         status=tournament.get("status"),
                     )
                     for tournament in data.get("in_progress", [])
@@ -103,6 +103,7 @@ class Tournaments(object):
 class FinishedTournament(object):
     """
     Represents a finished tournament.
+
     :ivar url: The URL of the tournament.
     :ivar id: The unique identifier of the tournament.
     :ivar wins: The number of wins by the player in the tournament.
@@ -131,6 +132,7 @@ class FinishedTournament(object):
 class InProgressTournament(object):
     """
     Represents an in-progress tournament.
+
     :ivar url: The URL of the tournament.
     :ivar id: The unique identifier of the tournament.
     :ivar status: The current status of the tournament.
@@ -145,6 +147,7 @@ class InProgressTournament(object):
 class RegisteredTournament(object):
     """
     Represents a registered tournament.
+
     :ivar url: The URL of the tournament.
     :ivar id: The unique identifier of the tournament.
     :ivar status: The current status of the tournament.
