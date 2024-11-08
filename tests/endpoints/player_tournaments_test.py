@@ -1,5 +1,8 @@
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.player_tournaments import Tournaments
 from tests.vcr import vcr
 
 
@@ -25,7 +28,16 @@ async def test_with_async_client(async_client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
-    assert response.tournaments is not None
+    assert isinstance(response.tournaments, Tournaments)
+
+
+@vcr.use_cassette("get_player_tournaments.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_player_tournaments(username="fabianocaruana")
+
+    validate_response_structure(response)
 
 
 def validate_response(response):
