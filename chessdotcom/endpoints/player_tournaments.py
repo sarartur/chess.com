@@ -13,11 +13,11 @@ from ..response_builder import ChessDotComResponse, ResponseBuilder
 @Client.endpoint
 def get_player_tournaments(
     username: str, tts=0, **request_options
-) -> ChessDotComResponse:
+) -> "GetPlayerTournamentsResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a
+    :returns: ``GetPlayerTournamentsResponse`` object containing a
                 list of tournaments the player is registered,
                 is attending or has attended in the past.
     """

@@ -117,3 +117,4 @@ API Reference
    members/chessdotcom.endpoints.player_current_games.rst
    members/chessdotcom.endpoints.player_games_by_month.rst
    members/chessdotcom.endpoints.player_games_by_month_pgn.rst
+   members/chessdotcom.endpoints.player_tournaments.rst
