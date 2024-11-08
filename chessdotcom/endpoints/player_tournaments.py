@@ -17,7 +17,7 @@ def get_player_tournaments(
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``GetPlayerTournamentsResponse`` object containing a
+    :returns: :obj:`GetPlayerTournamentsResponse` object containing a
                 list of tournaments the player is registered,
                 is attending or has attended in the past.
     """
