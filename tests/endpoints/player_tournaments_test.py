@@ -22,7 +22,17 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
+def validate_response_structure(response):
+    assert isinstance(response.json, dict)
+    assert isinstance(response.text, str)
+    assert response.tournaments is not None
+
+
 def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("tournaments") is not None
+
     tournaments = response.tournaments
     for tournament in tournaments.finished:
         assert isinstance(tournament.url, str)
