@@ -21,7 +21,6 @@ class DefaultResponseBuilder(ResponseBuilder):
         return ChessDotComResponse(
             text=text,
             top_level_attribute=self.resource.top_level_attribute,
-            no_json=self.resource.no_json,
         )
 
 
@@ -46,15 +45,11 @@ class ChessDotComResponse(object):
     :ivar text: API's raw response decoded into a string.
     """
 
-    def __init__(
-        self, text: str, top_level_attribute: str = None, no_json=False
-    ) -> None:
+    def __init__(self, text: str, top_level_attribute: str = None) -> None:
         self.text = text
-        self._parse_text(top_level_attribute, no_json)
+        self._parse_text(top_level_attribute)
 
-    def _parse_text(self, top_level_attribute: str, no_json) -> None:
-        if no_json:
-            self.text = json.dumps({top_level_attribute: self.text})
+    def _parse_text(self, top_level_attribute: str) -> None:
         try:
             self._create_json_attr(top_level_attribute)
             self._create_object_attrs(top_level_attribute)
