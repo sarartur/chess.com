@@ -193,7 +193,6 @@ class Resource(object):
         self,
         uri="",
         top_level_attribute=None,
-        no_json=False,
         tts=0,
         request_options=None,
         times_requested=0,
@@ -201,7 +200,6 @@ class Resource(object):
     ):
         self.url = self.HOST + uri
         self.top_level_attribute = top_level_attribute
-        self.no_json = no_json
         self.tts = tts
         self.times_requested = times_requested
 

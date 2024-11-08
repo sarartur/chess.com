@@ -11,6 +11,7 @@ from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
+from .player_tournaments import get_player_tournaments
 
 
 @Client.endpoint
@@ -72,25 +73,6 @@ def get_player_team_matches(
         uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attribute="matches",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_player_tournaments(
-    username: str, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a
-                list of tournaments the player is registered,
-                is attending or has attended in the past.
-    """
-    return Resource(
-        uri=f"/player/{username}/tournaments",
-        tts=tts,
-        top_level_attribute="tournaments",
         request_options=request_options,
     )
 
