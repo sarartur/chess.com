@@ -1,3 +1,9 @@
+"""
+List of tournaments the player is registered, is attending or has attended in the past.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player-tournaments
+"""
+
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 
