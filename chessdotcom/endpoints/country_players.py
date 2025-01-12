@@ -1,5 +1,5 @@
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse
+from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
@@ -11,5 +11,33 @@ def get_country_players(iso: str, tts=0, **request_options) -> ChessDotComRespon
                 who identify themselves as being in this country.
     """
     return Resource(
-        uri=f"/country/{iso}/players", tts=tts, request_options=request_options
+        uri=f"/country/{iso}/players",
+        tts=tts,
+        request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
+
+
+class ResponseBuilder(ResponseBuilder):
+    def build(self, text):
+        data = self.serializer.deserialize(text)
+
+        return GetCountryPlayersResponse(
+            json={"players": data}, text=text, players=self._build_players(data)
+        )
+
+    def _build_players(self, data):
+        return [club for club in data.get("players", [])]
+
+
+class GetCountryPlayersResponse(ChessDotComResponse):
+    """
+    :ivar players: Holds list of URLs for clubs.
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    """
+
+    def __init__(self, json, text, players):
+        self.json = json
+        self.text = text
+        self.players = players
