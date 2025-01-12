@@ -1,3 +1,5 @@
+from unittest.mock import patch
+
 import pytest
 
 from tests.vcr import vcr
@@ -22,8 +24,24 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_country_clubs.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_country_clubs(iso="XE")
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.clubs, list)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("clubs") is not None
 
     assert all(isinstance(club, str) for club in response.clubs)

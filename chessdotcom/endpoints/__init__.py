@@ -4,6 +4,9 @@ from typing import Optional, Union
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
+from .country_clubs import get_country_clubs
+from .country_details import get_country_details
+from .country_players import get_country_players
 from .player_clubs import get_player_clubs
 from .player_current_games import get_player_current_games
 from .player_game_archives import get_player_game_archives
@@ -246,48 +249,6 @@ def get_team_match_live_board(
         tts=tts,
         top_level_attribute="match_board",
         request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_country_details(iso: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param iso: country's 2-character ISO 3166 code.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                additional details about a country.
-    """
-    return Resource(
-        uri=f"/country/{iso}",
-        tts=tts,
-        top_level_attribute="country",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_country_players(iso: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param iso: country's 2-character ISO 3166 code.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of usernames for players
-                who identify themselves as being in this country.
-    """
-    return Resource(
-        uri=f"/country/{iso}/players", tts=tts, request_options=request_options
-    )
-
-
-@Client.endpoint
-def get_country_clubs(iso: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param iso: country's 2-character ISO 3166 code.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of URLs for clubs identified
-                as being in or associated with this country.
-    """
-    return Resource(
-        uri=f"/country/{iso}/clubs", tts=tts, request_options=request_options
     )
 
 

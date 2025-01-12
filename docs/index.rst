@@ -118,3 +118,6 @@ API Reference
    members/chessdotcom.endpoints.player_games_by_month.rst
    members/chessdotcom.endpoints.player_games_by_month_pgn.rst
    members/chessdotcom.endpoints.player_tournaments.rst
+   members/chessdotcom.endpoints.country_clubs.rst
+   members/chessdotcom.endpoints.country_players.rst
+   members/chessdotcom.endpoints.country_details.rst
