@@ -86,6 +86,13 @@ def test_do_get_request_sync_error(mock_requests):
     assert err.value.text == json.dumps(mock_data)
     assert err.value.json == mock_data
     assert err.value.headers == {"Content-Type": "application/json"}
+    assert err.value.url == "https://api.chess.com/pub/player/fabianocaruana"
+    assert str(err.value) == (
+        "ChessDotComClientError("
+        "status_code=404, "
+        'text={"message": "does not exist"}, '
+        "url=https://api.chess.com/pub/player/fabianocaruana)"
+    )
 
 
 @pytest.mark.asyncio
@@ -134,6 +141,13 @@ async def test_do_get_request_async_error(mock_session_get):
     assert err.value.text == json.dumps(mock_data)
     assert err.value.json == mock_data
     assert err.value.headers == {"Content-Type": "application/json"}
+    assert err.value.url == "https://api.chess.com/pub/player/fabianocaruana"
+    assert str(err.value) == (
+        "ChessDotComClientError("
+        "status_code=404, "
+        'text={"message": "does not exist"}, '
+        "url=https://api.chess.com/pub/player/fabianocaruana)"
+    )
 
 
 @patch("chessdotcom.client.requests")

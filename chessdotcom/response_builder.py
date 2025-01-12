@@ -18,7 +18,11 @@ class ResponseBuilder(object):
             response_text=response_text,
             headers=headers,
             json=self._build_json(response_text),
+            url=self.resource.url,
         )
+
+    def register_resource(self, resource):
+        self.resource = resource
 
     def _build_json(self, response_text: str):
         try:
@@ -28,11 +32,6 @@ class ResponseBuilder(object):
 
 
 class DefaultResponseBuilder(ResponseBuilder):
-    def __init__(self, resource) -> None:
-        self.resource = resource
-
-        super().__init__()
-
     def build(self, text):
         return ChessDotComResponse(
             text=text,

@@ -201,6 +201,7 @@ class Resource(object):
         self.top_level_attribute = top_level_attribute
         self.tts = tts
         self.times_requested = times_requested
-
         self.request_options = request_options or {}
-        self.response_builder = response_builder or DefaultResponseBuilder(self)
+
+        self.response_builder = response_builder or DefaultResponseBuilder()
+        self.response_builder.register_resource(self)
