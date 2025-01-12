@@ -1,3 +1,9 @@
+"""
+List of URLs for clubs identified as being in or associated with this country.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-clubs
+"""
+
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
 
@@ -7,7 +13,7 @@ def get_country_clubs(iso: str, tts=0, **request_options) -> "GetCountryClubsRes
     """
     :param iso: country's 2-character ISO 3166 code.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of URLs for clubs identified
+    :returns: ``GetCountryClubsResponse`` object containing a list of URLs for clubs identified
                 as being in or associated with this country.
     """
     return Resource(
@@ -32,7 +38,7 @@ class ResponseBuilder(ResponseBuilder):
 
 class GetCountryClubsResponse(ChessDotComResponse):
     """
-    :ivar clubs: Holds an array of :obj:`Club` objects.
+    :ivar clubs: Holds list of URLs for clubs.
     :ivar json: The JSON response from the API.
     :ivar text: The raw text response from the API.
     """
