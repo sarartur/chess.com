@@ -23,7 +23,6 @@ def get_country_details(
     return Resource(
         uri=f"/country/{iso}",
         tts=tts,
-        top_level_attribute="country",
         request_options=request_options,
         response_builder=ResponseBuilder(),
     )
