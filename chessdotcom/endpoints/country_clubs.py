@@ -13,7 +13,7 @@ def get_country_clubs(iso: str, tts=0, **request_options) -> "GetCountryClubsRes
     """
     :param iso: country's 2-character ISO 3166 code.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``GetCountryClubsResponse`` object containing a list of URLs for clubs identified
+    :returns: :obj:`GetCountryClubsResponse` object containing a list of URLs for clubs identified
                 as being in or associated with this country.
     """
     return Resource(

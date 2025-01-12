@@ -1,13 +1,21 @@
+"""
+List of usernames for players who identify themselves as being in this country.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-players
+"""
+
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
-def get_country_players(iso: str, tts=0, **request_options) -> ChessDotComResponse:
+def get_country_players(
+    iso: str, tts=0, **request_options
+) -> "GetCountryPlayersResponse":
     """
     :param iso: country's 2-character ISO 3166 code.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of usernames for players
+    :returns: :obj:`GetCountryPlayersResponse` object containing a list of usernames for players
                 who identify themselves as being in this country.
     """
     return Resource(
@@ -32,7 +40,7 @@ class ResponseBuilder(ResponseBuilder):
 
 class GetCountryPlayersResponse(ChessDotComResponse):
     """
-    :ivar players: Holds list of URLs for clubs.
+    :ivar players: Holds list of URLs for players.
     :ivar json: The JSON response from the API.
     :ivar text: The raw text response from the API.
     """
