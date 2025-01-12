@@ -120,3 +120,4 @@ API Reference
    members/chessdotcom.endpoints.player_tournaments.rst
    members/chessdotcom.endpoints.country_clubs.rst
    members/chessdotcom.endpoints.country_players.rst
+   members/chessdotcom.endpoints.country_details.rst

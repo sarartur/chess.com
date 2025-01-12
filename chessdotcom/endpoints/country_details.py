@@ -1,3 +1,9 @@
+"""
+Additional details about a country.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-country-profile
+"""
+
 from dataclasses import dataclass
 
 from ..client import Client, Resource
