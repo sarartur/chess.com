@@ -2,7 +2,7 @@ import json
 import re
 from types import SimpleNamespace
 
-from .errors import ChessDotComDecodingError
+from .errors import ChessDotComClientError, ChessDotComDecodingError
 
 
 class ResponseBuilder(object):
@@ -12,10 +12,26 @@ class ResponseBuilder(object):
     def build(self, text):
         raise NotImplementedError("Method must be defined by the child class")
 
+    def build_client_error(self, status_code: int, response_text: str, headers: dict):
+        return ChessDotComClientError(
+            status_code=status_code,
+            response_text=response_text,
+            headers=headers,
+            json=self._build_json(response_text),
+        )
+
+    def _build_json(self, response_text: str):
+        try:
+            return self.serializer.deserialize(response_text)
+        except ChessDotComDecodingError:
+            return {}
+
 
 class DefaultResponseBuilder(ResponseBuilder):
     def __init__(self, resource) -> None:
         self.resource = resource
+
+        super().__init__()
 
     def build(self, text):
         return ChessDotComResponse(

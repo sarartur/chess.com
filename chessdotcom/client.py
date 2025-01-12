@@ -7,7 +7,6 @@ from functools import wraps
 import requests
 from aiohttp import ClientSession
 
-from .errors import ChessDotComClientError
 from .response_builder import DefaultResponseBuilder
 
 
@@ -110,7 +109,7 @@ class Client:
         if r.status_code != 200:
             if self.rate_limit_handler.should_try_again(r.status_code, resource):
                 return self._do_sync_get_request(resource)
-            raise ChessDotComClientError(
+            raise resource.response_builder.build_client_error(
                 status_code=r.status_code, response_text=r.text, headers=r.headers
             )
         return resource.response_builder.build(r.text)
@@ -126,7 +125,7 @@ class Client:
                 if r.status != 200:
                     if self.rate_limit_handler.should_try_again(r.status, resource):
                         return await self._do_async_get_request(resource)
-                    raise ChessDotComClientError(
+                    raise resource.response_builder.build_client_error(
                         status_code=r.status, response_text=text, headers=r.headers
                     )
                 return resource.response_builder.build(text)
