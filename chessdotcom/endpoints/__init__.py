@@ -1,10 +1,8 @@
-from datetime import datetime
-from typing import Optional, Union
-
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
 from .club_details import get_club_details
+from .club_members import get_club_members
 from .country_clubs import get_country_clubs
 from .country_details import get_country_details
 from .country_players import get_country_players
@@ -77,21 +75,6 @@ def get_player_team_matches(
         uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attribute="matches",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_club_members(url_id: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param url_id: URL for the club's web page on www.chess.com.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of club members.
-    """
-    return Resource(
-        uri=f"/club/{url_id}/members",
-        tts=tts,
-        top_level_attribute="members",
         request_options=request_options,
     )
 
