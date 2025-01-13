@@ -10,6 +10,7 @@ from dataclasses import dataclass
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -80,7 +81,11 @@ class ClubMembersDetails(object):
     """
     :ivar username: The username of the club member.
     :ivar joined: The timestamp of when the club member joined
+    :ivar joined_datetime: The datetime of when the club member joined
     """
 
     username: str
     joined: int
+
+    def __post_init__(self):
+        self.joined_datetime = from_timestamp(self.joined)

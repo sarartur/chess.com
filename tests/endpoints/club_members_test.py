@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -46,14 +47,14 @@ def validate_response(response):
     validate_response_structure(response)
 
     members = response.members
-    for member in members.weekly:
-        assert isinstance(member.username, str)
-        assert isinstance(member.joined, int)
 
-    for member in members.monthly:
-        assert isinstance(member.username, str)
-        assert isinstance(member.joined, int)
+    validate_members(members.weekly)
+    validate_members(members.monthly)
+    validate_members(members.all_time)
 
-    for member in members.all_time:
+
+def validate_members(members):
+    for member in members:
         assert isinstance(member.username, str)
         assert isinstance(member.joined, int)
+        assert isinstance(member.joined_datetime, datetime)
