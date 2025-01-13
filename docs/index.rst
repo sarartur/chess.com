@@ -122,3 +122,4 @@ API Reference
    members/chessdotcom.endpoints.country_players.rst
    members/chessdotcom.endpoints.country_details.rst
    members/chessdotcom.endpoints.club_details.rst
+   members/chessdotcom.endpoints.club_members.rst

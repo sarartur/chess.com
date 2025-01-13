@@ -1,3 +1,11 @@
+"""
+List of club members (usernames and joined date timestamp),
+grouped by club-activity frequency. The club-activity is one of this actions:
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club-members
+"""
+
+
 from dataclasses import dataclass
 
 from ..client import Client, Resource
@@ -56,6 +64,12 @@ class GetClubMembersResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class ClubMembers(object):
+    """
+    :ivar weekly: List of :obj:`ClubMembersDetails` objects.
+    :ivar monthly: List of :obj:`ClubMembersDetails` objects.
+    :ivar all_time: List of :obj:`ClubMembersDetails` objects.
+    """
+
     weekly: list
     monthly: list
     all_time: list
@@ -63,5 +77,10 @@ class ClubMembers(object):
 
 @dataclass(repr=True)
 class ClubMembersDetails(object):
+    """
+    :ivar username: The username of the club member.
+    :ivar joined: The timestamp of when the club member joined
+    """
+
     username: str
     joined: int
