@@ -1,5 +1,9 @@
+from datetime import datetime
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.club_details import ClubDetails
 from tests.vcr import vcr
 
 
@@ -24,9 +28,25 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_club_details.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_club_details(url_id="chess-com-developer-community")
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.club, ClubDetails)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("club") is not None
 
     club = response.club
     assert isinstance(club.name, str)
@@ -43,3 +63,5 @@ def validate_response(response):
     assert isinstance(club.visibility, str)
     assert isinstance(club.join_request, str)
     assert isinstance(club.description, str)
+    assert isinstance(club.last_activity_datetime, datetime)
+    assert isinstance(club.created_datetime, datetime)
