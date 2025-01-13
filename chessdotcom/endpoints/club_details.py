@@ -1,3 +1,10 @@
+"""
+Get additional details about a club.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club-profile
+"""
+
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -61,6 +68,23 @@ class GetClubDetailsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class ClubDetails(object):
+    """
+    :ivar name: Club's name.
+    :ivar url: URL for the club's web page on www.chess.com.
+    :ivar icon: URL for the club's icon.
+    :ivar country: Country's name.
+    :ivar id: The URL of the club's profile.
+    :ivar club_id: The club's ID.
+    :ivar average_daily_rating: The club's average daily rating.
+    :ivar members_count: The number of members in the club.
+    :ivar created: The time the club was created.
+    :ivar last_activity: The time of the club's last activity.
+    :ivar admin: List of club admins.
+    :ivar visibility: The club's visibility setting.
+    :ivar join_request: The club's join request setting.
+    :ivar description: The club's description.
+    """
+
     name: Optional[str]
     url: Optional[str]
     icon: Optional[str]
