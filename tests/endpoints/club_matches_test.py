@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -55,6 +56,7 @@ def validate_response(response):
         assert isinstance(match.start_time, int)
         assert isinstance(match.time_class, str)
         assert isinstance(match.result, str)
+        assert isinstance(match.start_datetime, datetime)
 
     for match in matches.in_progress:
         assert isinstance(match.name, str)
@@ -62,6 +64,7 @@ def validate_response(response):
         assert isinstance(match.opponent, str)
         assert isinstance(match.start_time, int)
         assert isinstance(match.time_class, str)
+        assert isinstance(match.start_datetime, datetime)
 
     for match in matches.registered:
         assert isinstance(match.name, str)
