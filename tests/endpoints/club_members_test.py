@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 import pytest
 
+from chessdotcom.endpoints.club_members import ClubMembers
 from tests.vcr import vcr
 
 
@@ -38,6 +39,7 @@ def test_empty_data(deserialize, client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.members, ClubMembers)
 
 
 def validate_response(response):
