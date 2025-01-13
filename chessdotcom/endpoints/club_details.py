@@ -1,16 +1,16 @@
 from dataclasses import dataclass
-from types import Optional
+from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
-def get_club_details(url_id: str, tts=0, **request_options) -> ChessDotComResponse:
+def get_club_details(url_id: str, tts=0, **request_options) -> "GetClubDetailsResponse":
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param tts: the time the client will wait before making the first request.
-    :returns: :obj:`ChessDotComResponse` object containing additional details about a club.
+    :returns: :obj:`GetClubDetailsResponse` object containing additional details about a club.
     """
     return Resource(
         uri=f"/club/{url_id}",

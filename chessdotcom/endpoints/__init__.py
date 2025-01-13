@@ -4,6 +4,7 @@ from typing import Optional, Union
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse
 from ..utils import resolve_date
+from .club_details import get_club_details
 from .country_clubs import get_country_clubs
 from .country_details import get_country_details
 from .country_players import get_country_players
@@ -76,21 +77,6 @@ def get_player_team_matches(
         uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attribute="matches",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_club_details(url_id: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param url_id: URL for the club's web page on www.chess.com.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing additional details about a club.
-    """
-    return Resource(
-        uri=f"/club/{url_id}",
-        tts=tts,
-        top_level_attribute="club",
         request_options=request_options,
     )
 
