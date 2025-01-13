@@ -10,6 +10,7 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -83,6 +84,8 @@ class ClubDetails(object):
     :ivar visibility: The club's visibility setting.
     :ivar join_request: The club's join request setting.
     :ivar description: The club's description.
+    :ivar last_activity_datetime: The last activity as a datetime object.
+    :ivar created_datetime: The created timestamp as a datetime object.
     """
 
     name: Optional[str]
@@ -99,3 +102,7 @@ class ClubDetails(object):
     visibility: Optional[str]
     join_request: Optional[str]
     description: Optional[str]
+
+    def __post_init__(self):
+        self.last_activity_datetime = from_timestamp(self.last_activity)
+        self.created_datetime = from_timestamp(self.created)

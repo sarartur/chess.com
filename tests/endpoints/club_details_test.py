@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -62,3 +63,5 @@ def validate_response(response):
     assert isinstance(club.visibility, str)
     assert isinstance(club.join_request, str)
     assert isinstance(club.description, str)
+    assert isinstance(club.last_activity_datetime, datetime)
+    assert isinstance(club.created_datetime, datetime)
