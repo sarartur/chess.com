@@ -33,7 +33,7 @@ class ResponseBuilder(ResponseBuilder):
         data = self.serializer.deserialize(text)
 
         return GetClubMembersResponse(
-            json=data, text=text, members=self._build_members(data)
+            json={"members": data}, text=text, members=self._build_members(data)
         )
 
     def _build_members(self, data):

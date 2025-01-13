@@ -46,6 +46,8 @@ def validate_response_structure(response):
 def validate_response(response):
     validate_response_structure(response)
 
+    assert response.json.get("members") is not None
+
     members = response.members
 
     validate_members(members.weekly)
