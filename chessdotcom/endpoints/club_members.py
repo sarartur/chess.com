@@ -1,6 +1,6 @@
 """
 List of club members (usernames and joined date timestamp),
-grouped by club-activity frequency. The club-activity is one of this actions:
+grouped by club-activity frequency.
 
 API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club-members
 """
