@@ -75,6 +75,7 @@ class ResponseBuilder(ResponseBuilder):
             stats=data.get("stats"),
             status=data.get("status"),
             played_as_black=data.get("played_as_black"),
+            played_as_white=data.get("played_as_white"),
             rating=data.get("rating"),
             timeout_percent=data.get("timeout_percent"),
         )
