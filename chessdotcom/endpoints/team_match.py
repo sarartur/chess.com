@@ -1,3 +1,11 @@
+"""
+Get details about a team match and players playing that match.
+After the match is finished there will be a link to each player's stats endpoint,
+in order to get up-to-date information about the player.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-match-profile
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -7,11 +15,11 @@ from ..utils import dig
 
 
 @Client.endpoint
-def get_team_match(match_id: int, tts=0, **request_options) -> ChessDotComResponse:
+def get_team_match(match_id: int, tts=0, **request_options) -> "GetTeamMatchResponse":
     """
     :param match_id: the id of the match.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
+    :returns: :obj:`GetTeamMatchResponse` object containing
                 details about a team match and players playing that match.
     """
     return Resource(
@@ -96,6 +104,18 @@ class GetTeamMatchResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class TeamMatch(object):
+    """
+    :ivar name: The name of the match.
+    :ivar url: The URL of the match.
+    :ivar id: The unique identifier of the match.
+    :ivar status: The current status of the match.
+    :ivar start_time: The start time of the match in Unix timestamp.
+    :ivar end_time: The end time of the match in Unix timestamp.
+    :ivar boards: The number of boards in the match.
+    :ivar settings: The settings of the team match. Holds the :obj:`TeamMatchSettings` object.
+    :ivar teams: The teams participating in the match. Holds the :obj:`Teams` object.
+    """
+
     name: Optional[str]
     url: Optional[str]
     id: Optional[str]
@@ -109,6 +129,18 @@ class TeamMatch(object):
 
 @dataclass(repr=True)
 class TeamMatchSettings(object):
+    """
+    :ivar rules: The rules of the match.
+    :ivar time_class: The time class of the match.
+    :ivar time_control: The time control of the match.
+    :ivar min_team_players: The minimum number of players required in the team.
+    :ivar max_team_players: The maximum number of players required in the team.
+    :ivar min_required_games: The minimum number of games required to finish the match.
+    :ivar min_rating: The minimum rating required to participate in the match.
+    :ivar max_rating: The maximum rating required to participate in the match.
+    :ivar autostart: Whether the match will start automatically.
+    """
+
     rules: Optional[str]
     time_class: Optional[str]
     time_control: Optional[str]
@@ -122,12 +154,26 @@ class TeamMatchSettings(object):
 
 @dataclass(repr=True)
 class Teams(object):
+    """
+    :ivar team1: The first team participating in the match. Holds the :obj:`Team` object.
+    :ivar team2: The second team participating in the match. Holds the :obj:`Team` object
+    """
+
     team1: Optional["Team"]
     team2: Optional["Team"]
 
 
 @dataclass(repr=True)
 class Team(object):
+    """
+    :ivar id: The unique identifier of the team.
+    :ivar name: The name of the team.
+    :ivar url: The URL of the team.
+    :ivar score: The score of the team.
+    :ivar result: The result of the team.
+    :ivar players: List of :obj:`Player` objects.
+    """
+
     id: Optional[str]
     name: Optional[str]
     url: Optional[str]
@@ -138,6 +184,18 @@ class Team(object):
 
 @dataclass(repr=True)
 class Player(object):
+    """
+    :ivar username: The username of the player.
+    :ivar board: The board the player is playing on.
+    :ivar stats: The stats of the player.
+    :ivar status: The status of the player.
+    :ivar played_as_black: The result {win, lose, resign, etc.} of player when played as black.
+    :ivar played_as_white: The result {win, lose, resign, etc.} of player when played as white.
+    :ivar rating: The rating of the player.
+    :ivar timeout_percent: The timeout percentage of the player
+
+    """
+
     username: Optional[str]
     board: Optional[str]
     stats: Optional[str]

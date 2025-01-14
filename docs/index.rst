@@ -124,3 +124,4 @@ API Reference
    members/chessdotcom.endpoints.club_details.rst
    members/chessdotcom.endpoints.club_members.rst
    members/chessdotcom.endpoints.club_matches.rst
+   members/chessdotcom.endpoints.team_match.rst
