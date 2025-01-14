@@ -15,6 +15,7 @@ from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
+from .team_match import get_team_match
 
 
 @Client.endpoint
@@ -133,22 +134,6 @@ def get_tournament_round_group_details(
         uri=f"/tournament/{url_id}/{round_num}/{group_num}",
         tts=tts,
         top_level_attribute="tournament_round_group",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_team_match(match_id: int, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param match_id: the id of the match.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                details about a team match and players playing that match.
-    """
-    return Resource(
-        uri=f"/match/{match_id}",
-        tts=tts,
-        top_level_attribute="match",
         request_options=request_options,
     )
 
