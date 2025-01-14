@@ -142,5 +142,6 @@ class Player(object):
     stats: Optional[str]
     status: Optional[str]
     played_as_black: Optional[str]
+    played_as_white: Optional[str]
     rating: Optional[int]
     timeout_percent: Optional[float]

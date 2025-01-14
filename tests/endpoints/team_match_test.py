@@ -72,6 +72,7 @@ def validate_response(response):
             assert isinstance(player.stats, str)
             assert isinstance(player.status, str)
             assert isinstance(player.played_as_black, str)
+            assert isinstance(player.played_as_white, (str, type(None)))
             assert isinstance(player.board, str)
             assert isinstance(player.rating, (int, type(None)))
             assert isinstance(player.timeout_percent, (float, type(None)))
