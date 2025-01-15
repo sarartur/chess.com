@@ -15,9 +15,9 @@ from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
-from .team_live_match import get_team_match_live
 from .team_match import get_team_match
 from .team_match_board import get_team_match_board
+from .team_match_live import get_team_match_live
 
 
 @Client.endpoint
