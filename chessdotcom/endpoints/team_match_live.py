@@ -1,3 +1,11 @@
+"""
+Get details about a team match and players playing that match.
+After the match is finished there will be a link to each player's stats endpoint,
+in order to get up-to-date information about the player.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-match-live-profile
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
