@@ -1,3 +1,11 @@
+"""
+Get details about a team match board.
+Only in-progress or finished games will be included,
+so there may be one or two games in this list.
+
+API doc: "https://www.chess.com/news/view/published-data-api#pubapi-endpoint-match-live-board"
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
