@@ -15,6 +15,10 @@ from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
+from .team_match import get_team_match
+from .team_match_board import get_team_match_board
+from .team_match_live import get_team_match_live
+from .team_match_live_board import get_team_match_live_board
 
 
 @Client.endpoint
@@ -133,76 +137,6 @@ def get_tournament_round_group_details(
         uri=f"/tournament/{url_id}/{round_num}/{group_num}",
         tts=tts,
         top_level_attribute="tournament_round_group",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_team_match(match_id: int, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param match_id: the id of the match.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                details about a team match and players playing that match.
-    """
-    return Resource(
-        uri=f"/match/{match_id}",
-        tts=tts,
-        top_level_attribute="match",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_team_match_board(
-    match_id: int, board_num: int, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param match_id: the id of the match.
-    :param board_num: the number of the board.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                details about a team match board.
-    """
-    return Resource(
-        uri=f"/match/{match_id}/{board_num}",
-        tts=tts,
-        top_level_attribute="match_board",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_team_match_live(match_id: int, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param match_id: the id of the match.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                details about a team match and players playing that match.
-    """
-    return Resource(
-        uri=f"/match/live/{match_id}",
-        tts=tts,
-        top_level_attribute="match",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_team_match_live_board(
-    match_id: int, board_num: int, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param match_id: the id of the match.
-    :param board_num: the number of the board.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing details
-                about a team match board.
-    """
-    return Resource(
-        uri=f"/match/live/{match_id}/{board_num}",
-        tts=tts,
-        top_level_attribute="match_board",
         request_options=request_options,
     )
 

@@ -1,5 +1,9 @@
+from datetime import datetime
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.team_match import TeamMatch
 from tests.vcr import vcr
 
 
@@ -22,9 +26,25 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_team_match.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_team_match(match_id=12803)
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.match, TeamMatch)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("match") is not None
 
     match = response.match
 
@@ -43,6 +63,9 @@ def validate_response(response):
     assert isinstance(match.settings.min_required_games, int)
     assert isinstance(match.settings.autostart, bool)
 
+    assert isinstance(match.start_datetime, datetime)
+    assert isinstance(match.end_datetime, datetime)
+
     def validate_team(team):
         assert isinstance(team.id, str)
         assert isinstance(team.name, str)
@@ -55,7 +78,10 @@ def validate_response(response):
             assert isinstance(player.stats, str)
             assert isinstance(player.status, str)
             assert isinstance(player.played_as_black, str)
+            assert isinstance(player.played_as_white, (str, type(None)))
             assert isinstance(player.board, str)
+            assert isinstance(player.rating, (int, type(None)))
+            assert isinstance(player.timeout_percent, (float, type(None)))
 
     validate_team(match.teams.team1)
     validate_team(match.teams.team2)
