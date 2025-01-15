@@ -9,8 +9,9 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-matc
 from dataclasses import dataclass
 from typing import Optional
 
-from chessdotcom.client import Client, Resource
-from chessdotcom.response_builder import ChessDotComResponse, ResponseBuilder
+from ..client import Client, Resource
+from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -111,6 +112,8 @@ class Game(object):
     :ivar time_class: The time class of the game.
     :ivar rules: The rules of the game.
     :ivar match: The match of the game.
+    :ivar end_datetime: The end time as a datetime object.
+    :ivar start_datetime: The start time as a datetime object.
     :ivar white: The white player of the game. Holds the :obj:`GamePlayer` object.
     :ivar black: The black player of the game. Holds the :obj:`GamePlayer` object.
     """
@@ -128,6 +131,10 @@ class Game(object):
 
     white: Optional["GamePlayer"]
     black: Optional["GamePlayer"]
+
+    def __post_init__(self):
+        self.end_datetime = from_timestamp(self.end_time)
+        self.start_datetime = from_timestamp(self.start_time)
 
 
 @dataclass(repr=True)
