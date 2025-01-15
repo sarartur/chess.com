@@ -1,9 +1,9 @@
 name: Readthedocs Preview
 
 on:
-  pull_request_target:
-    types:
-      - opened
+  push:
+    branches-ignore:
+      - master
 
 permissions:
   pull-requests: write
