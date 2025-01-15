@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 import pytest
 
+from chessdotcom.endpoints.team_match_live_board import MatchBoard
 from tests.vcr import vcr
 
 
@@ -36,6 +37,7 @@ def test_empty_data(deserialize, client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.match_board, MatchBoard)
 
 
 def validate_response(response):
@@ -43,8 +45,7 @@ def validate_response(response):
 
     match_board = response.match_board
 
-    # board_scores = match_board.board_scores
-    # assert isinstance(board_scores, dict)
+    assert isinstance(match_board.board_scores, dict)
 
     games = match_board.games
     assert len(games) > 1
