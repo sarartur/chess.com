@@ -1,3 +1,11 @@
+"""
+Get details about a team match board.
+Only in-progress or finished games will be included,
+so there may be one or two games in this list.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-match-board
+"""
+
 from dataclasses import dataclass
 from typing import Optional
 
@@ -8,12 +16,12 @@ from chessdotcom.response_builder import ChessDotComResponse, ResponseBuilder
 @Client.endpoint
 def get_team_match_board(
     match_id: int, board_num: int, tts=0, **request_options
-) -> ChessDotComResponse:
+) -> "GetTeamMatchBoardResponse":
     """
     :param match_id: the id of the match.
     :param board_num: the number of the board.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
+    :returns: :obj:`GetTeamMatchBoardResponse` object containing
                 details about a team match board.
     """
     return Resource(
@@ -81,12 +89,32 @@ class GetTeamMatchBoardResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class MatchBoard(object):
+    """
+    :ivar board_scores: The board scores as a dictionary.
+    :ivar games: List of :obj:`Game` objects.
+    """
+
     games: list["Game"]
     board_scores: Optional[dict]
 
 
 @dataclass(repr=True)
 class Game(object):
+    """
+    :ivar url: URL for the game.
+    :ivar pgn: The PGN of the game.
+    :ivar time_control: The time control of the game.
+    :ivar end_time: The end time of the game.
+    :ivar start_time: The start time of the game.
+    :ivar rated: Whether the game is rated.
+    :ivar fen: The FEN of the game.
+    :ivar time_class: The time class of the game.
+    :ivar rules: The rules of the game.
+    :ivar match: The match of the game.
+    :ivar white: The white player of the game. Holds the :obj:`GamePlayer` object.
+    :ivar black: The black player of the game. Holds the :obj:`GamePlayer` object.
+    """
+
     url: Optional[str]
     pgn: Optional[str]
     time_control: Optional[str]
@@ -104,6 +132,14 @@ class Game(object):
 
 @dataclass(repr=True)
 class GamePlayer(object):
+    """
+    :ivar rating: The rating of the player.
+    :ivar result: The result of the player.
+    :ivar id: The ID of the player.
+    :ivar username: The username of the player.
+    :ivar uuid: The UUID of the player
+    """
+
     rating: Optional[int]
     result: Optional[str]
     id: Optional[str]
