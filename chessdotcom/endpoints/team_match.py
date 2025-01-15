@@ -114,6 +114,8 @@ class TeamMatch(object):
     :ivar boards: The number of boards in the match.
     :ivar settings: The settings of the team match. Holds the :obj:`TeamMatchSettings` object.
     :ivar teams: The teams participating in the match. Holds the :obj:`Teams` object.
+    :ivar start_datetime: The start time of the match as a datetime object.
+    :ivar end_datetime: The end time of the match as a datetime object.
     """
 
     name: Optional[str]
