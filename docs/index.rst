@@ -127,4 +127,4 @@ API Reference
    members/chessdotcom.endpoints.team_match.rst
    members/chessdotcom.endpoints.team_match_board.rst
    members/chessdotcom.endpoints.team_match_live.rst
-   members/chessdotcom.endpoints.team_match_live_board.rst
+   .. members/chessdotcom.endpoints.team_match_live_board.rst
