@@ -90,3 +90,5 @@ Chess.com API is subject to change. Smoke tests are ran daily to make sure the p
 Please open an [Issue](https://github.com/sarartur/chess.com/issues) if you spot any bugs.
 
 Small change
+
+Another small change
