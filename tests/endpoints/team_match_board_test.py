@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 import pytest
 
+from chessdotcom.endpoints.team_match_board import MatchBoard
 from tests.vcr import vcr
 
 
@@ -37,11 +38,11 @@ def test_empty_data(deserialize, client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.match_board, MatchBoard)
 
 
 def validate_response(response):
-    assert isinstance(response.json, dict)
-    assert isinstance(response.text, str)
+    validate_response_structure(response)
 
     assert response.json.get("match_board") is not None
 
