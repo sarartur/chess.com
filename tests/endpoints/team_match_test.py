@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -61,6 +62,9 @@ def validate_response(response):
     assert isinstance(match.settings.min_team_players, int)
     assert isinstance(match.settings.min_required_games, int)
     assert isinstance(match.settings.autostart, bool)
+
+    assert isinstance(match.start_datetime, datetime)
+    assert isinstance(match.end_datetime, datetime)
 
     def validate_team(team):
         assert isinstance(team.id, str)

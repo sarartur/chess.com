@@ -11,7 +11,7 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
-from ..utils import dig
+from ..utils import dig, from_timestamp
 
 
 @Client.endpoint
@@ -125,6 +125,10 @@ class TeamMatch(object):
     boards: Optional[int]
     settings: "TeamMatchSettings"
     teams: "Teams"
+
+    def __post_init__(self):
+        self.start_datetime = from_timestamp(self.start_time)
+        self.end_datetime = from_timestamp(self.end_time)
 
 
 @dataclass(repr=True)
