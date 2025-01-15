@@ -32,6 +32,7 @@ class ResponseBuilder(ResponseBuilder):
             json={"match_board": data},
             text=text,
             match_board=MatchBoard(
+                board_scores=data.get("board_scores"),
                 games=[
                     Game(
                         url=game.get("url"),
@@ -48,7 +49,7 @@ class ResponseBuilder(ResponseBuilder):
                         black=self._build_player(game.get("black")),
                     )
                     for game in data.get("games", [])
-                ]
+                ],
             ),
         )
 
@@ -81,6 +82,7 @@ class GetTeamMatchBoardResponse(ChessDotComResponse):
 @dataclass(repr=True)
 class MatchBoard(object):
     games: list["Game"]
+    board_scores: Optional[dict]
 
 
 @dataclass(repr=True)

@@ -45,7 +45,7 @@ def validate_response(response):
     assert response.json.get("match_board") is not None
 
     match_board = response.match_board
-    # assert isinstance(match_board.board_scores, dict)
+    assert isinstance(match_board.board_scores, dict)
 
     games = match_board.games
     for game in games:
