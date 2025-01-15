@@ -24,11 +24,11 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-@vcr.use_cassette("get_team_match.yaml")
+@vcr.use_cassette("get_team_match_live.yaml")
 @patch("chessdotcom.response_builder.Serializer.deserialize")
 def test_empty_data(deserialize, client):
     deserialize.return_value = {}
-    response = client.get_team_match(match_id=12803)
+    response = client.get_team_match_live(match_id=5833)
 
     validate_response_structure(response)
 
