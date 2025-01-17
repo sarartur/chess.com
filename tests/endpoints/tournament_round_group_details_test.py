@@ -1,5 +1,9 @@
+from datetime import datetime
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.tournament_round_group_details import TournamentRoundGroup
 from tests.vcr import vcr
 
 
@@ -28,9 +32,27 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_tournament_round_group_details.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_tournament_round_group_details(
+        url_id="-33rd-chesscom-quick-knockouts-1401-1600", round_num=1, group_num=1
+    )
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.tournament_round_group, TournamentRoundGroup)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("tournament_round_group") is not None
 
     tournament_round_group = response.tournament_round_group
     assert isinstance(tournament_round_group.fair_play_removals, list)
@@ -51,6 +73,14 @@ def validate_response(response):
         assert isinstance(game.start_time, int)
         assert isinstance(game.time_class, str)
         assert isinstance(game.rules, str)
+        assert isinstance(game.move_by, (int, type(None)))
+        assert isinstance(game.last_activity, (int, type(None)))
+        assert isinstance(game.draw_offer, (str, type(None)))
+
+        assert isinstance(game.end_datetime, datetime)
+        assert isinstance(game.start_datetime, datetime)
+        assert isinstance(game.last_activity_datetime, (datetime, type(None)))
+        assert isinstance(game.move_by_datetime, (datetime, type(None)))
 
         assert isinstance(game.white.rating, int)
         assert isinstance(game.white.result, str)

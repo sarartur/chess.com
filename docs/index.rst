@@ -3,9 +3,7 @@ Welcome to Chess.com Wrapper's Documentation!
 Description
 ------------
 A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
-website. All endpoints provided by Chess.com's API are available in the 
-respectively named methods. The package allows for simple interaction with the API, eliminating the need for
-repetitive code and testing.
+website.
 
 
 Indices and tables
@@ -23,7 +21,6 @@ Install from `PyPI <https://pypi.org/project/chess.com/>`_ ``pip install chess.c
 
 Retrieving Data
 ---------------
-All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
 
 Using client instance
 ^^^^^^^^^^^^^^^^^^^^^
@@ -128,3 +125,6 @@ API Reference
    members/chessdotcom.endpoints.team_match_board.rst
    members/chessdotcom.endpoints.team_match_live.rst
    members/chessdotcom.endpoints.team_match_live_board.rst
+   members/chessdotcom.endpoints.tournament_details.rst
+   members/chessdotcom.endpoints.tournament_round.rst
+   members/chessdotcom.endpoints.tournament_round_group_details.rst
