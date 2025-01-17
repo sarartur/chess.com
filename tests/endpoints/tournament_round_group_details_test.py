@@ -70,6 +70,9 @@ def validate_response(response):
         assert isinstance(game.start_time, int)
         assert isinstance(game.time_class, str)
         assert isinstance(game.rules, str)
+        assert isinstance(game.move_by, (int, type(None)))
+        assert isinstance(game.last_activity, (int, type(None)))
+        assert isinstance(game.draw_offer, (str, type(None)))
 
         assert isinstance(game.white.rating, int)
         assert isinstance(game.white.result, str)
