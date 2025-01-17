@@ -10,6 +10,7 @@ from typing import List, Optional, Union
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -141,6 +142,10 @@ class TournamentGames(object):
     :ivar move_by: the time the player must move by.
     :ivar last_activity: the time of the game's last activity.
     :ivar draw_offer: the draw offer.
+    :ivar end_datetime: the end time as a datetime object.
+    :ivar start_datetime: the start time as a datetime object.
+    :ivar last_activity_datetime: the last activity as a datetime object.
+    :ivar move_by_datetime: the move by time as a datetime object.
     :ivar white: Holds the :obj:`GamePlayer` object for the white player.
     :ivar black: Holds the :obj:`GamePlayer` object for the black player.
     """
@@ -160,6 +165,12 @@ class TournamentGames(object):
 
     white: Optional["GamePlayer"]
     black: Optional["GamePlayer"]
+
+    def __post_init__(self):
+        self.end_datetime = from_timestamp(self.end_time)
+        self.start_datetime = from_timestamp(self.start_time)
+        self.last_activity_datetime = from_timestamp(self.last_activity)
+        self.move_by_datetime = from_timestamp(self.move_by)
 
 
 @dataclass(repr=True)
