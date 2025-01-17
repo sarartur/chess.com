@@ -1,5 +1,14 @@
+"""
+Get details about a tournament's round.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-tournament-round
+"""
+
+from dataclasses import dataclass
+from typing import List, Optional
+
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse
+from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
@@ -16,6 +25,57 @@ def get_tournament_round(
     return Resource(
         uri=f"/tournament/{url_id}/{round_num}",
         tts=tts,
-        top_level_attribute="tournament_round",
         request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
+
+
+class ResponseBuilder(ResponseBuilder):
+    def build(self, text):
+        data = self.serializer.deserialize(text)
+
+        return GetTournamentRoundResponse(
+            json={"tournament_round": data},
+            text=text,
+            tournament_round=TournamentRound(
+                groups=data.get("groups", []),
+                players=[
+                    TournamentPlayer(
+                        username=player.get("username"),
+                        is_advancing=player.get("is_advancing"),
+                    )
+                    for player in data.get("players", [])
+                ],
+            ),
+        )
+
+
+class GetTournamentRoundResponse(ChessDotComResponse):
+    """
+    :ivar tournament_round: Holds the :obj:`TournamentRound` object.
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw response from the API.
+    """
+
+    def __init__(self, tournament_round, json, text):
+        self.tournament_round = tournament_round
+        self.json = json
+        self.text = text
+
+
+@dataclass(repr=True)
+class TournamentRound(object):
+    """
+    :ivar round_num: the round of the tournament.
+    :ivar group_count: the number of groups in the round.
+    :ivar groups: list of groups in the round.
+    """
+
+    groups: List[str]
+    players: List["TournamentPlayer"]
+
+
+@dataclass(repr=True)
+class TournamentPlayer(object):
+    username: Optional[str]
+    is_advancing: Optional[bool]
