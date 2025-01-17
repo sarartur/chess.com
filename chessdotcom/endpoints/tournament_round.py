@@ -19,7 +19,7 @@ def get_tournament_round(
     :param url_id: URL for the club's web page on www.chess.com.
     :param round_num: the round of the tournament.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
+    :returns: :obj:`GetTournamentRoundResponse` object containing
                  details about a tournament's round.
     """
     return Resource(
@@ -66,8 +66,7 @@ class GetTournamentRoundResponse(ChessDotComResponse):
 @dataclass(repr=True)
 class TournamentRound(object):
     """
-    :ivar round_num: the round of the tournament.
-    :ivar group_count: the number of groups in the round.
+    :ivar players: list of players in the round. Holds :obj:`TournamentPlayer` objects.
     :ivar groups: list of groups in the round.
     """
 
@@ -77,5 +76,10 @@ class TournamentRound(object):
 
 @dataclass(repr=True)
 class TournamentPlayer(object):
+    """
+    :ivar username: username of the player.
+    :ivar is_advancing: whether the player is advancing to the next round.
+    """
+
     username: Optional[str]
     is_advancing: Optional[bool]
