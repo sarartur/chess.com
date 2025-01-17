@@ -1,3 +1,9 @@
+"""
+Get details about a daily, live and arena tournament.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-tournament-profile
+"""
+
 from dataclasses import dataclass
 from typing import List, Optional
 
@@ -13,7 +19,7 @@ def get_tournament_details(
     """
     :param url_id: URL for the club's web page on www.chess.com.
     :param tts: the time the client will wait before making the first request.
-    :returns: :obj:`ChessDotComResponse` object containing details about a daily,
+    :returns: :obj:`GetTournamentDetailsResponse` object containing details about a daily,
                 live and arena tournament.
     """
     return Resource(
@@ -89,6 +95,18 @@ class GetTournamentDetailsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class TournamentDetails(object):
+    """
+    :ivar name: Tournament's name.
+    :ivar url: URL for the tournament's web page on www.chess.com.
+    :ivar description: Tournament's description.
+    :ivar creator: The creator of the tournament.
+    :ivar status: The status of the tournament.
+    :ivar finish_time: The time the tournament finishes.
+    :ivar settings: The tournament settings. Holds :obj:`TournamentSettings` object.
+    :ivar players: List of :obj:`TournamentPlayer` objects.
+    :ivar rounds: List of rounds in the tournament.
+    """
+
     name: Optional[str]
     url: Optional[str]
     description: Optional[str]
@@ -102,6 +120,27 @@ class TournamentDetails(object):
 
 @dataclass(repr=True)
 class TournamentSettings(object):
+    """
+    :ivar type: The type of the tournament.
+    :ivar rules: The rules of the tournament.
+    :ivar is_rated: Whether the tournament is rated.
+    :ivar is_official: Whether the tournament is official.
+    :ivar is_invite_only: Whether the tournament is invite-only.
+    :ivar min_rating: The minimum rating required to join the tournament.
+    :ivar max_rating: The maximum rating required to join the tournament.
+    :ivar initial_group_size: The initial group size of the tournament.
+    :ivar user_advance_count: The user advance count of the tournament.
+    :ivar use_tiebreak: Whether the tournament uses tiebreak.
+    :ivar allow_vacation: Whether the tournament allows vacation.
+    :ivar winner_places: The number of winner places in the tournament.
+    :ivar registered_user_count: The number of registered users in the tournament.
+    :ivar games_per_opponent: The number of games per opponent in the tournament.
+    :ivar total_rounds: The total number of rounds in the tournament.
+    :ivar concurrent_games_per_opponent: The number of concurrent games per opponent.
+    :ivar time_class: The time control class of the tournament.
+    :ivar time_control: The time control of the tournament.
+    """
+
     type: Optional[str]
     rules: Optional[str]
     is_rated: Optional[bool]
@@ -124,5 +163,10 @@ class TournamentSettings(object):
 
 @dataclass(repr=True)
 class TournamentPlayer(object):
+    """
+    :ivar username: The username of the player.
+    :ivar status: The status of the player
+    """
+
     username: Optional[str]
     status: Optional[str]
