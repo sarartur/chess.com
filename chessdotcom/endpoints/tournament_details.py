@@ -9,7 +9,7 @@ from typing import List, Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
-from ..utils import dig
+from ..utils import dig, from_timestamp
 
 
 @Client.endpoint
@@ -105,6 +105,7 @@ class TournamentDetails(object):
     :ivar settings: The tournament settings. Holds :obj:`TournamentSettings` object.
     :ivar players: List of :obj:`TournamentPlayer` objects.
     :ivar rounds: List of rounds in the tournament.
+    :ivar finish_datetime: The finish time as a datetime object.
     """
 
     name: Optional[str]
@@ -116,6 +117,9 @@ class TournamentDetails(object):
     settings: "TournamentSettings"
     players: List["TournamentPlayer"]
     rounds: List[str]
+
+    def __post_init__(self):
+        self.finish_datetime = from_timestamp(self.finish_time)
 
 
 @dataclass(repr=True)

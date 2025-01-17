@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -61,6 +62,7 @@ def validate_response(response):
     assert isinstance(tournament.creator, str)
     assert isinstance(tournament.status, str)
     assert isinstance(tournament.finish_time, int)
+    assert isinstance(tournament.finish_datetime, datetime)
     assert isinstance(tournament.settings.type, str)
     assert isinstance(tournament.settings.rules, str)
     assert isinstance(tournament.settings.is_rated, bool)
