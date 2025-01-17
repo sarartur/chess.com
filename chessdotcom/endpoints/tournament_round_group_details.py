@@ -103,6 +103,7 @@ class TournamentRoundGroup(object):
     """
     :ivar players: List of :obj:`TournamentPlayer` objects.
     :ivar games: List of :obj:`TournamentGames` objects.
+    :ivar fair_play_removals: List of usernames removed for fair play violations.
     """
 
     players: List["TournamentPlayer"]
@@ -112,6 +113,13 @@ class TournamentRoundGroup(object):
 
 @dataclass(repr=True)
 class TournamentPlayer(object):
+    """
+    :ivar username: username of the player.
+    :ivar points: the player's points.
+    :ivar is_advancing: whether the player is advancing to the next round.
+    :ivar tie_break: the player's tie-break score.
+    """
+
     username: Optional[str]
     points: Optional[Union[float, int]]
     is_advancing: Optional[bool]
@@ -120,6 +128,23 @@ class TournamentPlayer(object):
 
 @dataclass(repr=True)
 class TournamentGames(object):
+    """
+    :ivar url: URL for the game's web page on www.chess.com.
+    :ivar pgn: the game's PGN.
+    :ivar time_control: the game's time control.
+    :ivar end_time: the time the game ends.
+    :ivar rated: whether the game is rated.
+    :ivar fen: the game's FEN.
+    :ivar start_time: the time the game starts.
+    :ivar time_class: the game's time class.
+    :ivar rules: the game's rules.
+    :ivar move_by: the time the player must move by.
+    :ivar last_activity: the time of the game's last activity.
+    :ivar draw_offer: the draw offer.
+    :ivar white: Holds the :obj:`GamePlayer` object for the white player.
+    :ivar black: Holds the :obj:`GamePlayer` object for the black player.
+    """
+
     url: Optional[str]
     pgn: Optional[str]
     time_control: Optional[str]
@@ -139,6 +164,14 @@ class TournamentGames(object):
 
 @dataclass(repr=True)
 class GamePlayer(object):
+    """
+    :ivar rating: the player's rating.
+    :ivar result: the player's result.
+    :ivar id: the player's ID.
+    :ivar username: the player's username.
+    :ivar uuid: the player's UUID.
+    """
+
     rating: Optional[int]
     result: Optional[str]
     id: Optional[str]
