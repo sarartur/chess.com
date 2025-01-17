@@ -5,6 +5,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-play
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
@@ -116,16 +117,16 @@ class FinishedTournament(object):
     :ivar type: The type of the tournament.
     """
 
-    url: str
-    id: str
-    wins: int
-    losses: int
-    draws: int
-    placement: int
-    status: str
-    total_players: int
-    time_class: str
-    type: str
+    url: Optional[str]
+    id: Optional[str]
+    wins: Optional[int]
+    losses: Optional[int]
+    draws: Optional[int]
+    placement: Optional[int]
+    status: Optional[str]
+    total_players: Optional[int]
+    time_class: Optional[str]
+    type: Optional[str]
 
 
 @dataclass(repr=True)
@@ -138,9 +139,9 @@ class InProgressTournament(object):
     :ivar status: The current status of the tournament.
     """
 
-    url: str
-    id: str
-    status: str
+    url: Optional[str]
+    id: Optional[str]
+    status: Optional[str]
 
 
 @dataclass(repr=True)
@@ -153,6 +154,6 @@ class RegisteredTournament(object):
     :ivar status: The current status of the tournament.
     """
 
-    url: str
-    id: str
-    status: str
+    url: Optional[str]
+    id: Optional[str]
+    status: Optional[str]
