@@ -20,6 +20,7 @@ from .team_match_board import get_team_match_board
 from .team_match_live import get_team_match_live
 from .team_match_live_board import get_team_match_live_board
 from .tournament_details import get_tournament_details
+from .tournament_round import get_tournament_round
 
 
 @Client.endpoint
@@ -81,25 +82,6 @@ def get_player_team_matches(
         uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attribute="matches",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_tournament_round(
-    url_id: str, round_num: int, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param url_id: URL for the club's web page on www.chess.com.
-    :param round_num: the round of the tournament.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                 details about a tournament's round.
-    """
-    return Resource(
-        uri=f"/tournament/{url_id}/{round_num}",
-        tts=tts,
-        top_level_attribute="tournament_round",
         request_options=request_options,
     )
 
