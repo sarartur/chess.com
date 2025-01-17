@@ -1,7 +1,7 @@
 # Python wrapper for Chess.com Public API
 <img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/build_and_publish.yml?branch=master"> <img src="https://img.shields.io/readthedocs/chessdotcom"> <img src="https://img.shields.io/github/license/sarartur/chess.com">  <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6"> <img src="https://img.shields.io/github/forks/sarartur/chess.com"> <img src="https://img.shields.io/github/stars/sarartur/chess.com">
 ---
-Python wrapper for Chess.com API which provides public data from the chess.com website. All endpoints provided by Chess.com's API are available in the respectively named methods. 
+Python wrapper for Chess.com API which provides public data from the chess.com website. 
 ## Installation 
 **The package requires Python 3.8 or higher**.
 
@@ -13,8 +13,6 @@ Install latest version from [PyPI](https://pypi.org/project/chess.com/) ```pip i
 
 ## Usage
 ### Retrieving Data
-All the functions return a `ChessDotComResponse` object. The data can be accessed in dictionary format or via attributes.
-
 The package uses [aiohttp](https://docs.aiohttp.org/en/stable/) for asynchronous requests and [requests](https://requests.readthedocs.io/en/latest/) for synchronous requests to interact with the API. 
 
 #### Using client instance
