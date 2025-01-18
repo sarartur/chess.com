@@ -96,13 +96,17 @@ If the initial request gets rate limited the client will automatically retry the
 
 
 API Reference
-^^^^^^^^^^^^^^
+-------------
 
 .. toctree::
    :maxdepth: 2
 
    members/chessdotcom.client.rst
    members/chessdotcom.endpoints.rst
+
+
+Player Data
+~~~~~~~~~~~
 
 .. toctree::
    :maxdepth: 1
@@ -115,21 +119,74 @@ API Reference
    members/chessdotcom.endpoints.player_games_by_month.rst
    members/chessdotcom.endpoints.player_games_by_month_pgn.rst
    members/chessdotcom.endpoints.player_tournaments.rst
-   members/chessdotcom.endpoints.country_clubs.rst
-   members/chessdotcom.endpoints.country_players.rst
-   members/chessdotcom.endpoints.country_details.rst
+   members/chessdotcom.endpoints.titled_players.rst
+
+
+Clubs
+~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
    members/chessdotcom.endpoints.club_details.rst
    members/chessdotcom.endpoints.club_members.rst
    members/chessdotcom.endpoints.club_matches.rst
+
+Tournaments
+~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.tournament_details.rst
+   members/chessdotcom.endpoints.tournament_round.rst
+   members/chessdotcom.endpoints.tournament_round_group_details.rst
+
+
+Team Matches
+~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
    members/chessdotcom.endpoints.team_match.rst
    members/chessdotcom.endpoints.team_match_board.rst
    members/chessdotcom.endpoints.team_match_live.rst
    members/chessdotcom.endpoints.team_match_live_board.rst
-   members/chessdotcom.endpoints.tournament_details.rst
-   members/chessdotcom.endpoints.tournament_round.rst
-   members/chessdotcom.endpoints.tournament_round_group_details.rst
-   members/chessdotcom.endpoints.leaderboards.rst
-   members/chessdotcom.endpoints.titled_players.rst
-   members/chessdotcom.endpoints.streamers.rst
+
+Countries
+~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.country_clubs.rst
+   members/chessdotcom.endpoints.country_players.rst
+   members/chessdotcom.endpoints.country_details.rst
+
+Daily Puzzle
+~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
    members/chessdotcom.endpoints.random_daily_puzzle.rst
    members/chessdotcom.endpoints.current_daily_puzzle.rst
+
+
+Streamers
+~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.streamers.rst
+
+
+Leaderboards
+~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 1
+
+   members/chessdotcom.endpoints.leaderboards.rst
