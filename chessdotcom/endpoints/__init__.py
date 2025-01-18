@@ -16,6 +16,7 @@ from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
+from .steamers import get_streamers
 from .team_match import get_team_match
 from .team_match_board import get_team_match_board
 from .team_match_live import get_team_match_live
@@ -103,13 +104,3 @@ def get_random_daily_puzzle(tts=0, **request_options) -> ChessDotComResponse:
         top_level_attribute="puzzle",
         request_options=request_options,
     )
-
-
-@Client.endpoint
-def get_streamers(tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                information about Chess.com streamers.
-    """
-    return Resource(uri="/streamers", tts=tts, request_options=request_options)
