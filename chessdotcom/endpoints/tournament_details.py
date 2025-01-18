@@ -88,8 +88,7 @@ class GetTournamentDetailsResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, tournament):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.tournament = tournament
 
 

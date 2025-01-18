@@ -71,9 +71,8 @@ class GetPlayerCurrentGamesResponse(ChessDotComResponse):
     """
 
     def __init__(self, json: dict, text: str, games: list) -> None:
+        super().__init__(json=json, text=text)
         self.games = games
-        self.json = json
-        self.text = text
 
 
 @dataclass(repr=True)

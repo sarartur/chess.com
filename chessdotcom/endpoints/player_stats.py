@@ -116,8 +116,7 @@ class GetPlayerStatsResponse(ChessDotComResponse):
 
     def __init__(self, json: dict, text: str, stats: "PlayerStats"):
         self.stats = stats
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
 
 
 @dataclass(repr=True)

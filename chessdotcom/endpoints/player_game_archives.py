@@ -47,5 +47,4 @@ class GetPlayerGameArchivesResponse(ChessDotComResponse):
 
     def __init__(self, json: dict, text: str, archives: list) -> None:
         self.archives = archives
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)

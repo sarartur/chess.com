@@ -59,8 +59,7 @@ class GetTournamentRoundResponse(ChessDotComResponse):
 
     def __init__(self, tournament_round, json, text):
         self.tournament_round = tournament_round
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
 
 
 @dataclass(repr=True)

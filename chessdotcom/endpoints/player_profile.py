@@ -76,8 +76,7 @@ class GetPlayerProfileResponse(ChessDotComResponse):
 
     def __init__(self, json: dict, text: str, player: "PlayerProfile"):
         self.player = player
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
 
 
 @dataclass(repr=True)

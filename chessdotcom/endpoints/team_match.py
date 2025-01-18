@@ -97,8 +97,7 @@ class GetTeamMatchResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, match):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.match = match
 
 

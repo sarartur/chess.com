@@ -100,8 +100,7 @@ class GetPlayerGamesByMonthResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, games):
-        self.text = text
-        self.json = json
+        super().__init__(json=json, text=text)
         self.games = games
 
 

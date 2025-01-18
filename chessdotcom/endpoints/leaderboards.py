@@ -95,8 +95,7 @@ class GetLeaderboardsResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, leaderboards):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.leaderboards = leaderboards
 
 

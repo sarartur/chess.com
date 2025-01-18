@@ -94,8 +94,7 @@ class GetTournamentRoundGroupDetailsResponse(ChessDotComResponse):
     """
 
     def __init__(self, tournament_round_group, json, text):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.tournament_round_group = tournament_round_group
 
 

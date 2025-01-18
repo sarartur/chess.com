@@ -52,8 +52,7 @@ class GetPlayerGamesByMonthResponsePgn(ChessDotComResponse):
     """
 
     def __init__(self, json, text, pgn):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.pgn = pgn
 
 
