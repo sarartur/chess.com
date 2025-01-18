@@ -106,7 +106,7 @@ API Reference
 
 
 Player Data
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -123,7 +123,7 @@ Player Data
 
 
 Clubs
-~~~~~
+^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -133,7 +133,7 @@ Clubs
    members/chessdotcom.endpoints.club_matches.rst
 
 Tournaments
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -144,7 +144,7 @@ Tournaments
 
 
 Team Matches
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -155,7 +155,7 @@ Team Matches
    members/chessdotcom.endpoints.team_match_live_board.rst
 
 Countries
-~~~~~~~~~~
+^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -165,7 +165,7 @@ Countries
    members/chessdotcom.endpoints.country_details.rst
 
 Daily Puzzle
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -175,7 +175,7 @@ Daily Puzzle
 
 
 Streamers
-~~~~~~~~~
+^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
@@ -184,7 +184,7 @@ Streamers
 
 
 Leaderboards
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. toctree::
    :maxdepth: 1
