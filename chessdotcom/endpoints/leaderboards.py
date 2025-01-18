@@ -110,12 +110,9 @@ class Leaderboards(object):
     live_bullet: List of :obj:`Leaderboard` objects representing leaders in live bullet format.
     live_bughouse: List of :obj:`Leaderboard` objects representing leaders in live bughouse format.
     live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
-    live_threecheck: List of :obj:`Leaderboard` objects representing leaders
-                    in live threecheck format.
-    live_crazyhouse: List of :obj:`Leaderboard` objects representing leaders
-                    in live crazyhouse format.
-    live_kingofthehill: List of :obj:`Leaderboard` objects representing leaders
-                    in live kingofthehill format.
+    live_threecheck: List of :obj:`Leaderboard` objects representing leaders in live threecheck format.
+    live_crazyhouse: List of :obj:`Leaderboard` objects representing leaders in live crazyhouse format.
+    live_kingofthehill: List of :obj:`Leaderboard` objects representing leaders in live kingofthehill format. # noqa: E501
     live_tactics: List of :obj:`Leaderboard` objects representing leaders in live tactics format.
     live_rush: List of :obj:`Leaderboard` objects representing leaders in live rush format.
     live_battle: List of :obj:`Leaderboard` objects representing leaders in live battle format.

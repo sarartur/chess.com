@@ -18,7 +18,7 @@ from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
 from .random_daily_puzzle import get_random_daily_puzzle
-from .steamers import get_streamers
+from .streamers import get_streamers
 from .team_match import get_team_match
 from .team_match_board import get_team_match_board
 from .team_match_live import get_team_match_live

@@ -1,5 +1,5 @@
 chessdotcom.endpoints.streamers
-=====================
+===============================
 
 .. automodule:: chessdotcom.endpoints.streamers
    :members:
