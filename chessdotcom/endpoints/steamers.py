@@ -1,3 +1,10 @@
+"""
+Information about Chess.com streamers.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-streamers
+"""
+
+
 from dataclasses import dataclass
 from typing import List, Optional
 
@@ -66,6 +73,16 @@ class GetStreamersResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Streamer(object):
+    """
+    :ivar username: Streamer's username.
+    :ivar avatar: Streamer's avatar.
+    :ivar twitch_url: Streamer's Twitch URL.
+    :ivar url: Streamer's URL.
+    :ivar is_live: Whether the streamer is currently live.
+    :ivar is_community_streamer: Whether the streamer is a community streamer.
+    :ivar platforms: List of platforms the streamer is on. Holds a list of :obj:`Platform` objects.
+    """
+
     username: Optional[str]
     avatar: Optional[str]
     twitch_url: Optional[str]
@@ -77,6 +94,14 @@ class Streamer(object):
 
 @dataclass(repr=True)
 class Platform(object):
+    """
+    :ivar type: Platform type.
+    :ivar stream_url: Platform's stream URL.
+    :ivar channel_url: Platform's channel URL.
+    :ivar is_live: Whether the platform is currently live.
+    :ivar is_main_live_platform: Whether the platform is the main live platform.
+    """
+
     type: Optional[str]
     stream_url: Optional[str]
     channel_url: Optional[str]
