@@ -5,6 +5,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-coun
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import BaseResponseBuilder, ChessDotComResponse
@@ -61,6 +62,6 @@ class CountryDetails(object):
     :ivar code: The ISO-3166-1 2-character code.
     """
 
-    name: str
-    id: str
-    code: str
+    name: Optional[str]
+    id: Optional[str]
+    code: Optional[str]

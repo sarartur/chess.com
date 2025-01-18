@@ -5,6 +5,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import BaseResponseBuilder, ChessDotComResponse
@@ -70,12 +71,12 @@ class Puzzle(object):
     :ivar publish_datetime: Date and time the puzzle was published.
     """
 
-    title: str
-    url: str
-    publish_time: int
-    fen: str
-    pgn: str
-    image: str
+    title: Optional[str]
+    url: Optional[str]
+    publish_time: Optional[int]
+    fen: Optional[str]
+    pgn: Optional[str]
+    image: Optional[str]
 
     def __post_init__(self):
         self.publish_datetime = from_timestamp(self.publish_time)
