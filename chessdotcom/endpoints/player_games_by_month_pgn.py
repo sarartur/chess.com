@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import Optional, Union
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import resolve_date
 
 
@@ -35,7 +35,7 @@ def get_player_games_by_month_pgn(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         return GetPlayerGamesByMonthResponsePgn(
             json={"pgn": {"pgn": text, "data": text}},
@@ -52,8 +52,7 @@ class GetPlayerGamesByMonthResponsePgn(ChessDotComResponse):
     """
 
     def __init__(self, json, text, pgn):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.pgn = pgn
 
 

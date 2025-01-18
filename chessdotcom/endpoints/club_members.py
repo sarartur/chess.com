@@ -7,9 +7,10 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-club
 
 
 from dataclasses import dataclass
+from typing import List, Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp
 
 
@@ -28,7 +29,7 @@ def get_club_members(url_id: str, tts=0, **request_options) -> "GetClubMembersRe
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -58,8 +59,7 @@ class GetClubMembersResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, members):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.members = members
 
 
@@ -71,9 +71,9 @@ class ClubMembers(object):
     :ivar all_time: List of :obj:`ClubMembersDetails` objects.
     """
 
-    weekly: list
-    monthly: list
-    all_time: list
+    weekly: List["ClubMembersDetails"]
+    monthly: List["ClubMembersDetails"]
+    all_time: List["ClubMembersDetails"]
 
 
 @dataclass(repr=True)
@@ -84,8 +84,8 @@ class ClubMembersDetails(object):
     :ivar joined_datetime: The datetime of when the club member joined
     """
 
-    username: str
-    joined: int
+    username: Optional[str]
+    joined: Optional[int]
 
     def __post_init__(self):
         self.joined_datetime = from_timestamp(self.joined)

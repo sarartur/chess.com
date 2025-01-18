@@ -5,9 +5,10 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-coun
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -28,7 +29,7 @@ def get_country_details(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -49,8 +50,7 @@ class GetCountryDetailsResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, country):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.country = country
 
 
@@ -62,6 +62,6 @@ class CountryDetails(object):
     :ivar code: The ISO-3166-1 2-character code.
     """
 
-    name: str
-    id: str
-    code: str
+    name: Optional[str]
+    id: Optional[str]
+    code: Optional[str]

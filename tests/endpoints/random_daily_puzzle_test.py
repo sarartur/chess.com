@@ -1,5 +1,9 @@
+from datetime import datetime
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.random_daily_puzzle import Puzzle
 from tests.vcr import vcr
 
 
@@ -22,9 +26,25 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_random_daily_puzzle.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_random_daily_puzzle()
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.puzzle, Puzzle)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("puzzle") is not None
 
     puzzle = response.puzzle
 
@@ -34,3 +54,4 @@ def validate_response(response):
     assert isinstance(puzzle.fen, str)
     assert isinstance(puzzle.pgn, str)
     assert isinstance(puzzle.image, str)
+    assert isinstance(puzzle.publish_datetime, datetime)

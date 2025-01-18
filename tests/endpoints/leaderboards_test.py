@@ -1,5 +1,8 @@
+from unittest.mock import patch
+
 import pytest
 
+from chessdotcom.endpoints.leaderboards import Leaderboards
 from tests.vcr import vcr
 
 
@@ -22,9 +25,25 @@ async def test_with_async_client(async_client):
     validate_response(response)
 
 
-def validate_response(response):
+@vcr.use_cassette("get_leaderboards.yaml")
+@patch("chessdotcom.response_builder.Serializer.deserialize")
+def test_empty_data(deserialize, client):
+    deserialize.return_value = {}
+    response = client.get_leaderboards()
+
+    validate_response_structure(response)
+
+
+def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.leaderboards, Leaderboards)
+
+
+def validate_response(response):
+    validate_response_structure(response)
+
+    assert response.json.get("leaderboards") is not None
 
     def validate_leaderboard(leaderboard):
         for player in leaderboard:
@@ -35,14 +54,14 @@ def validate_response(response):
             assert isinstance(player.score, int)
             assert isinstance(player.rank, int)
             assert isinstance(player.country, str)
-            # assert isinstance(player.title, str)
-            # assert isinstance(player.name, str)
+            assert isinstance(player.title, (str, type(None)))
+            assert isinstance(player.name, (str, type(None)))
             assert isinstance(player.status, str)
             assert isinstance(player.avatar, str)
-            # assert isinstance(player.trend_score.direction, int)
-            # assert isinstance(player.trend_score.delta, int)
-            # assert isinstance(player.trend_rank.direction, int)
-            # assert isinstance(player.trend_rank.delta, int)
+            assert isinstance(player.trend_score.direction, (int, type(None)))
+            assert isinstance(player.trend_score.delta, (int, type(None)))
+            assert isinstance(player.trend_rank.direction, (int, type(None)))
+            assert isinstance(player.trend_rank.delta, (int, type(None)))
             assert isinstance(player.flair_code, str)
             assert isinstance(player.win_count, int)
             assert isinstance(player.loss_count, int)
@@ -59,6 +78,9 @@ def validate_response(response):
     validate_leaderboard(leaderboards.live_threecheck)
     validate_leaderboard(leaderboards.live_crazyhouse)
     validate_leaderboard(leaderboards.live_kingofthehill)
+    validate_leaderboard(leaderboards.live_tactics)
+    validate_leaderboard(leaderboards.live_rush)
+    validate_leaderboard(leaderboards.live_battle)
     validate_leaderboard(leaderboards.tactics)
     validate_leaderboard(leaderboards.rush)
     validate_leaderboard(leaderboards.battle)

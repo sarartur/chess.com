@@ -41,7 +41,7 @@ def validate_response_structure(response):
 
 
 def validate_response(response):
-    validate_response_structure
+    validate_response_structure(response)
 
     assert response.json.get("games") is not None
 

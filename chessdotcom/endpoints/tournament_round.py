@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -30,7 +30,7 @@ def get_tournament_round(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -59,8 +59,7 @@ class GetTournamentRoundResponse(ChessDotComResponse):
 
     def __init__(self, tournament_round, json, text):
         self.tournament_round = tournament_round
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
 
 
 @dataclass(repr=True)

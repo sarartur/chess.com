@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp
 
 
@@ -33,7 +33,7 @@ def get_team_match_board(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -83,8 +83,7 @@ class GetTeamMatchBoardResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, match_board):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.match_board = match_board
 
 

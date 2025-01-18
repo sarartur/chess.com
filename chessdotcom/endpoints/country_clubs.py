@@ -5,7 +5,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-coun
 """
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -24,7 +24,7 @@ def get_country_clubs(iso: str, tts=0, **request_options) -> "GetCountryClubsRes
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -44,6 +44,5 @@ class GetCountryClubsResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, clubs):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.clubs = clubs

@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp
 
 
@@ -31,7 +31,7 @@ def get_player_current_games(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -71,9 +71,8 @@ class GetPlayerCurrentGamesResponse(ChessDotComResponse):
     """
 
     def __init__(self, json: dict, text: str, games: list) -> None:
+        super().__init__(json=json, text=text)
         self.games = games
-        self.json = json
-        self.text = text
 
 
 @dataclass(repr=True)

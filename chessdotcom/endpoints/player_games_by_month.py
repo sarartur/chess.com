@@ -9,7 +9,7 @@ from datetime import datetime
 from typing import Optional, Union
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp, resolve_date
 
 
@@ -41,7 +41,7 @@ def get_player_games_by_month(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -100,8 +100,7 @@ class GetPlayerGamesByMonthResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, games):
-        self.text = text
-        self.json = json
+        super().__init__(json=json, text=text)
         self.games = games
 
 

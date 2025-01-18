@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp
 
 
@@ -31,7 +31,7 @@ def get_player_clubs(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 
@@ -63,8 +63,7 @@ class GetPlayerClubsResponse(ChessDotComResponse):
     """
 
     def __init__(self, json, text, clubs):
-        self.json = json
-        self.text = text
+        super().__init__(json=json, text=text)
         self.clubs = clubs
 
 
