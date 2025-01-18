@@ -1,19 +1,78 @@
+"""
+Daily Chess games where it is the player's turn to act.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-games-tomove
+"""
+
+
+from dataclasses import dataclass
+from typing import Optional
+
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse
+from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
 def get_player_current_games_to_move(
     username: str, tts=0, **request_options
-) -> ChessDotComResponse:
+) -> "GetPlayerCurrentGamesToMoveResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
+    :returns: :obj:`GetPlayerCurrentGamesToMoveResponse` object containing a list of
+                Daily Chess games
                 where it is the player's turn to act.
     """
     return Resource(
         uri=f"/player/{username}/games/to-move",
         tts=tts,
         request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
+
+
+class ResponseBuilder(ResponseBuilder):
+    def build(self, text):
+        data = self.serializer.deserialize(text)
+
+        return GetPlayerCurrentGamesToMoveResponse(
+            json=data,
+            text=text,
+            games=[
+                Game(
+                    url=game.get("url"),
+                    move_by=game.get("move_by"),
+                    last_activity=game.get("last_activity"),
+                    draw_offer=game.get("draw_offer"),
+                )
+                for game in data.get("games", [])
+            ],
+        )
+
+
+class GetPlayerCurrentGamesToMoveResponse(ChessDotComResponse):
+    """
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    :ivar games: List of :obj:`Game` objects.
+    """
+
+    def __init__(self, json, text, games):
+        self.json = json
+        self.text = text
+        self.games = games
+
+
+@dataclass(repr=True)
+class Game(object):
+    """
+    :ivar url: URL for the game.
+    :ivar move_by: Time when the player must make a move.
+    :ivar last_activity: Time of the last activity in the game.
+    :ivar draw_offer: True if the player has offered a draw.
+    """
+
+    url: Optional[str]
+    move_by: Optional[int]
+    last_activity: Optional[int]
+    draw_offer: Optional[bool]

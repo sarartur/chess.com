@@ -121,6 +121,7 @@ Player Data
    members/chessdotcom.endpoints.player_tournaments.rst
    members/chessdotcom.endpoints.titled_players.rst
    members/chessdotcom.endpoints.player_team_matches.rst
+   members/chessdotcom.endpoints.player_current_games_to_move.rst
 
 
 Clubs
