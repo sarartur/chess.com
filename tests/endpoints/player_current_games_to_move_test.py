@@ -41,24 +41,13 @@ def validate_response_structure(response):
 def validate_response(response):
     validate_response_structure(response)
 
-    # assert response.json.get("games") is not None
+    assert response.json.get("games") is not None
 
-    # games = response.games
-    # assert len(games) > 0
-    # for game in games:
-    #     assert isinstance(game.url, str)
-    #     assert isinstance(game.move_by, int)
-    #     assert isinstance(game.pgn, str)
-    #     assert isinstance(game.time_control, str)
-    #     assert isinstance(game.start_time, int)
-    #     assert isinstance(game.last_activity, int)
-    #     assert isinstance(game.rated, bool)
-    #     assert isinstance(game.turn, str)
-    #     assert isinstance(game.fen, str)
-    #     assert isinstance(game.time_class, str)
-    #     assert isinstance(game.rules, str)
-    #     assert isinstance(game.white, str)
-    #     assert isinstance(game.black, str)
-    #     assert isinstance(game.start_datetime, datetime)
-    #     assert isinstance(game.last_activity_datetime, datetime)
-    #     assert isinstance(game.draw_offer, (str, type(None)))
+    games = response.games
+    assert len(games) > 0
+
+    for game in games:
+        assert isinstance(game.url, str)
+        assert isinstance(game.move_by, int)
+        assert isinstance(game.last_activity, int)
+        # assert isinstance(game.draw_offer, (bool, type(None)))
