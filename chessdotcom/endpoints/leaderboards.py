@@ -1,5 +1,7 @@
 """
+It displays information about top 50 player for daily and live games, tactics and lessons.
 
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-leaderboards
 """
 
 
@@ -11,10 +13,10 @@ from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
-def get_leaderboards(tts=0, **request_options) -> ChessDotComResponse:
+def get_leaderboards(tts=0, **request_options) -> "GetLeaderboardsResponse":
     """
     :param tts: the time the client will wait before making the first request.
-    :returns: :obj:`ChessDotComResponse` object containing
+    :returns: :obj:`GetLeaderboardsResponse` object containing
                 information about top 50 player for daily and live games, tactics and lessons.
     """
     return Resource(
@@ -100,6 +102,29 @@ class GetLeaderboardsResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Leaderboards(object):
+    """
+    daily: List of :obj:`Leaderboard` objects representing leaders in daily format.
+    daily960: List of :obj:`Leaderboard` objects representing leaders in daily960 format.
+    live_rapid: List of :obj:`Leaderboard` objects representing leaders in live rapid format.
+    live_blitz: List of :obj:`Leaderboard` objects representing leaders in live blitz format.
+    live_bullet: List of :obj:`Leaderboard` objects representing leaders in live bullet format.
+    live_bughouse: List of :obj:`Leaderboard` objects representing leaders in live bughouse format.
+    live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
+    live_threecheck: List of :obj:`Leaderboard` objects representing leaders
+                    in live threecheck format.
+    live_crazyhouse: List of :obj:`Leaderboard` objects representing leaders
+                    in live crazyhouse format.
+    live_kingofthehill: List of :obj:`Leaderboard` objects representing leaders
+                    in live kingofthehill format.
+    live_tactics: List of :obj:`Leaderboard` objects representing leaders in live tactics format.
+    live_rush: List of :obj:`Leaderboard` objects representing leaders in live rush format.
+    live_battle: List of :obj:`Leaderboard` objects representing leaders in live battle format.
+    rush: List of :obj:`Leaderboard` objects representing leaders in rush format.
+    tactics: List of :obj:`Leaderboard` objects representing leaders in tactics format.
+    live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
+    battle: List of :obj:`Leaderboard` objects representing leaders in battle format.
+    """
+
     daily: List["Leaderboard"]
     daily960: List["Leaderboard"]
     live_rapid: List["Leaderboard"]
@@ -121,6 +146,27 @@ class Leaderboards(object):
 
 @dataclass(repr=True)
 class Leaderboard(object):
+    """
+    :ivar player_id: Player ID.
+    :ivar id: Unique identifier.
+    :ivar url: URL of the player's profile.
+    :ivar username: Player's username.
+    :ivar score: Player's score.
+    :ivar rank: Player's rank.
+    :ivar country: Player's country.
+    :ivar title: Player's title.
+    :ivar name: Player's name.
+    :ivar status: Player's status.
+    :ivar avatar: URL of the player's avatar.
+    :ivar flair_code: Player's flair code.
+    :ivar win_count: Number of wins.
+    :ivar loss_count: Number of losses.
+    :ivar draw_count: Number of draws.
+    :ivar trend_score: :obj:`TrendScore` object.
+    :ivar trend_rank: :obj:`TrendRank object`.
+
+    """
+
     player_id: Optional[int]
     id: Optional[str]
     url: Optional[str]
@@ -142,11 +188,21 @@ class Leaderboard(object):
 
 @dataclass(repr=True)
 class TrendScore(object):
+    """
+    :ivar direction: Direction of the trend.
+    :ivar delta: Change in score.
+    """
+
     direction: Optional[int]
     delta: Optional[int]
 
 
 @dataclass(repr=True)
 class TrendRank(object):
+    """
+    :ivar direction: Direction of the trend.
+    :ivar delta: Change in score.
+    """
+
     direction: Optional[int]
     delta: Optional[int]
