@@ -36,6 +36,7 @@ def test_empty_data(deserialize, client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.streamers, list)
 
 
 def validate_response(response):
@@ -48,14 +49,14 @@ def validate_response(response):
     for streamer in streamers:
         assert isinstance(streamer.username, str)
         assert isinstance(streamer.avatar, str)
-        # assert isinstance(streamer.twitch_url, str)
+        assert isinstance(streamer.twitch_url, (str, type(None)))
         assert isinstance(streamer.url, str)
         assert isinstance(streamer.is_live, bool)
         assert isinstance(streamer.is_community_streamer, bool)
 
         for platform in streamer.platforms:
             assert isinstance(platform.type, str)
-            # assert isinstance(platform.stream_url, str)
+            assert isinstance(platform.stream_url, (str, type(None)))
             assert isinstance(platform.channel_url, str)
             assert isinstance(platform.is_live, bool)
-            # assert isinstance(platform.is_main_live_platform, bool)
+            assert isinstance(platform.is_main_live_platform, (bool, type(None)))
