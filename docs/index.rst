@@ -129,3 +129,4 @@ API Reference
    members/chessdotcom.endpoints.tournament_round.rst
    members/chessdotcom.endpoints.tournament_round_group_details.rst
    members/chessdotcom.endpoints.leaderboards.rst
+   members/chessdotcom.endpoints.titled_players.rst
