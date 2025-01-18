@@ -10,6 +10,7 @@ from typing import Optional
 
 from ..client import Client, Resource
 from ..response_builder import BaseResponseBuilder, ChessDotComResponse
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -68,9 +69,15 @@ class Game(object):
     :ivar move_by: Time when the player must make a move.
     :ivar last_activity: Time of the last activity in the game.
     :ivar draw_offer: True if the player has offered a draw.
+    :ivar move_by_datetime: Time when the player must make a move as a datetime object.
+    :ivar last_activity_datetime: Time of the last activity in the game as a datetime object.
     """
 
     url: Optional[str]
     move_by: Optional[int]
     last_activity: Optional[int]
     draw_offer: Optional[bool]
+
+    def __post_init__(self):
+        self.move_by_datetime = from_timestamp(self.move_by)
+        self.last_activity_datetime = from_timestamp(self.last_activity)

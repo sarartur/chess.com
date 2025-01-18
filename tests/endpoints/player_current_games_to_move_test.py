@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -50,4 +51,6 @@ def validate_response(response):
         assert isinstance(game.url, str)
         assert isinstance(game.move_by, int)
         assert isinstance(game.last_activity, int)
-        # assert isinstance(game.draw_offer, (bool, type(None)))
+        assert isinstance(game.draw_offer, (bool, type(None)))
+        assert isinstance(game.move_by_datetime, datetime)
+        assert isinstance(game.last_activity_datetime, datetime)
