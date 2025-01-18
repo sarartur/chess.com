@@ -1,17 +1,60 @@
+from dataclasses import dataclass
+
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse
+from ..response_builder import ChessDotComResponse, ResponseBuilder
 
 
 @Client.endpoint
-def get_random_daily_puzzle(tts=0, **request_options) -> ChessDotComResponse:
+def get_random_daily_puzzle(tts=0, **request_options) -> "GetRandomDailyPuzzleResponse":
     """
     :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
+    :returns: :obj:`GetRandomDailyPuzzleResponse` object containing
                 information about a randomly picked daily puzzle.
     """
     return Resource(
         uri="/puzzle/random",
         tts=tts,
-        top_level_attribute="puzzle",
         request_options=request_options,
+        response_builder=ResponseBuilder(),
     )
+
+
+class ResponseBuilder(ResponseBuilder):
+    def build(self, text):
+        data = self.serializer.deserialize(text)
+
+        return GetRandomDailyPuzzleResponse(
+            json={"puzzle": data},
+            text=text,
+            puzzle=Puzzle(
+                title=data.get("title"),
+                url=data.get("url"),
+                publish_time=data.get("publish_time"),
+                fen=data.get("fen"),
+                pgn=data.get("pgn"),
+                image=data.get("image"),
+            ),
+        )
+
+
+class GetRandomDailyPuzzleResponse(ChessDotComResponse):
+    """
+    :ivar json: The JSON response from the API.
+    :ivar text: The raw text response from the API.
+    :ivar puzzle: Holds the :obj:`Puzzle` object.
+    """
+
+    def __init__(self, json, text, puzzle):
+        self.json = json
+        self.text = text
+        self.puzzle = puzzle
+
+
+@dataclass(repr=True)
+class Puzzle(object):
+    title: str
+    url: str
+    publish_time: int
+    fen: str
+    pgn: str
+    image: str
