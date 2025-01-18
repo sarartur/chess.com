@@ -7,6 +7,7 @@ from .club_members import get_club_members
 from .country_clubs import get_country_clubs
 from .country_details import get_country_details
 from .country_players import get_country_players
+from .current_daily_puzzle import get_current_daily_puzzle
 from .leaderboards import get_leaderboards
 from .player_clubs import get_player_clubs
 from .player_current_games import get_player_current_games
@@ -73,20 +74,5 @@ def get_player_team_matches(
         uri=f"/player/{username}/matches",
         tts=tts,
         top_level_attribute="matches",
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_current_daily_puzzle(tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                information about the daily puzzle found in www.chess.com.
-    """
-    return Resource(
-        uri="/puzzle",
-        top_level_attribute="puzzle",
-        tts=tts,
         request_options=request_options,
     )
