@@ -1,3 +1,11 @@
+"""
+Get ratings, win/loss, and other stats about a player's game play, tactics,
+lessons and Puzzle Rush score.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-titled
+"""
+
+
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
 
