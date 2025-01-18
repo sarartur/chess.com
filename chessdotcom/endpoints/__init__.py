@@ -16,6 +16,7 @@ from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
+from .player_team_matches import get_player_team_matches
 from .player_tournaments import get_player_tournaments
 from .random_daily_puzzle import get_random_daily_puzzle
 from .streamers import get_streamers
@@ -42,24 +43,5 @@ def get_player_current_games_to_move(
     return Resource(
         uri=f"/player/{username}/games/to-move",
         tts=tts,
-        request_options=request_options,
-    )
-
-
-@Client.endpoint
-def get_player_team_matches(
-    username: str, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of team matches
-                the player has attended,
-                is participating or is currently registered.
-    """
-    return Resource(
-        uri=f"/player/{username}/matches",
-        tts=tts,
-        top_level_attribute="matches",
         request_options=request_options,
     )
