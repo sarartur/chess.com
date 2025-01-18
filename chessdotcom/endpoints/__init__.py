@@ -20,23 +20,10 @@ from .team_match import get_team_match
 from .team_match_board import get_team_match_board
 from .team_match_live import get_team_match_live
 from .team_match_live_board import get_team_match_live_board
+from .titled_players import get_titled_players
 from .tournament_details import get_tournament_details
 from .tournament_round import get_tournament_round
 from .tournament_round_group_details import get_tournament_round_group_details
-
-
-@Client.endpoint
-def get_titled_players(
-    title_abbrev: str, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param title_abbrev: abbreviation of chess title.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of usernames.
-    """
-    return Resource(
-        uri=f"/titled/{title_abbrev}", tts=tts, request_options=request_options
-    )
 
 
 @Client.endpoint
