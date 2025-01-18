@@ -11,6 +11,7 @@ from .current_daily_puzzle import get_current_daily_puzzle
 from .leaderboards import get_leaderboards
 from .player_clubs import get_player_clubs
 from .player_current_games import get_player_current_games
+from .player_current_games_to_move import get_player_current_games_to_move
 from .player_game_archives import get_player_game_archives
 from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
@@ -28,20 +29,3 @@ from .titled_players import get_titled_players
 from .tournament_details import get_tournament_details
 from .tournament_round import get_tournament_round
 from .tournament_round_group_details import get_tournament_round_group_details
-
-
-@Client.endpoint
-def get_player_current_games_to_move(
-    username: str, tts=0, **request_options
-) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing a list of Daily Chess games
-                where it is the player's turn to act.
-    """
-    return Resource(
-        uri=f"/player/{username}/games/to-move",
-        tts=tts,
-        request_options=request_options,
-    )
