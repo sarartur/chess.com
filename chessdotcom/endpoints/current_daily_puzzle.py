@@ -1,3 +1,9 @@
+"""
+Information about the daily puzzle found in www.chess.com.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle
+"""
+
 from dataclasses import dataclass
 
 from ..client import Client, Resource

@@ -132,3 +132,4 @@ API Reference
    members/chessdotcom.endpoints.titled_players.rst
    members/chessdotcom.endpoints.streamers.rst
    members/chessdotcom.endpoints.random_daily_puzzle.rst
+   members/chessdotcom.endpoints.current_daily_puzzle.rst
