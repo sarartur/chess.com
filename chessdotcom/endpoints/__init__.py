@@ -14,7 +14,6 @@ from .player_current_games import get_player_current_games
 from .player_game_archives import get_player_game_archives
 from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
-from .player_online import is_player_online
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
