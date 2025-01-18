@@ -14,6 +14,7 @@ from .player_current_games import get_player_current_games
 from .player_game_archives import get_player_game_archives
 from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
+from .player_online import is_player_online
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_tournaments import get_player_tournaments
@@ -27,19 +28,6 @@ from .titled_players import get_titled_players
 from .tournament_details import get_tournament_details
 from .tournament_round import get_tournament_round
 from .tournament_round_group_details import get_tournament_round_group_details
-
-
-@Client.endpoint
-def is_player_online(username: str, tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param username: username of the player.
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing infomation about
-                whether or not a player is online
-    """
-    return Resource(
-        uri=f"/player/{username}/is-online", tts=tts, request_options=request_options
-    )
 
 
 @Client.endpoint
