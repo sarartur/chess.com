@@ -1,0 +1,71 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/plutopete/games/to-move
+  response:
+    body:
+      string: '{"games":[{"url":"https://www.chess.com/game/daily/751207461","move_by":1737314974,"last_activity":1737055774}]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      CF-Cache-Status:
+      - MISS
+      CF-RAY:
+      - 903f918b99ae43c3-EWR
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '112'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 18 Jan 2025 15:20:21 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=CHcebyIJ2UgpMQAJybeu94qbRBb7%2Bit7KsvgLiKZj7CoS%2Bc706gObRyhCajBTvUBhKx9itvLDURNqL4kMAmxb0rfW9jU2JnvGxjXGGOWqRRakFEL36ES7JWM%2BLa1p24%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=r7OIEmAEQmor5e5roKSJswNzvFgw1KTC5.iviqtUJXo-1737213621-1.0.1.1-Hr6U6HuWwgKlkkTKkNSY6rfI_bJMg0N7Evn98.WQiqVvMTOo2tbBrxCJxg..yn3KIgfVJHGyFTqz9Ip0Dnt71eVqPvEiK3EbcuenPkp4VVo;
+        path=/; expires=Sat, 18-Jan-25 15:50:21 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      Vary:
+      - Accept-Encoding
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"7a683e2c5244a2a1a0b23392ba1d10b7"
+      expires:
+      - Sat, 18 Jan 2025 15:20:26
+      last-modified:
+      - Saturday, 18-Jan-2025 15:17:42 GMT+0000
+      link:
+      - <https://api.chess.com/context/Games.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      x-chesscom-matched:
+      - pubapi_player_games_to_move
+      x-chesscom-meta:
+      - lean=cached
+      x-chesscom-request-id-cdn:
+      - 903f918b99ae43c3-IAD
+      x-chesscom-request-id-lb:
+      - f851df696c4a36c3e0418740881ed465
+      x-chesscom-servedby:
+      - '155'
+    status:
+      code: 200
+      message: OK
+version: 1
