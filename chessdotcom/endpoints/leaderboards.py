@@ -103,23 +103,23 @@ class GetLeaderboardsResponse(ChessDotComResponse):
 @dataclass(repr=True)
 class Leaderboards(object):
     """
-    daily: List of :obj:`Leaderboard` objects representing leaders in daily format.
-    daily960: List of :obj:`Leaderboard` objects representing leaders in daily960 format.
-    live_rapid: List of :obj:`Leaderboard` objects representing leaders in live rapid format.
-    live_blitz: List of :obj:`Leaderboard` objects representing leaders in live blitz format.
-    live_bullet: List of :obj:`Leaderboard` objects representing leaders in live bullet format.
-    live_bughouse: List of :obj:`Leaderboard` objects representing leaders in live bughouse format.
-    live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
-    live_threecheck: List of :obj:`Leaderboard` objects representing leaders in live threecheck format.
-    live_crazyhouse: List of :obj:`Leaderboard` objects representing leaders in live crazyhouse format.
-    live_kingofthehill: List of :obj:`Leaderboard` objects representing leaders in live kingofthehill format.
-    live_tactics: List of :obj:`Leaderboard` objects representing leaders in live tactics format.
-    live_rush: List of :obj:`Leaderboard` objects representing leaders in live rush format.
-    live_battle: List of :obj:`Leaderboard` objects representing leaders in live battle format.
-    rush: List of :obj:`Leaderboard` objects representing leaders in rush format.
-    tactics: List of :obj:`Leaderboard` objects representing leaders in tactics format.
-    live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
-    battle: List of :obj:`Leaderboard` objects representing leaders in battle format.
+    :ivar daily: List of :obj:`Leaderboard` objects representing leaders in daily format.
+    :ivar daily960: List of :obj:`Leaderboard` objects representing leaders in daily960 format.
+    :ivar live_rapid: List of :obj:`Leaderboard` objects representing leaders in live rapid format.
+    :ivar live_blitz: List of :obj:`Leaderboard` objects representing leaders in live blitz format.
+    :ivar live_bullet: List of :obj:`Leaderboard` objects representing leaders in live bullet format.
+    :ivar live_bughouse: List of :obj:`Leaderboard` objects representing leaders in live bughouse format.
+    :ivar live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
+    :ivar live_threecheck: List of :obj:`Leaderboard` objects representing leaders in live threecheck format.
+    :ivar live_crazyhouse: List of :obj:`Leaderboard` objects representing leaders in live crazyhouse format.
+    :ivar live_kingofthehill: List of :obj:`Leaderboard` objects representing leaders in live kingofthehill format.
+    :ivar live_tactics: List of :obj:`Leaderboard` objects representing leaders in live tactics format.
+    :ivar live_rush: List of :obj:`Leaderboard` objects representing leaders in live rush format.
+    :ivar live_battle: List of :obj:`Leaderboard` objects representing leaders in live battle format.
+    :ivar rush: List of :obj:`Leaderboard` objects representing leaders in rush format.
+    :ivar tactics: List of :obj:`Leaderboard` objects representing leaders in tactics format.
+    :ivar live_blitz960: List of :obj:`Leaderboard` objects representing leaders in live blitz960 format.
+    :ivar battle: List of :obj:`Leaderboard` objects representing leaders in battle format.
     """  # noqa: E501
 
     daily: List["Leaderboard"]
