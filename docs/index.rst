@@ -120,6 +120,7 @@ Player Data
    members/chessdotcom.endpoints.player_games_by_month_pgn.rst
    members/chessdotcom.endpoints.player_tournaments.rst
    members/chessdotcom.endpoints.titled_players.rst
+   members/chessdotcom.endpoints.player_team_matches.rst
 
 
 Clubs

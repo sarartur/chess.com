@@ -1,3 +1,10 @@
+"""
+List of Team matches the player has attended, is partecipating or is currently
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-player-matches
+"""
+
+
 from dataclasses import dataclass
 from typing import List, Optional
 
@@ -7,13 +14,11 @@ from ..utils import dig
 
 
 @Client.endpoint
-def get_player_team_matches(
-    username: str, tts=0, **request_options
-) -> ChessDotComResponse:
+def get_player_team_matches(username: str, tts=0, **request_options) -> "TeamMatches":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: :obj:`ChessDotComResponse` object containing a list of team matches
+    :returns: :obj:`TeamMatches` object containing a list of team matches
                 the player has attended,
                 is participating or is currently registered.
     """
@@ -87,6 +92,12 @@ class GetPlayerTeamMatchesResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class TeamMatches(object):
+    """
+    :ivar finished: List of :obj:`FinishedMatches` objects.
+    :ivar in_progress: List of :obj:`InProgressMatches` objects.
+    :ivar registered: List of :obj:`RegisteredMatches` objects.
+    """
+
     finished: List["FinishedMatches"]
     in_progress: List["InProgressMatches"]
     registered: List["RegisteredMatches"]
@@ -94,6 +105,15 @@ class TeamMatches(object):
 
 @dataclass(repr=True)
 class FinishedMatches(object):
+    """
+    :ivar name: The name of the match.
+    :ivar url: URL for the match.
+    :ivar id: The unique identifier of the match.
+    :ivar club: The club of the match.
+    :ivar results: The results of the match.
+    :ivar board: The board of the match.
+    """
+
     name: Optional[str]
     url: Optional[str]
     id: Optional[int]
@@ -104,6 +124,14 @@ class FinishedMatches(object):
 
 @dataclass(repr=True)
 class InProgressMatches(object):
+    """
+    :ivar name: The name of the match.
+    :ivar url: URL for the match.
+    :ivar id: The unique identifier of the match.
+    :ivar club: The club of the match.
+    :ivar board: The board of the match.
+    """
+
     name: Optional[str]
     url: Optional[str]
     id: Optional[int]
@@ -113,6 +141,13 @@ class InProgressMatches(object):
 
 @dataclass(repr=True)
 class RegisteredMatches(object):
+    """
+    :ivar name: The name of the match.
+    :ivar url: URL for the match.
+    :ivar id: The unique identifier of the match.
+    :ivar club: The club of the match.
+    """
+
     name: Optional[str]
     url: Optional[str]
     id: Optional[int]
@@ -121,5 +156,10 @@ class RegisteredMatches(object):
 
 @dataclass(repr=True)
 class Results(object):
+    """
+    :ivar played_as_white: The result of the player when played as white.
+    :ivar played_as_black: The result of the player when played as black.
+    """
+
     played_as_white: Optional[str]
     played_as_black: Optional[str]
