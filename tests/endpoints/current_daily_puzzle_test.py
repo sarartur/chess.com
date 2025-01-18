@@ -2,6 +2,7 @@ from unittest.mock import patch
 
 import pytest
 
+from chessdotcom.endpoints.current_daily_puzzle import Puzzle
 from tests.vcr import vcr
 
 
@@ -36,6 +37,7 @@ def test_empty_data(deserialize, client):
 def validate_response_structure(response):
     assert isinstance(response.json, dict)
     assert isinstance(response.text, str)
+    assert isinstance(response.puzzle, Puzzle)
 
 
 def validate_response(response):
