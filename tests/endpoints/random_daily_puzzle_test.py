@@ -1,3 +1,4 @@
+from datetime import datetime
 from unittest.mock import patch
 
 import pytest
@@ -53,3 +54,4 @@ def validate_response(response):
     assert isinstance(puzzle.fen, str)
     assert isinstance(puzzle.pgn, str)
     assert isinstance(puzzle.image, str)
+    assert isinstance(puzzle.publish_datetime, datetime)

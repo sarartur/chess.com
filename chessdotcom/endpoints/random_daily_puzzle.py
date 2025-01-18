@@ -1,7 +1,14 @@
+"""
+Information about a randomly picked daily puzzle.
+
+API doc: https://www.chess.com/news/view/published-data-api#pubapi-random-daily-puzzle
+"""
+
 from dataclasses import dataclass
 
 from ..client import Client, Resource
 from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..utils import from_timestamp
 
 
 @Client.endpoint
@@ -52,9 +59,22 @@ class GetRandomDailyPuzzleResponse(ChessDotComResponse):
 
 @dataclass(repr=True)
 class Puzzle(object):
+    """
+    :ivar title: Title of the puzzle.
+    :ivar url: URL for the puzzle.
+    :ivar publish_time: Time the puzzle was published.
+    :ivar fen: FEN string of the puzzle.
+    :ivar pgn: PGN string of the puzzle.
+    :ivar image: URL for the puzzle image.
+    :ivar publish_datetime: Date and time the puzzle was published.
+    """
+
     title: str
     url: str
     publish_time: int
     fen: str
     pgn: str
     image: str
+
+    def __post_init__(self):
+        self.publish_datetime = from_timestamp(self.publish_time)
