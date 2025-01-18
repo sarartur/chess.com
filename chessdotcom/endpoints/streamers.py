@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -27,7 +27,7 @@ def get_streamers(tts=0, **request_options) -> "GetStreamersResponse":
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 

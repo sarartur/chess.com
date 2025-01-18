@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from typing import Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import dig, from_timestamp
 
 
@@ -30,7 +30,7 @@ def get_team_match(match_id: int, tts=0, **request_options) -> "GetTeamMatchResp
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 

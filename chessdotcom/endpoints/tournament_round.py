@@ -8,7 +8,7 @@ from dataclasses import dataclass
 from typing import List, Optional
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -30,7 +30,7 @@ def get_tournament_round(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 

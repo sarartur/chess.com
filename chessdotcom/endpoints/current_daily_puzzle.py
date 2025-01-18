@@ -7,7 +7,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-daily-puzzle
 from dataclasses import dataclass
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 from ..utils import from_timestamp
 
 
@@ -28,7 +28,7 @@ def get_current_daily_puzzle(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 

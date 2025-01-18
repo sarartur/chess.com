@@ -7,7 +7,7 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-coun
 from dataclasses import dataclass
 
 from ..client import Client, Resource
-from ..response_builder import ChessDotComResponse, ResponseBuilder
+from ..response_builder import BaseResponseBuilder, ChessDotComResponse
 
 
 @Client.endpoint
@@ -28,7 +28,7 @@ def get_country_details(
     )
 
 
-class ResponseBuilder(ResponseBuilder):
+class ResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         data = self.serializer.deserialize(text)
 

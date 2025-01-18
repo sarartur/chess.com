@@ -3,7 +3,7 @@ import json
 from .errors import ChessDotComClientError, ChessDotComDecodingError
 
 
-class ResponseBuilder(object):
+class BaseResponseBuilder(object):
     def __init__(self, serializer=None) -> None:
         self.serializer = serializer or Serializer()
 
@@ -29,7 +29,7 @@ class ResponseBuilder(object):
             return {}
 
 
-class DefaultResponseBuilder(ResponseBuilder):
+class DefaultResponseBuilder(BaseResponseBuilder):
     def build(self, text):
         return ChessDotComResponse(text=text, json=self._build_json(text))
 
