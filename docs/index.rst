@@ -98,11 +98,12 @@ If the initial request gets rate limited the client will automatically retry the
 API Reference
 -------------
 
+Client
+
 .. toctree::
    :maxdepth: 2
 
    members/chessdotcom.client.rst
-   members/chessdotcom.endpoints.rst
 
 
 Player Data

@@ -14,11 +14,13 @@ from ..utils import dig
 
 
 @Client.endpoint
-def get_player_team_matches(username: str, tts=0, **request_options) -> "TeamMatches":
+def get_player_team_matches(
+    username: str, tts=0, **request_options
+) -> "GetPlayerTeamMatchesResponse":
     """
     :param username: username of the player.
     :param tts: the time the client will wait before making the first request.
-    :returns: :obj:`TeamMatches` object containing a list of team matches
+    :returns: :obj:`GetPlayerTeamMatchesResponse` object containing a list of team matches
                 the player has attended,
                 is participating or is currently registered.
     """
