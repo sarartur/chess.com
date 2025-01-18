@@ -99,6 +99,7 @@ API Reference
 -------------
 
 Client
+^^^^^^
 
 .. toctree::
    :maxdepth: 2
