@@ -191,17 +191,16 @@ class Resource(object):
     def __init__(
         self,
         uri="",
-        top_level_attribute=None,
+        response_builder=None,
         tts=0,
         request_options=None,
         times_requested=0,
-        response_builder=None,
     ):
         self.url = self.HOST + uri
-        self.top_level_attribute = top_level_attribute
+        self.response_builder = response_builder or DefaultResponseBuilder()
+
         self.tts = tts
         self.times_requested = times_requested
         self.request_options = request_options or {}
 
-        self.response_builder = response_builder or DefaultResponseBuilder()
         self.response_builder.register_resource(self)

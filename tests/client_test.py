@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from chessdotcom.client import ChessDotComClient, Client, RateLimitHandler, Resource
-from chessdotcom.errors import ChessDotComClientError, ChessDotComDecodingError
+from chessdotcom.errors import ChessDotComClientError
 from tests.support.aio_mock_response import AioMockResponse
 
 
@@ -54,7 +54,6 @@ def test_do_get_request_sync(mock_requests):
         headers={},
         timeout=30,
     )
-    assert response.name == "fabianocaruana"
     assert response.json == mock_data
 
 
@@ -114,7 +113,6 @@ async def test_do_get_request_async(mock_session_get):
         url="https://api.chess.com/player/fabianocaruana",
         headers={},
     )
-    assert response.name == "fabianocaruana"
     assert response.json == {"name": "fabianocaruana"}
 
 
@@ -159,10 +157,10 @@ def test_do_get_request_sync_decoding_error(mock_requests):
 
     client = ChessDotComClient()
 
-    with pytest.raises(ChessDotComDecodingError) as err:
-        client.do_get_request(Resource(uri="/player/fabianocaruana"))
+    response = client.do_get_request(Resource(uri="/player/fabianocaruana"))
 
-    assert err.value.text == '{"key": '
+    assert response.text == '{"key": '
+    assert response.json == {}
 
 
 @patch("chessdotcom.client.requests")
@@ -183,28 +181,6 @@ def test_do_get_request_sync_combined_headers(mock_requests):
         headers={"headers": {"header": "override_value"}},
         timeout=30,
     )
-
-
-@patch("chessdotcom.client.requests")
-def test_do_get_request_sync_top_level_attribute(mock_requests):
-    client = ChessDotComClient()
-
-    mock_requests.get.return_value = MagicMock(status_code=200, text='{"key": "value"}')
-
-    response = client.do_get_request(
-        Resource(
-            uri="/player/fabianocaruana",
-            request_options={"headers": {"header": "override_value"}},
-            top_level_attribute="top_level_attribute",
-        )
-    )
-
-    assert mock_requests.get.called_once_with(
-        url="https://api.chess.com/player/fabianocaruana",
-        headers={"headers": {"header": "override_value"}},
-        timeout=30,
-    )
-    assert response.top_level_attribute.key == "value"
 
 
 @patch("chessdotcom.client.requests")
