@@ -7,6 +7,7 @@ from .club_members import get_club_members
 from .country_clubs import get_country_clubs
 from .country_details import get_country_details
 from .country_players import get_country_players
+from .leaderboards import get_leaderboards
 from .player_clubs import get_player_clubs
 from .player_current_games import get_player_current_games
 from .player_game_archives import get_player_game_archives
@@ -125,18 +126,3 @@ def get_streamers(tts=0, **request_options) -> ChessDotComResponse:
                 information about Chess.com streamers.
     """
     return Resource(uri="/streamers", tts=tts, request_options=request_options)
-
-
-@Client.endpoint
-def get_leaderboards(tts=0, **request_options) -> ChessDotComResponse:
-    """
-    :param tts: the time the client will wait before making the first request.
-    :returns: ``ChessDotComResponse`` object containing
-                information about top 50 player for daily and live games, tactics and lessons.
-    """
-    return Resource(
-        uri="/leaderboards",
-        tts=tts,
-        top_level_attribute="leaderboards",
-        request_options=request_options,
-    )
