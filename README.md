@@ -79,6 +79,58 @@ client = ChessDotComClient(
 ```
 If the initial request gets rate limited the client will automatically retry the request **2 more times** with an interval of **4 seconds**.
 
+## Available Endpoints
+
+#### Player Data
+
+- [Profile](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_profile.html)
+- [Stats](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_stats.html)
+- [Clubs](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_clubs.html)
+- [Game archives](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_game_archives.html)
+- [Current games](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_current_games.html)
+- [Games by month](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_games_by_month.html)
+- [Games by month PGN](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_games_by_month_pgn.html)
+- [Tournaments](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_tournaments.html)
+- [Titled players](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.titled_players.html)
+- [Team matches](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_team_matches.html)
+- [Current games to move](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.player_current_games_to_move.html)
+
+#### Clubs
+
+- [Club details](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.club_details.html)
+- [Club members](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.club_members.html)
+- [Club matches](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.club_matches.html)
+
+
+#### Tournaments
+
+- [Tournament details](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.tournament_details.html)
+- [Tournament round](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.tournament_round.html)
+- [Tournament round group details](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.tournament_round_group_details.html)
+
+#### Team Matches
+
+- [Team match](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.team_match.html)
+- [Team match board](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.team_match_board.html)
+- [Team match live](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.team_match_live.html)
+- [Team match live board](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.team_match_live_board.html)
+
+#### Countries
+
+- [Country clubs](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.country_clubs.html)
+- [Country players](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.country_players.html)
+- [Country details](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.country_details.html)
+
+#### Daily Puzzle
+
+- [Random daily puzzle](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.random_daily_puzzle.html)
+- [Current daily puzzle](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.current_daily_puzzle.html)
+
+#### Other
+
+- [Streamers](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.streamers.html)
+- [Leaderboards](https://chesscom.readthedocs.io/en/latest/members/chessdotcom.endpoints.leaderboards.html)
+
 ## Reporting Issues
 
 Chess.com API is subject to change. Smoke tests are ran daily to make sure the package is working correctly.
