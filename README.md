@@ -1,7 +1,7 @@
-# Python wrapper for Chess.com Public API
+# Python client for Chess.com Public API
 <img alt="GitHub Workflow Status (event)" src="https://img.shields.io/github/actions/workflow/status/sarartur/chess.com/build_and_publish.yml?branch=master"> <img src="https://img.shields.io/readthedocs/chessdotcom"> <img src="https://img.shields.io/github/license/sarartur/chess.com">  <img alt="PyPI" src="https://img.shields.io/pypi/v/chess.com"> <img alt="PyPI - Downloads" src="https://img.shields.io/pypi/dm/chess.com?color=007EC6"> <img src="https://img.shields.io/github/forks/sarartur/chess.com"> <img src="https://img.shields.io/github/stars/sarartur/chess.com">
 ---
-Python wrapper for Chess.com API which provides public data from the chess.com website. 
+Python client for Chess.com API which provides public data from the chess.com website. 
 ## Installation 
 **The package requires Python 3.8 or higher**.
 

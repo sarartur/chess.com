@@ -7,7 +7,7 @@ name = "chess.com"
 authors = [
   { name="Artur Saradzhyan", email="sarartur.ruk@gmail.com" },
 ]
-description = "Python Wrapper for Chess.com API"
+description = "Python client for Chess.com API"
 keywords = ['chess', 'chess.com']
 readme = "README.md"
 license = {text = "MIT License"}

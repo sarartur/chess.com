@@ -7,7 +7,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - chess.com wrapper testing scripts. https://github.com/sarartur/chess.com
+      - chess.com client testing scripts. https://github.com/sarartur/chess.com
     method: GET
     uri: https://api.chess.com/pub/player/afgano29/games/archives
   response:

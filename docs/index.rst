@@ -1,8 +1,8 @@
-Welcome to Chess.com Wrapper's Documentation!
+Welcome to Chess.com Python Client Documentation!
 =============================================
 Description
 ------------
-A full Python Wrapper around Chess.com API which provides public data from the Chess.com 
+A Python client for Chess.com API which provides public data from the Chess.com 
 website.
 
 

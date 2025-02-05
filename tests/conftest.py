@@ -8,7 +8,7 @@ from chessdotcom import endpoints as _endpoints
 def set_headers():
     Client.request_config["headers"][
         "User-Agent"
-    ] = "chess.com wrapper testing scripts. https://github.com/sarartur/chess.com"
+    ] = "chess.com client testing scripts. https://github.com/sarartur/chess.com"
 
     Client.request_config["headers"]["Accept-Encoding"] = None
 
