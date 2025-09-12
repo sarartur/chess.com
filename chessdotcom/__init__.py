@@ -12,6 +12,7 @@ from .endpoints import (
     get_player_current_games,
     get_player_current_games_to_move,
     get_player_game_archives,
+    get_player_games_by_basetime_increment,
     get_player_games_by_month,
     get_player_games_by_month_pgn,
     get_player_profile,

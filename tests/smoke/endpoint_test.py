@@ -37,6 +37,11 @@ def test_endpoints():
     )
     assert isinstance(data, ChessDotComResponse)
 
+    data = client.get_player_games_by_basetime_increment(
+        username="erik", basetime="180", increment="2"
+    )
+    assert isinstance(data, ChessDotComResponse)
+
     data = client.get_player_games_by_month_pgn(
         username="fabianocaruana", year="2020", month="05"
     )
