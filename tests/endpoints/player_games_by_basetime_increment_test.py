@@ -30,15 +30,6 @@ async def test_with_async_client(async_client):
     )
     validate_response(response)
 
-
-@vcr.use_cassette("get_player_games_by_basetime_increment.yaml")
-def test_without_increment(client):
-    response = client.get_player_games_by_basetime_increment(
-        username="erik", basetime="180"
-    )
-    validate_response_structure(response)
-
-
 @vcr.use_cassette("get_player_games_by_basetime_increment.yaml")
 @patch("chessdotcom.response_builder.Serializer.deserialize")
 def test_empty_data(deserialize, client):

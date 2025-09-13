@@ -5,7 +5,6 @@ API doc: https://www.chess.com/news/view/published-data-api#pubapi-endpoint-game
 """
 
 from dataclasses import dataclass
-from datetime import datetime
 from typing import Optional, Union
 
 from ..client import Client, Resource
@@ -17,7 +16,7 @@ from ..utils import from_timestamp
 def get_player_games_by_basetime_increment(
     username: str,
     basetime: Union[str, int],
-    increment: Optional[Union[str, int, None]] = None,
+    increment: Union[str, int],
     tts=0,
     **request_options,
 ) -> "GetPlayerGamesByBasetimeIncrementResponse":
@@ -29,10 +28,7 @@ def get_player_games_by_basetime_increment(
     :returns: :obj:`GetPlayerGamesByBasetimeIncrementResponse` object containing a list of live
                 Chess games that a player has finished by time control.
     """
-    if increment is not None:
-        uri = f"/player/{username}/games/live/{basetime}/{increment}"
-    else:
-        uri = f"/player/{username}/games/live/{basetime}"
+    uri = f"/player/{username}/games/live/{basetime}/{increment}"
     
     return Resource(
         uri=uri,
