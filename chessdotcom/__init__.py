@@ -15,6 +15,7 @@ from .endpoints import (
     get_player_games_by_basetime_increment,
     get_player_games_by_month,
     get_player_games_by_month_pgn,
+    get_player_is_online,
     get_player_profile,
     get_player_stats,
     get_player_team_matches,

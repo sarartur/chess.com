@@ -1,0 +1,69 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Connection:
+      - keep-alive
+      User-Agent:
+      - chess.com client testing scripts. https://github.com/sarartur/chess.com
+    method: GET
+    uri: https://api.chess.com/pub/player/erik/is-online
+  response:
+    body:
+      string: '{"online":false}'
+    headers:
+      CF-Cache-Status:
+      - REVALIDATED
+      CF-RAY:
+      - 8d44ba41fd298fe4-BOS
+      Cache-Control:
+      - public, max-age=5
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '16'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Fri, 18 Oct 2024 01:24:13 GMT
+      NEL:
+      - '{"success_fraction":1,"report_to":"cf-nel","max_age":604800}'
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=qJiCXDlByOU%2BxEtOrghFBBFVvvse53bN3XIGsxOPuy%2FLiHEu53iK4D0YlcY9ou%2B4DFJCcjm4bZeFQs327lixDkYERchR4TVAFg7ydb1xADB3LdNUcI5zbBRuuJ%2F4qQE%3D"}],"group":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Set-Cookie:
+      - __cf_bm=TYG35WNK4DQlowx.uPWHZU3GGurwbTtERldNRJoFRXk-1729214653-1.0.1.1-71qGJjxYgG8IVeFzX5sgFIllxMxJ.IssozdehwknY3z19mMiCs6nhbO9yqtFcI377fEztYJAcOylHswjMbMkkL7A3l02sSu9x1Qdbf3Mz.s;
+        path=/; expires=Fri, 18-Oct-24 01:54:13 GMT; domain=.chess.com; HttpOnly;
+        Secure; SameSite=None
+      access-control-allow-origin:
+      - '*'
+      etag:
+      - W/"59035ea262f2b14549892c7ed8166109"
+      expires:
+      - Fri, 18 Oct 2024 01:24:18 GMT
+      last-modified:
+      - Thursday, 17-Oct-2024 22:34:57 GMT+0000
+      link:
+      - <https://api.chess.com/context/PlayerIsOnline.jsonld>; rel="http://www.w3.org/ns/json-ld#context";
+        type="application/ld+json"
+      strict-transport-security:
+      - max-age=63072000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      x-chesscom-matched:
+      - pubapi_player_is_online
+      x-chesscom-meta:
+      - lean=published
+      x-chesscom-request-id-cdn:
+      - 8d43c24dda9c05fb-IAD
+      x-chesscom-request-id-lb:
+      - 66ae65bb9cd88348c5cf5c3d0bb6c831
+      x-chesscom-servedby:
+      - '144'
+    status:
+      code: 200
+      message: OK
+version: 1

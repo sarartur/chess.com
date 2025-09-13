@@ -23,6 +23,9 @@ def test_endpoints():
     data = client.get_player_stats("fabianocaruana")
     assert isinstance(data, ChessDotComResponse)
 
+    data = client.get_player_is_online("erik")
+    assert isinstance(data, ChessDotComResponse)
+
     data = client.get_player_current_games("fabianocaruana")
     assert isinstance(data, ChessDotComResponse)
 
