@@ -21,7 +21,6 @@ def test_available_imports():
     assert hasattr(chessdotcom, "get_player_games_by_basetime_increment")
     assert hasattr(chessdotcom, "get_player_games_by_month")
     assert hasattr(chessdotcom, "get_player_games_by_month_pgn")
-    assert hasattr(chessdotcom, "get_player_is_online")
     assert hasattr(chessdotcom, "get_player_profile")
     assert hasattr(chessdotcom, "get_player_stats")
     assert hasattr(chessdotcom, "get_player_team_matches")

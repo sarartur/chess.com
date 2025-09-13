@@ -16,7 +16,6 @@ from .player_game_archives import get_player_game_archives
 from .player_games_by_basetime_increment import get_player_games_by_basetime_increment
 from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
-from .player_is_online import get_player_is_online
 from .player_profile import get_player_profile
 from .player_stats import get_player_stats
 from .player_team_matches import get_player_team_matches
