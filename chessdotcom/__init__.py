@@ -33,4 +33,4 @@ from .endpoints import (
 from .errors import ChessDotComClientError, ChessDotComError
 from .response_builder import ChessDotComResponse
 
-__version__ = "3.11.1"
+__version__ = "3.12.0"
