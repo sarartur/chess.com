@@ -13,6 +13,7 @@ from .player_clubs import get_player_clubs
 from .player_current_games import get_player_current_games
 from .player_current_games_to_move import get_player_current_games_to_move
 from .player_game_archives import get_player_game_archives
+from .player_games_by_basetime_increment import get_player_games_by_basetime_increment
 from .player_games_by_month import get_player_games_by_month
 from .player_games_by_month_pgn import get_player_games_by_month_pgn
 from .player_profile import get_player_profile
